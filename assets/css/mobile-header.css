@@ -1,0 +1,180 @@
+/* ================================================
+   MOBILE HEADER — THE POSH
+   Shared across all pages. Linked after header.css.
+   No conflicts: all rules are scoped to header,
+   #mobilePanel, .emergency-icon, .iso-pro, .svg
+================================================ */
+
+/* -----------------------------------------------
+   SOCIAL MEDIA ICONS (top bar)
+----------------------------------------------- */
+.card ul {
+  padding: 0;
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.card ul li { cursor: pointer; }
+
+.svg {
+  transition: all 0.3s;
+  padding: 0.3rem;
+  height: 32px;
+  width: 32px;
+  border-radius: 100%;
+  color: #fff;
+  fill: currentColor;
+  box-shadow:
+    inset 0 0 20px rgba(255,255,255,0.3),
+    inset 0 0 5px rgb(0,0,0),
+    0 5px 5px rgb(125,21,21);
+}
+
+.text {
+  opacity: 0;
+  border-radius: 5px;
+  padding: 5px;
+  transition: all 0.3s;
+  color: rgb(255,254,252);
+  background-color: rgba(0,0,0,0.93);
+  position: absolute;
+  z-index: 9999;
+  box-shadow:
+    -5px 0 1px rgba(153,153,153,0.2),
+    -10px 0 1px rgba(153,153,153,0.2),
+    inset 0 0 20px rgba(255,255,255,0.3),
+    inset 0 0 5px rgba(255,255,255,0.5),
+    0 5px 5px rgba(0,0,0,0.08);
+}
+
+/* Isometric hover effect */
+.iso-pro { transition: 0.5s; }
+.iso-pro:hover a > .svg { transform: translate(15px,-15px); border-radius: 100%; }
+.iso-pro:hover .text   { opacity: 1; transform: translate(25px,-2px) skew(-5deg); }
+.iso-pro:hover .svg    { transform: translate(5px,-5px); }
+.iso-pro span {
+  opacity: 0;
+  position: absolute;
+  color: #1877f2;
+  border-color: #1877f2;
+  border-radius: 50%;
+  transition: all 0.3s;
+  height: 70px;
+  width: 98px;
+}
+.iso-pro:hover span              { opacity: 1; }
+.iso-pro:hover span:nth-child(1) { opacity: 0.2; }
+.iso-pro:hover span:nth-child(2) { opacity: 0.4; transform: translate(5px,-5px); }
+.iso-pro:hover span:nth-child(3) { opacity: 0.6; transform: translate(10px,-10px); }
+
+/* -----------------------------------------------
+   EMERGENCY ICON (desktop default)
+----------------------------------------------- */
+.emergency-icon {
+  height: 56px;
+  width: auto;
+}
+
+/* -----------------------------------------------
+   MOBILE PANEL (slide-in nav)
+----------------------------------------------- */
+#mobilePanel {
+  box-shadow: 4px 0 20px rgba(0,0,0,0.5);
+  overflow-y: auto;
+}
+#mobilePanel ul { margin-top: 10px; }
+#mobilePanel ul li { border-bottom: 1px solid rgba(255,255,255,0.15); }
+#mobilePanel ul li a {
+  display: block;
+  padding: 14px 6px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #fff;
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+}
+#mobilePanel ul li a:hover { color: #f9a8d4; }
+#mobileMenu { position: fixed; inset: 0; z-index: 9999; }
+
+/* -----------------------------------------------
+   ≤ 1024px — TABLET / MOBILE HEADER LAYOUT
+----------------------------------------------- */
+@media (max-width: 1024px) {
+
+  /* Prevent horizontal overflow */
+  body { overflow-x: hidden; }
+
+  /* Sticky header */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  /* Stack top info bar vertically */
+  header .max-w-7xl.mx-auto.px-4.py-3 {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 12px;
+    text-align: center;
+  }
+
+  header .text-sm { font-size: 12px; line-height: 1.4; }
+
+  /* Phone number */
+  header .text-center.font-semibold {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  /* Emergency icon smaller */
+  .emergency-icon { height: 36px; }
+
+  /* Ambulance */
+  header img[alt="Ambulance Service"]        { height: 35px; }
+  header img[alt="Ambulance Service"] + span { display: none; }
+
+  /* Appointment button */
+  header a[href="appointment.html"] {
+    font-size: 12px;
+    padding: 6px 14px;
+    border-radius: 6px;
+  }
+
+  /* Hamburger */
+  #menuBtn { font-size: 18px; }
+
+  /* Branding row */
+  header .bg-white .max-w-7xl {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Logo */
+  header img           { height: 42px; }
+  header h1            { font-size: 18px; line-height: 1.2; }
+  header p             { font-size: 11px; line-height: 1.2; }
+
+  /* Hide desktop nav */
+  header nav { display: none; }
+}
+
+/* -----------------------------------------------
+   ≤ 480px — SMALL PHONES
+----------------------------------------------- */
+@media (max-width: 480px) {
+  header .bg-white { padding: 12px 8px; }
+  header h1        { font-size: 16px; }
+  header p         { font-size: 10px; }
+  #mobilePanel     { width: 90%; }
+}

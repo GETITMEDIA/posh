@@ -1,0 +1,117 @@
+nav ul li {
+  position: relative;
+}
+
+/* hide dropdown */
+nav ul li .dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #59016b;
+  min-width: 220px;
+  display: none;
+  padding: 8px 0;
+  border-radius: 6px;
+  z-index: 9999;
+}
+
+/* dropdown links */
+nav ul li .dropdown li a {
+  display: block;
+  padding: 8px 16px;
+  color: #fff;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+/* hover effects */
+nav ul li .dropdown li a:hover {
+  background-color: #7a3db8;
+  color: #ffd700;
+}
+
+/* show on hover */
+nav ul li.has-dropdown:hover .dropdown {
+  display: block;
+}
+
+/* smooth animation */
+nav ul li .dropdown {
+  animation: fadeDown 0.25s ease;
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}/* =========================
+   MOBILE NAV STYLES
+   ========================= */
+
+#mobilePanel {
+  overflow-y: auto;
+}
+
+/* Links & buttons */
+#mobilePanel a,
+#mobilePanel button {
+  width: 100%;
+  display: block;
+  padding: 12px 0;
+  color: #ffffff;
+  background: none;
+  border: none;
+  text-align: left;
+}
+
+/* Divider line */
+#mobilePanel ul > li {
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+}
+
+/* Dropdown toggle */
+.dropdown-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* + icon */
+.dropdown-toggle span {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate + */
+.dropdown-toggle.active span {
+  transform: rotate(45deg);
+}
+
+/* Dropdown container */
+.mobile-dropdown {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+  margin-left: 12px;
+  padding-left: 10px;
+  border-left: 2px solid rgba(255,255,255,0.2);
+}
+
+/* Open dropdown */
+.mobile-dropdown.open {
+  max-height: 1000px;
+}
+
+/* Dropdown links */
+.mobile-dropdown li a {
+  font-size: 13px;
+  padding: 8px 0;
+  text-transform: none;
+}

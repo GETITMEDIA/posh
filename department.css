@@ -1,0 +1,509 @@
+/* ==============================
+   GLOBAL BASE
+============================== */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #f8f9fb;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: 600;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #444;
+}
+
+/* ==============================
+   DEPARTMENT HEADER
+============================== */
+.dept-header {
+    text-align: center;
+    margin: 30px 0 10px;
+}
+
+.dept-header h1 {
+    color: rgb(176, 14, 154);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.dept-subtitle {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #d63384;
+    margin-top: 6px;
+}
+
+/* ==============================
+   SECTION TITLE
+============================== */
+.section-title {
+    text-align: center;
+    color: #b00e9a;
+    margin: 40px 0 25px;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    width: 70px;
+    height: 3px;
+    background: linear-gradient(to right, #b00e9a, #d63384);
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 3px;
+}
+
+/* ==============================
+   DOCTOR SECTION
+============================== */
+.doctor-section {
+    padding: 30px 0;
+}
+
+/* ==============================
+   DOCTOR CARD (MODERN)
+============================== */
+.doctor-card-modern {
+    background: #ffffff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: 0.35s ease;
+    height: 100%;
+}
+
+.doctor-card-modern:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Doctor Image */
+.doctor-card-modern img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+/* Doctor Info */
+.doctor-info {
+    padding: 22px;
+    text-align: center;
+}
+
+.doctor-info h5 {
+    color: #b00e9a;
+    margin-bottom: 8px;
+}
+
+.doctor-info p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* ==============================
+   APPOINTMENT BUTTON
+============================== */
+.btn-appoint {
+    display: inline-block;
+    background: linear-gradient(135deg, #25d366, #1ebe5b);
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-appoint i {
+    margin-right: 6px;
+}
+
+.btn-appoint:hover {
+    transform: scale(1.05);
+    color: #fff;
+}
+
+/* ==============================
+   DEPARTMENT INTRO
+============================== */
+.dept-intro {
+    padding: 40px 0;
+}
+
+.dept-intro p {
+    max-width: 900px;
+    margin: auto;
+}
+
+/* ==============================
+   SERVICES
+============================== */
+.dept-services {
+    padding: 40px 0;
+}
+
+.service-box {
+    background: #ffffff;
+    padding: 20px 22px;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    border-left: 5px solid #d63384;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.service-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.service-box h5 {
+    color: #b00e9a;
+    margin-bottom: 6px;
+}
+
+.service-box p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* ==============================
+   WHY CHOOSE US
+============================== */
+.dept-why {
+    padding: 40px 0;
+}
+
+.tick-list {
+    list-style: none;
+    padding-left: 0;
+    max-width: 900px;
+    margin: auto;
+}
+
+.tick-list li {
+    position: relative;
+    padding-left: 32px;
+    margin-bottom: 15px;
+    font-size: 0.98rem;
+}
+
+.tick-list li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: #28a745;
+    font-weight: bold;
+}
+
+/* ==============================
+   FINAL MESSAGE
+============================== */
+.dept-final {
+    padding: 40px 0 20px;
+}
+
+.final-heading {
+    text-align: center;
+    margin: 0 20px;
+    padding: 25px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: linear-gradient(135deg, #b00e9a, #d63384);
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(176, 14, 154, 0.35);
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+@media (max-width: 768px) {
+    .doctor-card-modern img {
+        height: 240px;
+    }
+
+    .dept-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .final-heading {
+        font-size: 1.05rem;
+    }
+
+    p {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .doctor-card-modern {
+        margin-bottom: 20px;
+    }
+
+    .section-title {
+        font-size: 1.4rem;
+    }
+}
+/* ==========================
+   DOCTOR GRID SECTION
+========================== */
+.doctor-section {
+    padding: 40px 20px;
+}
+
+/* GRID LAYOUT */
+.doctor-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* CARD */
+.doctor-card {
+    background: #ffffff;
+    border-radius: 18px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+.doctor-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+}
+
+/* IMAGE */
+.doctor-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+/* TEXT */
+.doctor-card h5 {
+    color: #b00e9a;
+    font-size: 1rem;
+    margin: 15px 10px 5px;
+}
+
+.doctor-card p {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0 12px 15px;
+}
+
+/* BUTTON */
+.btn-appoint {
+    display: inline-block;
+    margin-bottom: 18px;
+    padding: 9px 18px;
+    background: linear-gradient(135deg, #25d366, #1ebe5b);
+    color: #fff;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-appoint:hover {
+    transform: scale(1.05);
+    color: #fff;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+@media (max-width: 1024px) {
+    .doctor-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .doctor-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .doctor-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 30px auto;
+}
+
+.service-box {
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.service-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.service-box h5 {
+  color: #b00e9a;
+  margin-bottom: 12px;
+}
+
+.service-box p {
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+/* Container max width and padding */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Headings */
+h1, h2, h3, h5 {
+  word-wrap: break-word;
+}
+
+/* Text center and padding adjustment for small devices */
+@media (max-width: 768px) {
+  h1, h2, h3 {
+    font-size: 1.8rem;
+    padding: 0 10px;
+  }
+
+  h5 {
+    font-size: 1.1rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    padding: 0 10px;
+  }
+}
+
+/* Doctor Cards - flexible stack on mobile */
+.doctor-card {
+  max-width: 320px;
+  margin: 20px auto;
+  padding: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  background: #fff;
+  transition: box-shadow 0.3s ease;
+}
+
+.doctor-card:hover {
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 768px) {
+  .container.py-3 > .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+/* Buttons resize nicely on mobile */
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  font-size: 0.95rem;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+@media (max-width: 480px) {
+  .whatsapp-btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Final message styling for mobile */
+.final-heading {
+  max-width: 700px;
+  margin: 40px auto;
+  font-style: italic;
+  font-size: 1.1rem;
+  padding: 0 15px;
+  color: #6b2a6f;
+}
+
+@media (max-width: 480px) {
+  .final-heading {
+    font-size: 1rem;
+  }
+}
+.services-timeline {
+  position: relative;
+  max-width: 700px;
+  margin: 30px auto;
+  padding-left: 30px;
+  border-left: 3px solid #d63384;
+}
+
+@media (max-width: 768px) {
+  .services-timeline {
+    padding-left: 15px;
+    margin: 20px 10px;
+  }
+
+  .service-step::before {
+    left: -8px;
+    width: 12px;
+    height: 12px;
+  }
+  
+  .service-step {
+    padding-left: 15px;
+  }
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 30px auto;
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    padding: 0 15px;
+  }
+}
+.doctor-info h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 18px;
+    line-height: 1.3;
+    text-align: center;
+}

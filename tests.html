@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Posh</title>
+  <link rel="icon" type="image/png" href="fav.png" />
+  <link rel="shortcut icon" href="fav.png" />
+</head>
+<body>
+    <input type="text" id="phone" placeholder="+91XXXXXXXXXX">
+<button onclick="sendOTP()">Send OTP</button>
+
+<input type="text" id="otp" placeholder="Enter OTP">
+<button onclick="verifyOTP()">Verify OTP</button>
+
+<div id="recaptcha-container"></div>
+<script>import { initializeApp } from "firebase/app";
+import { getAuth, RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
+
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT.firebaseapp.com",
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+// reCAPTCHA (required for web)
+window.recaptchaVerifier = new RecaptchaVerifier(
+  'recaptcha-container',
+  { size: 'normal' },
+  auth
+);
+
+function sendOTP() {
+  const phoneNumber = document.getElementById("phone").value;
+  const appVerifier = window.recaptchaVerifier;
+
+  signInWithPhoneNumber(auth, phoneNumber, appVerifier)
+    .then((confirmationResult) => {
+      window.confirmationResult = confirmationResult;
+      alert("OTP sent to your phone");
+    })
+    .catch((error) => {
+      alert(error.message);
+    });
+}
+
+function verifyOTP() {
+  const otp = document.getElementById("otp").value;
+
+  confirmationResult.confirm(otp)
+    .then(() => {
+      alert("Phone verified successfully");
+    })
+    .catch(() => {
+      alert("Invalid OTP");
+    });
+}
+</script>
+</body>
+</html>
