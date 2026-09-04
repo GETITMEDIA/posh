@@ -937,3 +937,152 @@ html {
 header {
   background-color: #ffffff;
 }
+
+/* =========================================================
+   GLOBAL LAYOUT STANDARDISATION (1200px max-width)
+   Applied to ALL pages via site-header.css.
+   Ensures every content section has uniform left/right
+   margins matching the index.html reference layout.
+   ========================================================= */
+
+/* Standard container class — use on any wrapper that
+   needs the site-wide 1200px centred column.              */
+.posh-container {
+  max-width: 1200px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  box-sizing: border-box !important;
+}
+
+/* Override the Bootstrap / utility .container class that
+   many pages define inline so it caps at 1200px too.      */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px !important;
+  }
+}
+
+/* Contact page */
+.contact-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+/* Founder / Achievements page */
+.founder-section {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+/* Articles page */
+.article-container,
+.articles-page {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: auto;
+  box-sizing: border-box;
+}
+
+/* Health tips page */
+.ht-page,
+.ht-grid-wrap {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+/* Facilities page hero */
+.hero-wrap {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+/* Patient stories */
+.patient-story {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: auto;
+  box-sizing: border-box;
+}
+
+/* Gallery / Blog section */
+.blog-section,
+.clients-section {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+/* Footer container */
+.footer-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+/* Facilities page */
+.facilities-section,
+.facilities-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+/* Our Team page */
+.our-team-section,
+.team-container,
+.leadership-section,
+.dept-team-section {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+/* Achievements page */
+.awards-container,
+.certificates-section,
+.mv-award-section {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+/* Department pages — emergency hero is full-bleed, 
+   but the .container inside should already be 1200px
+   via the @media rule above. */

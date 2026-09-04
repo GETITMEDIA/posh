@@ -1687,37 +1687,68 @@ nav ul li .dropdown {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background: linear-gradient(135deg, #ff4d8d, #ff6b6b);
+    background: linear-gradient(135deg, #7a3db8 0%, #4b1d6b 100%);
     color: white;
-    padding: 20px 25px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(255, 77, 141, 0.4);
+    padding: 16px 24px;
+    border-radius: 16px;
+    box-shadow: 0 12px 35px rgba(75, 29, 107, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
     z-index: 1000;
     cursor: pointer;
-    transition: var(--transition-smooth);
-    animation: bounce 3s infinite;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     max-width: 350px;
 }
 
 .floating-emergency:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(255, 77, 141, 0.6);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 45px rgba(75, 29, 107, 0.6);
+    background: linear-gradient(135deg, #8e09a8 0%, #59016b 100%);
 }
 
 .emergency-content {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 18px;
 }
 
 .emergency-icon {
-    font-size: 2.5rem;
-    animation: pulse 1.5s infinite;
+    font-size: 2.2rem;
+    background: rgba(255, 255, 255, 0.15);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
 }
 
 .emergency-text h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+    color: #ffd6e8;
+}
+
+.emergency-text p {
     font-size: 1.1rem;
-    margin-bottom: 5px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.emergency-text .blink {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
 }
 
 .blink {
