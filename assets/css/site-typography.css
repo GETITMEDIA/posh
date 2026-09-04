@@ -1,0 +1,49 @@
+/* =========================================================
+   POSH — GLOBAL TYPOGRAPHY
+   ---------------------------------------------------------
+   Single source of truth for the site's font FAMILY.
+
+   The reference is the hospital name in the approved
+   index.html header:
+
+       "The POSH - Pondy Ortho Speciality Hospital Pvt Ltd"
+
+   which renders in Roboto - set by "body { font-family:
+   Roboto, sans-serif }" in assets/css/index.css and
+   assets/css/header.css. That exact family is reproduced here
+   as --posh-font and reused everywhere, so every page renders
+   in one family.
+
+   Font WEIGHTS, SIZES and the existing visual hierarchy are
+   deliberately NOT set here — they stay exactly as each page
+   already defines them.
+
+   The --font-* aliases below exist because the department
+   pages were written against a seven-font token system.
+   Pointing every token at --posh-font unifies the family
+   without touching any of their size/weight rules.
+   ========================================================= */
+
+:root {
+  --posh-font: "Roboto", sans-serif;
+
+  --font-body: var(--posh-font);
+  --font-heading: var(--posh-font);
+  --font-accent: var(--posh-font);
+  --font-card: var(--posh-font);
+  --font-hero: var(--posh-font);
+  --font-stat: var(--posh-font);
+  --font-badge: var(--posh-font);
+}
+
+body {
+  font-family: var(--posh-font);
+}
+
+/* Form controls and buttons do not inherit the page font by default */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}

@@ -1,0 +1,4263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Doctors - The Posh</title>
+  <link rel="icon" type="image/png" href="assets/images/fav.png" />
+  <link rel="shortcut icon" href="assets/images/fav.png" />
+    <style>
+        .dept-dropdown {
+            max-height: 320px !important;
+            overflow-y: auto !important;
+            overscroll-behavior: contain;
+        }
+
+        .dept-dropdown::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .dept-dropdown::-webkit-scrollbar-track {
+            background: #4b1d6b;
+        }
+
+        .dept-dropdown::-webkit-scrollbar-thumb {
+            background: #f48fb1;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Bootstrap -->
+    <!-- In your <head> tag -->
+
+
+    <!-- Custom CSS -->
+
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/mobile-header.css">
+  <link href="assets/css/site-header.css" rel="stylesheet">
+  <link href="assets/css/site-typography.css" rel="stylesheet">
+  <script defer src="assets/javascript/site-header.js"></script>
+
+    <style>
+        .dept-dropdown {
+            max-height: 320px !important;
+            overflow-y: auto !important;
+            overscroll-behavior: contain;
+        }
+
+        .dept-dropdown::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .dept-dropdown::-webkit-scrollbar-track {
+            background: #4b1d6b;
+        }
+
+        .dept-dropdown::-webkit-scrollbar-thumb {
+            background: #f48fb1;
+            border-radius: 4px;
+        }
+    </style>
+
+        <style>
+            /* ===== DROPDOWN MENU ===== */
+            nav ul li {
+                position: relative;
+            }
+
+            /* hide dropdown */
+            nav ul li .dropdown {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: #59016b;
+                min-width: 220px;
+                display: none;
+                padding: 8px 0;
+                border-radius: 6px;
+                z-index: 9999;
+            }
+
+            /* dropdown links */
+            nav ul li .dropdown li a {
+                display: block;
+                padding: 8px 16px;
+                color: #fff;
+                font-size: 13px;
+                white-space: nowrap;
+            }
+
+            /* hover effects */
+            nav ul li .dropdown li a:hover {
+                background-color: #7a3db8;
+                color: #ffd700;
+            }
+
+            /* show on hover */
+            nav ul li.has-dropdown:hover .dropdown {
+                display: block;
+            }
+
+            /* smooth animation */
+            nav ul li .dropdown {
+                animation: fadeDown 0.25s ease;
+            }
+
+            @keyframes fadeDown {
+                from {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            /* =========================
+   MOBILE NAV STYLES
+   ========================= */
+
+            #mobilePanel {
+                overflow-y: auto;
+            }
+
+            /* Links & buttons */
+            #mobilePanel a,
+            #mobilePanel button {
+                width: 100%;
+                display: block;
+                padding: 12px 0;
+                color: #ffffff;
+                background: none;
+                border: none;
+                text-align: left;
+            }
+
+            /* Divider line */
+            #mobilePanel ul>li {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+            }
+
+            /* Dropdown toggle */
+            .dropdown-toggle {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
+
+            /* + icon */
+            .dropdown-toggle span {
+                font-size: 18px;
+                transition: transform 0.3s ease;
+            }
+
+            /* Rotate + */
+            .dropdown-toggle.active span {
+                transform: rotate(45deg);
+            }
+
+            /* Dropdown container */
+            .mobile-dropdown {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.35s ease;
+                margin-left: 12px;
+                padding-left: 10px;
+                border-left: 2px solid rgba(255, 255, 255, 0.2);
+            }
+
+            /* Open dropdown */
+            .mobile-dropdown.open {
+                max-height: 1000px;
+            }
+
+            /* Dropdown links */
+            .mobile-dropdown li a {
+                font-size: 13px;
+                padding: 8px 0;
+                text-transform: none;
+            }
+        </style>
+
+            <header class=" top-0 z-[999]">
+
+    <!-- ONE CONTAINER -->
+    <div class="bg-gradient-to-r from-[#4b1d6b] to-[#7a3db8] text-white">
+
+      <!-- ROW 1 : TOP INFO -->
+      <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-4 text-sm"
+        style="background-color: #8e09a8c2;">
+        <!-- From Uiverse.io by jolprince_5263 -->
+        <div class="card">
+          <ul>
+            <li>
+              <a class="social facebook" href="https://www.facebook.com/theposhin/reels/" target="_blank"
+                rel="noopener" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+            </li>
+
+            <li>
+              <a class="social instagram" href="https://www.instagram.com/theposh_hospital/" target="_blank"
+                rel="noopener" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </li>
+
+            <li>
+              <a class="social youtube" href="https://www.youtube.com/channel/UCj_xz0cJBiy6tmlePNbaadg" target="_blank"
+                rel="noopener" aria-label="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </li>
+
+            <li>
+              <a class="social whatsapp" href="https://wa.me/918056555330" target="_blank" rel="noopener"
+                aria-label="WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Left -->
+        <div class="flex items-center gap-4">
+          <img decoding="async" src="assets/images/posh/247-emergency.avif" alt="24/7 Emergency Services" class="emergency-icon">
+        </div>
+
+        <!-- Center -->
+        <div class="text-center font-semibold header-call-now">
+          Call Now: 0413-2200018 / 0413-2200018 / +91 96770 73462 / +91 80565 55330
+        </div>
+
+        <!-- Right -->
+        <div class="flex items-center gap-4">
+          <button id="menuBtn" class="lg:hidden text-white text-3xl font-bold focus:outline-none" type="button"
+            aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+            &#9776;
+          </button>
+          <span class="flex items-center gap-2 font-semibold">
+            <span class="header-ambulance-wrap">
+              <img decoding="async" src="assets/images/ambulance.gif" alt="Ambulance Service"
+                class="h-6 w-auto object-contain header-ambulance">
+            </span>
+            <span class="hidden sm:inline">Ambulance Service</span>
+          </span>
+
+          <a href="appointment.html" target="_blank" rel="noopener">
+            <button class="appt-button" type="button">
+              <div class="ab-outline"></div>
+              <div class="ab-state ab-state--default">
+                <div class="ab-icon">
+                  <svg style="color:rgb(255,0,170);" width="1em" height="1em" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <g style="filter:url(#ab-shadow)">
+                      <path
+                        d="M14.2199 21.63C13.0399 21.63 11.3699 20.8 10.0499 16.83L9.32988 14.67L7.16988 13.95C3.20988 12.63 2.37988 10.96 2.37988 9.78001C2.37988 8.61001 3.20988 6.93001 7.16988 5.60001L15.6599 2.77001C17.7799 2.06001 19.5499 2.27001 20.6399 3.35001C21.7299 4.43001 21.9399 6.21001 21.2299 8.33001L18.3999 16.82C17.0699 20.8 15.3999 21.63 14.2199 21.63Z"
+                        fill="currentColor"></path>
+                      <path
+                        d="M10.11 14.4C9.92005 14.4 9.73005 14.33 9.58005 14.18C9.29005 13.89 9.29005 13.41 9.58005 13.12L13.16 9.53C13.45 9.24 13.93 9.24 14.22 9.53C14.51 9.82 14.51 10.3 14.22 10.59L10.64 14.18C10.5 14.33 10.3 14.4 10.11 14.4Z"
+                        fill="currentColor"></path>
+                    </g>
+                    <defs>
+                      <filter id="ab-shadow">
+                        <feDropShadow dx="0" dy="1" stdDeviation="0.6" flood-opacity="0.5"></feDropShadow>
+                      </filter>
+                    </defs>
+                  </svg>
+                </div>
+                <p>
+                  <span style="--i:0">A</span><span style="--i:1">P</span><span style="--i:2">P</span><span
+                    style="--i:3">O</span><span style="--i:4">I</span><span style="--i:5">N</span><span
+                    style="--i:6">T</span><span style="--i:7">M</span><span style="--i:8">E</span><span
+                    style="--i:9">N</span><span style="--i:10">T</span>
+                </p>
+              </div>
+              <div class="ab-state ab-state--sent">
+                <div class="ab-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="1em" width="1em"
+                    stroke-width="0.5px" stroke="black">
+                    <path fill="currentColor"
+                      d="M12 22.75C6.07 22.75 1.25 17.93 1.25 12C1.25 6.07 6.07 1.25 12 1.25C17.93 1.25 22.75 6.07 22.75 12C22.75 17.93 17.93 22.75 12 22.75ZM12 2.75C6.9 2.75 2.75 6.9 2.75 12C2.75 17.1 6.9 21.25 12 21.25C17.1 21.25 21.25 17.1 21.25 12C21.25 6.9 17.1 2.75 12 2.75Z">
+                    </path>
+                    <path fill="currentColor"
+                      d="M10.5795 15.5801C10.3795 15.5801 10.1895 15.5001 10.0495 15.3601L7.21945 12.5301C6.92945 12.2401 6.92945 11.7601 7.21945 11.4701C7.50945 11.1801 7.98945 11.1801 8.27945 11.4701L10.5795 13.7701L15.7195 8.6301C16.0095 8.3401 16.4895 8.3401 16.7795 8.6301C17.0695 8.9201 17.0695 9.4001 16.7795 9.6901L11.1095 15.3601C10.9695 15.5001 10.7795 15.5801 10.5795 15.5801Z">
+                    </path>
+                  </svg>
+                </div>
+                <p><span style="--i:5">S</span><span style="--i:6">e</span><span style="--i:7">n</span><span
+                    style="--i:8">t</span></p>
+              </div>
+            </button>
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- ROW 2 : BRANDING -->
+      <div class="bg-white text-center py-6 px-4">
+
+        <div class="logo-header mx-auto">
+          <!-- Left Logo -->
+          <a href="index.html">
+            <img decoding="async" src="assets/images/logo/logo.png" class="h-16" alt="The POSH Hospital logo">
+          </a>
+
+          <!-- Center Text -->
+          <div>
+            <h1 class="text-pink-600 text-3xl font-extrabold tracking-wide">
+              The POSH - Pondy Ortho Speciality Hospital Pvt Ltd
+            </h1>
+          </div>
+
+          <!-- Right Logo -->
+          <img decoding="async" src="assets/images/posh/unnamed.png" class="h-16" alt="NABH accreditation">
+
+        </div>
+
+      </div>
+
+
+      <!-- ROW 3 : NAV MENU -->
+      <nav class="bg-[#5b2d86] hidden lg:block" style="background-color:#59016b;" aria-label="Main navigation">
+        <ul class="max-w-7xl mx-auto px-4 flex flex-wrap justify-center py-3 text-white font-semibold uppercase"
+          style="font-size:12.5px; gap:18px;">
+
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li class="has-dropdown">
+            <a href="index.html#departmentssection">Departments</a>
+            <ul class="dropdown dept-dropdown">
+              <li><a href="departments/orthopedics-spine-care.html">Orthopedics &amp; Spine Care</a></li>
+              <li><a href="departments/anaesthesiology.html">Anaesthesiology</a></li>
+              <li><a href="departments/cardiology.html">Cardiology</a></li>
+              <li><a href="departments/cardiothoracic-vascular.html">Cardiothoracic &amp; Vascular</a></li>
+              <li><a href="departments/dental.html">Dental</a></li>
+              <li><a href="departments/dermatology.html">Dermatology &amp; Cosmetology</a></li>
+              <li><a href="departments/endocrinology.html">Endocrinology</a></li>
+              <li><a href="departments/ent.html">ENT</a></li>
+              <li><a href="departments/gastroenterology.html">Gastroenterology</a></li>
+              <li><a href="departments/general-medicine.html">General Medicine</a></li>
+              <li><a href="departments/general-surgery.html">General Surgery</a></li>
+              <li><a href="departments/hepatology.html">Hepatology</a></li>
+              <li><a href="departments/nephrology.html">Nephrology</a></li>
+              <li><a href="departments/neurology.html">Neurology</a></li>
+              <li><a href="departments/neurosurgery.html">Neurosurgery</a></li>
+              <li><a href="departments/obstetrics-gynaecology.html">Obstetrics &amp; Gynaecology</a></li>
+              <li><a href="departments/oncology.html">Oncology &amp; Surgical Oncology</a></li>
+              <li><a href="departments/ophthalmology.html">Ophthalmology</a></li>
+              <li><a href="departments/paediatrics.html">Paediatrics</a></li>
+              <li><a href="departments/physical-medicine-rehabilitation.html">Physical Medicine and Rehabilitation</a></li>
+              <li><a href="departments/physiotherapy.html">Physiotherapy</a></li>
+              <li><a href="departments/plastic-surgery.html">Plastic Surgery</a></li>
+              <li><a href="departments/psychiatry.html">Psychiatry</a></li>
+              <li><a href="departments/pulmonology.html">Pulmonology &amp; Chest Medicine</a></li>
+              <li><a href="departments/radiology.html">Radiology</a></li>
+              <li><a href="departments/urology.html">Urology</a></li>
+            </ul>
+          </li>
+          <li><a href="our-doctors.html">Our Doctors</a></li>
+          <li><a href="ourteams.html">Our Team</a></li>
+          <li><a href="index.html#clientsgrid">Happy Patients</a></li>
+          <li><a href="article.html">Articles</a></li>
+          <li><a href="healthtips.html">Health Tips</a></li>
+
+          <!-- GALLERY -->
+          <li class="has-dropdown">
+            <a href="gallery/news.html">Gallery</a>
+            <ul class="dropdown">
+              <li><a href="gallery/news.html">News</a></li>
+              <li><a href="gallery/bones-and-joints-week.html">Bones &amp; Joints Week Celebration</a></li>
+              <li><a href="gallery/medical-camps.html">Medical Camps</a></li>
+              <li><a href="gallery/education-and-training.html">Education &amp; Training</a></li>
+              <li><a href="gallery/nurses-day.html">Nurses Day Celebration</a></li>
+              <li><a href="gallery/radiographer-day.html">Radiographer Day Celebration</a></li>
+              <li><a href="gallery/independence-day.html">Independence Day</a></li>
+              <li><a href="gallery/poacon-event.html">Poacon Event</a></li>
+              <li><a href="gallery/conference-hall-inauguration.html">Conference Hall Inauguration</a></li>
+              <li><a href="gallery/anniversary-celebration.html">Anniversary Celebration</a></li>
+              <li><a href="gallery/annual-sports-meet.html">Annual Sports Meet</a></li>
+            </ul>
+          </li>
+
+          <!-- FACILITIES -->
+          <li class="has-dropdown">
+            <a href="facilities.html">Facilities</a>
+            <ul class="dropdown">
+              <li><a href="facilities/insurance.html">Insurance</a></li>
+              <li><a href="facilities/speciality.html">Speciality</a></li>
+              <li><a href="facilities/health-packages.html">Health Packages</a></li>
+            </ul>
+          </li>
+
+          <li><a href="achieve.html">Achievements</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+
+        </ul>
+      </nav>
+
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div id="mobileMenu" class="fixed inset-0 bg-black/60 z-[9999] hidden">
+      <div id="mobilePanel"
+        class="bg-[#59016b] w-[280px] h-full p-5 text-white transform -translate-x-full transition-transform duration-300">
+
+        <!-- HEADER -->
+        <div class="flex justify-between items-center mb-6">
+          <img decoding="async" src="assets/images/posh/logoo.avif" class="h-10" alt="The POSH Hospital logo">
+          <button id="closeMenu" class="text-3xl font-bold" type="button" aria-label="Close menu">&times;</button>
+        </div>
+
+        <!-- MOBILE NAV LINKS -->
+        <ul class="flex flex-col text-sm font-semibold uppercase">
+
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li>
+            <button class="dropdown-toggle" type="button" onclick="toggleDropdown('departmentsMob', this)">Departments
+              <span>+</span></button>
+            <ul id="departmentsMob" class="mobile-dropdown">
+              <li><a href="departments/orthopedics-spine-care.html">Orthopedics &amp; Spine Care</a></li>
+              <li><a href="departments/anaesthesiology.html">Anaesthesiology</a></li>
+              <li><a href="departments/cardiology.html">Cardiology</a></li>
+              <li><a href="departments/cardiothoracic-vascular.html">Cardiothoracic &amp; Vascular</a></li>
+              <li><a href="departments/dental.html">Dental</a></li>
+              <li><a href="departments/dermatology.html">Dermatology &amp; Cosmetology</a></li>
+              <li><a href="departments/endocrinology.html">Endocrinology</a></li>
+              <li><a href="departments/ent.html">ENT</a></li>
+              <li><a href="departments/gastroenterology.html">Gastroenterology</a></li>
+              <li><a href="departments/general-medicine.html">General Medicine</a></li>
+              <li><a href="departments/general-surgery.html">General Surgery</a></li>
+              <li><a href="departments/hepatology.html">Hepatology</a></li>
+              <li><a href="departments/nephrology.html">Nephrology</a></li>
+              <li><a href="departments/neurology.html">Neurology</a></li>
+              <li><a href="departments/neurosurgery.html">Neurosurgery</a></li>
+              <li><a href="departments/obstetrics-gynaecology.html">Obstetrics &amp; Gynaecology</a></li>
+              <li><a href="departments/oncology.html">Oncology &amp; Surgical Oncology</a></li>
+              <li><a href="departments/ophthalmology.html">Ophthalmology</a></li>
+              <li><a href="departments/paediatrics.html">Paediatrics</a></li>
+              <li><a href="departments/physical-medicine-rehabilitation.html">Physical Medicine and Rehabilitation</a></li>
+              <li><a href="departments/physiotherapy.html">Physiotherapy</a></li>
+              <li><a href="departments/plastic-surgery.html">Plastic Surgery</a></li>
+              <li><a href="departments/psychiatry.html">Psychiatry</a></li>
+              <li><a href="departments/pulmonology.html">Pulmonology &amp; Chest Medicine</a></li>
+              <li><a href="departments/radiology.html">Radiology</a></li>
+              <li><a href="departments/urology.html">Urology</a></li>
+            </ul>
+          </li>
+          <li><a href="our-doctors.html">Our Doctors</a></li>
+          <li><a href="ourteams.html">Our Team</a></li>
+          <li><a href="index.html#clientsgrid">Happy Patients</a></li>
+          <li><a href="article.html">Articles</a></li>
+          <li><a href="healthtips.html">Health Tips</a></li>
+
+          <!-- GALLERY -->
+          <li>
+            <button class="dropdown-toggle" type="button" onclick="toggleDropdown('galleryMob', this)">
+              Gallery <span>+</span>
+            </button>
+            <ul id="galleryMob" class="mobile-dropdown">
+              <li><a href="gallery/news.html">News</a></li>
+              <li><a href="gallery/bones-and-joints-week.html">Bones &amp; Joints Week Celebration</a></li>
+              <li><a href="gallery/medical-camps.html">Medical Camps</a></li>
+              <li><a href="gallery/education-and-training.html">Education &amp; Training</a></li>
+              <li><a href="gallery/nurses-day.html">Nurses Day Celebration</a></li>
+              <li><a href="gallery/radiographer-day.html">Radiographer Day Celebration</a></li>
+              <li><a href="gallery/independence-day.html">Independence Day</a></li>
+              <li><a href="gallery/poacon-event.html">Poacon Event</a></li>
+              <li><a href="gallery/conference-hall-inauguration.html">Conference Hall Inauguration</a></li>
+              <li><a href="gallery/anniversary-celebration.html">Anniversary Celebration</a></li>
+              <li><a href="gallery/annual-sports-meet.html">Annual Sports Meet</a></li>
+            </ul>
+          </li>
+
+          <!-- FACILITIES -->
+          <li>
+            <button class="dropdown-toggle" type="button" onclick="toggleDropdown('facilitiesMob', this)">
+              Facilities <span>+</span>
+            </button>
+            <ul id="facilitiesMob" class="mobile-dropdown">
+              <li><a href="facilities/insurance.html">Insurance</a></li>
+              <li><a href="facilities/speciality.html">Speciality</a></li>
+              <li><a href="facilities/health-packages.html">Health Packages</a></li>
+            </ul>
+          </li>
+
+          <li><a href="achieve.html">Achievements</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+
+        </ul>
+      </div>
+    </div>
+
+  </header><br><br>
+
+            <!DOCTYPE html>
+
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Our Doctors - Posh-Pondy Ortho Speciality Hospital</title>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+                <style>
+                    :root {
+                        --primary-color: #d63384;
+                        --primary-light: #ff4da6;
+                        --primary-dark: #b3256d;
+                        --secondary-color: #4361ee;
+                        --accent-color: #06d6a0;
+                        --dark-color: #2b2d42;
+                        --light-color: #f8f9fa;
+                        --gradient-primary: linear-gradient(135deg, #d63384 0%, #ff4da6 100%);
+                        --gradient-secondary: linear-gradient(135deg, #4361ee 0%, #3a56d4 100%);
+                        --gradient-accent: linear-gradient(135deg, #06d6a0 0%, #05b989 100%);
+                        --shadow-light: 0 10px 30px rgba(214, 51, 132, 0.15);
+                        --shadow-medium: 0 15px 40px rgba(0, 0, 0, 0.12);
+                        --shadow-heavy: 0 20px 50px rgba(0, 0, 0, 0.15);
+                        --transition-smooth: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+                    }
+
+
+
+                    body {
+                        font-family: var(--posh-font);
+                        color: var(--dark-color);
+                        background: linear-gradient(135deg, #f9f7fe 0%, #f0edf5 100%);
+                        min-height: 100vh;
+                        overflow-x: hidden;
+                    }
+
+                    /* Custom Scrollbar */
+                    ::-webkit-scrollbar {
+                        width: 10px;
+                    }
+
+                    ::-webkit-scrollbar-track {
+                        background: #f1f1f1;
+                        border-radius: 10px;
+                    }
+
+                    ::-webkit-scrollbar-thumb {
+                        background: var(--gradient-primary);
+                        border-radius: 10px;
+                    }
+
+                    ::-webkit-scrollbar-thumb:hover {
+                        background: var(--primary-dark);
+                    }
+
+                    /* Floating Elements Animation */
+                    @keyframes float {
+                        0% {
+                            transform: translateY(0px);
+                        }
+
+                        50% {
+                            transform: translateY(-15px);
+                        }
+
+                        100% {
+                            transform: translateY(0px);
+                        }
+                    }
+
+                    @keyframes pulse {
+                        0% {
+                            transform: scale(1);
+                        }
+
+                        50% {
+                            transform: scale(1.05);
+                        }
+
+                        100% {
+                            transform: scale(1);
+                        }
+                    }
+
+                    @keyframes shimmer {
+                        0% {
+                            background-position: -200% center;
+                        }
+
+                        100% {
+                            background-position: 200% center;
+                        }
+                    }
+
+                    .float-animation {
+                        animation: float 6s ease-in-out infinite;
+                    }
+
+                    .pulse-animation {
+                        animation: pulse 2s ease-in-out infinite;
+                    }
+
+                    /* Hospital Header */
+                    .hospital-header {
+                        background: linear-gradient(135deg, #1a0a2e 0%, #4a0018 60%, #7c1a3a 100%);
+                        padding: 4rem 0 3rem;
+                        margin-bottom: 3rem;
+                        position: relative;
+                        overflow: hidden;
+                        border-bottom-left-radius: 30px;
+                        border-bottom-right-radius: 30px;
+                        box-shadow: var(--shadow-medium);
+                    }
+
+                    .header-inner {
+                        display: flex;
+                        align-items: center;
+                        gap: 3rem;
+                    }
+
+                    .header-img-wrap {
+                        position: relative;
+                        flex-shrink: 0;
+                    }
+
+                    .header-doc-img {
+                        width: 420px;
+                        height: auto;
+                        object-fit: contain;
+                        border-radius: 20px;
+                        border: 4px solid rgba(255, 255, 255, 0.2);
+                        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+                    }
+
+                    .header-badge {
+                        position: absolute;
+                        bottom: -15px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        background: #e91e63;
+                        color: #fff;
+                        padding: 10px 22px;
+                        border-radius: 50px;
+                        font-weight: 700;
+                        font-size: 0.9rem;
+                        white-space: nowrap;
+                        box-shadow: 0 8px 24px rgba(233, 30, 99, 0.4);
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                    }
+
+                    .header-content {
+                        flex: 1;
+                        color: #fff;
+                    }
+
+                    .header-tag {
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 8px;
+                        background: rgba(233, 30, 99, 0.2);
+                        border: 1px solid rgba(233, 30, 99, 0.4);
+                        color: #f48fb1;
+                        padding: 8px 18px;
+                        border-radius: 50px;
+                        font-size: 0.85rem;
+                        font-weight: 600;
+                        margin-bottom: 1.2rem;
+                    }
+
+                    .header-content h1 {
+                        font-size: 3rem;
+                        font-weight: 900;
+                        color: #fff;
+                        margin-bottom: 1rem;
+                        line-height: 1.1;
+                    }
+
+                    .header-content p {
+                        font-size: 1rem;
+                        color: rgba(255, 255, 255, 0.8);
+                        line-height: 1.8;
+                        margin-bottom: 2rem;
+                    }
+
+                    .header-stats {
+                        display: flex;
+                        gap: 2rem;
+                    }
+
+                    .hstat {
+                        text-align: center;
+                    }
+
+                    .hstat span {
+                        display: block;
+                        font-size: 1.8rem;
+                        font-weight: 900;
+                        color: #e91e63;
+                    }
+
+                    .hstat small {
+                        font-size: 0.78rem;
+                        color: rgba(255, 255, 255, 0.7);
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                    }
+
+                    @media(max-width:768px) {
+                        .header-inner {
+                            flex-direction: column;
+                            text-align: center;
+                        }
+
+                        .header-doc-img {
+                            width: 220px;
+                            height: 260px;
+                        }
+
+                        .header-content h1 {
+                            font-size: 2rem;
+                        }
+
+                        .header-stats {
+                            justify-content: center;
+                        }
+                    }
+
+                    .hospital-header::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 5px;
+                        background: var(--gradient-primary);
+                    }
+
+                    .hospital-header::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 5px;
+                        background: var(--gradient-accent);
+                    }
+
+                    .hospital-header h1 {
+                        color: var(--dark-color);
+                        font-weight: 800;
+                        /* margin-bottom: 1.2rem; */
+                        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+                        position: relative;
+                        /* display: inline-block; */
+                        font-size: 3rem;
+                        /* background: var(--gradient-primary);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text; */
+                    }
+
+                    /* .hospital-header h1::after {
+                        content: '';
+                        position: absolute;
+                        bottom: -10px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 150px;
+                        height: 4px;
+                        background: var(--gradient-accent);
+                        border-radius: 2px;
+                    } */
+
+                    .hospital-header p {
+                        font-size: 1.2rem;
+                        line-height: 1.8;
+                        max-width: 900px;
+                        margin: 2rem auto 0;
+                        color: #555;
+                        background: rgba(255, 255, 255, 0.8);
+                        padding: 2rem;
+                        border-radius: 20px;
+                        box-shadow: var(--shadow-light);
+                        backdrop-filter: blur(10px);
+                    }
+
+                    .highlight {
+                        background: var(--gradient-primary);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                        font-weight: 700;
+                        padding: 0 5px;
+                    }
+
+                    /* Section Title */
+                    .section-title {
+                        background: var(--gradient-primary);
+                        color: white;
+                        padding: 18px 35px;
+                        border-radius: 15px;
+                        margin: 3.5rem 0 2.5rem;
+                        font-weight: 700;
+                        font-size: 1.8rem;
+                        display: block;
+                        text-align: center;
+                        box-shadow: var(--shadow-light);
+                        position: relative;
+                        overflow: hidden;
+                        z-index: 1;
+                        transition: var(--transition-smooth);
+                        border: none;
+                    }
+
+                    .section-title::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+                        transform: translateX(-100%);
+                        transition: transform 0.6s;
+                        z-index: -1;
+                    }
+
+                    .section-title:hover::before {
+                        transform: translateX(100%);
+                    }
+
+                    .section-title:hover {
+                        transform: translateY(-5px);
+                        box-shadow: var(--shadow-heavy);
+                    }
+
+                    /* Search Section */
+                    .search-section {
+                        background: #4a0018;
+                        padding: 2.5rem 0;
+                        border-radius: 0;
+                        box-shadow: none;
+                        margin-bottom: 3rem;
+                        backdrop-filter: none;
+                        border: none;
+                        position: relative;
+                        overflow: visible;
+                        width: 100%;
+                    }
+
+                    .search-section::before {
+                        display: none;
+                    }
+
+                    @keyframes rotate {
+                        100% {
+                            transform: rotate(360deg);
+                        }
+                    }
+
+                    .search-section>* {
+                        position: relative;
+                        z-index: 2;
+                    }
+
+                    .search-title {
+                        font-size: 1.8rem;
+                        font-weight: 700;
+                        margin-bottom: 1.5rem;
+                        color: #fff;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 15px;
+                        text-align: center;
+                    }
+
+                    .search-title i {
+                        background: none;
+                        -webkit-background-clip: unset;
+                        -webkit-text-fill-color: #fff;
+                        background-clip: unset;
+                        color: #fff;
+                        font-size: 2rem;
+                    }
+
+                    .search-box {
+                        position: relative;
+                    }
+
+                    .search-box i {
+                        position: absolute;
+                        left: 20px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        color: var(--primary-color);
+                        font-size: 1.3rem;
+                        z-index: 3;
+                    }
+
+                    .search-box input {
+                        padding-left: 60px;
+                        border-radius: 15px;
+                        border: 2px solid #e9ecef;
+                        height: 60px;
+                        font-size: 1.1rem;
+                        transition: var(--transition-smooth);
+                        background: rgba(255, 255, 255, 0.9);
+                        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+                    }
+
+                    .search-box input:focus {
+                        border-color: var(--primary-color);
+                        box-shadow: 0 0 0 0.35rem rgba(214, 51, 132, 0.25);
+                        transform: translateY(-2px);
+                    }
+
+                    /* Department Filter */
+                    .department-filter {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                        gap: 8px;
+                        margin-top: 25px;
+                        width: 100%;
+                    }
+
+                    .dept-btn {
+                        background: #e91e63;
+                        border: 2px solid #e91e63;
+                        border-radius: 50px;
+                        padding: 10px 14px;
+                        font-size: 0.78rem;
+                        font-weight: 700;
+                        color: #030000;
+                        transition: var(--transition-smooth);
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 7px;
+                        box-shadow: 0 4px 12px rgba(233, 30, 99, 0.25);
+                        width: 100%;
+                    }
+
+                    .dept-btn i {
+                        font-size: 0.85rem;
+                        transition: var(--transition-smooth);
+                    }
+
+                    .dept-btn:hover {
+                        background: var(--gradient-primary);
+                        color: white;
+                        border-color: var(--primary-color);
+                        transform: translateY(-5px) scale(1.05);
+                        box-shadow: var(--shadow-light);
+                    }
+
+                    .dept-btn:hover i {
+                        transform: rotate(15deg);
+                    }
+
+                    .dept-btn.active {
+                        background: var(--gradient-primary);
+                        color: white;
+                        border-color: var(--primary-color);
+                        transform: translateY(-3px);
+                        box-shadow: var(--shadow-light);
+                    }
+
+                    .dept-btn.active i {
+                        animation: pulse 1.5s infinite;
+                    }
+
+                    /* Result Count */
+                    .result-count {
+                        color: var(--dark-color);
+                        font-weight: 700;
+                        margin: 1.5rem 0;
+                        font-size: 1.2rem;
+                        padding: 15px;
+                        background: rgba(6, 214, 160, 0.1);
+                        border-radius: 15px;
+                        border-left: 5px solid var(--accent-color);
+                        display: flex;
+                        align-items: center;
+                        gap: 15px;
+                    }
+
+                    .result-count i {
+                        color: var(--accent-color);
+                        font-size: 1.5rem;
+                    }
+
+                    /* Doctor Cards */
+                    .doctor-card {
+                        background: #ffffff;
+                        border-radius: 14px;
+                        box-shadow: 0 4px 20px rgb(248, 113, 214), 0 1px 4px rgba(0, 0, 0, 0.06);
+                        border: 1px solid #ffffff;
+                        transition: transform 0.3s, box-shadow 0.3s;
+                        height: 100%;
+                        overflow: hidden;
+                        display: flex;
+                        flex-direction: column;
+                        text-align: center;
+                    }
+
+                    .doctor-card:hover {
+                        transform: translateY(-8px);
+                        box-shadow: 0 16px 40px rgba(0, 150, 167, 0.918), 0 4px 12px rgba(0, 0, 0, 0.10);
+                    }
+
+                    .dc-photo-wrap {
+                        background: #ffffff;
+                        padding: 24px 24px 0;
+                        display: flex;
+                        justify-content: center;
+                    }
+
+                    .dc-photo {
+                        width: 220px;
+                        height: 220px;
+                        object-fit: cover;
+                        object-position: top;
+                        border-radius: 8px;
+                        border: 2px solid #f5f3f3;
+                    }
+
+                    .dc-body {
+                        padding: 16px 20px 20px;
+                        display: flex;
+                        flex-direction: column;
+                        flex: 1;
+                        min-height: 160px;
+                    }
+
+                    .dc-name {
+                        font-size: 1.05rem;
+                        font-weight: 700;
+                        color: #1a1a2e;
+                        margin: 0 0 6px;
+                        line-height: 1.4;
+                        min-height: 52px;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                    }
+
+                    .dc-qual {
+                        font-size: 0.82rem;
+                        color: #555;
+                        font-weight: 600;
+                        margin-bottom: 6px;
+                    }
+
+                    .dc-specialty {
+                        font-size: 0.88rem;
+                        color: #020085;
+                        font-style: italic;
+                        margin-bottom: 16px;
+                        flex: 1;
+                    }
+
+                    .dc-btn {
+                        display: block;
+                        background: #fff;
+                        color: #e91e63;
+                        font-weight: 700;
+                        font-size: 0.95rem;
+                        padding: 10px 0;
+                        border-radius: 6px;
+                        text-decoration: none;
+                        transition: background 0.2s;
+                        border: 2px solid #e91e63;
+                    }
+
+                    .dc-btn:hover {
+                        background: #e91e63;
+                        color: #fff;
+                    }
+
+                    .doctor-card::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 5px;
+                        background: var(--gradient-primary);
+                        z-index: 2;
+                    }
+
+                    .doctor-card:hover {
+                        transform: translateY(-15px) scale(1.02);
+                        box-shadow: var(--shadow-heavy);
+                    }
+
+                    .doctor-card:hover .doctor-img {
+                        transform: scale(1.1);
+                        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+                    }
+
+                    .doctor-img-container {
+                        width: 160px;
+                        height: 160px;
+                        margin: 30px auto 20px;
+                        border-radius: 50%;
+                        padding: 5px;
+                        background: var(--gradient-primary);
+                        position: relative;
+                        overflow: hidden;
+                        box-shadow: 0 10px 25px rgb(0, 0, 0);
+                        transition: var(--transition-smooth);
+                    }
+
+                    .doctor-img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: 50%;
+                        border: 5px solid rgb(0, 0, 0);
+                        transition: var(--transition-smooth);
+                    }
+
+                    .doctor-card-content {
+                        padding: 20px 25px 30px;
+                        position: relative;
+                        text-align: center;
+                    }
+
+                    .doctor-department {
+                        position: absolute;
+                        top: 15px;
+                        right: 15px;
+                        background: var(--gradient-secondary);
+                        color: white;
+                        padding: 8px 18px;
+                        border-radius: 50px;
+                        font-size: 0.8rem;
+                        font-weight: 600;
+                        box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+                        z-index: 2;
+                    }
+
+                    .doctor-card h5 {
+                        color: var(--dark-color);
+                        font-weight: 700;
+                        /*margin: 1.2rem 0 0.3rem;*/
+                        font-size: 1.2rem;
+                        line-height: 1.35;
+                        /*min-height: auto;*/
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    .doctor-qual {
+                        font-size: 0.78rem;
+                        font-weight: 600;
+                        color: #d63384;
+                        background: #fff0f6;
+                        border: 1px solid #f9c0d8;
+                        border-radius: 6px;
+                        padding: 4px 10px;
+                        margin: 0.3rem auto 0.7rem;
+                        display: inline-block;
+                        max-width: 90%;
+                        line-height: 1.5;
+                        word-break: break-word;
+                    }
+
+                    .doctor-card p {
+                        color: #555;
+                        min-height: 2.8rem;
+                        font-size: 0.92rem;
+                        font-weight: 500;
+                        line-height: 1.55;
+                        margin-bottom: 1.2rem;
+                    }
+
+                    /* WhatsApp Button */
+                    .whatsapp-btn {
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 12px;
+                        background: var(--gradient-primary);
+                        color: white;
+                        padding: 14px 25px;
+                        border-radius: 12px;
+                        text-decoration: none;
+                        font-weight: 600;
+                        font-size: 1.05rem;
+                        transition: var(--transition-smooth);
+                        width: 100%;
+                        text-align: center;
+                        box-shadow: 0 8px 20px rgba(214, 51, 132, 0.3);
+                        position: relative;
+                        overflow: hidden;
+                        z-index: 1;
+                    }
+
+                    .whatsapp-btn::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: var(--gradient-secondary);
+                        z-index: -1;
+                        opacity: 0;
+                        transition: var(--transition-smooth);
+                    }
+
+                    .whatsapp-btn:hover {
+                        transform: translateY(-5px);
+                        box-shadow: 0 12px 25px rgba(214, 51, 132, 0.4);
+                        color: white;
+                    }
+
+                    .whatsapp-btn:hover::before {
+                        opacity: 1;
+                    }
+
+                    .whatsapp-btn i {
+                        font-size: 1.4rem;
+                        transition: var(--transition-smooth);
+                    }
+
+                    .whatsapp-btn:hover i {
+                        transform: scale(1.2) rotate(-5deg);
+                    }
+
+                    /* No Results */
+                    .no-results {
+                        text-align: center;
+                        padding: 5rem 3rem;
+                        background: white;
+                        border-radius: 25px;
+                        box-shadow: var(--shadow-medium);
+                        display: none;
+                        margin: 3rem 0;
+                    }
+
+                    .no-results i {
+                        font-size: 5rem;
+                        margin-bottom: 1.5rem;
+                        background: var(--gradient-primary);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                    }
+
+                    .no-results h4 {
+                        color: var(--dark-color);
+                        font-weight: 700;
+                        margin-bottom: 1rem;
+                        font-size: 1.8rem;
+                    }
+
+                    .no-results p {
+                        color: #777;
+                        font-size: 1.1rem;
+                        max-width: 500px;
+                        margin: 0 auto;
+                    }
+
+                    /* Reset Button */
+                    .reset-btn {
+                        background: var(--gradient-secondary);
+                        color: white;
+                        border: none;
+                        padding: 15px 25px;
+                        border-radius: 15px;
+                        font-weight: 600;
+                        font-size: 1.1rem;
+                        transition: var(--transition-smooth);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 12px;
+                        height: 60px;
+                        box-shadow: 0 8px 20px rgba(67, 97, 238, 0.3);
+                    }
+
+                    .reset-btn:hover {
+                        transform: translateY(-5px);
+                        box-shadow: 0 12px 25px rgba(67, 97, 238, 0.4);
+                        background: var(--gradient-primary);
+                    }
+
+                    .reset-btn i {
+                        font-size: 1.2rem;
+                        transition: var(--transition-smooth);
+                    }
+
+                    .reset-btn:hover i {
+                        transform: rotate(180deg);
+                    }
+
+                    /* Department Icons */
+                    .dept-icon {
+                        width: 40px;
+                        height: 40px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%;
+                        background: rgba(214, 51, 132, 0.1);
+                        color: var(--primary-color);
+                        font-size: 1.2rem;
+                        transition: var(--transition-smooth);
+                    }
+
+                    .dept-btn:hover .dept-icon {
+                        background: rgba(255, 255, 255, 0.3);
+                        color: white;
+                    }
+
+                    /* Floating Doctor Badge */
+                    .floating-badge {
+                        position: absolute;
+                        top: 15px;
+                        left: 15px;
+                        background: var(--gradient-accent);
+                        color: white;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-weight: 700;
+                        font-size: 1.2rem;
+                        box-shadow: 0 5px 15px rgba(6, 214, 160, 0.4);
+                        z-index: 2;
+                        transition: var(--transition-smooth);
+                    }
+
+                    .doctor-card:hover .floating-badge {
+                        transform: rotate(360deg) scale(1.1);
+                    }
+
+                    /* Responsive Design */
+                    @media (max-width: 992px) {
+                        .hospital-header {
+                            padding: 3rem 0 2rem;
+                        }
+
+                        .hospital-header h1 {
+                            font-size: 2.5rem;
+                        }
+
+                        .doctor-card h5 {
+                            font-size: 1.2rem;
+                        }
+
+                        .section-title {
+                            font-size: 1.6rem;
+                            padding: 15px 30px;
+                        }
+                    }
+
+                    @media (max-width: 768px) {
+                        .hospital-header {
+                            padding: 2.5rem 0 1.5rem;
+                        }
+
+                        .hospital-header h1 {
+                            font-size: 2rem;
+                        }
+
+                        .hospital-header p {
+                            padding: 1.5rem;
+                            font-size: 1.1rem;
+                        }
+
+                        .search-section {
+                            padding: 2rem 1.5rem;
+                        }
+
+                        .search-title {
+                            font-size: 1.5rem;
+                        }
+
+                        .dept-btn {
+                            padding: 10px 20px;
+                            font-size: 0.9rem;
+                        }
+
+                        .section-title {
+                            font-size: 1.4rem;
+                            padding: 12px 25px;
+                            margin: 2.5rem 0 2rem;
+                        }
+
+                        .doctor-img-container {
+                            width: 140px;
+                            height: 140px;
+                        }
+                    }
+
+                    /* Loading Animation */
+                    .loading {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 200px;
+                    }
+
+                    .spinner {
+                        width: 60px;
+                        height: 60px;
+                        border: 5px solid rgba(214, 51, 132, 0.2);
+                        border-top-color: var(--primary-color);
+                        border-radius: 50%;
+                        animation: spin 1s linear infinite;
+                    }
+
+                    @keyframes spin {
+                        100% {
+                            transform: rotate(360deg);
+                        }
+                    }
+
+
+
+                    /* Particles Background */
+                    .particles {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        z-index: -1;
+                        pointer-events: none;
+                    }
+
+                    .particle {
+                        position: absolute;
+                        pointer-events: none;
+                        user-select: none;
+                        line-height: 1;
+                    }
+
+                    /* ============================================
+   MOBILE RESPONSIVE STYLES (Max-width: 768px)
+   ============================================ */
+
+                    @media (max-width: 768px) {
+
+                        /* Base mobile adjustments */
+                        body {
+                            font-size: 14px;
+                            overflow-x: hidden;
+                        }
+
+                        .container {
+                            padding-left: 15px;
+                            padding-right: 15px;
+                            max-width: 100%;
+                        }
+
+                        /* Hospital Header Mobile */
+                        .hospital-header {
+                            padding: 2rem 0 1.5rem !important;
+                            margin-bottom: 1.5rem !important;
+                            border-radius: 20px !important;
+                        }
+
+                        .hospital-header h1 {
+                            font-size: 1.8rem !important;
+                            margin-bottom: 1rem !important;
+                        }
+
+                        .hospital-header h1 i {
+                            font-size: 1.5rem !important;
+                            margin-right: 10px !important;
+                        }
+
+                        .hospital-header p {
+                            font-size: 0.95rem !important;
+                            padding: 1.2rem !important;
+                            margin-top: 1rem !important;
+                            line-height: 1.6 !important;
+                        }
+
+                        /* Search Section Mobile */
+                        .search-section {
+                            padding: 1.5rem !important;
+                            margin-bottom: 1.5rem !important;
+                            border-radius: 0 !important;
+                        }
+
+                        .search-title {
+                            font-size: 1.3rem !important;
+                            flex-direction: column !important;
+                            text-align: center !important;
+                            gap: 8px !important;
+                        }
+
+                        .search-title i {
+                            font-size: 1.5rem !important;
+                        }
+
+                        .search-box {
+                            margin-bottom: 15px !important;
+                        }
+
+                        .search-box input {
+                            height: 50px !important;
+                            font-size: 1rem !important;
+                            padding-left: 50px !important;
+                        }
+
+                        .search-box i {
+                            left: 15px !important;
+                            font-size: 1.1rem !important;
+                        }
+
+                        /* Department Filter Mobile */
+                        .department-filter {
+                            gap: 8px !important;
+                            margin-top: 15px !important;
+                            justify-content: flex-start !important;
+                            overflow-x: auto !important;
+                            padding-bottom: 10px !important;
+                            flex-wrap: nowrap !important;
+                            -webkit-overflow-scrolling: touch !important;
+                        }
+
+                        .department-filter::-webkit-scrollbar {
+                            height: 4px !important;
+                        }
+
+                        .dept-btn {
+                            padding: 8px 15px !important;
+                            font-size: 0.85rem !important;
+                            white-space: nowrap !important;
+                            flex-shrink: 0 !important;
+                        }
+
+                        .dept-icon {
+                            width: 30px !important;
+                            height: 30px !important;
+                            font-size: 1rem !important;
+                        }
+
+                        /* Result Count Mobile */
+                        .result-count {
+                            font-size: 1rem !important;
+                            padding: 12px !important;
+                            margin: 1rem 0 !important;
+                            flex-direction: column !important;
+                            text-align: center !important;
+                            gap: 8px !important;
+                        }
+
+                        .result-count i {
+                            font-size: 1.2rem !important;
+                        }
+
+                        /* Reset Button Mobile */
+                        .reset-btn {
+                            height: 50px !important;
+                            padding: 12px 20px !important;
+                            font-size: 0.95rem !important;
+                        }
+
+                        /* Section Titles Mobile */
+                        .section-title {
+                            font-size: 1.2rem !important;
+                            padding: 12px 20px !important;
+                            margin: 2rem 0 1.5rem !important;
+                            width: 100% !important;
+                            text-align: center !important;
+                            display: block !important;
+                        }
+
+                        .section-title i {
+                            margin-right: 10px !important;
+                            font-size: 1.1rem !important;
+                        }
+
+                        /* Doctor Cards Mobile */
+                        .doctor-card {
+                            margin-bottom: 1.5rem !important;
+                        }
+
+                        .doctor-card:hover {
+                            transform: translateY(-5px) !important;
+                        }
+
+                        .doctor-img-container {
+                            width: 120px !important;
+                            height: 120px !important;
+                            margin: 20px auto 15px !important;
+                        }
+
+                        .doctor-img {
+                            border-width: 4px !important;
+                        }
+
+                        .doctor-card-content {
+                            padding: 15px !important;
+                        }
+
+                        .doctor-department {
+                            top: 10px !important;
+                            right: 10px !important;
+                            padding: 6px 12px !important;
+                            font-size: 0.7rem !important;
+                        }
+
+                        .doctor-department i {
+                            margin-right: 4px !important;
+                            font-size: 0.7rem !important;
+                        }
+
+                        .doctor-card h5 {
+                            font-size: 1rem !important;
+                            margin: 0.8rem 0 0.8rem !important;
+                            min-height: auto !important;
+                            line-height: 1.4 !important;
+                        }
+
+                        .doctor-card p {
+                            font-size: 0.9rem !important;
+                            min-height: auto !important;
+                            margin-bottom: 1rem !important;
+                            line-height: 1.5 !important;
+                        }
+
+                        /* Floating Badge Mobile */
+                        .floating-badge {
+                            width: 40px !important;
+                            height: 40px !important;
+                            font-size: 1rem !important;
+                            top: 10px !important;
+                            left: 10px !important;
+                        }
+
+                        /* WhatsApp Button Mobile */
+                        .whatsapp-btn {
+                            padding: 12px 15px !important;
+                            font-size: 0.95rem !important;
+                        }
+
+                        .whatsapp-btn i {
+                            font-size: 1.1rem !important;
+                            margin-right: 8px !important;
+                        }
+
+                        /* No Results Mobile */
+                        .no-results {
+                            padding: 3rem 1.5rem !important;
+                            margin: 2rem 0 !important;
+                        }
+
+                        .no-results i {
+                            font-size: 3.5rem !important;
+                            margin-bottom: 1rem !important;
+                        }
+
+                        .no-results h4 {
+                            font-size: 1.5rem !important;
+                        }
+
+                        .no-results p {
+                            font-size: 1rem !important;
+                        }
+
+                        /* Loading Spinner Mobile */
+                        .spinner {
+                            width: 40px !important;
+                            height: 40px !important;
+                            border-width: 4px !important;
+                        }
+
+                        /* Grid System Mobile */
+                        .row.g-4 {
+                            margin-left: -8px !important;
+                            margin-right: -8px !important;
+                        }
+
+                        .row.g-4>.col-lg-4,
+                        .row.g-4>.col-md-6 {
+                            padding-left: 8px !important;
+                            padding-right: 8px !important;
+                            margin-bottom: 16px !important;
+                        }
+
+
+
+                        /* Hide some animations on mobile for performance */
+                        .float-animation,
+                        .pulse-animation {
+                            animation: none !important;
+                        }
+
+                        /* Particles background reduced on mobile */
+                        .particle {
+                            display: none !important;
+                        }
+
+                        /* Better touch targets */
+                        .dept-btn,
+                        .whatsapp-btn,
+                        .reset-btn {
+                            min-height: 44px !important;
+                        }
+
+                        /* Improve scrolling performance */
+                        .doctor-card,
+                        .search-section,
+                        .hospital-header {
+                            will-change: transform;
+                            backface-visibility: hidden;
+                        }
+                    }
+
+                    /* ============================================
+   SMALL MOBILE STYLES (Max-width: 480px)
+   ============================================ */
+
+                    @media (max-width: 480px) {
+                        .hospital-header h1 {
+                            font-size: 1.6rem !important;
+                        }
+
+                        .hospital-header p {
+                            font-size: 0.9rem !important;
+                            padding: 1rem !important;
+                        }
+
+                        .search-title {
+                            font-size: 1.2rem !important;
+                        }
+
+                        .section-title {
+                            font-size: 1.1rem !important;
+                            padding: 10px 15px !important;
+                        }
+
+                        .dept-btn {
+                            padding: 6px 12px !important;
+                            font-size: 0.8rem !important;
+                        }
+
+                        .doctor-card h5 {
+                            font-size: 0.95rem !important;
+                        }
+
+                        .doctor-card p {
+                            font-size: 0.85rem !important;
+                        }
+
+                        .whatsapp-btn {
+                            font-size: 0.9rem !important;
+                            padding: 10px 12px !important;
+                        }
+
+                        /* Stack columns for very small screens */
+                        .row.g-4>.col-lg-4,
+                        .row.g-4>.col-md-6 {
+                            width: 100% !important;
+                            max-width: 100% !important;
+                            flex: 0 0 100% !important;
+                        }
+
+                        /* Single column layout for doctor cards */
+                        #doctorsContainer .row.g-4 {
+                            display: flex !important;
+                            flex-direction: column !important;
+                        }
+                    }
+
+                    /* ============================================
+   LANDSCAPE MOBILE ORIENTATION
+   ============================================ */
+
+                    @media (max-width: 768px) and (orientation: landscape) {
+                        .hospital-header {
+                            padding: 1.5rem 0 !important;
+                        }
+
+                        .doctor-img-container {
+                            width: 100px !important;
+                            height: 100px !important;
+                        }
+
+                        .doctor-card h5 {
+                            font-size: 0.9rem !important;
+                            min-height: 3.2rem !important;
+                        }
+
+                        /* Department filter scrollable in landscape */
+                        .department-filter {
+                            max-height: 120px !important;
+                            overflow-y: auto !important;
+                            overflow-x: hidden !important;
+                            flex-wrap: wrap !important;
+                        }
+                    }
+
+                    /* ============================================
+   HIGH DPI (RETINA) MOBILE SCREENS
+   ============================================ */
+
+                    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+                    only screen and (min-resolution: 192dpi) {
+
+                        /* Crisper borders and shadows */
+                        .doctor-card,
+                        .search-section,
+                        .section-title {
+                            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+                        }
+                    }
+
+                    /* ============================================
+   FONT SIZE ADJUSTMENTS FOR IOS SAFARI
+   ============================================ */
+
+                    @supports (-webkit-touch-callout: none) {
+
+                        /* iOS specific fixes */
+                        .search-box input {
+                            font-size: 16px !important;
+                        }
+
+                        .hospital-header {
+                            -webkit-backdrop-filter: blur(10px) !important;
+                            backdrop-filter: blur(10px) !important;
+                        }
+                    }
+
+                    /* ============================================
+   ANDROID CHROME SPECIFIC FIXES
+   ============================================ */
+
+                    @media screen and (-webkit-min-device-pixel-ratio: 0) {
+
+                        .whatsapp-btn,
+                        .reset-btn {
+                            -webkit-appearance: none !important;
+                            border-radius: 12px !important;
+                        }
+                    }
+
+                    /* main-styles.css */
+                    :root {
+                        --primary-color: #d63384;
+                        --primary-light: #ff4da6;
+                        --primary-dark: #b3256d;
+                        --secondary-color: #4361ee;
+                        --accent-color: #06d6a0;
+                        --dark-color: #2b2d42;
+                        --light-color: #f8f9fa;
+                        --gradient-primary: linear-gradient(135deg, #d63384 0%, #ff4da6 100%);
+                        --gradient-secondary: linear-gradient(135deg, #4361ee 0%, #3a56d4 100%);
+                        --gradient-accent: linear-gradient(135deg, #06d6a0 0%, #05b989 100%);
+                        --shadow-light: 0 10px 30px rgba(214, 51, 132, 0.15);
+                        --shadow-medium: 0 15px 40px rgba(0, 0, 0, 0.12);
+                        --shadow-heavy: 0 20px 50px rgba(0, 0, 0, 0.15);
+                        --transition-smooth: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+                    }
+
+
+
+                    body {
+                        font-family: var(--posh-font);
+                        color: var(--dark-color);
+                        background: linear-gradient(135deg, #f9f7fe 0%, #f0edf5 100%);
+                        min-height: 100vh;
+                        overflow-x: hidden;
+                    }
+
+                    /* Container */
+                    .container {
+                        width: 100%;
+                        padding-right: 15px;
+                        padding-left: 15px;
+                        margin-right: auto;
+                        margin-left: auto;
+                    }
+
+                    @media (min-width: 576px) {
+                        .container {
+                            max-width: 740px;
+                        }
+                    }
+
+                    @media (min-width: 768px) {
+                        .container {
+                            max-width: 720px;
+                        }
+                    }
+
+                    @media (min-width: 992px) {
+                        .container {
+                            max-width: 960px;
+                        }
+                    }
+
+                    @media (min-width: 1200px) {
+                        .container {
+                            max-width: 1140px;
+                        }
+                    }
+
+                    @media (min-width: 1400px) {
+                        .container {
+                            max-width: 1320px;
+                        }
+                    }
+
+                    /* Grid System */
+                    .row {
+                        display: flex;
+                        flex-wrap: wrap;
+                        margin-right: -15px;
+                        margin-left: -15px;
+                    }
+
+                    .col-md-4,
+                    .col-md-5,
+                    .col-md-6,
+                    .col-md-7,
+                    .col-md-8,
+                    .col-lg-4,
+                    .col-lg-5,
+                    .col-lg-6,
+                    .col-lg-7,
+                    .col-lg-8 {
+                        position: relative;
+                        width: 100%;
+                        padding-right: 15px;
+                        padding-left: 15px;
+                    }
+
+                    /* Columns for medium screens (≥768px) */
+                    @media (min-width: 768px) {
+                        .col-md-4 {
+                            flex: 0 0 33.333333%;
+                            max-width: 33.333333%;
+                        }
+
+                        .col-md-5 {
+                            flex: 0 0 41.666667%;
+                            max-width: 41.666667%;
+                        }
+
+                        .col-md-6 {
+                            flex: 0 0 50%;
+                            max-width: 50%;
+                        }
+
+                        .col-md-7 {
+                            flex: 0 0 58.333333%;
+                            max-width: 58.333333%;
+                        }
+
+                        .col-md-8 {
+                            flex: 0 0 66.666667%;
+                            max-width: 66.666667%;
+                        }
+                    }
+
+                    /* Columns for large screens (≥992px) */
+                    @media (min-width: 992px) {
+                        .col-lg-4 {
+                            flex: 0 0 33.333333%;
+                            max-width: 33.333333%;
+                        }
+
+                        .col-lg-5 {
+                            flex: 0 0 41.666667%;
+                            max-width: 41.666667%;
+                        }
+
+                        .col-lg-6 {
+                            flex: 0 0 50%;
+                            max-width: 50%;
+                        }
+
+                        .col-lg-7 {
+                            flex: 0 0 58.333333%;
+                            max-width: 58.333333%;
+                        }
+
+                        .col-lg-8 {
+                            flex: 0 0 66.666667%;
+                            max-width: 66.666667%;
+                        }
+                    }
+
+                    /* Gutters */
+                    .g-4 {
+                        margin-right: -16px;
+                        margin-left: -16px;
+                    }
+
+                    .g-4>[class*="col-"] {
+                        padding-right: 16px;
+                        padding-left: 16px;
+                        margin-bottom: 32px;
+                    }
+
+                    /* Text Center */
+                    .text-center {
+                        text-align: center !important;
+                    }
+
+                    /* Custom Scrollbar */
+                    ::-webkit-scrollbar {
+                        width: 10px;
+                    }
+
+                    ::-webkit-scrollbar-track {
+                        background: #f1f1f1;
+                        border-radius: 10px;
+                    }
+
+                    ::-webkit-scrollbar-thumb {
+                        background: var(--gradient-primary);
+                        border-radius: 10px;
+                    }
+
+                    ::-webkit-scrollbar-thumb:hover {
+                        background: var(--primary-dark);
+                    }
+
+                    /* Floating Elements Animation */
+                    @keyframes float {
+                        0% {
+                            transform: translateY(0px);
+                        }
+
+                        50% {
+                            transform: translateY(-15px);
+                        }
+
+                        100% {
+                            transform: translateY(0px);
+                        }
+                    }
+
+                    @keyframes pulse {
+                        0% {
+                            transform: scale(1);
+                        }
+
+                        50% {
+                            transform: scale(1.05);
+                        }
+
+                        100% {
+                            transform: scale(1);
+                        }
+                    }
+
+                    @keyframes shimmer {
+                        0% {
+                            background-position: -200% center;
+                        }
+
+                        100% {
+                            background-position: 200% center;
+                        }
+                    }
+
+                    .float-animation {
+                        animation: float 6s ease-in-out infinite;
+                    }
+
+                    .pulse-animation {
+                        animation: pulse 2s ease-in-out infinite;
+                    }
+
+                    /* Hospital Header */
+                    .hospital-header {
+                        background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.95) 100%),
+                            url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+                        background-size: cover;
+                        background-position: center;
+                        padding: 4rem 0 3rem;
+                        margin-bottom: 3rem;
+                        position: relative;
+                        overflow: hidden;
+                        border-bottom-left-radius: 30px;
+                        border-bottom-right-radius: 30px;
+                        box-shadow: var(--shadow-medium);
+                    }
+
+                    .hospital-header::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 5px;
+                        background: var(--gradient-primary);
+                    }
+
+                    .hospital-header::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 5px;
+                        background: var(--gradient-accent);
+                    }
+
+                    .hospital-header h1 {
+                        color: var(--dark-color);
+                        font-weight: 800;
+                        margin-bottom: 1.2rem;
+                        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+                        position: relative;
+                        /* display: inline-block; */
+                        font-size: 3rem;
+                        text-align: center;
+                        /* background: var(--gradient-primary); */
+                        /* -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text; */
+                    }
+
+                    /* .hospital-header h1::after {
+                        content: '';
+                        position: absolute;
+                        bottom: -10px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 150px;
+                        height: 4px;
+                        background: var(--gradient-accent);
+                        border-radius: 2px;
+                    } */
+
+                    .hospital-header p {
+                        font-size: 1.2rem;
+                        line-height: 1.8;
+                        max-width: 900px;
+                        margin: 2rem auto 0;
+                        color: #000000;
+                        background: rgba(255, 255, 255, 0.8);
+                        padding: 2rem;
+                        border-radius: 20px;
+                        box-shadow: var(--shadow-light);
+                        backdrop-filter: blur(10px);
+                    }
+
+                    .highlight {
+                        background: var(--gradient-primary);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                        font-weight: 700;
+                        padding: 0 5px;
+                    }
+
+                    /* Section Title */
+                    .section-title {
+                        background: var(--gradient-primary);
+                        color: rgb(0, 0, 0);
+                        padding: 18px 35px;
+                        border-radius: 15px;
+                        margin: 3.5rem 0 2.5rem;
+                        font-weight: 700;
+                        font-size: 1.8rem;
+                        display: block;
+                        box-shadow: var(--shadow-light);
+                        position: relative;
+                        overflow: hidden;
+                        z-index: 1;
+                        transition: var(--transition-smooth);
+                        border: none;
+                        text-align: center;
+
+                    }
+
+                    .section-title::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+                        transform: translateX(-100%);
+                        transition: transform 0.6s;
+                        z-index: -1;
+                        text-align: center;
+
+                    }
+
+                    .section-title:hover::before {
+                        transform: translateX(100%);
+                    }
+
+                    .section-title:hover {
+                        transform: translateY(-5px);
+                        box-shadow: var(--shadow-heavy);
+                    }
+
+                    /* Search Section */
+                    .search-section {
+                        background: #4a0018;
+                        padding: 2.5rem 0;
+                        border-radius: 0;
+                        box-shadow: none;
+                        margin-bottom: 3rem;
+                        backdrop-filter: none;
+                        border: none;
+                        position: relative;
+                        overflow: hidden;
+                    }
+
+                    .search-section::before {
+                        content: '';
+                        position: absolute;
+                        top: -50%;
+                        left: -50%;
+                        width: 200%;
+                        height: 200%;
+                        background: conic-gradient(transparent, var(--primary-color), transparent 30%);
+                        animation: rotate 10s linear infinite;
+                        z-index: -1;
+                    }
+
+                    @keyframes rotate {
+                        100% {
+                            transform: rotate(360deg);
+                        }
+                    }
+
+                    .search-section>* {
+                        position: relative;
+                        z-index: 2;
+                    }
+
+                    .search-title {
+                        font-size: 1.8rem;
+                        font-weight: 700;
+                        margin-bottom: 1.5rem;
+                        color: white;
+                        display: flex;
+                        align-items: center;
+                        gap: 15px;
+                    }
+
+                    .search-title i {
+                        background: var(--gradient-primary);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                        font-size: 2rem;
+                    }
+
+                    /* Form Control */
+                    .form-control {
+                        display: block;
+                        width: 100%;
+                        padding: 0.375rem 0.75rem;
+                        font-size: 1rem;
+                        font-weight: 400;
+                        line-height: 1.5;
+                        color: #495057;
+                        background-color: #fff;
+                        background-clip: padding-box;
+                        border: 1px solid #ced4da;
+                        border-radius: 0.25rem;
+                        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+                    }
+
+                    .search-box {
+                        position: relative;
+                    }
+
+                    .search-box i {
+                        position: absolute;
+                        left: 20px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        color: var(--primary-color);
+                        font-size: 1.3rem;
+                        z-index: 3;
+                    }
+
+                    .search-box input {
+                        padding-left: 60px;
+                        border-radius: 15px;
+                        border: 2px solid #e9ecef;
+                        height: 60px;
+                        font-size: 1.1rem;
+                        transition: var(--transition-smooth);
+                        background: rgba(255, 255, 255, 0.9);
+                        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+                    }
+
+                    .search-box input:focus {
+                        border-color: var(--primary-color);
+                        box-shadow: 0 0 0 0.35rem rgba(214, 51, 132, 0.25);
+                        transform: translateY(-2px);
+                        outline: none;
+                    }
+
+                    /* Department Filter */
+                    .department-filter {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                        gap: 8px;
+                        margin-top: 25px;
+                        width: 100%;
+                    }
+
+                    .dept-btn {
+                        background: white;
+                        border: 2px solid #061d33;
+                        border-radius: 50px;
+                        padding: 7px 14px;
+                        font-size: 0.78rem;
+                        font-weight: 600;
+                        transition: var(--transition-smooth);
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        gap: 7px;
+                        box-shadow: 0 5px 15px rgba(37, 5, 127, 0.615);
+                        border: none;
+                        outline: none;
+                    }
+
+                    .dept-btn i {
+                        font-size: 0.85rem;
+                        transition: var(--transition-smooth);
+                    }
+
+                    .dept-btn:hover {
+                        background: var(--gradient-primary);
+                        color: white;
+                        border-color: var(--primary-color);
+                        transform: translateY(-5px) scale(1.05);
+                        box-shadow: var(--shadow-light);
+                    }
+
+                    .dept-btn:hover i {
+                        transform: rotate(15deg);
+                    }
+
+                    .dept-btn.active {
+                        background: var(--gradient-primary);
+                        color: white;
+                        border-color: var(--primary-color);
+                        transform: translateY(-3px);
+                        box-shadow: var(--shadow-light);
+                    }
+
+                    .dept-btn.active i {
+                        animation: pulse 1.5s infinite;
+                    }
+
+                    /* Result Count */
+                    .result-count {
+                        color: var(--dark-color);
+                        font-weight: 700;
+                        margin: 1.5rem 0;
+                        font-size: 1.2rem;
+                        padding: 15px;
+                        background: rgba(6, 214, 160, 0.1);
+                        border-radius: 15px;
+                        border-left: 5px solid var(--accent-color);
+                        display: flex;
+                        align-items: center;
+                        gap: 15px;
+                    }
+
+                    .result-count i {
+                        color: var(--accent-color);
+                        font-size: 1.5rem;
+                    }
+
+                    /* Doctor Cards */
+                    .doctor-card {
+                        background: white;
+                        border-radius: 20px;
+                        box-shadow: var(--shadow-medium);
+                        transition: var(--transition-smooth);
+                        height: 100%;
+                        overflow: hidden;
+                        position: relative;
+                        z-index: 1;
+                    }
+
+                    .doctor-card::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 5px;
+                        background: var(--gradient-primary);
+                        z-index: 2;
+                    }
+
+                    .doctor-card:hover {
+                        transform: translateY(-15px) scale(1.02);
+                        box-shadow: var(--shadow-heavy);
+                    }
+
+                    .doctor-card:hover .doctor-img {
+                        transform: scale(1.1);
+                        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+                    }
+
+                    .doctor-img-container {
+                        width: 160px;
+                        height: 160px;
+                        margin: 30px auto 20px;
+                        border-radius: 50%;
+                        padding: 5px;
+                        background: var(--gradient-primary);
+                        position: relative;
+                        overflow: hidden;
+                        box-shadow: 0 10px 25px rgba(214, 51, 132, 0.3);
+                        transition: var(--transition-smooth);
+                    }
+
+                    .doctor-img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        border-radius: 50%;
+                        border: 5px solid white;
+                        transition: var(--transition-smooth);
+                    }
+
+                    .doctor-card-content {
+                        padding: 20px 25px 30px;
+                        position: relative;
+                        text-align: center;
+                    }
+
+                    .doctor-department {
+                        position: absolute;
+                        top: 15px;
+                        right: 15px;
+                        background: var(--gradient-secondary);
+                        color: white;
+                        padding: 8px 18px;
+                        border-radius: 50px;
+                        font-size: 0.8rem;
+                        font-weight: 600;
+                        box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+                        z-index: 2;
+                    }
+
+                    .doctor-card h5 {
+                        color: var(--dark-color);
+                        font-weight: 700;
+                        /*margin: 1.2rem 0 1rem;*/
+                        font-size: 1.3rem;
+                        line-height: 1.4;
+                        /*min-height: 4rem;*/
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    .doctor-card p {
+                        color: #666;
+                        min-height: 3.5rem;
+                        font-size: 1rem;
+                        line-height: 1.6;
+                        margin-bottom: 1.5rem;
+                    }
+
+                    /* WhatsApp Button */
+                    .whatsapp-btn {
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 12px;
+                        background: var(--gradient-primary);
+                        color: white;
+                        padding: 14px 25px;
+                        border-radius: 12px;
+                        text-decoration: none;
+                        font-weight: 600;
+                        font-size: 1.05rem;
+                        transition: var(--transition-smooth);
+                        width: 100%;
+                        text-align: center;
+                        box-shadow: 0 8px 20px rgba(214, 51, 132, 0.3);
+                        position: relative;
+                        overflow: hidden;
+                        z-index: 1;
+                    }
+
+                    .whatsapp-btn::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: var(--gradient-secondary);
+                        z-index: -1;
+                        opacity: 0;
+                        transition: var(--transition-smooth);
+                    }
+
+                    .whatsapp-btn:hover {
+                        transform: translateY(-5px);
+                        box-shadow: 0 12px 25px rgba(214, 51, 132, 0.4);
+                        color: white;
+                    }
+
+                    .whatsapp-btn:hover::before {
+                        opacity: 1;
+                    }
+
+                    .whatsapp-btn i {
+                        font-size: 1.4rem;
+                        transition: var(--transition-smooth);
+                    }
+
+                    .whatsapp-btn:hover i {
+                        transform: scale(1.2) rotate(-5deg);
+                    }
+
+                    /* No Results */
+                    .no-results {
+                        text-align: center;
+                        padding: 5rem 3rem;
+                        background: white;
+                        border-radius: 25px;
+                        box-shadow: var(--shadow-medium);
+                        display: none;
+                        margin: 3rem 0;
+                    }
+
+                    .no-results i {
+                        font-size: 5rem;
+                        margin-bottom: 1.5rem;
+                        background: var(--gradient-primary);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                    }
+
+                    .no-results h4 {
+                        color: var(--dark-color);
+                        font-weight: 700;
+                        margin-bottom: 1rem;
+                        font-size: 1.8rem;
+                    }
+
+                    .no-results p {
+                        color: #777;
+                        font-size: 1.1rem;
+                        max-width: 500px;
+                        margin: 0 auto;
+                    }
+
+                    /* Reset Button */
+                    .reset-btn {
+                        background: var(--gradient-secondary);
+                        color: white;
+                        border: none;
+                        padding: 15px 25px;
+                        border-radius: 15px;
+                        font-weight: 600;
+                        font-size: 1.1rem;
+                        transition: var(--transition-smooth);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 12px;
+                        height: 60px;
+                        box-shadow: 0 8px 20px rgba(67, 97, 238, 0.3);
+                        cursor: pointer;
+                        width: 100%;
+                    }
+
+                    .reset-btn:hover {
+                        transform: translateY(-5px);
+                        box-shadow: 0 12px 25px rgba(67, 97, 238, 0.4);
+                        background: var(--gradient-primary);
+                    }
+
+                    .reset-btn i {
+                        font-size: 1.2rem;
+                        transition: var(--transition-smooth);
+                    }
+
+                    .reset-btn:hover i {
+                        transform: rotate(180deg);
+                    }
+
+                    /* Department Icons */
+                    .dept-icon {
+                        width: 40px;
+                        height: 40px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%;
+                        background: rgba(214, 51, 132, 0.1);
+                        color: var(--primary-color);
+                        font-size: 1.2rem;
+                        transition: var(--transition-smooth);
+                    }
+
+                    .dept-btn:hover .dept-icon {
+                        background: rgba(255, 255, 255, 0.3);
+                        color: white;
+                    }
+
+                    /* Floating Doctor Badge */
+                    .floating-badge {
+                        position: absolute;
+                        top: 15px;
+                        left: 15px;
+                        background: var(--gradient-accent);
+                        color: white;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-weight: 700;
+                        font-size: 1.2rem;
+                        box-shadow: 0 5px 15px rgba(6, 214, 160, 0.4);
+                        z-index: 2;
+                        transition: var(--transition-smooth);
+                    }
+
+                    .doctor-card:hover .floating-badge {
+                        transform: rotate(360deg) scale(1.1);
+                    }
+
+                    /* Loading Animation */
+                    .loading {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 200px;
+                    }
+
+                    .spinner {
+                        width: 60px;
+                        height: 60px;
+                        border: 5px solid rgba(214, 51, 132, 0.2);
+                        border-top-color: var(--primary-color);
+                        border-radius: 50%;
+                        animation: spin 1s linear infinite;
+                    }
+
+                    @keyframes spin {
+                        100% {
+                            transform: rotate(360deg);
+                        }
+                    }
+
+                    /* Footer */
+
+
+
+
+
+                    .footer a i {
+                        font-size: 2rem;
+                    }
+
+                    /* Particles Background */
+                    .particles {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        z-index: -1;
+                        pointer-events: none;
+                    }
+
+                    .particle {
+                        position: absolute;
+                        pointer-events: none;
+                        user-select: none;
+                        line-height: 1;
+                        opacity: 0.1;
+                    }
+
+                    /* Spacing Utilities */
+                    .mt-2 {
+                        margin-top: 0.5rem !important;
+                    }
+
+                    .mt-3 {
+                        margin-top: 1rem !important;
+                    }
+
+                    .mt-4 {
+                        margin-top: 1.5rem !important;
+                    }
+
+                    .mt-md-0 {
+                        margin-top: 0 !important;
+                    }
+
+                    .mb-3 {
+                        margin-bottom: 1rem !important;
+                    }
+
+                    .me-2 {
+                        margin-right: 0.5rem !important;
+                    }
+
+                    .me-3 {
+                        margin-right: 1rem !important;
+                    }
+
+                    .mx-auto {
+                        margin-left: auto !important;
+                        margin-right: auto !important;
+                    }
+
+                    .py-3 {
+                        padding-top: 1rem !important;
+                        padding-bottom: 1rem !important;
+                    }
+
+                    .w-100 {
+                        width: 100% !important;
+                    }
+
+                    .h-100 {
+                        height: 100% !important;
+                    }
+
+                    /* Flex Utilities */
+                    .d-flex {
+                        display: flex !important;
+                    }
+
+                    .flex-column {
+                        flex-direction: column !important;
+                    }
+
+                    .align-items-center {
+                        align-items: center !important;
+                    }
+
+                    .justify-content-center {
+                        justify-content: center !important;
+                    }
+
+                    .justify-content-between {
+                        justify-content: space-between !important;
+                    }
+
+                    /* Department Highlight */
+                    @keyframes highlightFlash {
+                        0% {
+                            box-shadow: 0 0 0 0 rgba(214, 51, 132, 0.7);
+                        }
+
+                        70% {
+                            box-shadow: 0 0 0 20px rgba(214, 51, 132, 0);
+                        }
+
+                        100% {
+                            box-shadow: 0 0 0 0 rgba(214, 51, 132, 0);
+                        }
+                    }
+
+                    .section-highlight {
+                        animation: highlightFlash 2s ease-out;
+                        position: relative;
+                        z-index: 10;
+                    }
+
+                    .section-highlight .section-title {
+                        transform: scale(1.02);
+                        transition: transform 0.3s ease;
+                    }
+
+                    /* ============================================
+   MOBILE RESPONSIVE STYLES (Max-width: 768px)
+   ============================================ */
+
+                    @media (max-width: 768px) {
+
+                        /* Base mobile adjustments */
+                        body {
+                            font-size: 14px;
+                            overflow-x: hidden;
+                        }
+
+                        .container {
+                            padding-left: 15px;
+                            padding-right: 15px;
+                            max-width: 100%;
+                        }
+
+                        /* Hospital Header Mobile */
+                        .hospital-header {
+                            padding: 2rem 0 1.5rem !important;
+                            margin-bottom: 1.5rem !important;
+                            border-radius: 20px !important;
+                        }
+
+                        .hospital-header h1 {
+                            font-size: 1.8rem !important;
+                            margin-bottom: 1rem !important;
+                        }
+
+                        .hospital-header h1 i {
+                            font-size: 1.5rem !important;
+                            margin-right: 10px !important;
+                        }
+
+                        .hospital-header p {
+                            font-size: 0.95rem !important;
+                            padding: 1.2rem !important;
+                            margin-top: 1rem !important;
+                            line-height: 1.6 !important;
+                        }
+
+                        /* Search Section Mobile */
+                        .search-section {
+                            padding: 1.5rem !important;
+                            margin-bottom: 1.5rem !important;
+                            border-radius: 0 !important;
+                        }
+
+                        .search-title {
+                            font-size: 1.3rem !important;
+                            flex-direction: column !important;
+                            text-align: center !important;
+                            gap: 8px !important;
+                        }
+
+                        .search-title i {
+                            font-size: 1.5rem !important;
+                        }
+
+                        .search-box {
+                            margin-bottom: 15px !important;
+                        }
+
+                        .search-box input {
+                            height: 50px !important;
+                            font-size: 1rem !important;
+                            padding-left: 50px !important;
+                        }
+
+                        .search-box i {
+                            left: 15px !important;
+                            font-size: 1.1rem !important;
+                        }
+
+                        /* Department Filter Mobile */
+                        .department-filter {
+                            gap: 8px !important;
+                            margin-top: 15px !important;
+                            justify-content: flex-start !important;
+                            overflow-x: auto !important;
+                            padding-bottom: 10px !important;
+                            flex-wrap: nowrap !important;
+                            -webkit-overflow-scrolling: touch !important;
+                        }
+
+                        .department-filter::-webkit-scrollbar {
+                            height: 4px !important;
+                        }
+
+                        .dept-btn {
+                            padding: 8px 15px !important;
+                            font-size: 0.85rem !important;
+                            white-space: nowrap !important;
+                            flex-shrink: 0 !important;
+                        }
+
+                        .dept-icon {
+                            width: 30px !important;
+                            height: 30px !important;
+                            font-size: 1rem !important;
+                        }
+
+                        /* Result Count Mobile */
+                        .result-count {
+                            font-size: 1rem !important;
+                            padding: 12px !important;
+                            margin: 1rem 0 !important;
+                            flex-direction: column !important;
+                            text-align: center !important;
+                            gap: 8px !important;
+                        }
+
+                        .result-count i {
+                            font-size: 1.2rem !important;
+                        }
+
+                        /* Reset Button Mobile */
+                        .reset-btn {
+                            height: 50px !important;
+                            padding: 12px 20px !important;
+                            font-size: 0.95rem !important;
+                        }
+
+                        /* Section Titles Mobile */
+                        .section-title {
+                            font-size: 1.2rem !important;
+                            padding: 12px 20px !important;
+                            margin: 2rem 0 1.5rem !important;
+                            width: 100% !important;
+                            text-align: center !important;
+                            display: block !important;
+                        }
+
+                        .section-title i {
+                            margin-right: 10px !important;
+                            font-size: 1.1rem !important;
+                        }
+
+                        /* Doctor Cards Mobile */
+                        .doctor-card {
+                            margin-bottom: 1.5rem !important;
+                        }
+
+                        .doctor-card:hover {
+                            transform: translateY(-5px) !important;
+                        }
+
+                        .doctor-img-container {
+                            width: 120px !important;
+                            height: 120px !important;
+                            margin: 20px auto 15px !important;
+                        }
+
+                        .doctor-img {
+                            border-width: 4px !important;
+                        }
+
+                        .doctor-card-content {
+                            padding: 15px !important;
+                        }
+
+                        .doctor-department {
+                            top: 10px !important;
+                            right: 10px !important;
+                            padding: 6px 12px !important;
+                            font-size: 0.7rem !important;
+                        }
+
+                        .doctor-department i {
+                            margin-right: 4px !important;
+                            font-size: 0.7rem !important;
+                        }
+
+                        .doctor-card h5 {
+                            font-size: 1rem !important;
+                            margin: 0.8rem 0 0.8rem !important;
+                            min-height: auto !important;
+                            line-height: 1.4 !important;
+                        }
+
+                        .doctor-card p {
+                            font-size: 0.9rem !important;
+                            min-height: auto !important;
+                            margin-bottom: 1rem !important;
+                            line-height: 1.5 !important;
+                        }
+
+                        /* Floating Badge Mobile */
+                        .floating-badge {
+                            width: 40px !important;
+                            height: 40px !important;
+                            font-size: 1rem !important;
+                            top: 10px !important;
+                            left: 10px !important;
+                        }
+
+                        /* WhatsApp Button Mobile */
+                        .whatsapp-btn {
+                            padding: 12px 15px !important;
+                            font-size: 0.95rem !important;
+                        }
+
+                        .whatsapp-btn i {
+                            font-size: 1.1rem !important;
+                            margin-right: 8px !important;
+                        }
+
+                        /* No Results Mobile */
+                        .no-results {
+                            padding: 3rem 1.5rem !important;
+                            margin: 2rem 0 !important;
+                        }
+
+                        .no-results i {
+                            font-size: 3.5rem !important;
+                            margin-bottom: 1rem !important;
+                        }
+
+                        .no-results h4 {
+                            font-size: 1.5rem !important;
+                        }
+
+                        .no-results p {
+                            font-size: 1rem !important;
+                        }
+
+                        /* Loading Spinner Mobile */
+                        .spinner {
+                            width: 40px !important;
+                            height: 40px !important;
+                            border-width: 4px !important;
+                        }
+
+                        /* Grid System Mobile */
+                        .row.g-4 {
+                            margin-left: -8px !important;
+                            margin-right: -8px !important;
+                        }
+
+                        .row.g-4>.col-lg-4,
+                        .row.g-4>.col-md-6 {
+                            padding-left: 8px !important;
+                            padding-right: 8px !important;
+                            margin-bottom: 16px !important;
+                        }
+
+                        /* Footer Mobile */
+                        .footer {
+                            padding: 2rem 0 !important;
+                            margin-top: 3rem !important;
+                            border-radius: 20px !important;
+                        }
+
+                        .footer h4 {
+                            font-size: 1.3rem !important;
+                            margin-bottom: 1rem !important;
+                        }
+
+                        .footer p {
+                            font-size: 0.9rem !important;
+                        }
+
+                        .footer a i {
+                            font-size: 1.5rem !important;
+                            margin: 0 10px !important;
+                        }
+
+                        /* Hide some animations on mobile for performance */
+                        .float-animation,
+                        .pulse-animation {
+                            animation: none !important;
+                        }
+
+                        /* Particles background reduced on mobile */
+                        .particle {
+                            display: none !important;
+                        }
+
+                        /* Better touch targets */
+                        .dept-btn,
+                        .whatsapp-btn,
+                        .reset-btn {
+                            min-height: 44px !important;
+                        }
+
+                        /* Improve scrolling performance */
+                        .doctor-card,
+                        .search-section,
+                        .hospital-header {
+                            will-change: transform;
+                            backface-visibility: hidden;
+                        }
+                    }
+
+                    /* ============================================
+   SMALL MOBILE STYLES (Max-width: 480px)
+   ============================================ */
+
+                    @media (max-width: 480px) {
+                        .hospital-header h1 {
+                            font-size: 1.6rem !important;
+                        }
+
+                        .hospital-header p {
+                            font-size: 0.9rem !important;
+                            padding: 1rem !important;
+                        }
+
+                        .search-title {
+                            font-size: 1.2rem !important;
+                        }
+
+                        .section-title {
+                            font-size: 1.1rem !important;
+                            padding: 10px 15px !important;
+                        }
+
+                        .dept-btn {
+                            padding: 6px 12px !important;
+                            font-size: 0.8rem !important;
+                        }
+
+                        .doctor-card h5 {
+                            font-size: 0.95rem !important;
+                        }
+
+                        .doctor-card p {
+                            font-size: 0.85rem !important;
+                        }
+
+                        .whatsapp-btn {
+                            font-size: 0.9rem !important;
+                            padding: 10px 12px !important;
+                        }
+
+                        /* Stack columns for very small screens */
+                        .row.g-4>.col-lg-4,
+                        .row.g-4>.col-md-6 {
+                            width: 100% !important;
+                            max-width: 100% !important;
+                            flex: 0 0 100% !important;
+                        }
+
+                        /* Single column layout for doctor cards */
+                        #doctorsContainer .row.g-4 {
+                            display: flex !important;
+                            flex-direction: column !important;
+                        }
+                    }
+
+                    footer {
+                        position: relative;
+                        color: #fff;
+                        font-family: var(--posh-font);
+                        overflow: hidden;
+                    }
+
+                    /* Background Image */
+                    footer::before {
+                        content: "";
+                        position: absolute;
+                        inset: 0;
+                        background: url("assets/images/posh/footer.gif") center/cover no-repeat;
+                        z-index: 0;
+                    }
+
+                    /* Dark Overlay */
+                    footer::after {
+                        content: "";
+                        position: absolute;
+                        inset: 0;
+                        background: rgba(0, 0, 0, 0.65);
+                        z-index: 1;
+                    }
+
+                    /* Main Container */
+                    .footer-container {
+                        position: relative;
+                        z-index: 2;
+                        display: grid;
+                        grid-template-columns: repeat(4, 1fr);
+                        gap: 30px;
+                        padding: 60px 80px;
+                    }
+
+                    /* Headings */
+                    .footer-container h4 {
+                        margin-bottom: 15px;
+                        font-size: 18px;
+                        font-weight: 600;
+                    }
+
+                    /* About */
+                    .footer-about p {
+                        font-size: 14px;
+                        line-height: 1.6;
+                        color: white;
+                    }
+
+                    .footer-about a {
+                        color: #9acd32;
+                        text-decoration: none;
+                    }
+
+                    /* Links */
+                    .footer-links ul {
+                        list-style: none;
+                        padding: 0;
+                    }
+
+                    .footer-links li {
+                        margin-bottom: 8px;
+                    }
+
+                    .footer-links a {
+                        color: #fff;
+                        text-decoration: none;
+                        font-size: 14px;
+                    }
+
+                    .footer-links a:hover {
+                        color: #9acd32;
+                    }
+
+                    /* Contact */
+                    .footer-contact p {
+                        font-size: 14px;
+                        line-height: 1.6;
+                        color: white;
+
+                    }
+
+                    .footer-contact span {
+                        color: #9acd32;
+                        font-weight: 600;
+                    }
+
+                    .footer-contact a {
+                        color: #fff;
+                        text-decoration: none;
+                    }
+
+                    /* Map */
+                    .footer-map iframe {
+                        width: 100%;
+                        height: 200px;
+                        border: 0;
+                        border-radius: 6px;
+                    }
+
+                    /* Bottom Bar */
+                    .footer-bottom {
+                        position: relative;
+                        z-index: 2;
+                        text-align: center;
+                        padding: 15px;
+                        font-size: 13px;
+                        background: rgba(0, 0, 0, 0.8);
+                    }
+
+                    .footer-bottom a {
+                        color: #9acd32;
+                        text-decoration: none;
+                    }
+
+                    @media (max-width: 768px) {
+                        .footer-container {
+                            grid-template-columns: 1fr;
+                            padding: 40px 20px;
+                        }
+
+                        .footer-map iframe {
+                            height: 180px;
+                        }
+                    }
+
+
+                    /* ============================================
+   LANDSCAPE MOBILE ORIENTATION
+   ============================================ */
+
+                    @media (max-width: 768px) and (orientation: landscape) {
+                        .hospital-header {
+                            padding: 1.5rem 0 !important;
+                        }
+
+                        .doctor-img-container {
+                            width: 100px !important;
+                            height: 100px !important;
+                        }
+
+                        .doctor-card h5 {
+                            font-size: 0.9rem !important;
+                            min-height: 3.2rem !important;
+                        }
+
+                        /* Department filter scrollable in landscape */
+                        .department-filter {
+                            max-height: 120px !important;
+                            overflow-y: auto !important;
+                            overflow-x: hidden !important;
+                            flex-wrap: wrap !important;
+                        }
+                    }
+                </style>
+                <style>
+                    .dept-dropdown {
+                        max-height: 320px !important;
+                        overflow-y: auto !important;
+                        overscroll-behavior: contain;
+                    }
+
+                    .dept-dropdown::-webkit-scrollbar {
+                        width: 4px;
+                    }
+
+                    .dept-dropdown::-webkit-scrollbar-track {
+                        background: #4b1d6b;
+                    }
+
+                    .dept-dropdown::-webkit-scrollbar-thumb {
+                        background: #f48fb1;
+                        border-radius: 4px;
+                    }
+
+                    /* Fix: active dept icon was invisible (pink icon on pink active background) */
+                    .dept-btn.active .dept-icon {
+                        background: rgba(255, 255, 255, 0.3) !important;
+                        color: #fff !important;
+                    }
+                </style>
+
+
+                <!-- Particles Background -->
+                <div class="particles" id="particles"></div>
+
+                <!-- Hospital Header -->
+                <div class="hospital-header">
+                    <div class="container">
+                        <div class="header-inner">
+                            <!-- Left: Doctor Image -->
+                            <!-- <div class="header-img-wrap animate__animated animate__fadeInLeft">
+                                <img decoding="async" src="assets/images/posh/team.JPG" alt="Our Doctors" class="header-doc-img">
+                                <div class="header-badge">
+                                    <i class="fas fa-user-md"></i>
+                                    <span>77+ Specialists</span>
+                                </div>
+                            </div> -->
+                            <!-- Right: Content -->
+                            <div class="header-content animate__animated animate__fadeInRight">
+
+                                <h1>Meet Our <span style="color:#e91e63;">Doctors</span></h1>
+                                <p>At <strong style="color:#e91e63;">THE POSH-PONDY ORTHO SPECIALITY HOSPITAL</strong>,
+                                    our doctors are leaders in their field, with years of experience and expertise. We
+                                    pride ourselves on providing compassionate patient care and ensuring every patient
+                                    receives the highest level of attention and support.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search Section -->
+                <div class="search-section animate__animated animate__fadeIn">
+                    <div class="container">
+                        <div>
+                            <div class="search-title">
+                                <i style="color: white;" class="fas fa-stethoscope"></i> Find Your Specialist Doctor
+                            </div>
+                            <!-- <div class="row">
+                <div class="col-lg-8 col-md-7">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" class="form-control" placeholder="Search by doctor name, specialty, or department...">
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-5 mt-md-0 mt-3">
+                    <button id="resetBtn" class="reset-btn w-100 h-100">
+                        <i class="fas fa-redo-alt"></i>Reset All Filters
+                    </button>
+                </div>
+            </div> -->
+
+                            <div class="department-filter mt-4">
+                                <div class="dept-btn active" data-dept="all">
+                                    <div class="dept-icon">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <span>All Departments</span>
+                                </div>
+
+                                <div class="dept-btn" data-dept="orthopaedics">
+                                    <div class="dept-icon">
+                                        <i class="fas fa-bone"></i>
+                                    </div>
+                                    <span>Orthopaedics</span>
+                                </div>
+
+                                <div class="dept-btn" data-dept="anaesthesiology">
+                                    <div class="dept-icon">
+                                        <i class="fas fa-syringe"></i>
+                                    </div>
+                                    <span>Anaesthesiology</span>
+                                </div>
+
+                                <div class="dept-btn" data-dept="cardiology">
+                                    <div class="dept-icon">
+                                        <i class="fas fa-heart"></i>
+                                    </div>
+                                    <span>Cardiology</span>
+                                </div>
+
+                                <div class="dept-btn" data-dept="dental">
+                                    <div class="dept-icon">
+                                        <i class="fas fa-tooth"></i>
+                                    </div>
+                                    <span>Dental</span>
+                                </div>
+
+                                <div class="dept-btn" data-dept="dermatology">
+                                    <div class="dept-icon">
+                                        <i class="fas fa-allergies"></i>
+                                    </div>
+                                    <span>Dermatology</span>
+                                </div>
+
+                                <div class="dept-btn" data-dept="ent">
+                                    <div class="dept-icon">
+                                        <i class="fas fa-ear-deaf"></i>
+                                    </div>
+                                    <span>ENT</span>
+                                </div>
+
+                                <div class="dept-btn" data-dept="gastroenterology">
+                                    <div class="dept-icon">
+                                        <i class="fas fa-diagnoses"></i>
+                                    </div>
+                                    <span>Gastroenterology</span>
+                                </div>
+                                
+                                <div class="dept-btn" data-dept="gynaecology">
+                                    <div class="dept-icon">
+                                        <i class="fas fa-baby-carriage"></i>
+                                    </div>
+                                    <span>Obstetrics &amp; Gynaecology</span>
+                                </div>
+
+                                <div class="dept-btn" data-dept="general-medicine">
+                                    <div class="dept-icon">
+                                        <i class="fas fa-user-md"></i>
+                                    </div>
+                                    <span>General Medicine</span>
+                                </div>
+
+                                <div class="dept-btn" data-dept="endocrinology">
+                                    <div class="dept-icon">
+                                        <i class="fas fa-prescription-bottle"></i>
+                                    </div>
+                                    <span>Endocrinology</span>
+                                </div>
+
+                                <div class="dept-btn" data-dept="general-Surgeon ">
+                                    <div class="dept-icon">
+                                        <i class="fas fa-scissors"></i>
+                                    </div>
+                                    <span>General Surgeon </span>
+                                </div>
+
+                                <div class="dept-btn" data-dept="hepatology">
+                                    <div class="dept-icon">
+                                        <i class="fas fa-vial"></i>
+                                    </div>
+                                    <span>Hepatology</span>
+                                </div>
+
+                                <div class="dept-btn" data-dept="nephrology">
+                                    <div class="dept-icon">
+                                        <i class="fas fa-droplet"></i>
+                                    </div>
+                                    <span>Nephrology</span>
+                                </div>
+
+                                <div class="dept-btn" data-dept="neurology">
+                                    <div class="dept-icon">
+                                        <i class="fas fa-brain"></i>
+                                    </div>
+                                    <span>Neurology</span>
+                                </div>
+
+                                <div class="dept-btn" data-dept="neuroSurgeon ">
+                                    <div class="dept-icon">
+                                        <i class="fas fa-brain"></i>
+                                    </div>
+                                    <span>NeuroSurgeon </span>
+                                </div>
+
+                                <div class="dept-btn" data-dept="ophthalmology">
+                                    <div class="dept-icon">
+                                        <i class="fas fa-eye"></i>
+                                    </div>
+                                    <span>Ophthalmology</span>
+                                </div>
+
+                                <div class="dept-btn" data-dept="oncology">
+                                    <div class="dept-icon">
+                                        <i class="fas fa-hospital-user"></i>
+                                    </div>
+                                    <span>Oncology</span>
+                                </div>
+
+                                <div class="dept-btn" data-dept="paediatrics">
+                                    <div class="dept-icon">
+                                        <i class="fas fa-baby"></i>
+                                    </div>
+                                    <span>Paediatrics</span>
+                                </div>
+
+                                <div class="dept-btn" data-dept="plastic-surgeon">
+                                    <div class="dept-icon">
+                                        <i class="fas fa-hand-holding-medical"></i>
+                                    </div>
+                                    <span>Plastic Surgeon</span>
+                                </div>
+
+                                <div class="dept-btn" data-dept="physiotherapy">
+                                    <div class="dept-icon">
+                                        <i class="fas fa-wheelchair"></i>
+                                    </div>
+                                    <span>Physiotherapy</span>
+                                </div>
+                                <div class="dept-btn" data-dept="physiotherapy-two">
+                                    <div class="dept-icon">
+                                        <i class="fas fa-wheelchair"></i>
+                                    </div>
+                                    <span>Rehabilitation</span>
+                                </div>
+
+                                <div class="dept-btn" data-dept="psychiatry">
+                                    <div class="dept-icon">
+                                        <i class="fas fa-head-side-virus"></i>
+                                    </div>
+                                    <span>Psychiatry</span>
+                                </div>
+
+                                <div class="dept-btn" data-dept="pulmonology">
+                                    <div class="dept-icon">
+                                        <i class="fas fa-lungs"></i>
+                                    </div>
+                                    <span>Pulmonology</span>
+                                </div>
+
+                                <div class="dept-btn" data-dept="radiology">
+                                    <div class="dept-icon">
+                                        <i class="fas fa-x-ray"></i>
+                                    </div>
+                                    <span>Radiology</span>
+                                </div>
+
+                                <div class="dept-btn" data-dept="urology">
+                                    <div class="dept-icon">
+                                        <i class="fas fa-procedures"></i>
+                                    </div>
+                                    <span>Urology</span>
+                                </div>
+
+                                <div class="dept-btn" data-dept="cardiothoracic">
+                                    <div class="dept-icon">
+                                        <i class="fas fa-heartbeat"></i>
+                                    </div>
+                                    <span>Cardiothoracic</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="result-count mt-4" id="resultCount">
+                        <i class="fas fa-user-md"></i>
+                        <span>Showing all doctors</span>
+                    </div>
+
+                    <!-- No Results Message -->
+                    <div class="no-results animate__animated animate__fadeIn" id="noResults">
+                        <i class="fas fa-user-md pulse-animation"></i>
+                        <h4>No Doctors Found</h4>
+                        <p class="text-muted">Try adjusting your search or filter to find what you're looking for.</p>
+                        <button id="resetFromNoResults" class="reset-btn mt-4" style="width: auto; padding: 12px 30px;">
+                            <i class="fas fa-redo-alt"></i> Show All Doctors
+                        </button>
+                    </div>
+
+                    <!-- Loading Spinner -->
+                    <div class="loading" id="loadingSpinner" style="display: none;">
+                        <div class="spinner"></div>
+                    </div>
+
+                    <!-- Doctors Sections -->
+                    <div id="doctorsContainer">
+                        <!-- All doctor sections will be loaded here dynamically -->
+                    </div>
+                </div>
+
+                <!-- Footer -->
+
+
+
+                <!-- Bootstrap JS -->
+
+
+
+                <script>
+
+                    // Doctor data
+                    const doctorsData = [
+                        // ... keep ALL your doctors data exactly as it is ...
+                        /* ================= ORTHOPAEDICS ================= */
+                        { id: 1, name: "Dr. V. Veerappan, M.S. (Ortho), FRCS (Glasgow)", specialty: "Trauma, Spine & Joint Replacement surgeon", department: "orthopaedics", img: "assets/images/doc1.avif" },
+                        { id: 2, name: "Dr. Harish Jayakumar, MBBS, MS (ORTHO)", specialty: "Trauma & Orthopedic Surgeon", department: "orthopaedics", img: "assets/images/doc59.avif" },
+                        { id: 3, name: "Dr. R. Krishnagopal, M.S. (Ortho)", specialty: "Arthroscopic Surgeon ", department: "orthopaedics", img: "assets/images/doc2.avif" },
+                        { id: 4, name: "Dr. R. Vijayaragavan, M.S (Ortho)", specialty: "Consultant Orthopaedic Surgeon", department: "orthopaedics", img: "assets/images/vijayaraghavan.jpeg" },
+                        { id: 6, name: "Dr. Pragwal, Ms.ortho.,FISU (SESI) ,FIASM (UK/INDIA) Executive committee member TNAS", specialty: "Consultant Orthopaedic Surgeon", department: "orthopaedics", img: "assets/images/Pragwal.jpeg" },
+
+                        /* ================= ANAESTHESIOLOGY ================= */
+                        { id: 7, name: "Dr. Dilip Chander, MBBS, MD", specialty: "Anaesthesiologist & Pain Specialist", department: "anaesthesiology", img: "assets/images/doc49.avif" },
+                        { id: 8, name: "Dr. Vigneshwaran, MBBS, MD", specialty: "Consultant Anaesthesiologist", department: "anaesthesiology", img: "assets/images/doc50.avif" },
+                        { id: 9, name: "Dr. Ranjith Kumar, MBBS, MD", specialty: "Consultant Anaesthesiologist", department: "anaesthesiology", img: "assets/images/doc51.avif" },
+                        { id: 10, name: "Dr. Vinayagamurugan, MBBS, MD ", specialty: "MBBS MD Consultant Anaesthesiologist", department: "anaesthesiology", img: "assets/images/Vinayagamurugan.jpeg" },
+
+                        /* ================= CARDIOLOGY ================= */
+                        { id: 13, name: "Dr. Baskaran, MD Medicine, DM-Cardiologist", specialty: "Interventional Cardiologist", department: "cardiology", img: "assets/images/baskaran.jpeg" }, { id: 14, name: "Dr. Giridharan, MD, DM", specialty: "Consultant Cardiologist", department: "cardiology", img: "assets/images/doc29.avif" },
+                        { id: 15, name: "Dr. preamnath Vinayagam, MD, DM.,DEM(UK)", specialty: "Consultant Cardiologist", department: "cardiology", img: "assets/images/preamnath.jpeg" },
+                        { id: 16, name: "Dr. Badrinath, MD,FRCP,FACP,FIAE,AFISC,  FIMSA,FIACM", specialty: "Consultant Cardiologist", department: "cardiology", img: "assets/images/badri.jpeg" },
+                        { id: 89, name: "Dr. R. Hanushraj, MD (Gen Medicine), DM (Cardiology)", specialty: "Consultant Cardiologist", department: "cardiology", img: "assets/images/posh/Dr.R.Hanushra.jfif" },
+
+                        /* ================= DENTAL ================= */
+                        { id: 17, name: "Dr. Thavi Dhivagar BDS, MDS", specialty: " Chief Dental Surgeon", department: "dental", img: "assets/images/Thavi.jpeg" },
+                        { id: 19, name: "Dr. Nithin Joseph Jude, MDS", specialty: "Oral & Maxillofacial Surgeon", department: "dental", img: "assets/images/doc57.avif" },
+                        { id: 20, name: "Dr. V. Venugopalan, MDS", specialty: "Associate Professor (OMFS)", department: "dental", img: "assets/images/doc55.avif" },
+                        { id: 21, name: "Dr. Balatandayoudam, MDS", specialty: "Oral and maxillofacial Surgeon ", department: "dental", img: "assets/images/tha.jpeg" },
+
+                        /* ================= DERMATOLOGY ================= */
+                        { id: 22, name: "Dr. Trishna Vaishali, MD (DVL)", specialty: "Consultant Dermatologist", department: "dermatology", img: "assets/images/doc44.avif" },
+                        { id: 23, name: "Dr. Dileep Jude, MD, DNB (DVL)", specialty: "Dermatologist & Cosmetologist", department: "dermatology", img: "assets/images/doc45.avif" },
+                        { id: 26, name: "Dr. Suruthi Purushothaman,  MD,DNB-DVL", specialty: "Dermatologist & Aesthetic Physician", department: "dermatology", img: "assets/images/suruthi.jpeg" },
+
+                        /* ================= ENT ================= */
+                        { id: 27, name: "Dr. T.C. Vikram, MS", specialty: "Consultant ENT Surgeon", department: "ent", img: "assets/images/vikram.jpeg" },
+                        { id: 28, name: "Dr. Nishanth Savery, MS (ENT), MCIP", specialty: "Consultant ENT Surgeon", department: "ent", img: "assets/images/doc41.avif" },
+                        { id: 29, name: "Dr. Shanmuganathan, DLO, DNB, MNAMS", specialty: "Consultant ENT Surgeon", department: "ent", img: "assets/images/doc40.avif" },
+                        { id: 30, name: "Dr. Sathish, MBBS, DNB (ENT)", specialty: "Consultant ENT Surgeon", department: "ent", img: "assets/images/sathish.jpeg" },
+                        { id: 31, name: "Dr. Naveen Kumar, MS", specialty: "Consultant ENT Surgeon", department: "ent", img: "assets/images/doc42.avif" },
+
+                        /* ================= GASTROENTEROLOGY ================= */
+                        { id: 32, name: "Dr. A. Rameshkumar, MS, MCh (SEGG)", specialty: "Consultant Gastroenterologist", department: "gastroenterology", img: "assets/images/Rameshkumar.jpeg" },
+                        { id: 33, name: "Dr. Kishore, R M.D.,D.M.", specialty: "Consultant Medical Gastroenterologist", department: "gastroenterology", img: "assets/images/Kishore.jpeg" },
+                        
+                         /* ================= OBSTETRICS & GYNAECOLOGY ================= */
+                        { id: 108, name: "Dr. S. Arthi, MS (OG), FMAS, DMAS", specialty: "Obstetrician & Gynaecologist", department: "gynaecology", img: "assets/images/arthi.jpeg" },
+                        { id: 109, name: "Dr. Tanvi Gupta, MBBS, DNB - OBGYN, FMAS, Dip USG (USA)", specialty: "Consultant Gynaecologist", department: "gynaecology", img: "assets/images/Tanvi.jpeg" },
+
+
+                        /* ================= GENERAL MEDICINE ================= */
+                        { id: 34, name: "Dr. I.Arun, MD", specialty: "General Physician & Diabetologist", department: "general-medicine", img: "assets/images/doc8.avif" },
+                        { id: 35, name: "Dr. Zeno, MD", specialty: "Consultant General Physician", department: "general-medicine", img: "assets/images/doc10.avif" },
+                        { id: 36, name: "Dr. Darshan Savery, MD", specialty: "General Physician & Diabetologist", department: "general-medicine", img: "assets/images/doc9.avif" },
+
+                        /* ================= ENDOCRINOLOGY ================= */
+                        { id: 38, name: "Dr. Vijayabhaskar Reddy, MD, MRCP", specialty: "Endocrinologist & Diabetologist", department: "endocrinology", img: "assets/images/doc54.avif" },
+
+                        /* ================= GENERAL Surgeon  ================= */
+                        { id: 39, name: "Dr. K.V. Rajan, MS,FRCS,FMAS", specialty: "Hernia & Laparoscopic Surgeon", department: "general-Surgeon ", img: "assets/images/doc11.avif" },
+                        { id: 40, name: "Dr. Vinayagam, MS", specialty: "Endoscopic & General Surgeon", department: "general-Surgeon ", img: "assets/images/doc12.avif" },
+                        { id: 41, name: "Dr. Raj S., MBBS, DNB, FIAGES", specialty: "General & Laparoscopic Surgeon", department: "general-Surgeon ", img: "assets/images/doc13.avif" },
+
+
+                        /* ================= HEPATOLOGY ================= */
+                        { id: 44, name: "Dr. Sivaramakrishnan, DNB, MNAMS, DM Gold Medalist", specialty: "Consultant Hepatologist", department: "hepatology", img: "assets/images/doc23.avif" },
+
+                        /* ================= NEPHROLOGY ================= */
+                        { id: 45, name: "Dr. K. Kumar, MD, DM", specialty: "Nephrologist & Transplant Physician", department: "nephrology", img: "assets/images/doc20.avif" },
+                        { id: 46, name: "Dr. M. M. Murali Krishna, DNB", specialty: "Consultant Nephrologist", department: "nephrology", img: "assets/images/doc21.avif" },
+                        { id: 47, name: "Dr. Kathiravan", specialty: "Nephrologist & Transplant Physician", department: "nephrology", img: "assets/images/doc3.avif" },
+                        { id: 48, name: "Dr. T. Sugan Gandhi, MD, DM", specialty: "Nephrologist & Transplant Physician", department: "nephrology", img: "assets/images/doc22.avif" },
+
+                        /* ================= NEUROLOGY ================= */
+                        { id: 49, name: "Dr. Ganesh, MD, DM", specialty: "Consultant Neurologist", department: "neurology", img: "assets/images/doc18.avif" },
+                        { id: 50, name: "Dr. Shobana, MD, DM", specialty: "Consultant Neurologist", department: "neurology", img: "assets/images/doc17.avif" },
+                        { id: 51, name: "Dr. Arul Prasad, MD, DM", specialty: "Consultant Neurologist", department: "neurology", img: "assets/images/arun.jpeg" },
+
+                        /* ================= NEUROSurgeon  ================= */
+                        { id: 52, name: "Dr. Prabakaran, MS, MCh", specialty: "Consultant Neurosurgeon", department: "neuroSurgeon ", img: "assets/images/doc15.avif" },
+                        { id: 53, name: "Dr. M. Shanmugapathy, MS, MCh", specialty: "Consultant Neurosurgeon", department: "neuroSurgeon ", img: "assets/images/doc16.avif" },
+                        { id: 54, name: "Dr. Santhosh, DNB-Neuro Surgeon ", specialty: "Consultant Neurosurgeon", department: "neuroSurgeon ", img: "assets/images/santhosh.jpeg" },
+                        { id: 88, name: "Dr. Praveen", specialty: "Specialist in Trauma, Endoscopic Spine & Skullbase Surgery", department: "neuroSurgeon ", img: "assets/images/posh/Dr_Praveen.jfif" },
+
+                        /* ================= OPHTHALMOLOGY ================= */
+                        { id: 55, name: "Dr. Karunanithy, DO, DNB", specialty: "Consultant Ophthalmologist", department: "ophthalmology", img: "assets/images/doc37.avif" },
+                        { id: 56, name: "Dr. Senthamizh Rene, DO, DNB", specialty: "Consultant Ophthalmologist", department: "ophthalmology", img: "assets/images/doc38.avif" },
+                        { id: 57, name: "Dr. Malarmozhi, DO, DNB", specialty: "Consultant Ophthalmologist", department: "ophthalmology", img: "assets/images/doc3.avif" },
+
+                        /* ================= ONCOLOGY ================= */
+                        { id: 59, name: "Dr. P. Ravi Shankar, MS, MCh, DNB, FAS, GOLF", specialty: "Consultant Oncologist", department: "oncology", img: "assets/images/Dr-Ravi-Shankar.png" },
+                        { id: 60, name: "Dr. Damodara Kumaran P, MD, DMRT, ECMO", specialty: "Medical & Radiation Oncologist", department: "oncology", img: "assets/images/doc27.avif" },
+                        { id: 61, name: "Dr. Vikas Babu, MBBS MD", specialty: "Consultant Clinical Oncologist", department: "oncology", img: "assets/images/vikas.jpeg" },
+                        { id: 62, name: "Dr. Pandian Baskaran Rao, MD(rad.onco.)DM(Med.onco)", specialty: "Consultant Oncologist", department: "oncology", img: "assets/images/pandiyan.jpeg" },
+                        { id: 63, name: "Dr. Vigneshwaran, MS,MCH,MCHIR", specialty: "Consultant Oncologist", department: "oncology", img: "assets/images/vignesh.jpeg" },
+
+                        /* ================= PAEDIATRICS ================= */
+                        { id: 64, name: "Dr. Thiyagarajan, MD", specialty: "Consultant Paediatrician", department: "paediatrics", img: "assets/images/doc47.avif" },
+                        { id: 65, name: "Dr. C. Hemarani, DNB, PGPN (Boston)", specialty: "Consultant Paediatrician", department: "paediatrics", img: "assets/images/doc39.avif" },
+                        { id: 66, name: "Dr. Abirami Selvaganapathy, MBBS MD MIYCF ", specialty: "Consultant Paediatrician", department: "paediatrics", img: "assets/images/abirami.jpeg" },
+                        { id: 67, name: "Dr. Meena", specialty: "Consultant Paediatrician", department: "paediatrics", img: "assets/images/doc3.avif" },
+
+                        /* ================= PLASTIC SURGEON ================= */
+                        { id: 68, name: "Dr. A. Vaithiswaran, MS, MCh", specialty: "Plastic & Reconstructive Surgeon", department: "plastic-surgeon", img: "assets/images/doc15.avif" },
+                        { id: 69, name: "Dr. Vijayaragavan, MS, MCh", specialty: "Consultant Plastic Surgeon", department: "plastic-surgeon", img: "assets/images/doc14.avif" },
+                        { id: 70, name: "Dr. K. Ashok Kumar, MCh", specialty: "Hand, Burns & Reconstructive Surgeon ", department: "plastic-surgeon", img: "assets/images/doc15.avif" },
+
+                        /* ================= PHYSIOTHERAPY ================= */
+                        { id: 72, name: "Dr. T. Murugaraj, MPT", specialty: "Ortho Consultant Physiotherapist", department: "physiotherapy", img: "assets/images/doc58.avif" },
+                        
+                        /* ================= Physical medicine and Rehabilitation Consultant ================= */
+                        { id: 101, name: "Dr. Agalaya Kandavelu, MBBS, DNB (PMR), FIPM (Delhi), FIPC (UK), EULAR (UK)", specialty: "Physical medicine and Rehabilitation Consultant", department: "physiotherapy-two", img: "assets/images/Agalya.jpeg" },
+
+                        /* ================= PSYCHIATRY ================= */
+                        { id: 73, name: "Dr. S. Karthik, MD (Psychiatry)", specialty: "Consultant Psychiatrist", department: "psychiatry", img: "assets/images/doc46.avif" },
+                        { id: 90, name: "Dr. V. Gokoul, MBBS., MD", specialty: "Consultant Psychiatrist", department: "psychiatry", img: "assets/images/posh/dr.v.gokul.jfif" },
+
+                        /* ================= PULMONOLOGY ================= */
+                        { id: 74, name: "Dr. Praveen, MD (Respiratory Medicine)", specialty: "Interventional Pulmonologist", department: "pulmonology", img: "assets/images/doc53.avif" },
+                        { id: 75, name: "Prof. Dr. S. Yuvarajan, MD, DNB, FCCP", specialty: "Pulmonologist & Interventional Bronchoscopist", department: "pulmonology", img: "assets/images/doc52.avif" },
+                        { id: 77, name: "Dr. Arif", specialty: "Consultant Pulmonologist", department: "pulmonology", img: "assets/images/Arif.jpeg" },
+                        { id: 77, name: "Dr. UVARAJAN E,M.B.B.S., M.D.,(RESPIRATORY MEDICINE)", specialty: "Consultant Pulmonologist", department: "pulmonology", img: "assets/images/Dr-UVARAJAN-E.jpeg" },
+
+                        /* ================= RADIOLOGY ================= */
+                        { id: 79, name: "Dr. A. Sivarajan, MD, RD", specialty: "Consultant Radiologist", department: "radiology", img: "assets/images/doc33.avif" },
+                        { id: 80, name: "Dr. Avinesh, MD, RD, CCFRG", specialty: "Consultant Radiologist", department: "radiology", img: "assets/images/doc34.avif" },
+                        { id: 81, name: "Dr. Micheal, MD, RD", specialty: "Assistant Professor & Consultant Radiologist", department: "radiology", img: "assets/images/doc35.avif" },
+
+                        /* ================= UROLOGY ================= */
+                        { id: 84, name: "Dr. Vijayaganapathy, MS, DNB, MCh", specialty: "Consultant Uro Surgeon", department: "urology", img: "assets/images/doc36.avif" },
+                        { id: 91, name: "Dr. J. Rathinavel Kamarajan, MBBS, DNB (General Surgery), DrNB (Urology), FAIS, FIAGES", specialty: "Consultant Urologist", department: "urology", img: "assets/images/posh/RathinavelKamarajan.png" },
+                         { id: 91, name: "Dr. SUBRAMANIAN .E, MS, Mch - Urology", specialty: "Consultant Urologist", department: "urology", img: "assets/images/SUBRAMANIAN.jpeg" },
+
+                        /* ================= CARDIOTHORACIC & VASCULAR Surgeon  ================= */
+                        { id: 85, name: "Dr. P. Sudarasan Reddy, MS, MCh, DNB (CTVS)", specialty: "Consultant CTVS Surgeon", department: "cardiothoracic", img: "assets/images/doc19.avif" },
+                        { id: 87, name: "Dr. Elamaran, Ms,Mch", specialty: "Consultant CTVS Surgeon", department: "cardiothoracic", img: "assets/images/Elamaran.jpeg" },
+                    ];
+
+                    // Department mapping
+                    const departmentInfo = {
+                        "orthopaedics": { name: "ORTHOPAEDICS", icon: "fas fa-bone", color: "#d63384" },
+                        "anaesthesiology": { name: "ANAESTHESIOLOGY", icon: "fas fa-syringe", color: "#4361ee" },
+                        "cardiology": { name: "CARDIOLOGY", icon: "fas fa-heart", color: "#ef476f" },
+                        "cardiothoracic": { name: "CARDIOTHORACIC AND VASCULAR SURGEON", icon: "fas fa-heartbeat", color: "#ef476f" },
+                        "dental": { name: "DENTAL", icon: "fas fa-tooth", color: "#06d6a0" },
+                        "dermatology": { name: "DERMATOLOGY", icon: "fas fa-allergies", color: "#ffd166" },
+                        "endocrinology": { name: "ENDOCRINOLOGY", icon: "fas fa-prescription-bottle", color: "#4cc9f0" },
+                        "ent": { name: "ENT", icon: "fas fa-ear-deaf", color: "#118ab2" },
+                        "gastroenterology": { name: "GASTROENTEROLOGY", icon: "fas fa-diagnoses", color: "#7209b7" },
+                        "gynaecology": { name: "OBSTETRICS & GYNAECOLOGY", icon: "fas fa-baby-carriage", color: "#c9184a" },
+                        "general-medicine": { name: "GENERAL MEDICINE", icon: "fas fa-user-md", color: "#f72585" },
+                        "general-Surgeon ": { name: "GENERAL SURGEON", icon: "fas fa-scissors", color: "#f8961e" },
+                        "hepatology": { name: "HEPATOLOGY", icon: "fas fa-vial", color: "#43aa8b" },
+                        "nephrology": { name: "NEPHROLOGY", icon: "fas fa-droplet", color: "#577590" },
+                        "neurology": { name: "NEUROLOGY", icon: "fas fa-brain", color: "#9d4edd" },
+                        "neuroSurgeon ": { name: "NEUROSURGEON", icon: "fas fa-brain", color: "#ff6d00" },
+                        "oncology": { name: "ONCOLOGY", icon: "fas fa-hospital-user", color: "#8338ec" },
+                        "ophthalmology": { name: "OPHTHALMOLOGY", icon: "fas fa-eye", color: "#3a86ff" },
+                        "paediatrics": { name: "PAEDIATRICS", icon: "fas fa-baby", color: "#ff006e" },
+                        "physiotherapy": { name: "PHYSIOTHERAPY", icon: "fas fa-wheelchair", color: "#3a86ff" },
+                        "physiotherapy-two": { name: "PHYSICAL MEDICINE AND REHABILITATION", icon: "fas fa-wheelchair", color: "#3a86ff" },
+                        "plastic-surgeon": { name: "PLASTIC SURGEON", icon: "fas fa-hand-holding-medical", color: "#fb5607" },
+                        "psychiatry": { name: "PSYCHIATRY", icon: "fas fa-head-side-virus", color: "#8338ec" },
+                        "pulmonology": { name: "PULMONOLOGY", icon: "fas fa-lungs", color: "#06d6a0" },
+                        "radiology": { name: "RADIOLOGY", icon: "fas fa-x-ray", color: "#ffbe0b" },
+                        "urology": { name: "UROLOGY", icon: "fas fa-procedures", color: "#fb5607" }
+                    };
+
+                    let currentFilter = "all";
+                    let currentSearch = "";
+
+                    // Initialize
+                    document.addEventListener('DOMContentLoaded', function () {
+                        console.log("Doctors page loaded");
+                        createParticles();
+                        renderDoctors();
+                        setupEventListeners();
+                    });
+
+                    // Create medical icon particles
+                    function createParticles() {
+                        const particlesContainer = document.getElementById('particles');
+                        if (!particlesContainer) return;
+
+                        const icons = [
+                            'fa-cross', 'fa-heart', 'fa-stethoscope', 'fa-syringe', 'fa-pills',
+                            'fa-heartbeat', 'fa-hospital', 'fa-dna', 'fa-user-md', 'fa-microscope',
+                            'fa-ambulance', 'fa-procedures', 'fa-lungs', 'fa-brain', 'fa-bone',
+                            'fa-hand-holding-medical', 'fa-notes-medical', 'fa-virus-slash'
+                        ];
+                        const colors = ['#d63384', '#4361ee', '#06d6a0', '#ff6d00', '#9d4edd', '#3a86ff', '#ef476f'];
+
+                        for (let i = 0; i < 45; i++) {
+                            const particle = document.createElement('i');
+                            const icon = icons[Math.floor(Math.random() * icons.length)];
+                            particle.className = `fas ${icon} particle`;
+
+                            const size = Math.random() * 28 + 14;
+                            particle.style.fontSize = `${size}px`;
+                            particle.style.left = `${Math.random() * 100}%`;
+                            particle.style.top = `${Math.random() * 200}%`;
+                            particle.style.animation = `float ${Math.random() * 12 + 8}s ease-in-out infinite`;
+                            particle.style.animationDelay = `${Math.random() * 7}s`;
+                            particle.style.color = colors[Math.floor(Math.random() * colors.length)];
+                            particle.style.opacity = (Math.random() * 0.07 + 0.03).toFixed(2);
+
+                            particlesContainer.appendChild(particle);
+                        }
+                    }
+
+                    // Render doctors
+                    function renderDoctors(filteredDoctors = doctorsData) {
+                        const container = document.getElementById('doctorsContainer');
+                        const spinner = document.getElementById('loadingSpinner');
+                        const noResults = document.getElementById('noResults');
+
+                        container.innerHTML = '';
+                        spinner.style.display = 'flex';
+
+                        setTimeout(() => {
+                            spinner.style.display = 'none';
+
+                            if (filteredDoctors.length === 0) {
+                                noResults.style.display = 'block';
+                                updateResultCount(0);
+                                return;
+                            } else {
+                                noResults.style.display = 'none';
+                            }
+
+                            // Group doctors by department
+                            const doctorsByDept = {};
+                            filteredDoctors.forEach(doc => {
+                                if (!doctorsByDept[doc.department]) {
+                                    doctorsByDept[doc.department] = [];
+                                }
+                                doctorsByDept[doc.department].push(doc);
+                            });
+
+                            // Render in fixed department order
+                            Object.keys(departmentInfo).forEach(deptKey => {
+                                if (!doctorsByDept[deptKey]) return;
+
+                                const deptInfo = departmentInfo[deptKey];
+                                const doctors = doctorsByDept[deptKey];
+
+                                const section = document.createElement('section');
+                                section.className = 'department-section container my-5';
+                                section.id = deptKey;
+
+                                section.innerHTML = `
+                    <h2 class="section-title">
+                        <i class="${deptInfo.icon} me-3"></i>${deptInfo.name}
+                    </h2>
+                    <div class="row g-4 justify-content-center" id="dept-${deptKey}"></div>
+                `;
+
+                                container.appendChild(section);
+
+                                const row = document.getElementById(`dept-${deptKey}`);
+
+                                doctors.forEach(doctor => {
+                                    const col = document.createElement('div');
+                                    col.className = 'col-lg-4 col-md-6';
+
+                                    const commaIdx = doctor.name.indexOf(', ');
+                                    const drName = commaIdx !== -1 ? doctor.name.substring(0, commaIdx) : doctor.name;
+                                    const drQual = commaIdx !== -1 ? doctor.name.substring(commaIdx + 2) : '';
+
+                                    col.innerHTML = `
+                        <div class="doctor-card">
+                            <div class="dc-photo-wrap">
+                                <img src="${doctor.img}" class="dc-photo"
+                                     onerror="this.src='assets/images/doc3.avif'">
+                            </div>
+                            <div class="dc-body">
+                                <h5 class="dc-name">${drName}</h5>
+                                ${drQual ? `<div class="dc-qual">${drQual}</div>` : ''}
+                                <div class="dc-specialty">${doctor.specialty}</div>
+                                <a href="https://wa.me/918056555330?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20with%20${encodeURIComponent(drName)}%20at%20The%20Posh%20Hospital.%20Please%20let%20me%20know%20the%20available%20date%20and%20time."
+                                   class="dc-btn" target="_blank">
+                                    Book Appointment
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                                    row.appendChild(col);
+                                });
+                            });
+
+                            updateResultCount(filteredDoctors.length);
+
+                        }, 250);
+                    }
+
+                    // Filter doctors
+                    function filterDoctors() {
+                        console.log("Filtering doctors...");
+                        console.log("Search term:", currentSearch);
+                        console.log("Department filter:", currentFilter);
+
+                        let results = doctorsData;
+
+                        // Apply search filter
+                        if (currentSearch && currentSearch.trim() !== '') {
+                            const searchTerm = currentSearch.toLowerCase().trim();
+                            console.log("Searching for:", searchTerm);
+
+                            results = results.filter(doctor => {
+                                return doctor.name.toLowerCase().includes(searchTerm) ||
+                                    doctor.specialty.toLowerCase().includes(searchTerm) ||
+                                    departmentInfo[doctor.department].name.toLowerCase().includes(searchTerm);
+                            });
+
+                            console.log("Found after search:", results.length, "doctors");
+                        }
+
+                        // Apply department filter
+                        if (currentFilter && currentFilter !== 'all') {
+                            results = results.filter(doctor => doctor.department === currentFilter);
+                            console.log("Found after department filter:", results.length, "doctors");
+                        }
+
+                        renderDoctors(results);
+                    }
+
+                    // Setup event listeners
+                    function setupEventListeners() {
+                        console.log("Setting up event listeners...");
+
+                        // SEARCH INPUT - FIXED VERSION
+                        const searchInput = document.getElementById('searchInput');
+                        console.log("Search input element:", searchInput);
+
+                        if (searchInput) {
+                            // Clear any existing event listeners first
+                            const newSearchInput = searchInput.cloneNode(true);
+                            searchInput.parentNode.replaceChild(newSearchInput, searchInput);
+
+                            // Add new event listener
+                            (document.getElementById('searchInput') || { addEventListener: function () {} }).addEventListener('input', function (e) {
+                                currentSearch = this.value;
+                                console.log("Search input changed to:", currentSearch);
+                                filterDoctors();
+                            });
+
+                            // Also add keyup for immediate feedback
+                            (document.getElementById('searchInput') || { addEventListener: function () {} }).addEventListener('keyup', function (e) {
+                                currentSearch = this.value;
+                                console.log("Search keyup:", currentSearch);
+                                filterDoctors();
+                            });
+                        }
+
+                        // Department buttons
+                        document.querySelectorAll('.dept-btn').forEach(btn => {
+                            btn.addEventListener('click', function () {
+                                // Remove active from all buttons
+                                document.querySelectorAll('.dept-btn').forEach(b => b.classList.remove('active'));
+                                this.classList.add('active');
+
+                                // Update filter
+                                currentFilter = this.dataset.dept;
+                                console.log("Department selected:", currentFilter);
+                                filterDoctors();
+                            });
+                        });
+
+                        // Reset button
+                        (document.getElementById('resetBtn') || { addEventListener: function () {} }).addEventListener('click', function () {
+                            resetFilters();
+                        });
+
+                        // Reset from no results button
+                        (document.getElementById('resetFromNoResults') || { addEventListener: function () {} }).addEventListener('click', function () {
+                            resetFilters();
+                        });
+                    }
+
+                    // Reset filters
+                    function resetFilters() {
+                        console.log("Resetting filters");
+
+                        currentFilter = 'all';
+                        currentSearch = '';
+
+                        // Reset search input
+                        const searchInput = document.getElementById('searchInput');
+                        if (searchInput) searchInput.value = '';
+
+                        // Reset department buttons
+                        document.querySelectorAll('.dept-btn').forEach(b => b.classList.remove('active'));
+                        const allBtn = document.querySelector('.dept-btn[data-dept="all"]');
+                        if (allBtn) allBtn.classList.add('active');
+
+                        // Re-render all doctors
+                        renderDoctors();
+
+                        // Scroll to top
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+
+                    // Update result count
+                    function updateResultCount(count) {
+                        const box = document.getElementById('resultCount');
+                        if (!box) return;
+
+                        const icon = box.querySelector('i');
+                        const text = box.querySelector('span');
+
+                        if (currentFilter === 'all' && currentSearch === '') {
+                            text.textContent = `Showing all ${count} specialist doctors`;
+                            icon.className = 'fas fa-user-md';
+                        } else if (currentFilter !== 'all' && currentSearch === '') {
+                            text.textContent = `Showing ${count} doctors in ${departmentInfo[currentFilter].name}`;
+                            icon.className = departmentInfo[currentFilter].icon;
+                        } else {
+                            text.textContent = `Found ${count} doctors matching "${currentSearch}"`;
+                            icon.className = 'fas fa-search';
+                        }
+                    }
+
+
+                </script>
+                <footer>
+                    <div class="footer-container" id="footernav">
+
+                        <!-- About -->
+                        <div class="footer-about">
+                            <h4>ABOUT US</h4>
+                            <p>
+                                Welcome to <strong>THE POSH</strong>. We operate at PONDICHERRY as a private surgical
+                                hospital, and our focus is on delivering quality care and value for money. We play a key
+                                role in improving the health of PONDICHERRY... <a href="about.html">MORE</a>
+                            </p>
+                        </div>
+
+                        <!-- Quick Links -->
+                        <div class="footer-links">
+                            <h4>QUICK LINKS</h4>
+                            <ul>
+                                <li><a href="index.html">HOME</a></li>
+                                <li><a href="about.html">ABOUT US</a></li>
+                                <li><a href="index.html#departmentssection">DEPARTMENTS</a></li>
+                                <li><a href="our-doctors.html">OUR DOCTORS</a></li>
+                                <li><a href="ourteams.html">Our Team</a></li>
+                                <li><a href="healthtips.html">HEALTH TIPS</a></li>
+                                <li><a href="appointment.html">APPOINTMENT</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Contact -->
+                        <div class="footer-contact">
+                            <h4>CONTACT US</h4>
+                            <p>
+                                <span>PONDICHERRY BRANCH:</span><br> 📍 Location: No. 24, First Main Road, Ambal Nagar,
+                                Puducherry – 605009<br> ☎ Tel: 0413-2200017 / 0413-2200018<br> 📱 +91 9677073462 / +91
+                                8056555330
+                            </p>
+                            <p>
+                                <span>THE POSH @ KALPAKKAM:</span><br> 🚑 Emergency & Trauma Day Care Unit<br> ECR Road,
+                                Prabaliyamedu, Pudhupattinam, Thirukazhukundram Taluk,<br> Chengalpattu District –
+                                603102<br> 📱 8925733344 | ☎ 044 2748 8981
+                            </p>
+                            <p>
+                                <span>Email:</span><br>
+                                <a href="mailto:theposhmarketing@gmail.com">theposhmarketing@gmail.com</a><br>
+                                <a href="mailto:theposhhospital@gmail.com">theposhhospital@gmail.com</a>
+                            </p>
+                        </div>
+
+                        <!-- Location -->
+                        <div class="footer-map">
+                            <h4>LOCATION</h4>
+                            <iframe src="https://www.google.com/maps?q=The+Posh+Hospital+Pondicherry&output=embed"
+                                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+
+                        </div>
+                    </div>
+
+                    <!-- Footer Bottom -->
+                    <div class="footer-bottom">
+                        © 2025 by The POSH - Pondy Ortho Speciality Hospital. Proudly created with
+                        <a href="https://www.getitmediasolutions.com/">GETIT MEDIA SOLUTIONS PVT LTD</a>
+                    </div>
+                </footer>
+                <script>
+                    document.addEventListener("click", function (e) {
+
+                        const button = e.target.closest(".appointment-btn");
+                        if (!button) return;
+
+                        // Find the nearest doctor card
+                        const card = button.closest(".doctor-card");
+                        if (!card) return;
+
+                        // Extract doctor name and specialization from existing HTML
+                        const doctorName = card.querySelector("h3")?.innerText.trim();
+                        const specialization = card.querySelector(".specialization")?.innerText.trim();
+
+                        // Your clinic WhatsApp number (with country code)
+                        const phoneNumber = "918056555330"; // CHANGE THIS
+
+                        const message = `Hello,
+I would like to book an appointment.
+
+Doctor: ${doctorName}
+Specialization: ${specialization}
+
+Please share available slots.`;
+
+                        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+                        window.open(whatsappURL, "_blank");
+                    });
+                </script>
+
+                <SCript>// Modify the existing filterDoctors function to include scrolling
+                    function filterDoctors() {
+                        console.log("Filtering doctors...");
+                        console.log("Search term:", currentSearch);
+                        console.log("Department filter:", currentFilter);
+
+                        let results = doctorsData;
+
+                        // Apply search filter
+                        if (currentSearch && currentSearch.trim() !== '') {
+                            const searchTerm = currentSearch.toLowerCase().trim();
+                            console.log("Searching for:", searchTerm);
+
+                            results = results.filter(doctor => {
+                                return doctor.name.toLowerCase().includes(searchTerm) ||
+                                    doctor.specialty.toLowerCase().includes(searchTerm) ||
+                                    departmentInfo[doctor.department].name.toLowerCase().includes(searchTerm);
+                            });
+
+                            console.log("Found after search:", results.length, "doctors");
+                        }
+
+                        // Apply department filter
+                        if (currentFilter && currentFilter !== 'all') {
+                            results = results.filter(doctor => doctor.department === currentFilter);
+                            console.log("Found after department filter:", results.length, "doctors");
+                        }
+
+                        renderDoctors(results);
+
+                        // Scroll to the department section if not "all"
+                        if (currentFilter !== 'all' && results.length > 0) {
+                            // Wait a bit for the DOM to update with the filtered results
+                            setTimeout(() => {
+                                scrollToDepartment(currentFilter);
+                            }, 300);
+                        }
+                    }
+
+                    // Function to smoothly scroll to the department section
+                    function scrollToDepartment(departmentId) {
+                        const section = document.getElementById(departmentId);
+
+                        if (section) {
+                            // Highlight the section with a temporary animation
+                            section.classList.add('section-highlight');
+
+                            // Calculate offset for fixed header (adjust based on your header height)
+                            const headerHeight = 180; // You may need to adjust this value
+                            const elementPosition = section.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+
+                            // Smooth scroll to the section
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+
+                            // Remove highlight after animation
+                            setTimeout(() => {
+                                section.classList.remove('section-highlight');
+                            }, 2000);
+                        }
+                    }
+
+                    // Update the setupEventListeners function to handle scrolling
+                    function setupEventListeners() {
+                        console.log("Setting up event listeners...");
+
+                        // SEARCH INPUT - FIXED VERSION
+                        const searchInput = document.getElementById('searchInput');
+                        console.log("Search input element:", searchInput);
+
+                        if (searchInput) {
+                            // Clear any existing event listeners first
+                            const newSearchInput = searchInput.cloneNode(true);
+                            searchInput.parentNode.replaceChild(newSearchInput, searchInput);
+
+                            // Add new event listener
+                            (document.getElementById('searchInput') || { addEventListener: function () {} }).addEventListener('input', function (e) {
+                                currentSearch = this.value;
+                                console.log("Search input changed to:", currentSearch);
+                                filterDoctors();
+                            });
+
+                            // Also add keyup for immediate feedback
+                            (document.getElementById('searchInput') || { addEventListener: function () {} }).addEventListener('keyup', function (e) {
+                                currentSearch = this.value;
+                                console.log("Search keyup:", currentSearch);
+                                filterDoctors();
+                            });
+                        }
+
+                        // Department buttons
+                        document.querySelectorAll('.dept-btn').forEach(btn => {
+                            btn.addEventListener('click', function () {
+                                // Remove active from all buttons
+                                document.querySelectorAll('.dept-btn').forEach(b => b.classList.remove('active'));
+                                this.classList.add('active');
+
+                                // Update filter
+                                currentFilter = this.dataset.dept;
+                                console.log("Department selected:", currentFilter);
+
+                                // Scroll to the department section if not "all"
+                                if (currentFilter !== 'all') {
+                                    // Check if the section already exists
+                                    const section = document.getElementById(currentFilter);
+                                    if (section) {
+                                        // If section exists, scroll to it first
+                                        scrollToDepartment(currentFilter);
+                                    }
+                                }
+
+                                filterDoctors();
+                            });
+                        });
+
+                        // Reset button
+                        (document.getElementById('resetBtn') || { addEventListener: function () {} }).addEventListener('click', function () {
+                            resetFilters();
+                        });
+
+                        // Reset from no results button
+                        (document.getElementById('resetFromNoResults') || { addEventListener: function () {} }).addEventListener('click', function () {
+                            resetFilters();
+                        });
+                    }</SCript>
+</body>
+</html>

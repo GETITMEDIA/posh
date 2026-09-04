@@ -1,0 +1,1452 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- #keywords -->
+    <meta
+      name="keywords"
+      content="Posh, Fertility clinic, IVF treatment, gynecology services, maternity care, pregnancy support, surrogacy, egg donation, pediatric care, women's health, urology treatment Posh HTML Template, tailwind css"
+    />
+    <!-- #description -->
+    <meta
+      name="description"
+      content="Posh is a modern and responsive HTML template designed for IVF, fertility clinics, gynecology, maternity, surrogacy, pediatrics, and urology services. Perfect for healthcare professionals to showcase services with a clean, SEO-friendly design."
+    />
+    <!-- phosphor icons -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/duotone/style.css"
+    />
+    <title>Speciality - The Posh</title>
+  <link rel="icon" type="image/png" href="../assets/images/fav.png" />
+  <link rel="shortcut icon" href="../assets/images/fav.png" />
+  <link href="../assets/css/index.css" rel="stylesheet">
+  <style>/* =====================
+   RESET & BASE
+===================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--posh-font);
+  background: #f6f7fb;
+  color: #222;
+  line-height: 1.7;
+}
+
+/* =====================
+   FIX HEADER OVERLAP
+===================== */
+/* Adjust this value to your navbar height */
+main,
+.page-content {
+  padding-top: 120px;
+}
+
+/* =====================
+   SECTION WRAPPER
+===================== */
+section {
+  
+  margin: 35px auto;
+  padding: 35px 40px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* =====================
+   HEADINGS
+===================== */
+h1 {
+  font-size: 38px;
+  font-weight: 700;
+  color: #c2187a;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 28px;
+  color: #c2187a;
+  margin-bottom: 15px;
+  padding-left: 15px;
+  border-left: 6px solid #c2187a;
+}
+
+h3 {
+  font-size: 20px;
+  color: #6a1b9a;
+  margin-top: 25px;
+}
+
+/* =====================
+   INTRO HEADER
+===================== */
+.article-header {
+  text-align: center;
+  background: linear-gradient(135deg, #c2187a, #8e24aa);
+  color: #fff;
+  padding: 70px 25px;
+  border-radius: 0 0 30px 30px;
+}
+
+.subtitle {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* =====================
+   PARAGRAPHS
+===================== */
+p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+strong {
+  color: #000;
+}
+
+/* =====================
+   LISTS
+===================== */
+
+/* =====================
+   IMAGE GRID
+===================== */
+.image-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 25px;
+}
+
+.image-row img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  background: #fafafa;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-row img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+}
+
+/* =====================
+   STAGE BOXES
+===================== */
+.emergency-surgery h3 {
+  background: #fce4ec;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 5px solid #c2187a;
+}
+
+/* =====================
+   KEY POINTS
+===================== */
+.key-points {
+  background: #fff0f7;
+}
+
+.key-points ul li::marker {
+  color: #c2187a;
+}
+
+/* =====================
+   CONCLUSION
+===================== */
+.conclusion {
+  background: linear-gradient(135deg, #fff, #fce4ec);
+}
+
+.highlight {
+  margin-top: 25px;
+  padding: 22px;
+  background: #c2187a;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 768px) {
+  section {
+    padding: 25px 22px;
+    margin: 25px 15px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  p,
+  ul li {
+    font-size: 15px;
+  }
+}
+
+.image-row {
+  display: flex;
+  gap: 15px;              /* space between images */
+}
+
+.image-row img {
+  width: 200px;           /* same width for all */
+  height: 200px;          /* same height for all */
+  object-fit: cover;      /* prevents distortion */
+  border-radius: 8px;     /* optional */
+}
+.image-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.image-row img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.image-row {
+  display: flex;
+  gap: 15px;
+}
+
+.image-row img {
+  width: 290px;      /* SAME width */
+  height: 250px;     /* SAME height */
+  object-fit: cover; /* prevents stretching */
+}
+.image-row {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center;     /* center vertically */
+  gap: 20px;
+}
+
+.image-row img {
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+}.image-row {
+  display: flex;
+  gap: 15px;
+}
+
+.image-row img {
+  width: 400px;      /* same width */
+  height: 250px;     /* same height */
+  object-fit: cover; /* crop instead of stretch */
+}
+
+/* 📱 Mobile fix */
+@media (max-width: 768px) {
+  .image-row {
+    flex-direction: column; /* stack images */
+  }
+
+  .image-row img {
+    height: 220px; /* slightly taller for mobile */
+  }
+}
+.image-row {
+  display: flex;
+  gap: 15px;              /* space between images */
+}
+
+.image-row img {
+  width: 200px;           /* same width for all */
+  height: 200px;          /* same height for all */
+  object-fit: cover;      /* prevents distortion */
+  border-radius: 8px;     /* optional */
+}
+.image-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.image-row img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.image-row {
+  display: flex;
+  gap: 15px;
+}
+
+.image-row img {
+  width: 290px;      /* SAME width */
+  height: 250px;     /* SAME height */
+  object-fit: cover; /* prevents stretching */
+}
+.image-row {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center;     /* center vertically */
+  gap: 20px;
+}
+
+.image-row img {
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+}.image-row {
+  display: flex;
+  gap: 15px;
+}
+
+.image-row img {
+  width: 400px;      /* same width */
+  height: 250px;     /* same height */
+  object-fit: cover; /* crop instead of stretch */
+}
+
+/* 📱 Mobile fix */
+@media (max-width: 768px) {
+  .image-row {
+    flex-direction: column; /* stack images */
+  }
+
+  .image-row img {
+    height: 220px; /* slightly taller for mobile */
+  }
+}
+
+
+</style>
+
+<link href="../assets/css/header.css" rel="stylesheet">
+  <link href="../assets/css/mobile-header.css" rel="stylesheet"/>
+<style>
+.dept-dropdown {
+  max-height: 320px !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain;
+}
+.dept-dropdown::-webkit-scrollbar { width: 4px; }
+.dept-dropdown::-webkit-scrollbar-track { background: #4b1d6b; }
+.dept-dropdown::-webkit-scrollbar-thumb { background: #f48fb1; border-radius: 4px; }
+</style></head>
+
+  <body>
+  <style>/* ===== DROPDOWN MENU ===== */
+nav ul li {
+  position: relative;
+}
+
+/* hide dropdown */
+nav ul li .dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #59016b;
+  min-width: 220px;
+  display: none;
+  padding: 8px 0;
+  border-radius: 6px;
+  z-index: 9999;
+}
+
+/* dropdown links */
+nav ul li .dropdown li a {
+  display: block;
+  padding: 8px 16px;
+  color: #fff;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+/* hover effects */
+nav ul li .dropdown li a:hover {
+  background-color: #7a3db8;
+  color: #ffd700;
+}
+
+/* show on hover */
+nav ul li.has-dropdown:hover .dropdown {
+  display: block;
+}
+
+/* smooth animation */
+nav ul li .dropdown {
+  animation: fadeDown 0.25s ease;
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}/* =========================
+   MOBILE NAV STYLES
+   ========================= */
+
+#mobilePanel {
+  overflow-y: auto;
+}
+
+/* Links & buttons */
+#mobilePanel a,
+#mobilePanel button {
+  width: 100%;
+  display: block;
+  padding: 12px 0;
+  color: #ffffff;
+  background: none;
+  border: none;
+  text-align: left;
+}
+
+/* Divider line */
+#mobilePanel ul > li {
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+}
+
+/* Dropdown toggle */
+.dropdown-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* + icon */
+.dropdown-toggle span {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate + */
+.dropdown-toggle.active span {
+  transform: rotate(45deg);
+}
+
+/* Dropdown container */
+.mobile-dropdown {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+  margin-left: 12px;
+  padding-left: 10px;
+  border-left: 2px solid rgba(255,255,255,0.2);
+}
+
+/* Open dropdown */
+.mobile-dropdown.open {
+  max-height: 1000px;
+}
+
+/* Dropdown links */
+.mobile-dropdown li a {
+  font-size: 13px;
+  padding: 8px 0;
+  text-transform: none;
+}
+</style>
+       <header class=" top-0 z-[999]">
+
+    <!-- ONE CONTAINER -->
+    <div class="bg-gradient-to-r from-[#4b1d6b] to-[#7a3db8] text-white">
+
+      <!-- ROW 1 : TOP INFO -->
+      <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-4 text-sm"
+        style="background-color: #8e09a8c2;">
+        <!-- From Uiverse.io by jolprince_5263 -->
+        <div class="card">
+          <ul>
+            <li>
+              <a class="social facebook" href="https://www.facebook.com/theposhin/reels/" target="_blank"
+                rel="noopener" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+            </li>
+
+            <li>
+              <a class="social instagram" href="https://www.instagram.com/theposh_hospital/" target="_blank"
+                rel="noopener" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </li>
+
+            <li>
+              <a class="social youtube" href="https://www.youtube.com/channel/UCj_xz0cJBiy6tmlePNbaadg" target="_blank"
+                rel="noopener" aria-label="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </li>
+
+            <li>
+              <a class="social whatsapp" href="https://wa.me/918056555330" target="_blank" rel="noopener"
+                aria-label="WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Left -->
+        <div class="flex items-center gap-4">
+          <img decoding="async" src="../assets/images/posh/247-emergency.avif" alt="24/7 Emergency Services" class="emergency-icon">
+        </div>
+
+        <!-- Center -->
+        <div class="text-center font-semibold header-call-now">
+          Call Now: 0413-2200018 / 0413-2200018 / +91 96770 73462 / +91 80565 55330
+        </div>
+
+        <!-- Right -->
+        <div class="flex items-center gap-4">
+          <button id="menuBtn" class="lg:hidden text-white text-3xl font-bold focus:outline-none" type="button"
+            aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+            &#9776;
+          </button>
+          <span class="flex items-center gap-2 font-semibold">
+            <span class="header-ambulance-wrap">
+              <img decoding="async" src="../assets/images/ambulance.gif" alt="Ambulance Service"
+                class="h-6 w-auto object-contain header-ambulance">
+            </span>
+            <span class="hidden sm:inline">Ambulance Service</span>
+          </span>
+
+          <a href="../appointment.html" target="_blank" rel="noopener">
+            <button class="appt-button" type="button">
+              <div class="ab-outline"></div>
+              <div class="ab-state ab-state--default">
+                <div class="ab-icon">
+                  <svg style="color:rgb(255,0,170);" width="1em" height="1em" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <g style="filter:url(#ab-shadow)">
+                      <path
+                        d="M14.2199 21.63C13.0399 21.63 11.3699 20.8 10.0499 16.83L9.32988 14.67L7.16988 13.95C3.20988 12.63 2.37988 10.96 2.37988 9.78001C2.37988 8.61001 3.20988 6.93001 7.16988 5.60001L15.6599 2.77001C17.7799 2.06001 19.5499 2.27001 20.6399 3.35001C21.7299 4.43001 21.9399 6.21001 21.2299 8.33001L18.3999 16.82C17.0699 20.8 15.3999 21.63 14.2199 21.63Z"
+                        fill="currentColor"></path>
+                      <path
+                        d="M10.11 14.4C9.92005 14.4 9.73005 14.33 9.58005 14.18C9.29005 13.89 9.29005 13.41 9.58005 13.12L13.16 9.53C13.45 9.24 13.93 9.24 14.22 9.53C14.51 9.82 14.51 10.3 14.22 10.59L10.64 14.18C10.5 14.33 10.3 14.4 10.11 14.4Z"
+                        fill="currentColor"></path>
+                    </g>
+                    <defs>
+                      <filter id="ab-shadow">
+                        <feDropShadow dx="0" dy="1" stdDeviation="0.6" flood-opacity="0.5"></feDropShadow>
+                      </filter>
+                    </defs>
+                  </svg>
+                </div>
+                <p>
+                  <span style="--i:0">A</span><span style="--i:1">P</span><span style="--i:2">P</span><span
+                    style="--i:3">O</span><span style="--i:4">I</span><span style="--i:5">N</span><span
+                    style="--i:6">T</span><span style="--i:7">M</span><span style="--i:8">E</span><span
+                    style="--i:9">N</span><span style="--i:10">T</span>
+                </p>
+              </div>
+              <div class="ab-state ab-state--sent">
+                <div class="ab-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="1em" width="1em"
+                    stroke-width="0.5px" stroke="black">
+                    <path fill="currentColor"
+                      d="M12 22.75C6.07 22.75 1.25 17.93 1.25 12C1.25 6.07 6.07 1.25 12 1.25C17.93 1.25 22.75 6.07 22.75 12C22.75 17.93 17.93 22.75 12 22.75ZM12 2.75C6.9 2.75 2.75 6.9 2.75 12C2.75 17.1 6.9 21.25 12 21.25C17.1 21.25 21.25 17.1 21.25 12C21.25 6.9 17.1 2.75 12 2.75Z">
+                    </path>
+                    <path fill="currentColor"
+                      d="M10.5795 15.5801C10.3795 15.5801 10.1895 15.5001 10.0495 15.3601L7.21945 12.5301C6.92945 12.2401 6.92945 11.7601 7.21945 11.4701C7.50945 11.1801 7.98945 11.1801 8.27945 11.4701L10.5795 13.7701L15.7195 8.6301C16.0095 8.3401 16.4895 8.3401 16.7795 8.6301C17.0695 8.9201 17.0695 9.4001 16.7795 9.6901L11.1095 15.3601C10.9695 15.5001 10.7795 15.5801 10.5795 15.5801Z">
+                    </path>
+                  </svg>
+                </div>
+                <p><span style="--i:5">S</span><span style="--i:6">e</span><span style="--i:7">n</span><span
+                    style="--i:8">t</span></p>
+              </div>
+            </button>
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- ROW 2 : BRANDING -->
+      <div class="bg-white text-center py-6 px-4">
+
+        <div class="logo-header mx-auto">
+          <!-- Left Logo -->
+          <a href="../index.html">
+            <img decoding="async" src="../assets/images/logo/logo.png" class="h-16" alt="The POSH Hospital logo">
+          </a>
+
+          <!-- Center Text -->
+          <div>
+            <h1 class="text-pink-600 text-3xl font-extrabold tracking-wide">
+              The POSH - Pondy Ortho Speciality Hospital Pvt Ltd
+            </h1>
+          </div>
+
+          <!-- Right Logo -->
+          <img decoding="async" src="../assets/images/posh/unnamed.png" class="h-16" alt="NABH accreditation">
+
+        </div>
+
+      </div>
+
+
+      <!-- ROW 3 : NAV MENU -->
+      <nav class="bg-[#5b2d86] hidden lg:block" style="background-color:#59016b;" aria-label="Main navigation">
+        <ul class="max-w-7xl mx-auto px-4 flex flex-wrap justify-center py-3 text-white font-semibold uppercase"
+          style="font-size:12.5px; gap:18px;">
+
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About Us</a></li>
+          <li class="has-dropdown">
+            <a href="../index.html#departmentssection">Departments</a>
+            <ul class="dropdown dept-dropdown">
+              <li><a href="../departments/orthopedics-spine-care.html">Orthopedics &amp; Spine Care</a></li>
+              <li><a href="../departments/anaesthesiology.html">Anaesthesiology</a></li>
+              <li><a href="../departments/cardiology.html">Cardiology</a></li>
+              <li><a href="../departments/cardiothoracic-vascular.html">Cardiothoracic &amp; Vascular</a></li>
+              <li><a href="../departments/dental.html">Dental</a></li>
+              <li><a href="../departments/dermatology.html">Dermatology &amp; Cosmetology</a></li>
+              <li><a href="../departments/endocrinology.html">Endocrinology</a></li>
+              <li><a href="../departments/ent.html">ENT</a></li>
+              <li><a href="../departments/gastroenterology.html">Gastroenterology</a></li>
+              <li><a href="../departments/general-medicine.html">General Medicine</a></li>
+              <li><a href="../departments/general-surgery.html">General Surgery</a></li>
+              <li><a href="../departments/hepatology.html">Hepatology</a></li>
+              <li><a href="../departments/nephrology.html">Nephrology</a></li>
+              <li><a href="../departments/neurology.html">Neurology</a></li>
+              <li><a href="../departments/neurosurgery.html">Neurosurgery</a></li>
+              <li><a href="../departments/obstetrics-gynaecology.html">Obstetrics &amp; Gynaecology</a></li>
+              <li><a href="../departments/oncology.html">Oncology &amp; Surgical Oncology</a></li>
+              <li><a href="../departments/ophthalmology.html">Ophthalmology</a></li>
+              <li><a href="../departments/paediatrics.html">Paediatrics</a></li>
+              <li><a href="../departments/physical-medicine-rehabilitation.html">Physical Medicine and Rehabilitation</a></li>
+              <li><a href="../departments/physiotherapy.html">Physiotherapy</a></li>
+              <li><a href="../departments/plastic-surgery.html">Plastic Surgery</a></li>
+              <li><a href="../departments/psychiatry.html">Psychiatry</a></li>
+              <li><a href="../departments/pulmonology.html">Pulmonology &amp; Chest Medicine</a></li>
+              <li><a href="../departments/radiology.html">Radiology</a></li>
+              <li><a href="../departments/urology.html">Urology</a></li>
+            </ul>
+          </li>
+          <li><a href="../our-doctors.html">Our Doctors</a></li>
+          <li><a href="../ourteams.html">Our Team</a></li>
+          <li><a href="../index.html#clientsgrid">Happy Patients</a></li>
+          <li><a href="../article.html">Articles</a></li>
+          <li><a href="../healthtips.html">Health Tips</a></li>
+
+          <!-- GALLERY -->
+          <li class="has-dropdown">
+            <a href="../gallery/news.html">Gallery</a>
+            <ul class="dropdown">
+              <li><a href="../gallery/news.html">News</a></li>
+              <li><a href="../gallery/bones-and-joints-week.html">Bones &amp; Joints Week Celebration</a></li>
+              <li><a href="../gallery/medical-camps.html">Medical Camps</a></li>
+              <li><a href="../gallery/education-and-training.html">Education &amp; Training</a></li>
+              <li><a href="../gallery/nurses-day.html">Nurses Day Celebration</a></li>
+              <li><a href="../gallery/radiographer-day.html">Radiographer Day Celebration</a></li>
+              <li><a href="../gallery/independence-day.html">Independence Day</a></li>
+              <li><a href="../gallery/poacon-event.html">Poacon Event</a></li>
+              <li><a href="../gallery/conference-hall-inauguration.html">Conference Hall Inauguration</a></li>
+              <li><a href="../gallery/anniversary-celebration.html">Anniversary Celebration</a></li>
+              <li><a href="../gallery/annual-sports-meet.html">Annual Sports Meet</a></li>
+            </ul>
+          </li>
+
+          <!-- FACILITIES -->
+          <li class="has-dropdown">
+            <a href="../facilities.html">Facilities</a>
+            <ul class="dropdown">
+              <li><a href="../facilities/insurance.html">Insurance</a></li>
+              <li><a href="../facilities/speciality.html">Speciality</a></li>
+              <li><a href="../facilities/health-packages.html">Health Packages</a></li>
+            </ul>
+          </li>
+
+          <li><a href="../achieve.html">Achievements</a></li>
+          <li><a href="../contact.html">Contact Us</a></li>
+
+        </ul>
+      </nav>
+
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div id="mobileMenu" class="fixed inset-0 bg-black/60 z-[9999] hidden">
+      <div id="mobilePanel"
+        class="bg-[#59016b] w-[280px] h-full p-5 text-white transform -translate-x-full transition-transform duration-300">
+
+        <!-- HEADER -->
+        <div class="flex justify-between items-center mb-6">
+          <img decoding="async" src="../assets/images/posh/logoo.avif" class="h-10" alt="The POSH Hospital logo">
+          <button id="closeMenu" class="text-3xl font-bold" type="button" aria-label="Close menu">&times;</button>
+        </div>
+
+        <!-- MOBILE NAV LINKS -->
+        <ul class="flex flex-col text-sm font-semibold uppercase">
+
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About Us</a></li>
+          <li>
+            <button class="dropdown-toggle" type="button" onclick="toggleDropdown('departmentsMob', this)">Departments
+              <span>+</span></button>
+            <ul id="departmentsMob" class="mobile-dropdown">
+              <li><a href="../departments/orthopedics-spine-care.html">Orthopedics &amp; Spine Care</a></li>
+              <li><a href="../departments/anaesthesiology.html">Anaesthesiology</a></li>
+              <li><a href="../departments/cardiology.html">Cardiology</a></li>
+              <li><a href="../departments/cardiothoracic-vascular.html">Cardiothoracic &amp; Vascular</a></li>
+              <li><a href="../departments/dental.html">Dental</a></li>
+              <li><a href="../departments/dermatology.html">Dermatology &amp; Cosmetology</a></li>
+              <li><a href="../departments/endocrinology.html">Endocrinology</a></li>
+              <li><a href="../departments/ent.html">ENT</a></li>
+              <li><a href="../departments/gastroenterology.html">Gastroenterology</a></li>
+              <li><a href="../departments/general-medicine.html">General Medicine</a></li>
+              <li><a href="../departments/general-surgery.html">General Surgery</a></li>
+              <li><a href="../departments/hepatology.html">Hepatology</a></li>
+              <li><a href="../departments/nephrology.html">Nephrology</a></li>
+              <li><a href="../departments/neurology.html">Neurology</a></li>
+              <li><a href="../departments/neurosurgery.html">Neurosurgery</a></li>
+              <li><a href="../departments/obstetrics-gynaecology.html">Obstetrics &amp; Gynaecology</a></li>
+              <li><a href="../departments/oncology.html">Oncology &amp; Surgical Oncology</a></li>
+              <li><a href="../departments/ophthalmology.html">Ophthalmology</a></li>
+              <li><a href="../departments/paediatrics.html">Paediatrics</a></li>
+              <li><a href="../departments/physical-medicine-rehabilitation.html">Physical Medicine and Rehabilitation</a></li>
+              <li><a href="../departments/physiotherapy.html">Physiotherapy</a></li>
+              <li><a href="../departments/plastic-surgery.html">Plastic Surgery</a></li>
+              <li><a href="../departments/psychiatry.html">Psychiatry</a></li>
+              <li><a href="../departments/pulmonology.html">Pulmonology &amp; Chest Medicine</a></li>
+              <li><a href="../departments/radiology.html">Radiology</a></li>
+              <li><a href="../departments/urology.html">Urology</a></li>
+            </ul>
+          </li>
+          <li><a href="../our-doctors.html">Our Doctors</a></li>
+          <li><a href="../ourteams.html">Our Team</a></li>
+          <li><a href="../index.html#clientsgrid">Happy Patients</a></li>
+          <li><a href="../article.html">Articles</a></li>
+          <li><a href="../healthtips.html">Health Tips</a></li>
+
+          <!-- GALLERY -->
+          <li>
+            <button class="dropdown-toggle" type="button" onclick="toggleDropdown('galleryMob', this)">
+              Gallery <span>+</span>
+            </button>
+            <ul id="galleryMob" class="mobile-dropdown">
+              <li><a href="../gallery/news.html">News</a></li>
+              <li><a href="../gallery/bones-and-joints-week.html">Bones &amp; Joints Week Celebration</a></li>
+              <li><a href="../gallery/medical-camps.html">Medical Camps</a></li>
+              <li><a href="../gallery/education-and-training.html">Education &amp; Training</a></li>
+              <li><a href="../gallery/nurses-day.html">Nurses Day Celebration</a></li>
+              <li><a href="../gallery/radiographer-day.html">Radiographer Day Celebration</a></li>
+              <li><a href="../gallery/independence-day.html">Independence Day</a></li>
+              <li><a href="../gallery/poacon-event.html">Poacon Event</a></li>
+              <li><a href="../gallery/conference-hall-inauguration.html">Conference Hall Inauguration</a></li>
+              <li><a href="../gallery/anniversary-celebration.html">Anniversary Celebration</a></li>
+              <li><a href="../gallery/annual-sports-meet.html">Annual Sports Meet</a></li>
+            </ul>
+          </li>
+
+          <!-- FACILITIES -->
+          <li>
+            <button class="dropdown-toggle" type="button" onclick="toggleDropdown('facilitiesMob', this)">
+              Facilities <span>+</span>
+            </button>
+            <ul id="facilitiesMob" class="mobile-dropdown">
+              <li><a href="../facilities/insurance.html">Insurance</a></li>
+              <li><a href="../facilities/speciality.html">Speciality</a></li>
+              <li><a href="../facilities/health-packages.html">Health Packages</a></li>
+            </ul>
+          </li>
+
+          <li><a href="../achieve.html">Achievements</a></li>
+          <li><a href="../contact.html">Contact Us</a></li>
+
+        </ul>
+      </div>
+    </div>
+
+  </header>
+    
+
+
+
+
+
+<!DOCTYPE html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Posh - Our Facilities</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #1a6bb0;
+            --secondary-blue: #0d4d8a;
+            --accent-teal: #2a9d8f;
+            --accent-yellow: #ffd166;
+            --light-gray: #f8f9fa;
+            --dark-gray: #333;
+        }
+        
+        
+        body {
+            font-family: var(--posh-font);
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--light-gray);
+            overflow-x: hidden;
+        }
+        
+        .facilities-full {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Intro Section */
+        .facilities-intro {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 60px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .facilities-intro h1 {
+            font-family: var(--posh-font);
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .facilities-intro p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+        }
+        
+        .facilities-intro strong {
+            color: var(--accent-yellow);
+        }
+        
+        /* Grid Layout */
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+        
+        .facility-block {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        
+        /* Scroll Animation Classes */
+        .scroll-animate {
+            animation: fadeUp 0.8s ease forwards;
+        }
+        
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .facility-block.highlight {
+            background: linear-gradient(135deg, var(--accent-teal) 0%, #1d7873 100%);
+            color: white;
+        }
+        
+        .facility-block.highlight h2 {
+            color: white;
+            border-bottom-color: var(--accent-yellow);
+        }
+        
+        .facility-block h2 {
+            font-family: var(--posh-font);
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--primary-blue);
+            display: inline-block;
+        }
+        
+        .facility-block ul {
+            list-style-type: none;
+        }
+        
+        .facility-block li {
+            padding: 12px 0;
+            border-bottom: 1px dashed #e0e0e0;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .facility-block.highlight li {
+            border-bottom-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .facility-block li:last-child {
+            border-bottom: none;
+        }
+        
+        .facility-block li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent-teal);
+        }
+        
+        .facility-block.highlight li::before {
+            color: var(--accent-yellow);
+        }
+        
+        /* Image Grid */
+        .facility-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+            margin-bottom: 80px;
+        }
+        
+        .facility-images > div {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 280px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: scale(0.9);
+        }
+        
+        .image-scroll {
+            animation: scaleIn 0.8s ease forwards;
+        }
+        
+        @keyframes scaleIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .facility-images img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .facility-images > div:hover img {
+            transform: scale(1.1);
+        }
+        
+        .facility-images span {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 107, 176, 0.85);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .facility-images > div:hover span {
+            transform: translateY(0);
+        }
+        
+        /* Staggered Animation Delays */
+        .facility-block:nth-child(1) { animation-delay: 0.1s; }
+        .facility-block:nth-child(2) { animation-delay: 0.2s; }
+        .facility-block:nth-child(3) { animation-delay: 0.3s; }
+        .facility-block:nth-child(4) { animation-delay: 0.4s; }
+        
+        .facility-images > div:nth-child(1) { animation-delay: 0.5s; }
+        .facility-images > div:nth-child(2) { animation-delay: 0.6s; }
+        .facility-images > div:nth-child(3) { animation-delay: 0.7s; }
+        .facility-images > div:nth-child(4) { animation-delay: 0.8s; }
+        
+        /* Icons */
+        .facility-block h2 i {
+            margin-right: 10px;
+            font-size: 1.4rem;
+        }
+        
+        /* Footer */
+        .footer-note {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+            margin-top: 40px;
+            animation: fadeIn 1.5s ease-out;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .facilities-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .facilities-intro {
+                padding: 40px 15px;
+            }
+            
+            .facilities-intro h1 {
+                font-size: 2.5rem;
+            }
+            
+            .facilities-intro p {
+                font-size: 1.1rem;
+            }
+            
+            .facilities-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .facility-images {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .facility-images {
+                grid-template-columns: 1fr;
+            }
+            
+            .facilities-intro h1 {
+                font-size: 2rem;
+            }
+            
+            .facility-block {
+                padding: 20px;
+            }
+            
+            .facility-block h2 {
+                font-size: 1.4rem;
+            }
+        }
+        
+        /* Hover Effects */
+        .facility-block:not(.highlight):hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .facility-block.highlight:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(42, 157, 143, 0.2);
+        }
+        
+        /* Scroll Progress Indicator */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+        }
+        
+        .scroll-progress-bar {
+            height: 100%;
+            background: linear-gradient(to right, var(--accent-teal), var(--primary-blue));
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary-blue);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--secondary-blue);
+            transform: translateY(-5px);
+        }
+    </style>
+<link href="../assets/css/header.css" rel="stylesheet">
+  <link href="../assets/css/mobile-header.css" rel="stylesheet"/>
+  <link href="../assets/css/site-header.css" rel="stylesheet">
+  <link href="../assets/css/site-typography.css" rel="stylesheet">
+  <script defer src="../assets/javascript/site-header.js"></script>
+<style>
+.dept-dropdown {
+  max-height: 320px !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain;
+}
+.dept-dropdown::-webkit-scrollbar { width: 4px; }
+.dept-dropdown::-webkit-scrollbar-track { background: #4b1d6b; }
+.dept-dropdown::-webkit-scrollbar-thumb { background: #f48fb1; border-radius: 4px; }
+</style>    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar" id="scrollBar"></div>
+    </div>
+    
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <section class="facilities-full">
+        <!-- INTRO -->
+        <div class="facilities-intro">
+            <h1><i class="fas fa-hospital"></i> Our Facilities</h1>
+            <p>
+                At <strong>The Posh – Pondy Ortho Specialty Hospital Pvt. Ltd.</strong>, we are
+                committed to delivering quality care with advanced medical infrastructure
+                and compassionate service. Our hospital is equipped with modern facilities
+                to ensure accurate diagnosis, effective treatment, and patient comfort.
+            </p>
+        </div>
+
+        <!-- GRID CONTENT -->
+        <div class="facilities-grid">
+            <!-- COLUMN 1 -->
+            <div class="facility-block">
+                <h2><i class="fas fa-x-ray"></i> Diagnostic & Imaging Services</h2>
+                <ul>
+                    <li>MRI Scan</li>
+                    <li>CT Scan</li>
+                    <li>DEXA Scan (Bone Density Test)</li>
+                    <li>Digital X-ray & Portable X-ray</li>
+                    <li>Ultrasound & Colour Doppler</li>
+                    <li>2D Echocardiogram</li>
+                    <li>Antenatal Sonogram</li>
+                    <li>Fully Automated Laboratory</li>
+                </ul>
+            </div>
+
+            <!-- COLUMN 2 -->
+            <div class="facility-block highlight">
+                <h2><i class="fas fa-award"></i> Why Choose Us?</h2>
+                <ul>
+                    <li>NABH Entry-Level Accredited</li>
+                    <li>Specialist Doctors Across 25+ Departments</li>
+                    <li>Patient-Centric Services</li>
+                    <li>Affordable Packages</li>
+                    <li>Friendly and Trained Medical Staff</li>
+                </ul>
+            </div>
+
+            <!-- COLUMN 3 -->
+            <div class="facility-block">
+                <h2><i class="fas fa-hands-helping"></i> Patient Care & Support</h2>
+                <ul>
+                    <li>24/7 Emergency and Trauma Care</li>
+                    <li>Ambulance Services</li>
+                    <li>Modular Operation Theatres</li>
+                    <li>Deluxe Rooms</li>
+                    <li>Single AC and Non-AC Rooms</li>
+                    <li>General Ward</li>
+                    <li>Preventive Health Check-up Packages</li>
+                    <li>Home Blood Sample Collection</li>
+                    <li>Home Delivery of Medicines</li>
+                    <li>Pharmacy (24/7)</li>
+                </ul>
+            </div>
+
+            <!-- COLUMN 4 -->
+            <div class="facility-block">
+                <h2><i class="fas fa-dumbbell"></i> Advanced Therapies & Rehabilitation</h2>
+                <ul>
+                    <li>Spinal Decompression Therapy</li>
+                    <li>Physiotherapy and Rehabilitation Services with Advanced Technology</li>
+                </ul>
+
+                <h2 style="margin-top:30px;"><i class="fas fa-shield-alt"></i> Hygiene & Safety</h2>
+                <ul>
+                    <li>Biomedical Waste Management</li>
+                    <li>Infection Control Protocols</li>
+                    <li>Regular Sanitization of Premises</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- IMAGE GRID -->
+        <div class="facility-images">
+            <div>
+                <img decoding="async" src="../assets/images/dexa.avif" alt="DEXA Scan">
+                <span>DEXA Scan</span>
+            </div>
+            <div>
+                <img decoding="async" src="../assets/images/ci.avif" alt="DEXA Scan">
+                <span>MRI Scan</span>
+            </div>
+            <div>
+                <img loading="lazy" decoding="async" src="../assets/images/mri.avif" alt="DEXA Scan">
+                <span>CT Scan</span>
+            </div>
+            <div>
+                <img loading="lazy" decoding="async" src="../assets/images/robotic.avif" alt="DEXA Scan">
+                <span>Robotic Spinal Decompression Therapy</span>
+            </div>
+        </div>
+        
+        <div class="footer-note">
+            <p><i class="fas fa-heartbeat" style="color: #e63946;"></i> Committed to your health and wellbeing | The Posh – Pondy Ortho Specialty Hospital Pvt. Ltd.</p>
+        </div>
+    </section>
+
+    <script>
+        // Simple scroll animation function
+        function checkScroll() {
+            const blocks = document.querySelectorAll('.facility-block');
+            const images = document.querySelectorAll('.facility-images > div');
+            
+            // Calculate trigger point (80% from top of viewport)
+            const triggerPoint = window.innerHeight * 0.8;
+            
+            blocks.forEach(block => {
+                const blockTop = block.getBoundingClientRect().top;
+                
+                if (blockTop < triggerPoint) {
+                    block.classList.add('scroll-animate');
+                }
+            });
+            
+            images.forEach(image => {
+                const imageTop = image.getBoundingClientRect().top;
+                
+                if (imageTop < triggerPoint) {
+                    image.classList.add('image-scroll');
+                }
+            });
+        }
+        
+        // Scroll progress indicator
+        function updateScrollProgress() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("scrollBar").style.width = scrolled + "%";
+            
+            // Show/hide back to top button
+            const backToTop = document.getElementById("backToTop");
+            if (winScroll > 300) {
+                backToTop.classList.add("show");
+            } else {
+                backToTop.classList.remove("show");
+            }
+        }
+        
+        // Back to top functionality
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Initialize animations on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check scroll position on load
+            checkScroll();
+            
+            // Add scroll event listeners
+            window.addEventListener('scroll', function() {
+                checkScroll();
+                updateScrollProgress();
+            });
+            
+            // Back to top button event
+            document.getElementById('backToTop').addEventListener('click', scrollToTop);
+            
+            // Add hover effects for facility blocks
+            const facilityBlocks = document.querySelectorAll('.facility-block');
+            facilityBlocks.forEach(block => {
+                // Remove initial transform styles when animation completes
+                block.addEventListener('animationend', function() {
+                    if (this.classList.contains('scroll-animate')) {
+                        this.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+            
+            // Preload images for smoother experience
+            const imageUrls = [
+                'https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+                'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+                'https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+                'https://images.unsplash.com/photo-158028165866-1db7726c9f9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80'
+            ];
+            
+            // Preload images in background
+            imageUrls.forEach(url => {
+                const img = new Image();
+                img.src = url;
+            });
+        });
+        
+        // Fallback for older browsers
+        if (!window.requestAnimationFrame) {
+            window.requestAnimationFrame = function(callback) {
+                return setTimeout(callback, 1000/60);
+            };
+        }
+    </script>
+       <footer>
+            <div class="footer-container" id="footernav">
+
+                <!-- About -->
+                <div class="footer-about">
+                    <h4>ABOUT US</h4>
+                    <p>
+                        Welcome to <strong>THE POSH</strong>. We operate at PONDICHERRY as a private surgical hospital, and our focus is on delivering quality care and value for money. We play a key role in improving the health of PONDICHERRY... <a href="../about.html">MORE</a>
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-links">
+                    <h4>QUICK LINKS</h4>
+                    <ul>
+                        <li><a href="../index.html">HOME</a></li>
+                        <li><a href="../about.html">ABOUT US</a></li>
+                        <li><a href="../index.html#departmentssection">DEPARTMENTS</a></li>
+                        <li><a href="../our-doctors.html">OUR DOCTORS</a></li>
+      <li><a href="../ourteams.html">Our Team</a></li>
+                        <li><a href="../healthtips.html">HEALTH TIPS</a></li>
+                        <li><a href="../appointment.html">APPOINTMENT</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-contact">
+                    <h4>CONTACT US</h4>
+                    <p>
+                        <span>PONDICHERRY BRANCH:</span><br> 📍 Location: No. 24, First Main Road, Ambal Nagar, Puducherry – 605009<br> ☎ Tel: 0413-2200017 / 0413-2200018<br> 📱 +91 9677073462 / +91 8056555330
+                    </p>
+                    <p>
+                        <span>THE POSH @ KALPAKKAM:</span><br> 🚑 Emergency & Trauma Day Care Unit<br> ECR Road, Prabaliyamedu, Pudhupattinam, Thirukazhukundram Taluk,<br> Chengalpattu District – 603102<br> 📱 8925733344 | ☎ 044 2748 8981
+                    </p>
+                    <p>
+                        <span>Email:</span><br>
+                        <a href="mailto:theposhmarketing@gmail.com">theposhmarketing@gmail.com</a><br>
+                        <a href="mailto:theposhhospital@gmail.com">theposhhospital@gmail.com</a>
+                    </p>
+                </div>
+
+                <!-- Location -->
+                <div class="footer-map">
+                    <h4>LOCATION</h4>
+                <iframe
+  src="https://www.google.com/maps?q=The+Posh+Hospital+Pondicherry&output=embed"
+  width="100%"
+  height="450"
+  style="border:0;"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+                       <div class="footer-bottom">
+                © 2025 by The POSH - Pondy Ortho Speciality Hospital. Proudly created with
+                <a href="https://www.getitmediasolutions.com/">GETIT MEDIA SOLUTIONS PVT LTD</a>
+            </div>
+        </footer> <script>
+document.addEventListener("click", function (e) {
+
+    const button = e.target.closest(".appointment-btn");
+    if (!button) return;
+
+    // Find the nearest doctor card
+    const card = button.closest(".doctor-card");
+    if (!card) return;
+
+    // Extract doctor name and specialization from existing HTML
+    const doctorName = card.querySelector("h3")?.innerText.trim();
+    const specialization = card.querySelector(".specialization")?.innerText.trim();
+
+    // Your clinic WhatsApp number (with country code)
+    const phoneNumber = "918056555330"; // CHANGE THIS
+
+    const message = `Hello,
+I would like to book an appointment.
+
+Doctor: ${doctorName}
+Specialization: ${specialization}
+
+Please share available slots.`;
+
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappURL, "_blank");
+});
+</script>
+</body>
+</html>

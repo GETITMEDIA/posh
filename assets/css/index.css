@@ -7864,7 +7864,7 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 }
 
 body {
-    font-family: "Roboto", sans-serif;
+    font-family: var(--posh-font);
     font-optical-sizing: auto;
 }
 
@@ -7998,7 +7998,7 @@ button {
     text-align: center;
     -webkit-text-fill-color: var(--pink-main);
     -webkit-text-stroke: 1px black;
-    font-family: "Ubuntu", sans-serif;
+    font-family: var(--posh-font);
 }
 
 .stroke-text2 {
@@ -8006,7 +8006,7 @@ button {
     text-align: center;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
-    font-family: "Ubuntu", sans-serif;
+    font-family: var(--posh-font);
 }
 
 .stroke-text3 {
@@ -8014,7 +8014,7 @@ button {
     text-align: center;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 1px rgba(255, 255, 255, 1);
-    font-family: "Ubuntu", sans-serif;
+    font-family: var(--posh-font);
 }
 
 .services-slider .swiper-slide-active {
@@ -10673,9 +10673,9 @@ header img:hover {
 footer {
     position: relative;
     color: #fff;
-    font-family: Arial, sans-serif;
+    font-family: var(--posh-font);
     overflow: hidden;
-    background: url("/assets/images/posh/footer.gif") center/cover no-repeat;
+    background: url("../images/posh/footer.gif") center/cover no-repeat;
 
 }
 
@@ -10684,7 +10684,7 @@ footer::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: url("/assets/images/posh/footer.gif") center/cover no-repeat;
+    background: url("../images/posh/footer.gif") center/cover no-repeat;
     z-index: 0;
 }
 
@@ -10694,7 +10694,6 @@ footer::after {
     position: absolute;
     inset: 0;
     background: rgba(0, 0, 0, 0.65);
-    background: url("/posh-finher/") center/cover no-repeat;
 
     z-index: 1;
 }
