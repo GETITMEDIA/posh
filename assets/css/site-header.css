@@ -1,0 +1,847 @@
+/* =========================================================
+   POSH — SHARED SITE HEADER STYLES
+   Extracted verbatim from the approved index.html header.
+   Single source of truth for header / navigation / dropdowns /
+   mobile panel / appointment button on every page.
+   ========================================================= */
+
+nav ul li {
+  position: relative;
+}
+
+/* hide dropdown */
+nav ul li .dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #59016b;
+  min-width: 220px;
+  display: none;
+  padding: 8px 0;
+  border-radius: 6px;
+  z-index: 9999;
+}
+
+/* dropdown links */
+nav ul li .dropdown li a {
+  display: block;
+  padding: 8px 16px;
+  color: #fff;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+/* hover effects */
+nav ul li .dropdown li a:hover {
+  background-color: #7a3db8;
+  color: #ffd700;
+}
+
+/* show on hover */
+nav ul li.has-dropdown:hover .dropdown {
+  display: block;
+}
+
+/* smooth animation */
+nav ul li .dropdown {
+  animation: fadeDown 0.25s ease;
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   MOBILE NAV STYLES
+   ========================= */
+
+#mobilePanel {
+  overflow-y: auto;
+}
+
+/* Links & buttons */
+#mobilePanel a,
+#mobilePanel button {
+  width: 100%;
+  display: block;
+  padding: 12px 0;
+  color: #ffffff;
+  background: none;
+  border: none;
+  text-align: left;
+}
+
+/* Divider line */
+#mobilePanel ul>li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Dropdown toggle */
+.dropdown-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* + icon */
+.dropdown-toggle span {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate + */
+.dropdown-toggle.active span {
+  transform: rotate(45deg);
+}
+
+/* Dropdown container */
+.mobile-dropdown {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+  margin-left: 12px;
+  padding-left: 10px;
+  border-left: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Open dropdown */
+.mobile-dropdown.open {
+  max-height: 1000px;
+}
+
+/* Dropdown links */
+.mobile-dropdown li a {
+  font-size: 13px;
+  padding: 8px 0;
+  text-transform: none;
+}
+
+
+/* From Uiverse.io by StealthWorm */
+
+/* From Uiverse.io by MuhammadHasann */
+button {
+  position: relative;
+  padding: 10px 25px;
+  background: #fdfdfd;
+  font-size: 13px;
+  font-weight: 500;
+  color: #96034c;
+  cursor: pointer;
+  border: 1px solid #7a3300;
+  border-radius: 50px;
+  filter: drop-shadow(2px 2px 3px rgba(233, 0, 0, 0.2));
+
+  animation: wind 1s linear infinite;
+
+}
+
+button:hover {
+  border: 1px solid #ff6c04;
+  background: #b90b76;
+  color: white;
+  animation: wind 2s ease-in-out infinite;
+}
+
+@keyframes wind {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  0% {
+    background-position: 50% 100%;
+  }
+
+  0% {
+    background-position: 0% 50%;
+  }
+}
+
+.icon-1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25px;
+  transform-origin: 0 0;
+  transform: rotate(10deg);
+  transition: all 0.5s ease-in-out;
+  filter: drop-shadow(2px 2px 3px rgba(255, 255, 255, 0.3));
+}
+
+button:hover .icon-1 {
+  animation: slay-1 3s cubic-bezier(0.52, 0, 0.58, 1) infinite;
+  transform: rotate(10deg);
+}
+
+@keyframes slay-1 {
+  0% {
+    transform: rotate(10deg);
+  }
+
+  50% {
+    transform: rotate(-5deg);
+  }
+
+  100% {
+    transform: rotate(10deg);
+  }
+}
+
+.icon-2 {
+  position: absolute;
+  top: 0;
+  left: 25px;
+  width: 12px;
+  transform-origin: 50% 0;
+  transform: rotate(10deg);
+  transition: all 1s ease-in-out;
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.5));
+}
+
+button:hover .icon-2 {
+  animation: slay-2 3s cubic-bezier(0.52, 0, 0.58, 1) 1s infinite;
+  transform: rotate(0);
+}
+
+@keyframes slay-2 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(15deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+.icon-3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18px;
+  transform-origin: 50% 0;
+  transform: rotate(-5deg);
+  transition: all 1s ease-in-out;
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.5));
+}
+
+button:hover .icon-3 {
+  animation: slay-3 2s cubic-bezier(0.52, 0, 0.58, 1) 1s infinite;
+  transform: rotate(0);
+}
+
+@keyframes slay-3 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(-5deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+.appt-button {
+  --primary: #ff5569;
+  --neutral-1: #f7f8f7;
+  --neutral-2: #e7e7e7;
+  --radius: 14px;
+  cursor: pointer;
+  border-radius: var(--radius);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  border: none;
+  box-shadow: 0 0.5px 0.5px 1px rgba(255, 255, 255, 0.2), 0 10px 20px rgba(0, 0, 0, 0.2), 0 4px 5px 0px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease;
+  min-width: 130px;
+  padding: 12px;
+  height: 38px;
+  font-family: var(--posh-font);
+  font-size: 13px;
+  font-weight: 600;
+  background: var(--neutral-1);
+}
+
+.appt-button:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 1px 2px rgba(255, 255, 255, 0.3), 0 15px 30px rgba(0, 0, 0, 0.3), 0 10px 3px -3px rgba(0, 0, 0, 0.04);
+}
+
+.appt-button:active {
+  transform: scale(1);
+}
+
+.appt-button:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  border: 2.5px solid transparent;
+  background: linear-gradient(var(--neutral-1), var(--neutral-2)) padding-box, linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.45)) border-box;
+  z-index: 0;
+  transition: all 0.4s ease;
+}
+
+.appt-button:hover::after {
+  transform: scale(1.05, 1.1);
+  box-shadow: inset 0 -1px 3px 0 rgba(244, 143, 177, 1);
+}
+
+.appt-button::before {
+  content: "";
+  inset: 7px 6px 6px 6px;
+  position: absolute;
+  background: linear-gradient(to top, var(--neutral-1), var(--neutral-2));
+  border-radius: 30px;
+  filter: blur(0.5px);
+  z-index: 2;
+}
+
+.appt-button .ab-outline {
+  position: absolute;
+  border-radius: inherit;
+  overflow: hidden;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  inset: -2px -3.5px;
+}
+
+.appt-button .ab-outline::before {
+  content: "";
+  position: absolute;
+  inset: -100%;
+  background: conic-gradient(from 180deg, transparent 60%, white 80%, transparent 100%);
+  animation: ab-spin 2s linear infinite;
+  animation-play-state: paused;
+}
+
+@keyframes ab-spin {
+  0% {
+    transform: rotate(0deg)
+  }
+
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+.appt-button:hover .ab-outline {
+  opacity: 1;
+}
+
+.appt-button:hover .ab-outline::before {
+  animation-play-state: running;
+}
+
+.appt-button .ab-state {
+  padding-left: 29px;
+  z-index: 2;
+  display: flex;
+  position: relative;
+}
+
+.appt-button .ab-state p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.appt-button .ab-state .ab-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  transform: scale(1.25);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.appt-button:hover .ab-state--default .ab-icon {
+  transform: rotate(45deg) scale(1.25);
+}
+
+.appt-button .ab-state--sent {
+  display: none;
+}
+
+.appt-button:focus .ab-state--default {
+  position: absolute;
+}
+
+.appt-button:focus .ab-state--sent {
+  display: flex;
+}
+
+.appt-button .ab-state p span {
+  display: block;
+  opacity: 0;
+  color: #000;
+  animation: ab-slideDown 0.8s ease forwards calc(var(--i)*0.03s);
+}
+
+.appt-button:hover .ab-state p span {
+  opacity: 1;
+  animation: ab-wave 0.5s ease forwards calc(var(--i)*0.02s);
+}
+
+@keyframes ab-wave {
+  30% {
+    opacity: 1;
+    transform: translateY(4px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-3px);
+    color: var(--primary);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ab-slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) rotate(-90deg);
+    color: var(--primary);
+    filter: blur(5px);
+  }
+
+  30% {
+    opacity: 1;
+    transform: translateY(4px);
+    filter: blur(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   HEADER SHELL — branding row, social icons, top info bar
+   (moved out of the per-page inline <style> blocks so every
+    page shares the exact same approved header appearance)
+   ========================================================= */
+
+header {
+  box-shadow:
+    0 6px 18px rgba(233, 30, 99, 0.25),
+    0 3px 8px rgba(106, 27, 154, 0.35);
+}
+
+header .text-sm {
+  letter-spacing: 0.3px;
+}
+
+/* Branding row: logo — hospital name — accreditation logo */
+.logo-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.header-top {
+  background: #8e09a8c2;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
+/* Scrollable departments dropdown */
+.dept-dropdown {
+  max-height: 320px !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain;
+}
+
+.dept-dropdown::-webkit-scrollbar {
+  width: 4px;
+}
+
+.dept-dropdown::-webkit-scrollbar-track {
+  background: #4b1d6b;
+}
+
+.dept-dropdown::-webkit-scrollbar-thumb {
+  background: #f48fb1;
+  border-radius: 4px;
+}
+
+/* Smooth fade mask so the ambulance gif blends into the header bg */
+.header-ambulance-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.header-ambulance-wrap .header-ambulance {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 22%, black 78%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 22%, black 78%, transparent 100%);
+}
+
+/* Social icon row (From Uiverse.io by jolprince_5263) */
+.card:hover {
+  animation: ease-out 5s;
+}
+
+.card ul {
+  padding: 0px;
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.card ul li {
+  cursor: pointer;
+}
+
+.social {
+  height: 40px;
+  width: 40px;
+  display: block;
+  margin: auto;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.social:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.facebook {
+  background: #065397;
+}
+
+.instagram {
+  background: radial-gradient(circle at 30% 107%, #af036d 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.youtube {
+  background: red;
+}
+
+.whatsapp {
+  background: #25D366;
+}
+
+.emergency-icon {
+  height: 72px;
+  width: auto;
+}
+
+/* Phone numbers in the top info bar. This was an inline style on the
+   element, which made the responsive rules below impossible to apply
+   without !important. Values are the approved ones. */
+.header-call-now {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* =========================================================
+   HEADER RESPONSIVE BEHAVIOUR
+   ========================================================= */
+@media (max-width: 1024px) {
+
+  /* Stack top info bar items vertically */
+  header .max-w-7xl.mx-auto.px-4.py-3 {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 12px;
+    text-align: center;
+  }
+
+  .header-call-now {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .emergency-icon {
+    height: 36px;
+    width: auto;
+  }
+
+  header img[alt="Ambulance Service"] {
+    height: 35px;
+  }
+
+  header img[alt="Ambulance Service"]+span {
+    display: none;
+  }
+
+  /* Appointment button — matched on suffix so it also works
+     from pages inside a sub-folder (../appointment.html) */
+  header a[href$="appointment.html"] {
+    font-size: 12px;
+    padding: 6px 14px;
+    border-radius: 6px;
+  }
+
+  /* The desktop nav is hidden below 1024px (assets/css/mobile-header.css)
+     while Tailwind's lg: breakpoint in this project is 992px, so between
+     992px and 1024px neither the nav nor the burger was shown. Keep the
+     burger visible for the whole range in which the nav is hidden. */
+  #menuBtn {
+    display: block;
+    font-size: 18px;
+  }
+}
+
+/* The header must never be wider than the viewport. Scoped to the
+   widths where the top bar stacks, so the centred desktop container
+   is left exactly as it was. */
+@media (max-width: 1024px) {
+
+  header,
+  header .logo-header,
+  header .max-w-7xl {
+    max-width: 100%;
+  }
+}
+
+/* Branding row: let the hospital name shrink/wrap instead of
+   overflowing on narrow screens. Desktop sizing is untouched. */
+.logo-header>div {
+  min-width: 0;
+}
+
+.logo-header h1 {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1024px) {
+  .logo-header {
+    gap: 20px;
+  }
+
+  .logo-header h1 {
+    font-size: 1.5rem;
+    line-height: 1.25;
+  }
+}
+
+@media (max-width: 767px) {
+  .logo-header {
+    gap: 12px;
+  }
+
+  .logo-header h1 {
+    font-size: 1.15rem;
+    line-height: 1.3;
+    letter-spacing: normal;
+  }
+
+  .logo-header img {
+    height: 3rem;
+  }
+
+  /* keep the appointment button and its neighbours inside the bar */
+  header .max-w-7xl>div {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .appt-button {
+    min-width: 110px;
+    padding: 10px;
+  }
+}
+
+/* =========================================================
+   PAGE-LEVEL OVERFLOW GUARD
+   ---------------------------------------------------------
+   Entrance animations that slide content in from the right
+   briefly push their element past the viewport edge, which
+   flashes a horizontal scrollbar on load. The project already
+   suppresses this below 1024px (assets/css/mobile-header.css);
+   apply the same guard at every width. Nothing is repositioned.
+   ========================================================= */
+body {
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   TOP INFO BAR — SINGLE ROW ON DESKTOP
+   ---------------------------------------------------------
+   Every page now uses the index.html header, whose social
+   icons (40px) and 24/7 badge (72px) are larger than the ones
+   the inner pages used to carry. With flex-wrap the row could
+   spill onto a second line on those pages. Letting the phone
+   line shrink instead keeps it on one row without changing
+   the size of any element. Below 1024px the bar deliberately
+   stacks into a column, so this only applies above that.
+   ========================================================= */
+@media (min-width: 1025px) {
+
+  header .max-w-7xl.mx-auto.px-4.py-3 {
+    flex-wrap: nowrap;
+  }
+
+  header .max-w-7xl.mx-auto.px-4.py-3>.card,
+  header .max-w-7xl.mx-auto.px-4.py-3>.flex {
+    flex-shrink: 0;
+  }
+
+  .header-call-now {
+    min-width: 0;
+  }
+}
+
+/* =========================================================
+   APPOINTMENT BUTTON — IMMUNE TO PAGE-LEVEL TEXT RULES
+   ---------------------------------------------------------
+   Several inner pages set their own font-size on <p>, which
+   leaked into the button's label and made it wider there than
+   on index.html — squeezing the phone line onto two rows.
+   Pin the label to the button's own font-size so the header
+   renders identically on every page.
+   ========================================================= */
+.appt-button .ab-state p,
+.appt-button .ab-state p span {
+  font-size: inherit;
+  line-height: normal;
+  margin: 0;
+}
+
+/* =========================================================
+   SMOOTH IN-PAGE NAVIGATION
+   ---------------------------------------------------------
+   The nav points at sections on the home page
+   (index.html#departmentssection, index.html#clientsgrid).
+   Without these the browser hard-jumps to the target, and
+   below 1024px the sticky header covers the section heading.
+   ========================================================= */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Leave room for the sticky header so a jumped-to section is
+   not hidden underneath it. */
+:target {
+  scroll-margin-top: 16px;
+}
+
+@media (max-width: 1024px) {
+  :target {
+    scroll-margin-top: 96px;
+  }
+}
+
+/* Readers who ask the OS for less motion get the plain jump. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+/* =========================================================
+   STICKY NAV ROW
+   ---------------------------------------------------------
+   The whole header sticks to the top of the window. Scrolling
+   DOWN slides the top info bar and the branding row up out of
+   the way, leaving just the nav row on screen; scrolling UP
+   brings them straight back.
+
+   The distance to slide is the combined height of rows 1 + 2,
+   measured at runtime and written to --posh-header-shift by
+   assets/javascript/site-header.js, so nothing here has to
+   hard-code a pixel height.
+
+   Below 1024px the nav row is hidden and the burger takes its
+   place, so the collapse is desktop-only - otherwise there
+   would be nothing left to see.
+   ========================================================= */
+@media (min-width: 1025px) {
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  /* Only animate once the script has taken over, so the header
+     cannot slide about during the first paint. */
+  header.posh-sticky-ready {
+    transition: transform 0.35s ease;
+    will-change: transform;
+  }
+
+  header.posh-collapsed {
+    transform: translateY(calc(var(--posh-header-shift, 0px) * -1));
+  }
+
+  /* An anchored section must clear the nav row that stays behind. */
+  :target {
+    scroll-margin-top: calc(var(--posh-nav-height, 64px) + 16px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  header.posh-sticky-ready {
+    transition: none;
+  }
+}
+
+/* ---------------------------------------------------------
+   The header needs an opaque base now that page content
+   scrolls underneath it. Row 1's purple is rgba(...,0.76) and
+   the branding row's bg-white utility is not in the compiled
+   CSS, so both were being composited straight onto the white
+   page canvas. Painting that same white on the header keeps
+   the colours pixel-identical and stops the bleed-through.
+   --------------------------------------------------------- */
+header {
+  background-color: #ffffff;
+}

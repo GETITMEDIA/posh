@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="Arthroscopy, Sports Injury, Keyhole Surgery, ACL, Meniscus, Rotator Cuff, Sports Medicine, Pondy Ortho Specialty Hospital" />
+    <meta name="description" content="Advanced arthroscopy and sports injury care at THE POSH. Minimally invasive keyhole surgeries, sports rehabilitation, and personalized treatment plans for athletes." />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/duotone/style.css" />
+    <title>Arthroscopy and Sports Injury - THE POSH</title>
+  <link rel="icon" type="image/png" href="../assets/images/fav.png" />
+  <link rel="shortcut icon" href="../assets/images/fav.png" />
+    <link href="../assets/css/index.css" rel="stylesheet">
+    <style>
+/* =====================
+   ARTHROSCOPY SECTIONS
+===================== */
+
+/* Header/Title Section */
+.arthro-header-section {
+  padding: 120px 20px;
+  background: linear-gradient(135deg, #e91e63 0%, #7cf5ff 100%);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 60px;
+}
+
+.arthro-header-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(233, 30, 99, 0.9), rgba(124, 245, 255, 0.9));
+  z-index: 0;
+}
+
+.arthro-header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.arthro-main-title {
+  font-size: 4.5rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 20px;
+  letter-spacing: 3px;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    0 6px 20px rgba(0, 0, 0, 0.25),
+    0 0 40px rgba(0, 0, 0, 0.15);
+  -webkit-text-stroke: 0.5px rgba(0, 0, 0, 0.1);
+  line-height: 1.2;
+}
+
+.arthro-subtitle {
+  font-size: 1.8rem;
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 0;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Intro Section */
+.arthro-intro-section {
+  padding: 80px 20px;
+  background: #f6f7fb;
+  margin-bottom: 60px;
+}
+
+.arthro-intro-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.arthro-intro-content {
+  background: #fff;
+  border-radius: 25px;
+  padding: 50px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.arthro-intro-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #c2187a;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+.arthro-intro-content p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.9;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Services Section */
+.arthro-services-section {
+  padding: 90px 20px;
+  background: #fff;
+  margin-bottom: 60px;
+}
+
+.arthro-services-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.arthro-services-title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #c2187a;
+  margin-bottom: 60px;
+  letter-spacing: 2px;
+}
+
+/* =====================
+   GRID LAYOUT STYLES - Choose ONE
+   Comment out current style and uncomment the one you want
+===================== */
+
+/* GRID STYLE A: 2x2 Equal Grid (Currently Active) */
+.arthro-services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px;
+}
+
+/* GRID STYLE B: 3 Columns (uncomment to use)
+.arthro-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.arthro-services-grid .arthro-service-card:nth-child(4) {
+  grid-column: 2;
+}
+*/
+
+/* GRID STYLE C: 4 Columns Masonry (uncomment to use)
+.arthro-services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+.arthro-services-grid .arthro-service-card:nth-child(1) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.arthro-services-grid .arthro-service-card:nth-child(2),
+.arthro-services-grid .arthro-service-card:nth-child(3) {
+  grid-column: span 2;
+}
+.arthro-services-grid .arthro-service-card:nth-child(4) {
+  grid-column: span 4;
+}
+*/
+
+/* =====================
+   CARD STYLE OPTIONS - Choose ONE style
+   Comment out current style and uncomment the one you want
+===================== */
+
+/* CARD STYLE 1: Modern Gradient with Bottom Border */
+.arthro-service-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  border-bottom: 4px solid #e91e63;
+  position: relative;
+  overflow: hidden;
+}
+
+.arthro-service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #e91e63, #7cf5ff);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.arthro-service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(233, 30, 99, 0.2);
+  border-bottom-color: #7cf5ff;
+}
+
+.arthro-service-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* CARD STYLE 2: Left Border Accent (uncomment to use)
+.arthro-service-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 45px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  border-left: 6px solid #e91e63;
+  position: relative;
+}
+
+.arthro-service-card:hover {
+  transform: translateX(10px) translateY(-5px);
+  box-shadow: 0 15px 50px rgba(233, 30, 99, 0.25);
+  border-left-width: 10px;
+  border-left-color: #7cf5ff;
+}
+*/
+
+/* CARD STYLE 3: Top Border with Icon Style (uncomment to use)
+.arthro-service-card {
+  background: linear-gradient(to bottom, #fff 0%, #fafafa 100%);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  border-top: 5px solid #e91e63;
+  position: relative;
+}
+
+.arthro-service-card::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 5px;
+  background: #7cf5ff;
+  transition: width 0.4s ease;
+}
+
+.arthro-service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(233, 30, 99, 0.3);
+}
+
+.arthro-service-card:hover::after {
+  width: 100%;
+  left: 0;
+  transform: none;
+}
+*/
+
+/* CARD STYLE 4: Gradient Background (uncomment to use)
+.arthro-service-card {
+  background: linear-gradient(135deg, #ffffff 0%, #fff5f8 100%);
+  border-radius: 25px;
+  padding: 45px;
+  box-shadow: 0 8px 30px rgba(233, 30, 99, 0.15);
+  transition: all 0.4s ease;
+  border: 2px solid rgba(233, 30, 99, 0.1);
+  position: relative;
+}
+
+.arthro-service-card:hover {
+  background: linear-gradient(135deg, #fff5f8 0%, #e0f7fa 100%);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(233, 30, 99, 0.25);
+  border-color: rgba(233, 30, 99, 0.3);
+}
+*/
+
+/* CARD STYLE 5: Box Shadow with Hover Glow (uncomment to use)
+.arthro-service-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 45px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  border: 1px solid #f0f0f0;
+  position: relative;
+}
+
+.arthro-service-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 60px rgba(233, 30, 99, 0.3),
+              0 0 0 4px rgba(233, 30, 99, 0.1);
+  border-color: transparent;
+}
+*/
+
+/* CARD STYLE 6: Diagonal Gradient Accent (uncomment to use)
+.arthro-service-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 45px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.arthro-service-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent 30%, rgba(233, 30, 99, 0.05) 50%, transparent 70%);
+  transform: rotate(45deg);
+  transition: all 0.6s ease;
+}
+
+.arthro-service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(233, 30, 99, 0.25);
+}
+
+.arthro-service-card:hover::before {
+  right: -30%;
+  top: -30%;
+}
+*/
+
+.arthro-service-card h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #c2187a;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 1;
+}
+
+.arthro-service-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.arthro-service-card ul li {
+  padding: 12px 0;
+  padding-left: 30px;
+  position: relative;
+  color: #555;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+}
+
+.arthro-service-card ul li:hover {
+  color: #c2187a;
+  padding-left: 35px;
+}
+
+.arthro-service-card ul li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #e91e63;
+  font-weight: 700;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+}
+
+.arthro-service-card ul li:hover::before {
+  transform: scale(1.2);
+  color: #c2187a;
+}
+
+/* Why Choose Us Section */
+.arthro-why-choose-section {
+  padding: 90px 20px;
+  background: linear-gradient(135deg, #e91e63 0%, #7cf5ff 100%);
+  margin-bottom: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.arthro-why-choose-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(233, 30, 99, 0.95), rgba(124, 245, 255, 0.95));
+  z-index: 0;
+}
+
+.arthro-why-choose-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.arthro-why-choose-title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 60px;
+  letter-spacing: 2px;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    0 6px 20px rgba(0, 0, 0, 0.25),
+    0 0 30px rgba(0, 0, 0, 0.15);
+}
+
+.arthro-benefits-list {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 25px;
+  padding: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  margin-bottom: 50px;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.arthro-benefits-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.arthro-benefits-list ul li {
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 600;
+  padding-left: 45px;
+  position: relative;
+  line-height: 1.9;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    0 0 12px rgba(0, 0, 0, 0.25);
+}
+
+.arthro-benefits-list ul li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #ffffff;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.5),
+    0 4px 8px rgba(0, 0, 0, 0.4),
+    0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.arthro-motivational-quote {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 45px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 
+    0 15px 40px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.arthro-motivational-quote p {
+  font-size: 1.6rem;
+  color: #ffffff;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.9;
+  margin: 0;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    0 6px 15px rgba(0, 0, 0, 0.25),
+    0 0 20px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.3px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .arthro-main-title {
+    font-size: 3.5rem;
+  }
+  
+  .arthro-services-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .arthro-services-grid .arthro-service-card:nth-child(n) {
+    grid-column: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .arthro-header-section {
+    padding: 80px 20px;
+  }
+  
+  .arthro-main-title {
+    font-size: 2.8rem;
+    letter-spacing: 2px;
+  }
+  
+  .arthro-subtitle {
+    font-size: 1.4rem;
+    text-shadow: 
+      0 2px 3px rgba(0, 0, 0, 0.5),
+      0 3px 6px rgba(0, 0, 0, 0.3),
+      0 0 15px rgba(0, 0, 0, 0.25);
+  }
+  
+  .arthro-intro-content {
+    padding: 35px 25px;
+  }
+  
+  .arthro-intro-content h2 {
+    font-size: 2rem;
+  }
+  
+  .arthro-intro-content p {
+    font-size: 1.1rem;
+  }
+  
+  .arthro-services-title,
+  .arthro-why-choose-title {
+    font-size: 2.2rem;
+  }
+  
+  .arthro-services-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .arthro-service-card {
+    padding: 30px 25px;
+  }
+  
+  .arthro-benefits-list {
+    padding: 35px 25px;
+  }
+  
+  .arthro-benefits-list ul {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .arthro-benefits-list ul li {
+    font-size: 1rem;
+    padding-left: 35px;
+  }
+  
+  .arthro-motivational-quote {
+    padding: 35px 25px;
+  }
+  
+  .arthro-motivational-quote p {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .arthro-main-title {
+    font-size: 2.2rem;
+  }
+  
+  .arthro-services-title,
+  .arthro-why-choose-title {
+    font-size: 1.8rem;
+  }
+  
+  .arthro-intro-content h2 {
+    font-size: 1.7rem;
+  }
+  
+  .arthro-service-card h3 {
+    font-size: 1.5rem;
+  }
+}
+    </style>
+  <link href="../assets/css/header.css" rel="stylesheet">
+  <link href="../assets/css/mobile-header.css" rel="stylesheet"/>
+  <link href="../assets/css/site-header.css" rel="stylesheet">
+  <link href="../assets/css/site-typography.css" rel="stylesheet">
+  <script defer src="../assets/javascript/site-header.js"></script>
+<style>
+.dept-dropdown {
+  max-height: 320px !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain;
+}
+.dept-dropdown::-webkit-scrollbar { width: 4px; }
+.dept-dropdown::-webkit-scrollbar-track { background: #4b1d6b; }
+.dept-dropdown::-webkit-scrollbar-thumb { background: #f48fb1; border-radius: 4px; }
+</style></head>
+  <body>
+   <header class=" top-0 z-[999]">
+
+    <!-- ONE CONTAINER -->
+    <div class="bg-gradient-to-r from-[#4b1d6b] to-[#7a3db8] text-white">
+
+      <!-- ROW 1 : TOP INFO -->
+      <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-4 text-sm"
+        style="background-color: #8e09a8c2;">
+        <!-- From Uiverse.io by jolprince_5263 -->
+        <div class="card">
+          <ul>
+            <li>
+              <a class="social facebook" href="https://www.facebook.com/theposhin/reels/" target="_blank"
+                rel="noopener" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+            </li>
+
+            <li>
+              <a class="social instagram" href="https://www.instagram.com/theposh_hospital/" target="_blank"
+                rel="noopener" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </li>
+
+            <li>
+              <a class="social youtube" href="https://www.youtube.com/channel/UCj_xz0cJBiy6tmlePNbaadg" target="_blank"
+                rel="noopener" aria-label="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+              </a>
+            </li>
+
+            <li>
+              <a class="social whatsapp" href="https://wa.me/918056555330" target="_blank" rel="noopener"
+                aria-label="WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Left -->
+        <div class="flex items-center gap-4">
+          <img decoding="async" src="../assets/images/posh/247-emergency.avif" alt="24/7 Emergency Services" class="emergency-icon">
+        </div>
+
+        <!-- Center -->
+        <div class="text-center font-semibold header-call-now">
+          Call Now: 0413-2200018 / 0413-2200018 / +91 96770 73462 / +91 80565 55330
+        </div>
+
+        <!-- Right -->
+        <div class="flex items-center gap-4">
+          <button id="menuBtn" class="lg:hidden text-white text-3xl font-bold focus:outline-none" type="button"
+            aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+            &#9776;
+          </button>
+          <span class="flex items-center gap-2 font-semibold">
+            <span class="header-ambulance-wrap">
+              <img decoding="async" src="../assets/images/ambulance.gif" alt="Ambulance Service"
+                class="h-6 w-auto object-contain header-ambulance">
+            </span>
+            <span class="hidden sm:inline">Ambulance Service</span>
+          </span>
+
+          <a href="../appointment.html" target="_blank" rel="noopener">
+            <button class="appt-button" type="button">
+              <div class="ab-outline"></div>
+              <div class="ab-state ab-state--default">
+                <div class="ab-icon">
+                  <svg style="color:rgb(255,0,170);" width="1em" height="1em" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <g style="filter:url(#ab-shadow)">
+                      <path
+                        d="M14.2199 21.63C13.0399 21.63 11.3699 20.8 10.0499 16.83L9.32988 14.67L7.16988 13.95C3.20988 12.63 2.37988 10.96 2.37988 9.78001C2.37988 8.61001 3.20988 6.93001 7.16988 5.60001L15.6599 2.77001C17.7799 2.06001 19.5499 2.27001 20.6399 3.35001C21.7299 4.43001 21.9399 6.21001 21.2299 8.33001L18.3999 16.82C17.0699 20.8 15.3999 21.63 14.2199 21.63Z"
+                        fill="currentColor"></path>
+                      <path
+                        d="M10.11 14.4C9.92005 14.4 9.73005 14.33 9.58005 14.18C9.29005 13.89 9.29005 13.41 9.58005 13.12L13.16 9.53C13.45 9.24 13.93 9.24 14.22 9.53C14.51 9.82 14.51 10.3 14.22 10.59L10.64 14.18C10.5 14.33 10.3 14.4 10.11 14.4Z"
+                        fill="currentColor"></path>
+                    </g>
+                    <defs>
+                      <filter id="ab-shadow">
+                        <feDropShadow dx="0" dy="1" stdDeviation="0.6" flood-opacity="0.5"></feDropShadow>
+                      </filter>
+                    </defs>
+                  </svg>
+                </div>
+                <p>
+                  <span style="--i:0">A</span><span style="--i:1">P</span><span style="--i:2">P</span><span
+                    style="--i:3">O</span><span style="--i:4">I</span><span style="--i:5">N</span><span
+                    style="--i:6">T</span><span style="--i:7">M</span><span style="--i:8">E</span><span
+                    style="--i:9">N</span><span style="--i:10">T</span>
+                </p>
+              </div>
+              <div class="ab-state ab-state--sent">
+                <div class="ab-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="1em" width="1em"
+                    stroke-width="0.5px" stroke="black">
+                    <path fill="currentColor"
+                      d="M12 22.75C6.07 22.75 1.25 17.93 1.25 12C1.25 6.07 6.07 1.25 12 1.25C17.93 1.25 22.75 6.07 22.75 12C22.75 17.93 17.93 22.75 12 22.75ZM12 2.75C6.9 2.75 2.75 6.9 2.75 12C2.75 17.1 6.9 21.25 12 21.25C17.1 21.25 21.25 17.1 21.25 12C21.25 6.9 17.1 2.75 12 2.75Z">
+                    </path>
+                    <path fill="currentColor"
+                      d="M10.5795 15.5801C10.3795 15.5801 10.1895 15.5001 10.0495 15.3601L7.21945 12.5301C6.92945 12.2401 6.92945 11.7601 7.21945 11.4701C7.50945 11.1801 7.98945 11.1801 8.27945 11.4701L10.5795 13.7701L15.7195 8.6301C16.0095 8.3401 16.4895 8.3401 16.7795 8.6301C17.0695 8.9201 17.0695 9.4001 16.7795 9.6901L11.1095 15.3601C10.9695 15.5001 10.7795 15.5801 10.5795 15.5801Z">
+                    </path>
+                  </svg>
+                </div>
+                <p><span style="--i:5">S</span><span style="--i:6">e</span><span style="--i:7">n</span><span
+                    style="--i:8">t</span></p>
+              </div>
+            </button>
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- ROW 2 : BRANDING -->
+      <div class="bg-white text-center py-6 px-4">
+
+        <div class="logo-header mx-auto">
+          <!-- Left Logo -->
+          <a href="../index.html">
+            <img decoding="async" src="../assets/images/logo/logo.png" class="h-16" alt="The POSH Hospital logo">
+          </a>
+
+          <!-- Center Text -->
+          <div>
+            <h1 class="text-pink-600 text-3xl font-extrabold tracking-wide">
+              The POSH - Pondy Ortho Speciality Hospital Pvt Ltd
+            </h1>
+          </div>
+
+          <!-- Right Logo -->
+          <img decoding="async" src="../assets/images/posh/unnamed.png" class="h-16" alt="NABH accreditation">
+
+        </div>
+
+      </div>
+
+
+      <!-- ROW 3 : NAV MENU -->
+      <nav class="bg-[#5b2d86] hidden lg:block" style="background-color:#59016b;" aria-label="Main navigation">
+        <ul class="max-w-7xl mx-auto px-4 flex flex-wrap justify-center py-3 text-white font-semibold uppercase"
+          style="font-size:12.5px; gap:18px;">
+
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About Us</a></li>
+          <li class="has-dropdown">
+            <a href="../index.html#departmentssection">Departments</a>
+            <ul class="dropdown dept-dropdown">
+              <li><a href="../departments/orthopedics-spine-care.html">Orthopedics &amp; Spine Care</a></li>
+              <li><a href="../departments/anaesthesiology.html">Anaesthesiology</a></li>
+              <li><a href="../departments/cardiology.html">Cardiology</a></li>
+              <li><a href="../departments/cardiothoracic-vascular.html">Cardiothoracic &amp; Vascular</a></li>
+              <li><a href="../departments/dental.html">Dental</a></li>
+              <li><a href="../departments/dermatology.html">Dermatology &amp; Cosmetology</a></li>
+              <li><a href="../departments/endocrinology.html">Endocrinology</a></li>
+              <li><a href="../departments/ent.html">ENT</a></li>
+              <li><a href="../departments/gastroenterology.html">Gastroenterology</a></li>
+              <li><a href="../departments/general-medicine.html">General Medicine</a></li>
+              <li><a href="../departments/general-surgery.html">General Surgery</a></li>
+              <li><a href="../departments/hepatology.html">Hepatology</a></li>
+              <li><a href="../departments/nephrology.html">Nephrology</a></li>
+              <li><a href="../departments/neurology.html">Neurology</a></li>
+              <li><a href="../departments/neurosurgery.html">Neurosurgery</a></li>
+              <li><a href="../departments/obstetrics-gynaecology.html">Obstetrics &amp; Gynaecology</a></li>
+              <li><a href="../departments/oncology.html">Oncology &amp; Surgical Oncology</a></li>
+              <li><a href="../departments/ophthalmology.html">Ophthalmology</a></li>
+              <li><a href="../departments/paediatrics.html">Paediatrics</a></li>
+              <li><a href="../departments/physical-medicine-rehabilitation.html">Physical Medicine and Rehabilitation</a></li>
+              <li><a href="../departments/physiotherapy.html">Physiotherapy</a></li>
+              <li><a href="../departments/plastic-surgery.html">Plastic Surgery</a></li>
+              <li><a href="../departments/psychiatry.html">Psychiatry</a></li>
+              <li><a href="../departments/pulmonology.html">Pulmonology &amp; Chest Medicine</a></li>
+              <li><a href="../departments/radiology.html">Radiology</a></li>
+              <li><a href="../departments/urology.html">Urology</a></li>
+            </ul>
+          </li>
+          <li><a href="../our-doctors.html">Our Doctors</a></li>
+          <li><a href="../ourteams.html">Our Team</a></li>
+          <li><a href="../index.html#clientsgrid">Happy Patients</a></li>
+          <li><a href="../article.html">Articles</a></li>
+          <li><a href="../healthtips.html">Health Tips</a></li>
+
+          <!-- GALLERY -->
+          <li class="has-dropdown">
+            <a href="../gallery/news.html">Gallery</a>
+            <ul class="dropdown">
+              <li><a href="../gallery/news.html">News</a></li>
+              <li><a href="../gallery/bones-and-joints-week.html">Bones &amp; Joints Week Celebration</a></li>
+              <li><a href="../gallery/medical-camps.html">Medical Camps</a></li>
+              <li><a href="../gallery/education-and-training.html">Education &amp; Training</a></li>
+              <li><a href="../gallery/nurses-day.html">Nurses Day Celebration</a></li>
+              <li><a href="../gallery/radiographer-day.html">Radiographer Day Celebration</a></li>
+              <li><a href="../gallery/independence-day.html">Independence Day</a></li>
+              <li><a href="../gallery/poacon-event.html">Poacon Event</a></li>
+              <li><a href="../gallery/conference-hall-inauguration.html">Conference Hall Inauguration</a></li>
+              <li><a href="../gallery/anniversary-celebration.html">Anniversary Celebration</a></li>
+              <li><a href="../gallery/annual-sports-meet.html">Annual Sports Meet</a></li>
+            </ul>
+          </li>
+
+          <!-- FACILITIES -->
+          <li class="has-dropdown">
+            <a href="../facilities.html">Facilities</a>
+            <ul class="dropdown">
+              <li><a href="../facilities/insurance.html">Insurance</a></li>
+              <li><a href="../facilities/speciality.html">Speciality</a></li>
+              <li><a href="../facilities/health-packages.html">Health Packages</a></li>
+            </ul>
+          </li>
+
+          <li><a href="../achieve.html">Achievements</a></li>
+          <li><a href="../contact.html">Contact Us</a></li>
+
+        </ul>
+      </nav>
+
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div id="mobileMenu" class="fixed inset-0 bg-black/60 z-[9999] hidden">
+      <div id="mobilePanel"
+        class="bg-[#59016b] w-[280px] h-full p-5 text-white transform -translate-x-full transition-transform duration-300">
+
+        <!-- HEADER -->
+        <div class="flex justify-between items-center mb-6">
+          <img decoding="async" src="../assets/images/posh/logoo.avif" class="h-10" alt="The POSH Hospital logo">
+          <button id="closeMenu" class="text-3xl font-bold" type="button" aria-label="Close menu">&times;</button>
+        </div>
+
+        <!-- MOBILE NAV LINKS -->
+        <ul class="flex flex-col text-sm font-semibold uppercase">
+
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About Us</a></li>
+          <li>
+            <button class="dropdown-toggle" type="button" onclick="toggleDropdown('departmentsMob', this)">Departments
+              <span>+</span></button>
+            <ul id="departmentsMob" class="mobile-dropdown">
+              <li><a href="../departments/orthopedics-spine-care.html">Orthopedics &amp; Spine Care</a></li>
+              <li><a href="../departments/anaesthesiology.html">Anaesthesiology</a></li>
+              <li><a href="../departments/cardiology.html">Cardiology</a></li>
+              <li><a href="../departments/cardiothoracic-vascular.html">Cardiothoracic &amp; Vascular</a></li>
+              <li><a href="../departments/dental.html">Dental</a></li>
+              <li><a href="../departments/dermatology.html">Dermatology &amp; Cosmetology</a></li>
+              <li><a href="../departments/endocrinology.html">Endocrinology</a></li>
+              <li><a href="../departments/ent.html">ENT</a></li>
+              <li><a href="../departments/gastroenterology.html">Gastroenterology</a></li>
+              <li><a href="../departments/general-medicine.html">General Medicine</a></li>
+              <li><a href="../departments/general-surgery.html">General Surgery</a></li>
+              <li><a href="../departments/hepatology.html">Hepatology</a></li>
+              <li><a href="../departments/nephrology.html">Nephrology</a></li>
+              <li><a href="../departments/neurology.html">Neurology</a></li>
+              <li><a href="../departments/neurosurgery.html">Neurosurgery</a></li>
+              <li><a href="../departments/obstetrics-gynaecology.html">Obstetrics &amp; Gynaecology</a></li>
+              <li><a href="../departments/oncology.html">Oncology &amp; Surgical Oncology</a></li>
+              <li><a href="../departments/ophthalmology.html">Ophthalmology</a></li>
+              <li><a href="../departments/paediatrics.html">Paediatrics</a></li>
+              <li><a href="../departments/physical-medicine-rehabilitation.html">Physical Medicine and Rehabilitation</a></li>
+              <li><a href="../departments/physiotherapy.html">Physiotherapy</a></li>
+              <li><a href="../departments/plastic-surgery.html">Plastic Surgery</a></li>
+              <li><a href="../departments/psychiatry.html">Psychiatry</a></li>
+              <li><a href="../departments/pulmonology.html">Pulmonology &amp; Chest Medicine</a></li>
+              <li><a href="../departments/radiology.html">Radiology</a></li>
+              <li><a href="../departments/urology.html">Urology</a></li>
+            </ul>
+          </li>
+          <li><a href="../our-doctors.html">Our Doctors</a></li>
+          <li><a href="../ourteams.html">Our Team</a></li>
+          <li><a href="../index.html#clientsgrid">Happy Patients</a></li>
+          <li><a href="../article.html">Articles</a></li>
+          <li><a href="../healthtips.html">Health Tips</a></li>
+
+          <!-- GALLERY -->
+          <li>
+            <button class="dropdown-toggle" type="button" onclick="toggleDropdown('galleryMob', this)">
+              Gallery <span>+</span>
+            </button>
+            <ul id="galleryMob" class="mobile-dropdown">
+              <li><a href="../gallery/news.html">News</a></li>
+              <li><a href="../gallery/bones-and-joints-week.html">Bones &amp; Joints Week Celebration</a></li>
+              <li><a href="../gallery/medical-camps.html">Medical Camps</a></li>
+              <li><a href="../gallery/education-and-training.html">Education &amp; Training</a></li>
+              <li><a href="../gallery/nurses-day.html">Nurses Day Celebration</a></li>
+              <li><a href="../gallery/radiographer-day.html">Radiographer Day Celebration</a></li>
+              <li><a href="../gallery/independence-day.html">Independence Day</a></li>
+              <li><a href="../gallery/poacon-event.html">Poacon Event</a></li>
+              <li><a href="../gallery/conference-hall-inauguration.html">Conference Hall Inauguration</a></li>
+              <li><a href="../gallery/anniversary-celebration.html">Anniversary Celebration</a></li>
+              <li><a href="../gallery/annual-sports-meet.html">Annual Sports Meet</a></li>
+            </ul>
+          </li>
+
+          <!-- FACILITIES -->
+          <li>
+            <button class="dropdown-toggle" type="button" onclick="toggleDropdown('facilitiesMob', this)">
+              Facilities <span>+</span>
+            </button>
+            <ul id="facilitiesMob" class="mobile-dropdown">
+              <li><a href="../facilities/insurance.html">Insurance</a></li>
+              <li><a href="../facilities/speciality.html">Speciality</a></li>
+              <li><a href="../facilities/health-packages.html">Health Packages</a></li>
+            </ul>
+          </li>
+
+          <li><a href="../achieve.html">Achievements</a></li>
+          <li><a href="../contact.html">Contact Us</a></li>
+
+        </ul>
+      </div>
+    </div>
+
+  </header>
+    <!-- Header/Title Section -->
+    <section class="arthro-header-section">
+      <div class="arthro-header-container">
+        <h1 class="arthro-main-title">ARTHROSCOPY AND SPORTS INJURY</h1>
+        <p class="arthro-subtitle">Advanced Care for Active Lives</p>
+      </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section class="arthro-intro-section">
+      <div class="arthro-intro-container">
+        <div class="arthro-intro-content">
+          <h2>Welcome to Our Department</h2>
+          <p>
+            At THE POSH – Pondy Ortho Specialty Hospital, our Arthroscopy and Sports Injury Department is committed to restoring mobility, strength, and confidence to athletes and active individuals of all ages. We offer cutting-edge, minimally invasive treatments for sports-related injuries and joint problems—helping patients return to peak performance safely and quickly.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="arthro-services-section">
+      <div class="arthro-services-container">
+        <h2 class="arthro-services-title">Our Services Include</h2>
+        
+        <div class="arthro-services-grid">
+          <!-- Service Card 1: Arthroscopic Surgeries -->
+          <div class="arthro-service-card">
+            <h3>Arthroscopic (Keyhole) Surgeries</h3>
+            <ul>
+              <li>Knee (ACL, PCL, Meniscus repair)</li>
+              <li>Shoulder (Rotator cuff tear, recurrent dislocation)</li>
+              <li>Ankle, Elbow & Hip arthroscopy</li>
+            </ul>
+          </div>
+
+          <!-- Service Card 2: Sports Injury Management -->
+          <div class="arthro-service-card">
+            <h3>Sports Injury Management</h3>
+            <ul>
+              <li>Sprains, ligament tears, tendon injuries</li>
+              <li>Muscle strains and overuse injuries</li>
+              <li>Dislocations and cartilage damage</li>
+            </ul>
+          </div>
+
+          <!-- Service Card 3: Rehabilitation & Physiotherapy -->
+          <div class="arthro-service-card">
+            <h3>Rehabilitation & Physiotherapy</h3>
+            <ul>
+              <li>Sports-specific rehab programs</li>
+              <li>Strengthening and flexibility training</li>
+              <li>Post-operative recovery support</li>
+            </ul>
+          </div>
+
+          <!-- Service Card 4: Preventive Sports Medicine -->
+          <div class="arthro-service-card">
+            <h3>Preventive Sports Medicine</h3>
+            <ul>
+              <li>Injury prevention strategies</li>
+              <li>Fitness assessment and performance optimization</li>
+              <li>Custom braces and supports</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="arthro-why-choose-section">
+      <div class="arthro-why-choose-container">
+        <h2 class="arthro-why-choose-title">Why Choose Us?</h2>
+        
+        <div class="arthro-benefits-list">
+          <ul>
+            <li>Minimally Invasive Surgery – Faster healing, smaller scars, and quicker return to sports</li>
+            <li>Advanced Imaging & Diagnostics – MRI, DEXA Scan, CT, Ultrasound, and on-site Digital X-rays</li>
+            <li>Multidisciplinary Team – Experienced arthroscopy surgeons, sports medicine experts, and certified physiotherapists</li>
+            <li>Personalized Care Plans – Tailored treatment and rehab for each patient's goals and sport</li>
+          </ul>
+        </div>
+
+        <div class="arthro-motivational-quote">
+          <p>"Whether you're a professional athlete or a weekend warrior, we're here to get you back in action with confidence and care"</p>
+        </div>
+      </div>
+    </section>
+</body>
+</html>
