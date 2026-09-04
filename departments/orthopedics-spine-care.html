@@ -30,42 +30,40 @@
 
 /* Header/Title Section */
     .ortho-header-section {
-      padding: 0 20px;
-      background: url('../assets/images/posh/ortho.jpg') right center / 60% no-repeat, #00103a !important;
+      background: url('../assets/images/posh/ortho.jpg') right center / cover no-repeat, #00103a !important;
       position: relative;
       overflow: hidden;
-      margin-bottom: 6px;
-      min-height: unset;
-      height: auto;
+      margin-bottom: 20px;
+      min-height: 200px;
       display: flex;
       align-items: center;
-      padding: 30px 20px;
+      padding: 40px 60px;
     }
 
     .ortho-header-section::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, #00103a 0%, #00103a 40%, rgba(0, 16, 58, 0.6) 65%, transparent 100%) !important;
+      background: linear-gradient(90deg, #00103a 0%, #00103a 35%, rgba(0, 16, 58, 0.5) 60%, transparent 100%) !important;
       z-index: 0;
     }
 
     .ortho-header-container {
-      max-width: 1200px;
-      margin: 0 auto;
+      width: 100%;
       position: relative;
       z-index: 1;
       text-align: left;
+      padding-left: 20px;
     }
 
     .ortho-main-title {
-      font-size: 1.6rem !important;
+      font-size: 2.2rem !important;
       font-weight: 900;
       color: #ffffff;
-      margin-bottom: 4px;
+      margin: 0;
       letter-spacing: 3px;
       text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-      -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.1);
+      text-align: left !important;
     }
 
     .ortho-subtitle {
@@ -1179,15 +1177,9 @@
 ===================== -->
 
     <!-- Header/Title Section -->
-    <section id="dept-hero-banner" class="banner">
-      <div
-        style="position:absolute;inset:0;background:linear-gradient(90deg,#00103a 0%,#00103a 38%,rgba(0,16,58,0.5) 65%,transparent 100%);">
-      </div>
-      <div style="position:relative;z-index:1;padding:0 40px;">
-        <h1 style="font-size:1.8rem;font-weight:900;color:#fff;letter-spacing:3px;margin-left: 40px;">ORTHOPAEDICS
-        </h1>
-
-
+    <section class="ortho-header-section">
+      <div class="ortho-header-container">
+        <h1 class="ortho-main-title">ORTHOPAEDICS</h1>
       </div>
     </section>
 
@@ -1749,7 +1741,7 @@
           <p>
             Welcome to <strong>THE POSH</strong>. We operate at PONDICHERRY as a private surgical hospital, and our
             focus is on delivering quality care and value for money. We play a key role in improving the health of
-            PONDICHERRY... <a href="../about.html">MORE</a>
+            PONDICHERRY.
           </p>
         </div>
 
@@ -1881,6 +1873,7 @@ Please share available slots.`;
         if (e.key === "Escape") {
           closeLightbox();
         }
+      });
     </script>
 
       <!-- Bootstrap -->
@@ -2039,17 +2032,7 @@ Please share available slots.`;
             text-transform: none;
           }
         </style>
-
-
-
-          <!DOCTYPE html>
-
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Our Doctors - Posh-Pondy Ortho Speciality Hospital</title>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-            <style>
+        <style>
               :root {
                 --primary-color: #d63384;
                 --primary-light: #ff4da6;
