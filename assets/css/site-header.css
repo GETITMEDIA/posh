@@ -461,44 +461,7 @@ header {
   box-shadow:
     0 6px 18px rgba(233, 30, 99, 0.25),
     0 3px 8px rgba(106, 27, 154, 0.35);
-  transition: transform 0.35s ease, top 0.35s ease;
 }
-
-/* =========================================================
-   STICKY HEADER SCROLL BEHAVIOR
-   1. Down Scroll: Hides 1st & 2nd rows, 3rd navbar stays sticky at top: 0
-   2. Up Scroll: Whole header slides down sticky at top: 0 (showing 1st & 2nd rows)
-   ========================================================= */
-
-/* Scrolling down: Shift header up so row 1 and row 2 hide above top of viewport, leaving 3rd nav fixed at top */
-body.header-scrolled-down header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
-  /* Transform up by height of top 2 rows: top row (~60px) + logo row (~110px) = ~170px */
-  transform: translateY(-170px);
-}
-
-/* Scrolling up: Header is fixed at top: 0, showing full header */
-body.header-scrolled-up header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
-  transform: translateY(0);
-}
-
-/* Ensure mobile header stays responsive */
-@media (max-width: 1024px) {
-  body.header-scrolled-down header {
-    /* On mobile/tablet, top info bar + logo header height is around 130px */
-    transform: translateY(-130px);
-  }
-}
-
 
 header .text-sm {
   letter-spacing: 0.3px;
@@ -822,4 +785,63 @@ html {
   html {
     scroll-behavior: auto;
   }
+}
+/* =========================================================
+   STICKY NAV ROW
+   ---------------------------------------------------------
+   The whole header sticks to the top of the window. Scrolling
+   DOWN slides the top info bar and the branding row up out of
+   the way, leaving just the nav row on screen; scrolling UP
+   brings them straight back.
+
+   The distance to slide is the combined height of rows 1 + 2,
+   measured at runtime and written to --posh-header-shift by
+   assets/javascript/site-header.js, so nothing here has to
+   hard-code a pixel height.
+
+   Below 1024px the nav row is hidden and the burger takes its
+   place, so the collapse is desktop-only - otherwise there
+   would be nothing left to see.
+   ========================================================= */
+@media (min-width: 1025px) {
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  /* Only animate once the script has taken over, so the header
+     cannot slide about during the first paint. */
+  header.posh-sticky-ready {
+    transition: transform 0.35s ease;
+    will-change: transform;
+  }
+
+  header.posh-collapsed {
+    transform: translateY(calc(var(--posh-header-shift, 0px) * -1));
+  }
+
+  /* An anchored section must clear the nav row that stays behind. */
+  :target {
+    scroll-margin-top: calc(var(--posh-nav-height, 64px) + 16px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  header.posh-sticky-ready {
+    transition: none;
+  }
+}
+
+/* ---------------------------------------------------------
+   The header needs an opaque base now that page content
+   scrolls underneath it. Row 1's purple is rgba(...,0.76) and
+   the branding row's bg-white utility is not in the compiled
+   CSS, so both were being composited straight onto the white
+   page canvas. Painting that same white on the header keeps
+   the colours pixel-identical and stops the bleed-through.
+   --------------------------------------------------------- */
+header {
+  background-color: #ffffff;
 }

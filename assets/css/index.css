@@ -10788,10 +10788,20 @@ footer::after {
     text-decoration: none;
 }
 
-@media (max-width: 768px) {
+/* Responsive Footer Grid for all screens */
+@media (max-width: 1024px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 50px 40px;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 640px) {
     .footer-container {
         grid-template-columns: 1fr;
         padding: 40px 20px;
+        gap: 25px;
     }
 
     .footer-map iframe {
