@@ -51,6 +51,49 @@
         closeMobile();
       }
     });
+
+    /* =========================================================
+       DYNAMIC STICKY HEADER
+       Down scroll -> hides 1st & 2nd navbars, locks 3rd navbar to top: 0
+       Up scroll -> shows 1st & 2nd navbars back
+       ========================================================= */
+    var header = document.querySelector("header");
+    var nav = document.querySelector("header nav");
+    var lastScrollY = window.scrollY;
+
+    function handleScroll() {
+      var currentScrollY = window.scrollY;
+      
+      // Calculate top rows height (Row 1 + Row 2)
+      var topRowsHeight = 0;
+      if (header) {
+        var topRow = header.children[0];
+        var logoRow = header.children[1];
+        if (topRow && logoRow) {
+          topRowsHeight = topRow.offsetHeight + logoRow.offsetHeight;
+        }
+      }
+
+      if (currentScrollY > topRowsHeight + 20) {
+        if (currentScrollY > lastScrollY) {
+          // Scrolling down -> hide row 1 & row 2, stick nav at top:0
+          document.body.classList.add("header-scrolled-down");
+          document.body.classList.remove("header-scrolled-up");
+        } else {
+          // Scrolling up -> show full header back
+          document.body.classList.add("header-scrolled-up");
+          document.body.classList.remove("header-scrolled-down");
+        }
+      } else {
+        // Near top -> reset to default state
+        document.body.classList.remove("header-scrolled-down", "header-scrolled-up");
+      }
+
+      lastScrollY = currentScrollY;
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
   }
 
   /* Accordion toggle used by the mobile menu's dropdown buttons.

@@ -461,7 +461,44 @@ header {
   box-shadow:
     0 6px 18px rgba(233, 30, 99, 0.25),
     0 3px 8px rgba(106, 27, 154, 0.35);
+  transition: transform 0.35s ease, top 0.35s ease;
 }
+
+/* =========================================================
+   STICKY HEADER SCROLL BEHAVIOR
+   1. Down Scroll: Hides 1st & 2nd rows, 3rd navbar stays sticky at top: 0
+   2. Up Scroll: Whole header slides down sticky at top: 0 (showing 1st & 2nd rows)
+   ========================================================= */
+
+/* Scrolling down: Shift header up so row 1 and row 2 hide above top of viewport, leaving 3rd nav fixed at top */
+body.header-scrolled-down header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  /* Transform up by height of top 2 rows: top row (~60px) + logo row (~110px) = ~170px */
+  transform: translateY(-170px);
+}
+
+/* Scrolling up: Header is fixed at top: 0, showing full header */
+body.header-scrolled-up header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  transform: translateY(0);
+}
+
+/* Ensure mobile header stays responsive */
+@media (max-width: 1024px) {
+  body.header-scrolled-down header {
+    /* On mobile/tablet, top info bar + logo header height is around 130px */
+    transform: translateY(-130px);
+  }
+}
+
 
 header .text-sm {
   letter-spacing: 0.3px;
