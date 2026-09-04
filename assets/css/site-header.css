@@ -1050,7 +1050,8 @@ header {
 
 /* Facilities page */
 .facilities-section,
-.facilities-container {
+.facilities-container,
+.package-images {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
