@@ -686,109 +686,212 @@ header .text-sm {
    ========================================================= */
 @media (max-width: 1024px) {
 
-  /* Stack top info bar items vertically */
+  /* ---- TOP INFO BAR: SHOW ALL, STACKED NEATLY ---- */
   header .max-w-7xl.mx-auto.px-4.py-3 {
+    display: flex !important;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 6px;
     padding: 10px 12px;
     text-align: center;
   }
 
-  .header-call-now {
-    font-size: 12px;
-    line-height: 1.4;
+  /* Social icons — compact row */
+  .card ul {
+    gap: 8px;
+    margin-bottom: 2px;
   }
 
+  .social {
+    height: 30px;
+    width: 30px;
+    font-size: 15px;
+    line-height: 30px;
+  }
+
+  /* Emergency icon */
   .emergency-icon {
     height: 36px;
     width: auto;
   }
 
-  header img[alt="Ambulance Service"] {
-    height: 35px;
-  }
-
-  header img[alt="Ambulance Service"]+span {
-    display: none;
-  }
-
-  /* Appointment button — matched on suffix so it also works
-     from pages inside a sub-folder (../appointment.html) */
-  header a[href$="appointment.html"] {
+  /* Phone numbers */
+  .header-call-now {
     font-size: 12px;
-    padding: 6px 14px;
-    border-radius: 6px;
+    line-height: 1.4;
   }
 
-  /* The desktop nav is hidden below 1024px (assets/css/mobile-header.css)
-     while Tailwind's lg: breakpoint in this project is 992px, so between
-     992px and 1024px neither the nav nor the burger was shown. Keep the
-     burger visible for the whole range in which the nav is hidden. */
-  #menuBtn {
-    display: block;
-    font-size: 18px;
-  }
-}
-
-/* The header must never be wider than the viewport. Scoped to the
-   widths where the top bar stacks, so the centred desktop container
-   is left exactly as it was. */
-@media (max-width: 1024px) {
-
-  header,
-  header .logo-header,
-  header .max-w-7xl {
-    max-width: 100%;
-  }
-}
-
-/* Branding row: let the hospital name shrink/wrap instead of
-   overflowing on narrow screens. Desktop sizing is untouched. */
-.logo-header>div {
-  min-width: 0;
-}
-
-.logo-header h1 {
-  overflow-wrap: anywhere;
-}
-
-@media (max-width: 1024px) {
-  .logo-header {
-    gap: 20px;
-  }
-
-  .logo-header h1 {
-    font-size: 1.5rem;
-    line-height: 1.25;
-  }
-}
-
-@media (max-width: 767px) {
-  .logo-header {
-    gap: 12px;
-  }
-
-  .logo-header h1 {
-    font-size: 1.15rem;
-    line-height: 1.3;
-    letter-spacing: normal;
-  }
-
-  .logo-header img {
-    height: 3rem;
-  }
-
-  /* keep the appointment button and its neighbours inside the bar */
-  header .max-w-7xl>div {
-    flex-wrap: wrap;
+  /* Bottom row: Hamburger | Ambulance | Appointment */
+  header .max-w-7xl.mx-auto.px-4.py-3 > .flex:last-child {
+    display: flex;
+    width: 100%;
     justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: nowrap;
+    margin-top: 4px;
   }
 
-  .appt-button {
-    min-width: 110px;
-    padding: 10px;
+  /* Hamburger button */
+  #menuBtn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px !important;
+    padding: 0 !important;
+    border: 2px solid rgba(255, 255, 255, 0.35) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    border-radius: 8px !important;
+    cursor: pointer;
+    line-height: 1;
+    width: 38px;
+    height: 38px;
+  }
+
+  /* Ambulance gif */
+  header img[alt="Ambulance Service"] {
+    height: 30px !important;
+  }
+
+  /* Hide "Ambulance Service" text */
+  header img[alt="Ambulance Service"] + span {
+    display: none !important;
+  }
+
+  /* Appointment button */
+  header a[href$="appointment.html"] {
+    font-size: 11px !important;
+    padding: 8px 14px !important;
+    border-radius: 6px !important;
+  }
+
+  /* ---- BRANDING ROW ---- */
+  header .bg-white {
+    padding: 10px 16px !important;
+  }
+
+  .logo-header {
+    gap: 12px !important;
+    width: 100% !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .logo-header > a:first-child img,
+  .logo-header > a:first-child {
+    flex-shrink: 0;
+  }
+
+  .logo-header > a:first-child img {
+    height: 45px !important;
+    width: auto !important;
+  }
+
+  .logo-header h1 {
+    font-size: 0.8rem !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+    letter-spacing: normal !important;
+    text-shadow: none !important;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .logo-header > img:last-child {
+    height: 40px !important;
+    width: auto !important;
+    flex-shrink: 0;
+  }
+
+  /* Hide desktop nav */
+  header nav {
+    display: none !important;
+  }
+}
+
+/* ---- MOBILE (≤ 767px) ---- */
+@media (max-width: 767px) {
+
+  header .bg-white {
+    padding: 8px 12px !important;
+  }
+
+  .logo-header {
+    gap: 8px !important;
+  }
+
+  .logo-header > a:first-child img {
+    height: 38px !important;
+  }
+
+  .logo-header h1 {
+    font-size: 0.7rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .logo-header > img:last-child {
+    height: 35px !important;
+  }
+
+  .social {
+    height: 28px;
+    width: 28px;
+    font-size: 14px;
+    line-height: 28px;
+  }
+
+  .header-call-now {
+    font-size: 11px;
+  }
+
+  #menuBtn {
+    width: 34px;
+    height: 34px;
+    font-size: 20px !important;
+  }
+}
+
+/* ---- SMALL PHONES (≤ 480px) ---- */
+@media (max-width: 480px) {
+
+  .logo-header h1 {
+    font-size: 0.6rem !important;
+  }
+
+  .logo-header > a:first-child img {
+    height: 32px !important;
+  }
+
+  .logo-header > img:last-child {
+    height: 30px !important;
+  }
+
+  .logo-header {
+    gap: 6px !important;
+  }
+
+  .social {
+    height: 26px;
+    width: 26px;
+    font-size: 13px;
+    line-height: 26px;
+  }
+
+  .header-call-now {
+    font-size: 10px;
+  }
+
+  #menuBtn {
+    width: 32px;
+    height: 32px;
+    font-size: 18px !important;
+  }
+
+  .emergency-icon {
+    height: 30px;
   }
 }
 
