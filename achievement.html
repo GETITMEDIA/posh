@@ -265,7 +265,7 @@
             </ul>
           </li>
 
-          <li><a href="achieve.html">Achievements</a></li>
+          <li><a href="achievement.html">Achievements</a></li>
           <li><a href="contact.html">Contact Us</a></li>
 
         </ul>
@@ -359,7 +359,7 @@
             </ul>
           </li>
 
-          <li><a href="achieve.html">Achievements</a></li>
+          <li><a href="achievement.html">Achievements</a></li>
           <li><a href="contact.html">Contact Us</a></li>
 
         </ul>
@@ -567,7 +567,7 @@
                   <span class="mv-award-badge">Mrs.Kalaivani</span>
                   <h4>OPD</h4>
                 </div>
-                <div class="mv-award-images">
+                <div class="mv-award-images mv-award-images-single">
                   <div class="mv-img-wrap" onclick="openCert('assets/images/awards/department-6.jpg')">
                     <img decoding="async" src="assets/images/awards/department-6.jpg"
                       alt="Nursing Department receiving the Shripanjavarnam Award" loading="lazy">
@@ -580,7 +580,7 @@
                   <span class="mv-award-badge">Mr.Madhan</span>
                   <h4>MRI</h4>
                 </div>
-                <div class="mv-award-images">
+                <div class="mv-award-images mv-award-images-single">
                   <div class="mv-img-wrap" onclick="openCert('assets/images/awards/department-8.jpg')">
                     <img decoding="async" src="assets/images/awards/department-8.jpg"
                       alt="Nursing Department receiving the Shripanjavarnam Award" loading="lazy">
@@ -593,7 +593,7 @@
                   <span class="mv-award-badge">Dr.Murugaraj</span>
                   <h4>Physiotherapy</h4>
                 </div>
-                <div class="mv-award-images">
+                <div class="mv-award-images mv-award-images-single">
                   <div class="mv-img-wrap" onclick="openCert('assets/images/awards/department-9.jpg')">
                     <img decoding="async" src="assets/images/awards/department-9.jpg"
                       alt="Nursing Department receiving the Shripanjavarnam Award" loading="lazy">
@@ -606,7 +606,7 @@
                   <span class="mv-award-badge">Mr.Kamaraj</span>
                   <h4>Operation Manager - Administration</h4>
                 </div>
-                <div class="mv-award-images">
+                <div class="mv-award-images mv-award-images-single">
                   <div class="mv-img-wrap" onclick="openCert('assets/images/awards/department-10.jpg')">
                     <img decoding="async" src="assets/images/awards/department-10.jpg"
                       alt="Nursing Department receiving the Shripanjavarnam Award" loading="lazy">
@@ -629,7 +629,7 @@
                   <h4>Mrs. Mathi</h4>
                   <p>Nursing Department</p>
                 </div>
-                <div class="mv-award-images">
+                <div class="mv-award-images mv-award-images-single">
                   <div class="mv-img-wrap" onclick="openCert('assets/images/awards/employee-1.jpeg')">
                     <img decoding="async" src="assets/images/awards/employee-1.jpeg"
                       alt="Mrs. Mathi receiving the Best Employee Award, Nursing Department" loading="lazy">
@@ -643,7 +643,7 @@
                   <h4>Mr. Vinothkumar</h4>
                   <p>Maintenance Department</p>
                 </div>
-                <div class="mv-award-images">
+                <div class="mv-award-images mv-award-images-single">
                   <div class="mv-img-wrap" onclick="openCert('assets/images/awards/employee-1.jpeg')">
                     <img decoding="async" src="assets/images/awards/employee-2.jpeg"
                       alt="Maintenance Department receiving the Best Employee Award" loading="lazy">
@@ -1084,6 +1084,10 @@
       gap: 12px;
       padding: 18px;
       background: linear-gradient(135deg, #f9f0ff 0%, #fff0f8 100%);
+    }
+
+    .mv-award-images.mv-award-images-single {
+      grid-template-columns: 1fr;
     }
 
     .mv-award-images img {
