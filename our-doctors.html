@@ -36,7 +36,7 @@
 
 
     <!-- Custom CSS -->
-
+    <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/mobile-header.css">
   <link href="assets/css/site-header.css" rel="stylesheet">
@@ -995,7 +995,7 @@
                     .doctor-card {
                         background: #ffffff;
                         border-radius: 14px;
-                        box-shadow: 0 4px 20px rgb(248, 113, 214), 0 1px 4px rgba(0, 0, 0, 0.06);
+                        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
                         border: 1px solid #ffffff;
                         transition: transform 0.3s, box-shadow 0.3s;
                         height: 100%;
@@ -1064,20 +1064,27 @@
 
                     .dc-btn {
                         display: block;
-                        background: #fff;
-                        color: #e91e63;
+                        background: #e91e63;
+                        color: #fff;
                         font-weight: 700;
                         font-size: 0.95rem;
                         padding: 10px 0;
                         border-radius: 6px;
                         text-decoration: none;
-                        transition: background 0.2s;
-                        border: 2px solid #e91e63;
+                        transition: background 0.3s, transform 0.2s;
+                        border: none;
+                        position: relative;
+                        z-index: 10;
                     }
 
                     .dc-btn:hover {
-                        background: #e91e63;
+                        background: #d81b60;
                         color: #fff;
+                        transform: translateY(-2px);
+                    }
+
+                    .doctor-card::after {
+                        display: none !important;
                     }
 
                     .doctor-card::before {
