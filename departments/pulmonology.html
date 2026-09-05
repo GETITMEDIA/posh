@@ -2046,27 +2046,6 @@
                         }
                     }
 
-                    /* Footer Styles with Animations */
-                    footer {
-                        background: linear-gradient(135deg, #1a2a3a 0%, #0d1a26 100%);
-                        color: #fff;
-                        padding: 40px 0 20px;
-                        position: relative;
-                        overflow: hidden;
-                    }
-
-                    /* Animated background elements */
-                    footer::before {
-                        content: '';
-                        position: absolute;
-                        top: -50%;
-                        left: -50%;
-                        width: 200%;
-                        height: 200%;
-                        background: radial-gradient(circle, rgba(41, 128, 185, 0.1) 0%, transparent 70%);
-                        animation: float 20s infinite linear;
-                    }
-
                     @keyframes float {
                         0% {
                             transform: rotate(0deg);
@@ -2077,304 +2056,10 @@
                         }
                     }
 
-                    .footer-container {
-                        max-width: 1200px;
-                        margin: 0 auto;
-                        display: grid;
-                        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                        gap: 40px;
-                        padding: 0 20px;
-                        position: relative;
-                        z-index: 1;
-                    }
-
-                    /* Section Headings Animation */
-                    .footer-container h4 {
-                        color: #4dabf7;
-                        font-size: 1.2rem;
-                        margin-bottom: 20px;
-                        padding-bottom: 10px;
-                        position: relative;
-                        display: inline-block;
-                        animation: slideInLeft 0.8s ease-out;
-                    }
-
-                    .footer-container h4::after {
-                        content: '';
-                        position: absolute;
-                        left: 0;
-                        bottom: -5px;
-                        width: 50px;
-                        height: 3px;
-                        background: linear-gradient(90deg, #4dabf7, #228be6);
-                        transform: scaleX(0);
-                        transform-origin: left;
-                        animation: expandLine 1s ease-out 0.5s forwards;
-                    }
-
                     @keyframes expandLine {
                         to {
                             transform: scaleX(1);
                         }
-                    }
-
-                    /* About Section */
-                    .footer-about {
-                        animation: fadeInUp 0.8s ease-out 0.2s both;
-                    }
-
-                    .footer-about p {
-                        line-height: 1.6;
-                        color: #b3c5d8;
-                        transition: all 0.3s ease;
-                    }
-
-                    .footer-about p:hover {
-                        color: #fff;
-                        transform: translateY(-2px);
-                    }
-
-                    .footer-about strong {
-                        color: #4dabf7;
-                        position: relative;
-                        display: inline-block;
-                    }
-
-                    .footer-about strong::after {
-                        content: '';
-                        position: absolute;
-                        left: 0;
-                        bottom: -2px;
-                        width: 100%;
-                        height: 2px;
-                        background: #4dabf7;
-                        transform: scaleX(0);
-                        transition: transform 0.3s ease;
-                    }
-
-                    .footer-about p:hover strong::after {
-                        transform: scaleX(1);
-                    }
-
-                    .footer-about a {
-                        color: #4dabf7;
-                        text-decoration: none;
-                        font-weight: 600;
-                        position: relative;
-                        padding: 2px 4px;
-                        transition: all 0.3s ease;
-                    }
-
-                    .footer-about a::before {
-                        content: '';
-                        position: absolute;
-                        left: 0;
-                        bottom: 0;
-                        width: 100%;
-                        height: 1px;
-                        background: #4dabf7;
-                        transform: scaleX(0);
-                        transition: transform 0.3s ease;
-                    }
-
-                    .footer-about a:hover {
-                        color: #fff;
-                        background: rgba(77, 171, 247, 0.1);
-                        border-radius: 3px;
-                    }
-
-                    .footer-about a:hover::before {
-                        transform: scaleX(1);
-                    }
-
-                    /* Quick Links Animation */
-                    .footer-links {
-                        animation: fadeInUp 0.8s ease-out 0.4s both;
-                    }
-
-                    .footer-links ul {
-                        list-style: none;
-                        padding: 0;
-                    }
-
-                    .footer-links li {
-                        margin-bottom: 12px;
-                        opacity: 0;
-                        animation: slideInRight 0.5s ease-out forwards;
-                    }
-
-                    .footer-links li:nth-child(1) {
-                        animation-delay: 0.5s;
-                    }
-
-                    .footer-links li:nth-child(2) {
-                        animation-delay: 0.6s;
-                    }
-
-                    .footer-links li:nth-child(3) {
-                        animation-delay: 0.7s;
-                    }
-
-                    .footer-links li:nth-child(4) {
-                        animation-delay: 0.8s;
-                    }
-
-                    .footer-links li:nth-child(5) {
-                        animation-delay: 0.9s;
-                    }
-
-                    .footer-links li:nth-child(6) {
-                        animation-delay: 1.0s;
-                    }
-
-                    .footer-links li:nth-child(7) {
-                        animation-delay: 1.1s;
-                    }
-
-                    .footer-links a {
-                        color: #b3c5d8;
-                        text-decoration: none;
-                        display: inline-block;
-                        padding: 8px 0;
-                        position: relative;
-                        transition: all 0.3s ease;
-                        width: 100%;
-                    }
-
-                    .footer-links a::before {
-                        content: '?';
-                        position: absolute;
-                        left: -20px;
-                        opacity: 0;
-                        transition: all 0.3s ease;
-                        color: #4dabf7;
-                    }
-
-                    .footer-links a:hover {
-                        color: #fff;
-                        transform: translateX(10px);
-                        padding-left: 5px;
-                    }
-
-                    .footer-links a:hover::before {
-                        opacity: 1;
-                        left: -15px;
-                    }
-
-                    /* Contact Section Animation */
-                    .footer-contact {
-                        animation: fadeInUp 0.8s ease-out 0.6s both;
-                    }
-
-                    .footer-contact p {
-                        margin-bottom: 20px;
-                        line-height: 1.6;
-                        color: #b3c5d8;
-                        transition: all 0.3s ease;
-                        padding: 15px;
-                        border-radius: 8px;
-                        background: rgba(255, 255, 255, 0.05);
-                    }
-
-                    .footer-contact p:hover {
-                        background: rgba(255, 255, 255, 0.1);
-                        transform: translateY(-3px);
-                        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-                    }
-
-                    .footer-contact span {
-                        color: #4dabf7;
-                        font-weight: 600;
-                        display: block;
-                        margin-bottom: 5px;
-                    }
-
-                    .footer-contact a {
-                        color: #4dabf7;
-                        text-decoration: none;
-                        transition: all 0.3s ease;
-                        position: relative;
-                        padding: 2px 4px;
-                    }
-
-                    .footer-contact a::after {
-                        content: '';
-                        position: absolute;
-                        left: 0;
-                        bottom: 0;
-                        width: 100%;
-                        height: 1px;
-                        background: #4dabf7;
-                        transform: scaleX(0);
-                        transition: transform 0.3s ease;
-                    }
-
-                    .footer-contact a:hover {
-                        color: #fff;
-                    }
-
-                    .footer-contact a:hover::after {
-                        transform: scaleX(1);
-                    }
-
-                    /* Map Animation */
-                    .footer-map {
-                        animation: fadeInUp 0.8s ease-out 0.8s both;
-                    }
-
-                    .footer-map iframe {
-                        width: 100%;
-                        height: 200px;
-                        border: none;
-                        border-radius: 10px;
-                        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
-                        transition: all 0.5s ease;
-                        position: relative;
-                        overflow: hidden;
-                    }
-
-                    .footer-map iframe::before {
-                        content: '';
-                        position: absolute;
-                        top: 0;
-                        left: -100%;
-                        width: 100%;
-                        height: 100%;
-                        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-                        transition: left 0.5s ease;
-                    }
-
-                    .footer-map iframe:hover {
-                        transform: scale(1.02) translateY(-5px);
-                        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-                    }
-
-                    .footer-map iframe:hover::before {
-                        left: 100%;
-                    }
-
-                    /* Footer Bottom Animation */
-                    .footer-bottom {
-                        text-align: center;
-                        margin-top: 40px;
-                        padding-top: 20px;
-                        border-top: 1px solid rgba(255, 255, 255, 0.1);
-                        color: #b3c5d8;
-                        font-size: 0.9rem;
-                        animation: fadeIn 1s ease-out 1s both;
-                        position: relative;
-                    }
-
-                    .footer-bottom::before {
-                        content: '';
-                        position: absolute;
-                        top: 0;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        width: 100px;
-                        height: 2px;
-                        background: linear-gradient(90deg, transparent, #4dabf7, transparent);
-                        animation: pulse 2s infinite;
                     }
 
                     @keyframes pulse {
@@ -2387,37 +2072,6 @@
                         50% {
                             opacity: 1;
                         }
-                    }
-
-                    .footer-bottom a {
-                        color: #4dabf7;
-                        text-decoration: none;
-                        font-weight: 600;
-                        position: relative;
-                        transition: all 0.3s ease;
-                        padding: 2px 4px;
-                    }
-
-                    .footer-bottom a::after {
-                        content: '';
-                        position: absolute;
-                        left: 0;
-                        bottom: 0;
-                        width: 100%;
-                        height: 1px;
-                        background: #4dabf7;
-                        transform: scaleX(0);
-                        transition: transform 0.3s ease;
-                    }
-
-                    .footer-bottom a:hover {
-                        color: #fff;
-                        background: rgba(77, 171, 247, 0.1);
-                        border-radius: 3px;
-                    }
-
-                    .footer-bottom a:hover::after {
-                        transform: scaleX(1);
                     }
 
                     /* Animation Keyframes */
@@ -2469,43 +2123,6 @@
 
                     /* Responsive Design with Animation */
                     @media (max-width: 768px) {
-                        .footer-container {
-                            grid-template-columns: 1fr;
-                            gap: 30px;
-                        }
-
-                        .footer-container>div {
-                            animation: fadeInUp 0.8s ease-out both !important;
-                        }
-
-                        .footer-links li {
-                            animation: slideInRight 0.5s ease-out forwards !important;
-                        }
-
-                        .footer-map iframe {
-                            height: 150px;
-                        }
-                    }
-
-                    /* Hover effect for all sections */
-                    .footer-container>div {
-                        transition: transform 0.3s ease;
-                    }
-
-                    .footer-container>div:hover {
-                        transform: translateY(-5px);
-                    }
-
-                    /* Decorative elements */
-                    .footer-container::after {
-                        content: '+';
-                        position: absolute;
-                        top: 50%;
-                        right: 5%;
-                        font-size: 24px;
-                        color: rgba(77, 171, 247, 0.1);
-                        animation: spin 10s linear infinite;
-                        z-index: 0;
                     }
 
                     @keyframes spin {
@@ -2517,7 +2134,7 @@
                             transform: rotate(360deg);
                         }
                     }
-                </style>
+</style>
                 <style>
                     .dept-dropdown {
                         max-height: 320px !important;
@@ -2977,69 +2594,68 @@
 
             <!-- Footer -->
             <footer>
-                <div class="footer-container" id="footernav">
+      <div class="footer-container" id="footernav">
 
-                    <!-- About -->
-                    <div class="footer-about">
-                        <h4>ABOUT US</h4>
-                        <p>
-                            Welcome to <strong>THE POSH</strong>. We operate at PONDICHERRY as a private surgical
-                            hospital, and our focus is on delivering quality care and value for money. We play a key
-                            role in improving the health of PONDICHERRY.
-                        </p>
-                    </div>
+        <!-- About -->
+        <div class="footer-about">
+          <h4>ABOUT US</h4>
+          <p>
+            Welcome to <strong>THE POSH</strong>. We operate at PONDICHERRY as a private surgical hospital, and our
+            focus is on delivering quality care and value for money. We play a key role in improving the health of
+            PONDICHERRY.
+          </p>
+        </div>
 
-                    <!-- Quick Links -->
-                    <div class="footer-links">
-                        <h4>QUICK LINKS</h4>
-                        <ul>
-                            <li><a href="../index.html">HOME</a></li>
-                            <li><a href="../about.html">ABOUT US</a></li>
-                            <li><a href="../index.html#departmentssection">DEPARTMENTS</a></li>
-                            <li><a href="../our-doctors.html">OUR DOCTORS</a></li>
-                            <li><a href="../ourteams.html">Our Team</a></li>
-                            <li><a href="../healthtips.html">HEALTH TIPS</a></li>
-                            <li><a href="../appointment.html">APPOINTMENT</a></li>
-                        </ul>
-                    </div>
+        <!-- Quick Links -->
+        <div class="footer-links">
+          <h4>QUICK LINKS</h4>
+          <ul>
+            <li><a href="../index.html">HOME</a></li>
+            <li><a href="../about.html">ABOUT US</a></li>
+            <li><a href="../index.html#departmentssection">DEPARTMENTS</a></li>
+            <li><a href="../our-doctors.html">OUR DOCTORS</a></li>
+            <li><a href="../ourteams.html">Our Team</a></li>
+            <li><a href="../healthtips.html">HEALTH TIPS</a></li>
+            <li><a href="../appointment.html">APPOINTMENT</a></li>
+          </ul>
+        </div>
 
-                    <!-- Contact -->
-                    <div class="footer-contact">
-                        <h4>CONTACT US</h4>
-                        <p>
-                            <span>PONDICHERRY BRANCH:</span><br> ?? Location: No. 24, First Main Road, Ambal Nagar,
-                            Puducherry � 605009<br> ? Tel: 0413-2200017 / 0413-2200018<br> ?? +91 9677073462 / +91
-                            8056555330
-                        </p>
-                        <p>
-                            <span>THE POSH @ KALPAKKAM:</span><br> ?? Emergency & Trauma Day Care Unit<br> ECR Road,
-                            Prabaliyamedu, Pudhupattinam, Thirukazhukundram Taluk,<br> Chengalpattu District �
-                            603102<br> ?? 8925733344 | ? 044 2748 8981
-                        </p>
-                        <p>
-                            <span>Email:</span><br>
-                            <a href="mailto:theposhmarketing@gmail.com">theposhmarketing@gmail.com</a><br>
-                            <a href="mailto:theposhhospital@gmail.com">theposhhospital@gmail.com</a>
-                        </p>
-                    </div>
+        <!-- Contact -->
+        <div class="footer-contact">
+          <h4>CONTACT US</h4>
+          <p>
+            <span>PONDICHERRY BRANCH:</span><br> 📍 Location: No. 24, First Main Road, Ambal Nagar, Puducherry –
+            605009<br> ☎ Tel: 0413-2200017 / 0413-2200018<br> 📱 +91 9677073462 / +91 8056555330
+          </p>
+          <p>
+            <span>THE POSH @ KALPAKKAM:</span><br> 🚑 Emergency & Trauma Day Care Unit<br> ECR Road, Prabaliyamedu,
+            Pudhupattinam, Thirukazhukundram Taluk,<br> Chengalpattu District – 603102<br> 📱 8925733344 | ☎ 044 2748
+            8981
+          </p>
+          <p>
+            <span>Email:</span><br>
+            <a href="mailto:theposhmarketing@gmail.com">theposhmarketing@gmail.com</a><br>
+            <a href="mailto:theposhhospital@gmail.com">theposhhospital@gmail.com</a>
+          </p>
+        </div>
 
-                    <!-- Location -->
-                    <div class="footer-map">
-                        <h4>LOCATION</h4>
-                        <iframe src="https://www.google.com/maps?q=The+Posh+Hospital+Pondicherry&output=embed"
-                            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+        <!-- Location -->
+        <div class="footer-map">
+          <h4>LOCATION</h4>
+          <iframe src="https://www.google.com/maps?q=The+Posh+Hospital+Pondicherry&output=embed" width="100%"
+            height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
 
-                    </div>
-                </div>
+        </div>
+      </div>
 
-                <!-- Footer Bottom -->
-                <div class="footer-bottom">
-                    � 2025 by The POSH - Pondy Ortho Speciality Hospital. Proudly created with
-                    <a href="https://www.getitmediasolutions.com/">GETIT MEDIA SOLUTIONS PVT LTD</a>
-                </div>
-            </footer>
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        © 2025 by The POSH - Pondy Ortho Speciality Hospital. Proudly created with
+        <a href="https://www.getitmediasolutions.com/">GETIT MEDIA SOLUTIONS PVT LTD</a>
+      </div>
+    </footer>
             <script>
                 document.addEventListener("click", function (e) {
 
