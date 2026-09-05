@@ -9098,7 +9098,8 @@ header img:hover {
 }
 
 .icon-box img {
-    width: 700px;
+    width: 100%;
+    max-width: 50px;
     filter: invert(20%) sepia(90%) saturate(600%) hue-rotate(300deg) brightness(0.85);
 }
 
@@ -10650,7 +10651,7 @@ header img:hover {
 
 /* DEFAULT (DESKTOP & LARGE SCREENS) */
 #imageSlider img {
-    width: 100vw;
+    width: 100%;
     height: 100%;
     object-fit: cover;
     /* fills height perfectly */
