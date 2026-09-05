@@ -7,6 +7,15 @@
   <title>Hepatology - The Posh</title>
   <link rel="icon" type="image/png" href="../assets/images/fav.png" />
   <link rel="shortcut icon" href="../assets/images/fav.png" />
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/index.css">
+  <link rel="stylesheet" href="../assets/css/header.css">
+  <link rel="stylesheet" href="../assets/css/mobile-header.css">
+  <link href="../assets/css/site-header.css" rel="stylesheet">
+  <link href="../assets/css/site-typography.css" rel="stylesheet">
+  <script defer src="../assets/javascript/site-header.js"></script>
+  <link rel="stylesheet" href="../assets/css/department.css">
   <style>
     .dept-dropdown {
       max-height: 320px !important;
@@ -17,13 +26,13 @@
       display: flex;
       gap: 20px;
     }
-.contact-item a {
-    font-family: var(--font-accent);
-    color: var(--primary-pink);
-    font-weight: 700;
-    font-size: 1.1rem;
-    letter-spacing: 0.5px;
-}
+    .contact-item a {
+      font-family: var(--font-accent);
+      color: var(--primary-pink);
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+    }
     .dept-dropdown::-webkit-scrollbar {
       width: 4px;
     }
@@ -40,164 +49,7 @@
 </head>
 
 <body>
-  <!-- Bootstrap -->
-  <!-- In your <head> tag -->
-
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="../assets/css/index.css">
-  <link rel="stylesheet" href="../assets/css/header.css">
-  <link rel="stylesheet" href="../assets/css/mobile-header.css">
-  <link href="../assets/css/site-header.css" rel="stylesheet">
-  <link href="../assets/css/site-typography.css" rel="stylesheet">
-  <script defer src="../assets/javascript/site-header.js"></script>
-  <link rel="stylesheet" href="../assets/css/department.css">
-  <style>
-    .dept-dropdown {
-      max-height: 320px !important;
-      overflow-y: auto !important;
-      overscroll-behavior: contain;
-    }
-
-    .dept-dropdown::-webkit-scrollbar {
-      width: 4px;
-    }
-
-    .dept-dropdown::-webkit-scrollbar-track {
-      background: #4b1d6b;
-    }
-
-    .dept-dropdown::-webkit-scrollbar-thumb {
-      background: #f48fb1;
-      border-radius: 4px;
-    }
-  </style>
-
-    <style>
-      /* ===== DROPDOWN MENU ===== */
-      nav ul li {
-        position: relative;
-      }
-
-      /* hide dropdown */
-      nav ul li .dropdown {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: #59016b;
-        min-width: 220px;
-        display: none;
-        padding: 8px 0;
-        border-radius: 6px;
-        z-index: 9999;
-      }
-
-      /* dropdown links */
-      nav ul li .dropdown li a {
-        display: block;
-        padding: 8px 16px;
-        color: #fff;
-        font-size: 13px;
-        white-space: nowrap;
-      }
-
-      /* hover effects */
-      nav ul li .dropdown li a:hover {
-        background-color: #7a3db8;
-        color: #ffd700;
-      }
-
-      /* show on hover */
-      nav ul li.has-dropdown:hover .dropdown {
-        display: block;
-      }
-
-      /* smooth animation */
-      nav ul li .dropdown {
-        animation: fadeDown 0.25s ease;
-      }
-
-      @keyframes fadeDown {
-        from {
-          opacity: 0;
-          transform: translateY(10px);
-        }
-
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* =========================
-   MOBILE NAV STYLES
-   ========================= */
-
-      #mobilePanel {
-        overflow-y: auto;
-      }
-
-      /* Links & buttons */
-      #mobilePanel a,
-      #mobilePanel button {
-        width: 100%;
-        display: block;
-        padding: 12px 0;
-        color: #ffffff;
-        background: none;
-        border: none;
-        text-align: left;
-      }
-
-      /* Divider line */
-      #mobilePanel ul>li {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-      }
-
-      /* Dropdown toggle */
-      .dropdown-toggle {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-weight: 600;
-        text-transform: uppercase;
-      }
-
-      /* + icon */
-      .dropdown-toggle span {
-        font-size: 18px;
-        transition: transform 0.3s ease;
-      }
-
-      /* Rotate + */
-      .dropdown-toggle.active span {
-        transform: rotate(45deg);
-      }
-
-      /* Dropdown container */
-      .mobile-dropdown {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.35s ease;
-        margin-left: 12px;
-        padding-left: 10px;
-        border-left: 2px solid rgba(255, 255, 255, 0.2);
-      }
-
-      /* Open dropdown */
-      .mobile-dropdown.open {
-        max-height: 1000px;
-      }
-
-      /* Dropdown links */
-      .mobile-dropdown li a {
-        font-size: 13px;
-        padding: 8px 0;
-        text-transform: none;
-      }
-    </style>
-
-      <header class=" top-0 z-[999]">
+  <header class=" top-0 z-[999]">
 
     <!-- ONE CONTAINER -->
     <div class="bg-gradient-to-r from-[#4b1d6b] to-[#7a3db8] text-white">
@@ -511,75 +363,32 @@
     </div>
 
   </header>
-      <!DOCTYPE html>
+  <style>
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --primary-blue: #1a73e8;
+      --primary-pink: #d81b60;
+      --light-pink: #ffebee;
+      --light-blue: #e3f2fd;
+      --dark-blue: #0d47a1;
+      --dark-pink: #ad1457;
+      --white: #ffffff;
+      --gray: #666666;
+      --light-gray: #f5f5f5;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.12);
+      --radius: 12px;
+      --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Anaesthesiology - Posh Hospital</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <style>
-          /* ===== CSS VARIABLES ===== */
-          :root {
-            --primary-blue: #1a73e8;
-            --primary-pink: #d81b60;
-            --light-pink: #ffebee;
-            --light-blue: #e3f2fd;
-            --dark-blue: #0d47a1;
-            --dark-pink: #ad1457;
-            --white: #ffffff;
-            --gray: #666666;
-            --light-gray: #f5f5f5;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.12);
-            --radius: 12px;
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-          }
-
-          /* ===== CSS VARIABLES & FONT DEFINITIONS ===== */
-          :root {
-            --primary-blue: #1a73e8;
-            --primary-pink: #d81b60;
-            --light-pink: #ffebee;
-            --light-blue: #e3f2fd;
-            --dark-blue: #0d47a1;
-            --dark-pink: #ad1457;
-            --white: #ffffff;
-            --gray: #666666;
-            --light-gray: #f5f5f5;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.12);
-            --radius: 12px;
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-            /* Different Font Families for Each Element */
-            --font-heading: var(--posh-font);
-            --font-hero: var(--posh-font);
-            --font-body: var(--posh-font);
-            --font-card: var(--posh-font);
-            --font-accent: var(--posh-font);
-            --font-stat: var(--posh-font);
-            --font-badge: var(--posh-font);
-          }
-
-
-          /* ===== GLOBAL FONT SETTINGS ===== */
-          * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-          }
-
-          body {
-            font-family: var(--font-body);
-            /* Open Sans for body */
-            line-height: 1.7;
-            /* Slightly increased line height for readability */
-            color: #333;
-            background: var(--white);
-            font-weight: 400;
-            font-size: 16px;
-            letter-spacing: 0.2px;
-          }
+      /* Different Font Families for Each Element */
+      --font-heading: var(--posh-font);
+      --font-hero: var(--posh-font);
+      --font-body: var(--posh-font);
+      --font-card: var(--posh-font);
+      --font-accent: var(--posh-font);
+      --font-stat: var(--posh-font);
+      --font-badge: var(--posh-font);
+    }
 
           h1,
           h2,
