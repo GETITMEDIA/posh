@@ -5689,7 +5689,7 @@
     </section>
 
     <section class="clients-section masonry">
-      <div class="mx-auto py-8" style="max-width: 1200px; padding-left: 20px; padding-right: 20px;">
+      <div class="mx-auto py-8">
         <h2 class="clients-title" id="clientsgrid-anchor">Happy Patients</h2>
 
         <div class="clients-grid" id="clientsgrid">
@@ -6754,5 +6754,63 @@
         if (e.target === this) closeVideoLightbox();
       });
     </script>
+
+    <!-- =========================================================
+         PAGE CONTAINER — Bootstrap 5 sizing
+         ---------------------------------------------------------
+         Bootstrap 5's .container breakpoint scale, capped at the xl
+         value (1140px) as asked. Applied to the blocks on this page
+         that were each carrying their own max-width (1200 / 1300 /
+         1400px), which is why their left and right edges did not
+         line up with one another.
+
+         Loaded last so it wins over the per-section rules above.
+         Scoped to index.html only for now.
+         ========================================================= -->
+    <style>
+      :root {
+        --posh-container: 100%;
+        --posh-container-gutter: 12px;
+      }
+
+      @media (min-width: 576px) {
+        :root { --posh-container: 540px; }
+      }
+
+      @media (min-width: 768px) {
+        :root { --posh-container: 720px; }
+      }
+
+      @media (min-width: 992px) {
+        :root { --posh-container: 960px; }
+      }
+
+      @media (min-width: 1200px) {
+        :root { --posh-container: 1140px; }
+      }
+
+      /* Every content block on this page now shares one width and one
+         pair of left/right margins. Full-bleed backgrounds are left
+         alone - only the content inside them is aligned. */
+      .pa-inner,
+      .stats-container,
+      .dept-hero-inner,
+      .dept-grid,
+      .dept-feat-wrap,
+      .wcp-cards,
+      .wcp-head,
+      .masonry .clients-grid,
+      .patient-video-gallery-container,
+      .ortho-header-container,
+      .ortho-why-choose-container,
+      .ortho-doctors-container,
+      .ortho-gallery-container,
+      .ortho-expertise-container,
+      #testimonials-container {
+        max-width: var(--posh-container);
+        margin-inline: auto;
+      }
+    </style>
+
 </body>
 </html>
