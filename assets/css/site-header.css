@@ -32,15 +32,6 @@ header h1 {
   text-shadow: 0 2px 6px rgba(233, 30, 99, 0.35) !important;
 }
 
-header a[href*="appointment.html"] {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.45) !important;
-  transition: all 0.3s ease !important;
-}
-
-header a[href*="appointment.html"]:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 6px 18px rgba(233, 30, 99, 0.6) !important;
-}
 
 header nav {
   background-color: #59016b !important;
@@ -838,13 +829,174 @@ header .text-sm {
    ========================================================= */
 @media (max-width: 1024px) {
 
-  /* ---- TOP INFO BAR: SHOW ALL, STACKED NEATLY ----
-     Explicit grid so the rows land in the approved order and the
-     hamburger sits on the bottom row beside the ambulance and the
-     Appointment button, even though in the DOM it is the bar's
-     first child. A column flex could not do this and also let the
-     phone line wrap, because align-items:center sizes each child
-     to fit-content, so the long number string overflowed. */
+  /* ---- Shared below desktop: chrome that is the same on
+     phone and tablet. The bar's *arrangement* differs, so it
+     lives in the two range blocks further down. ---- */
+
+  /* Social icons — compact row */
+  .card ul {
+    gap: 8px;
+    margin-bottom: 2px;
+  }
+
+  .social {
+    height: 30px;
+    width: 30px;
+    font-size: 15px;
+    line-height: 30px;
+  }
+
+  /* Hamburger button */
+  #menuBtn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px !important;
+    padding: 0 !important;
+    border: 2px solid rgba(255, 255, 255, 0.35) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    border-radius: 8px !important;
+    cursor: pointer;
+    line-height: 1;
+    width: 38px;
+    height: 38px;
+  }
+
+  /* Ambulance gif — the "Ambulance Service" label is dropped */
+  header img[alt="Ambulance Service"] {
+    height: 30px !important;
+  }
+
+  header img[alt="Ambulance Service"] + span {
+    display: none !important;
+  }
+
+
+
+  /* ---- BRANDING ROW ---- */
+  header .bg-white {
+    padding: 10px 16px !important;
+  }
+
+  .logo-header {
+    gap: 12px !important;
+    width: 100% !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .logo-header > a:first-child img,
+  .logo-header > a:first-child {
+    flex-shrink: 0;
+  }
+
+  .logo-header > a:first-child img {
+    height: 45px !important;
+    width: auto !important;
+  }
+
+  .logo-header h1 {
+    line-height: 1.3 !important;
+    text-align: center !important;
+    letter-spacing: normal !important;
+    text-shadow: none !important;
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: break-word;
+  }
+
+  .logo-header > img:last-child {
+    height: 40px !important;
+    width: auto !important;
+    flex-shrink: 0;
+  }
+
+  /* Hide desktop nav — both phone and tablet use the panel */
+  header nav {
+    display: none !important;
+  }
+}
+
+/* =========================================================
+   TABLET (768px - 1024px) — TWO COMPACT ROWS
+   ---------------------------------------------------------
+   A tablet has plenty of horizontal room, so the phone's
+   four-row stack left a tall band of empty purple and pushed
+   the page content below the fold. Pack the bar into two
+   rows instead:
+
+     row 1   24/7 badge | phone numbers | social icons
+     row 2   hamburger  |               | ambulance + appointment
+
+   One row would need roughly 900px, so it would break at the
+   768px end of this range — two rows stay stable across it.
+   ========================================================= */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  header .max-w-7xl.mx-auto.px-4.py-3 {
+    display: grid !important;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas:
+      "emerg phone  social"
+      "menu  right  right";
+    align-items: center;
+    gap: 8px 16px;
+    padding: 10px 20px;
+  }
+
+  header .max-w-7xl.mx-auto.px-4.py-3 > #menuBtn        { grid-area: menu; justify-self: start; }
+  header .max-w-7xl.mx-auto.px-4.py-3 > .card           { grid-area: social; justify-self: end; }
+  header .max-w-7xl.mx-auto.px-4.py-3 > div:nth-of-type(2) { grid-area: emerg; justify-self: start; }
+
+  header .max-w-7xl.mx-auto.px-4.py-3 > .header-call-now {
+    grid-area: phone;
+    justify-self: center;
+    text-align: center;
+    font-size: clamp(12px, 1.45vw, 14px);
+    line-height: 1.4;
+  }
+
+  header .max-w-7xl.mx-auto.px-4.py-3 > .flex:last-child {
+    grid-area: right;
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .emergency-icon {
+    height: 44px;
+    width: auto;
+  }
+
+  /* Branding row can afford real sizes at this width */
+  header .bg-white {
+    padding: 12px 24px !important;
+  }
+
+  .logo-header {
+    gap: 20px !important;
+  }
+
+  .logo-header > a:first-child img { height: 58px !important; }
+  .logo-header > img:last-child    { height: 52px !important; }
+  .logo-header h1                  { font-size: 1.25rem !important; }
+}
+
+/* =========================================================
+   PHONE (≤ 767px) — FOUR STACKED ROWS
+   ---------------------------------------------------------
+   Explicit grid so the rows land in the approved order and the
+   hamburger sits on the bottom row beside the ambulance and the
+   Appointment button, even though in the DOM it is the bar's
+   first child. A column flex could not do this and also let the
+   phone line wrap, because align-items:center sizes each child
+   to fit-content, so the long number string overflowed.
+   ========================================================= */
+@media (max-width: 767px) {
+
   header .max-w-7xl.mx-auto.px-4.py-3 {
     display: grid !important;
     grid-template-columns: auto minmax(0, 1fr);
@@ -871,33 +1023,11 @@ header .text-sm {
     justify-self: stretch;
     width: 100%;
     overflow-wrap: break-word;
-  }
-
-  /* Social icons — compact row */
-  .card ul {
-    gap: 8px;
-    margin-bottom: 2px;
-  }
-
-  .social {
-    height: 30px;
-    width: 30px;
-    font-size: 15px;
-    line-height: 30px;
-  }
-
-  /* Emergency icon */
-  .emergency-icon {
-    height: 36px;
-    width: auto;
-  }
-
-  /* Phone numbers */
-  .header-call-now {
     font-size: 12px;
     line-height: 1.4;
   }
-  /* Bottom row, right cell: Ambulance | Appointment
+
+  /* Bottom row, right cell: ambulance | appointment
      (the hamburger occupies the "menu" cell to its left) */
   header .max-w-7xl.mx-auto.px-4.py-3 > .flex:last-child {
     grid-area: right;
@@ -911,83 +1041,12 @@ header .text-sm {
     flex-wrap: nowrap;
   }
 
-  /* Hamburger button */
-  #menuBtn {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px !important;
-    padding: 0 !important;
-    border: 2px solid rgba(255, 255, 255, 0.35) !important;
-    background: rgba(255, 255, 255, 0.1) !important;
-    color: #ffffff !important;
-    border-radius: 8px !important;
-    cursor: pointer;
-    line-height: 1;
-    width: 38px;
-    height: 38px;
+  .emergency-icon {
+    height: 36px;
+    width: auto;
   }
 
-  /* Ambulance gif */
-  header img[alt="Ambulance Service"] {
-    height: 30px !important;
-  }
-
-  /* Hide "Ambulance Service" text */
-  header img[alt="Ambulance Service"] + span {
-    display: none !important;
-  }
-
-  /* Appointment button */
-  header a[href$="appointment.html"] {
-    font-size: 11px !important;
-    padding: 8px 14px !important;
-    border-radius: 6px !important;
-  }
-
-  /* ---- BRANDING ROW ---- */
-  header .bg-white {
-    padding: 10px 16px !important;
-  }
-
-  .logo-header {
-    gap: 12px !important;
-    width: 100% !important;
-    justify-content: center !important;
-    align-items: center !important;
-    flex-wrap: nowrap !important;
-  }
-
-  .logo-header > a:first-child img,
-  .logo-header > a:first-child {
-    flex-shrink: 0;
-  }
-
-  .logo-header > a:first-child img {
-    height: 45px !important;
-    width: auto !important;
-  }
-
-  .logo-header h1 {
-    font-size: 0.8rem !important;
-    line-height: 1.3 !important;
-    text-align: center !important;
-    letter-spacing: normal !important;
-    text-shadow: none !important;
-    flex: 1;
-    min-width: 0;
-  }
-
-  .logo-header > img:last-child {
-    height: 40px !important;
-    width: auto !important;
-    flex-shrink: 0;
-  }
-
-  /* Hide desktop nav */
-  header nav {
-    display: none !important;
-  }
+  .logo-header h1 { font-size: 0.8rem !important; }
 }
 
 /* ---- MOBILE (≤ 767px) ---- */
@@ -1006,7 +1065,7 @@ header .text-sm {
   }
 
   .logo-header h1 {
-    font-size: 0.7rem !important;
+    font-size: clamp(0.7rem, 2.1vw, 1.05rem) !important;
     line-height: 1.2 !important;
   }
 
@@ -1370,3 +1429,145 @@ header {
 /* Department pages — emergency hero is full-bleed, 
    but the .container inside should already be 1200px
    via the @media rule above. */
+
+/* Remove legacy container effect around the appointment button link */
+header a[href*="appointment.html"] {
+  box-shadow: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  display: inline-block !important;
+}
+header a[href*="appointment.html"]:hover {
+  box-shadow: none !important;
+  background: transparent !important;
+  transform: none !important;
+}
+
+/* =========================================================
+   GLOBAL BUTTON TWEAKS
+   ========================================================= */
+
+/* 1. Reduce button sizes globally */
+.btn, .btn-primary, .btn-secondary, .btn-appoint, .appointment-btn, .whatsapp-btn, .ortho-appointment-btn {
+  padding: 8px 18px !important;
+  font-size: 14px !important;
+  transition: all 0.3s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px; /* space between text and existing icon */
+}
+
+/* 2. Animate existing icons (if any) on hover */
+.btn i, .btn-primary i, .btn-secondary i, .btn-appoint i, .appointment-btn i, .whatsapp-btn i, .ortho-appointment-btn i {
+  transition: transform 0.3s ease !important;
+}
+
+.btn:hover i, .btn-primary:hover i, .btn-secondary:hover i, .btn-appoint:hover i, .appointment-btn:hover i, .whatsapp-btn:hover i, .ortho-appointment-btn:hover i {
+  transform: translateX(6px) !important;
+}
+
+/* 3. Add sliding arrow for buttons without an <i> icon */
+.btn:not(:has(i))::after, 
+.btn-primary:not(:has(i))::after, 
+.btn-secondary:not(:has(i))::after, 
+.btn-appoint:not(:has(i))::after, 
+.whatsapp-btn:not(:has(i))::after, 
+.ortho-appointment-btn:not(:has(i))::after {
+  content: '\f061'; /* FontAwesome right arrow */
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  display: inline-block;
+  opacity: 0;
+  max-width: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+  font-size: 13px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.btn:not(:has(i)):hover::after, 
+.btn-primary:not(:has(i)):hover::after, 
+.btn-secondary:not(:has(i)):hover::after, 
+.btn-appoint:not(:has(i)):hover::after, 
+.whatsapp-btn:not(:has(i)):hover::after, 
+.ortho-appointment-btn:not(:has(i)):hover::after {
+  opacity: 1;
+  max-width: 20px;
+  margin-left: 6px;
+  transform: translateX(0);
+}
+
+/* =========================================================
+   USER FEEDBACK FIXES (Global)
+   ========================================================= */
+
+/* 1. Reduce .pa-btn (Explore More) size */
+.pa-btn {
+  padding: 8px 18px !important;
+  font-size: 14px !important;
+}
+
+/* 2. Make department cards smaller on mobile */
+@media (max-width: 768px) {
+  .dept-item {
+    padding: 12px 10px !important;
+    gap: 10px !important;
+  }
+  .dept-item .icon-box {
+    width: 50px !important;
+    height: 50px !important;
+    min-width: 50px !important;
+  }
+  .dept-item .icon-box img {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  .dept-item .dept-name {
+    font-size: 0.75rem !important;
+    margin: 0 0 4px !important;
+  }
+  .dept-item p.dept-desc {
+    font-size: 0.7rem !important;
+    margin: 0 0 8px !important;
+    line-height: 1.4 !important;
+  }
+  .dept-item .dept-explore {
+    font-size: 0.7rem !important;
+    padding: 4px 6px 4px 10px !important;
+  }
+  .dept-item .dept-explore-arr {
+    width: 18px !important;
+    height: 18px !important;
+  }
+}
+
+/* 3. Make video background text white in Consultants section */
+.consultants-section .section-header h2,
+.consultants-section .section-header h2::after,
+.consultants-section .section-header p {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6) !important;
+}
+
+/* 4. Reduce APPOINTMENT button size on mobile */
+@media (max-width: 768px) {
+  .appt-button {
+    min-width: 100px !important;
+    padding: 6px 10px !important;
+    height: 30px !important;
+    font-size: 10px !important;
+  }
+  .appt-button .ab-state {
+    padding-left: 20px !important;
+  }
+  .appt-button .ab-icon {
+    transform: scale(1) !important;
+  }
+  .appt-button:hover .ab-state--default .ab-icon {
+    transform: rotate(45deg) scale(1) !important;
+  }
+}
