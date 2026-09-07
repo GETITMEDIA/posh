@@ -999,12 +999,12 @@ header .text-sm {
 
   header .max-w-7xl.mx-auto.px-4.py-3 {
     display: grid !important;
-    grid-template-columns: auto minmax(0, 1fr);
+    position: relative;
+    grid-template-columns: max-content 1fr max-content;
     grid-template-areas:
-      "social social"
-      "emerg  emerg"
-      "phone  phone"
-      "menu   right";
+      "social . ambulance"
+      "phone  phone phone"
+      "menu   .     appt";
     align-items: center;
     justify-items: center;
     gap: 8px;
@@ -1013,11 +1013,17 @@ header .text-sm {
   }
 
   header .max-w-7xl.mx-auto.px-4.py-3 > #menuBtn        { grid-area: menu; justify-self: start; }
-  header .max-w-7xl.mx-auto.px-4.py-3 > .card           { grid-area: social; }
-  header .max-w-7xl.mx-auto.px-4.py-3 > div:nth-of-type(2) { grid-area: emerg; }
+  header .max-w-7xl.mx-auto.px-4.py-3 > .card           { grid-area: social; justify-self: start; }
+  header .max-w-7xl.mx-auto.px-4.py-3 > .card ul        { flex-wrap: nowrap !important; gap: 6px !important; }
+  header .max-w-7xl.mx-auto.px-4.py-3 > .card .social   { height: 26px !important; width: 26px !important; font-size: 13px !important; line-height: 26px !important; }
+  header .max-w-7xl.mx-auto.px-4.py-3 > div:nth-of-type(2) { 
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
-  /* Phone line: full width of the grid row so it wraps instead of
-     overflowing behind the body's overflow-x guard. */
+  /* Phone line */
   header .max-w-7xl.mx-auto.px-4.py-3 > .header-call-now {
     grid-area: phone;
     justify-self: stretch;
@@ -1027,18 +1033,20 @@ header .text-sm {
     line-height: 1.4;
   }
 
-  /* Bottom row, right cell: ambulance | appointment
-     (the hamburger occupies the "menu" cell to its left) */
+  /* Right div has both Ambulance and Appt Button.
+     We use display:contents so they can act as separate grid items. */
   header .max-w-7xl.mx-auto.px-4.py-3 > .flex:last-child {
-    grid-area: right;
-    justify-self: stretch;
-    display: flex;
-    width: 100%;
-    min-width: 0;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: nowrap;
+    display: contents;
+  }
+  
+  header .max-w-7xl.mx-auto.px-4.py-3 > .flex:last-child > span {
+    grid-area: ambulance;
+    justify-self: end;
+  }
+
+  header .max-w-7xl.mx-auto.px-4.py-3 > .flex:last-child > a {
+    grid-area: appt;
+    justify-self: end;
   }
 
   .emergency-icon {
