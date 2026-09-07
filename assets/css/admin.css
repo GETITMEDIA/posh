@@ -1544,18 +1544,26 @@ body {
     overflow: hidden;
   }
   .top-header {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: stretch;
     gap: 0.75rem;
     margin-bottom: 1.25rem;
   }
   .header-left {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.65rem;
+  }
+  .header-title-group {
     flex: 1;
     min-width: 0;
   }
   .header-title-group h1 {
-    font-size: 1.35rem;
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1563,18 +1571,21 @@ body {
   .header-title-group p {
     display: none;
   }
-  .header-actions {
-    width: auto;
+  .theme-toggle-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
     flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  }
+  .header-actions {
+    width: 100%;
   }
   .header-actions .btn {
-    flex: none;
-    width: auto;
-    padding: 0.55rem 0.85rem;
-    font-size: 0.825rem;
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    border-radius: var(--radius-md);
   }
 
   .card-toolbar {
