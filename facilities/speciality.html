@@ -51,18 +51,6 @@ main,
 }
 
 /* =====================
-   SECTION WRAPPER
-===================== */
-section {
-  
-  margin: 35px auto;
-  padding: 35px 40px;
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-/* =====================
    HEADINGS
 ===================== */
 h1 {
@@ -110,9 +98,7 @@ p {
   margin-bottom: 15px;
 }
 
-strong {
-  color: #000;
-}
+
 
 /* =====================
    LISTS
@@ -338,6 +324,9 @@ strong {
 
 <link href="../assets/css/header.css" rel="stylesheet">
   <link href="../assets/css/mobile-header.css" rel="stylesheet"/>
+  <link href="../assets/css/site-header.css" rel="stylesheet">
+  <link href="../assets/css/site-typography.css" rel="stylesheet">
+  <script defer src="../assets/javascript/site-header.js"></script>
 <style>
 .dept-dropdown {
   max-height: 320px !important;
@@ -682,7 +671,7 @@ nav ul li .dropdown {
             </ul>
           </li>
 
-          <li><a href="../achieve.html">Achievements</a></li>
+          <li><a href="../achievement.html">Achievements</a></li>
           <li><a href="../contact.html">Contact Us</a></li>
 
         </ul>
@@ -776,7 +765,7 @@ nav ul li .dropdown {
             </ul>
           </li>
 
-          <li><a href="../achieve.html">Achievements</a></li>
+          <li><a href="../achievement.html">Achievements</a></li>
           <li><a href="../contact.html">Contact Us</a></li>
 
         </ul>
@@ -818,13 +807,13 @@ nav ul li .dropdown {
         /* Intro Section */
         .facilities-intro {
             text-align: center;
-            padding: 60px 20px 40px;
+            padding: 80px 20px;
             background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
             color: white;
-            border-radius: 15px;
             margin-bottom: 60px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             animation: fadeIn 1s ease-out;
+            width: 100%;
         }
         
         @keyframes fadeIn {
@@ -1131,11 +1120,7 @@ nav ul li .dropdown {
             transform: translateY(-5px);
         }
     </style>
-<link href="../assets/css/header.css" rel="stylesheet">
-  <link href="../assets/css/mobile-header.css" rel="stylesheet"/>
-  <link href="../assets/css/site-header.css" rel="stylesheet">
-  <link href="../assets/css/site-typography.css" rel="stylesheet">
-  <script defer src="../assets/javascript/site-header.js"></script>
+
 <style>
 .dept-dropdown {
   max-height: 320px !important;
@@ -1155,18 +1140,18 @@ nav ul li .dropdown {
         <i class="fas fa-arrow-up"></i>
     </div>
     
-    <section class="facilities-full">
-        <!-- INTRO -->
-        <div class="facilities-intro">
-            <h1><i class="fas fa-hospital"></i> Our Facilities</h1>
-            <p>
-                At <strong>The Posh – Pondy Ortho Specialty Hospital Pvt. Ltd.</strong>, we are
-                committed to delivering quality care with advanced medical infrastructure
-                and compassionate service. Our hospital is equipped with modern facilities
-                to ensure accurate diagnosis, effective treatment, and patient comfort.
-            </p>
-        </div>
+    <!-- INTRO -->
+    <div class="facilities-intro">
+        <h1><i class="fas fa-hospital"></i> Our Facilities</h1>
+        <p>
+            At <strong>The Posh – Pondy Ortho Specialty Hospital Pvt. Ltd.</strong>, we are
+            committed to delivering quality care with advanced medical infrastructure
+            and compassionate service. Our hospital is equipped with modern facilities
+            to ensure accurate diagnosis, effective treatment, and patient comfort.
+        </p>
+    </div>
 
+    <section class="facilities-full">
         <!-- GRID CONTENT -->
         <div class="facilities-grid">
             <!-- COLUMN 1 -->
@@ -1353,68 +1338,68 @@ nav ul li .dropdown {
         }
     </script>
        <footer>
-            <div class="footer-container" id="footernav">
+      <div class="footer-container" id="footernav">
 
-                <!-- About -->
-                <div class="footer-about">
-                    <h4>ABOUT US</h4>
-                    <p>
-                        Welcome to <strong>THE POSH</strong>. We operate at PONDICHERRY as a private surgical hospital, and our focus is on delivering quality care and value for money. We play a key role in improving the health of PONDICHERRY.
-                    </p>
-                </div>
+        <!-- About -->
+        <div class="footer-about">
+          <h4>ABOUT US</h4>
+          <p>
+            Welcome to <strong>THE POSH</strong>. We operate at PONDICHERRY as a private surgical hospital, and our
+            focus is on delivering quality care and value for money. We play a key role in improving the health of
+            PONDICHERRY.
+          </p>
+        </div>
 
-                <!-- Quick Links -->
-                <div class="footer-links">
-                    <h4>QUICK LINKS</h4>
-                    <ul>
-                        <li><a href="../index.html">HOME</a></li>
-                        <li><a href="../about.html">ABOUT US</a></li>
-                        <li><a href="../index.html#departmentssection">DEPARTMENTS</a></li>
-                        <li><a href="../our-doctors.html">OUR DOCTORS</a></li>
-      <li><a href="../ourteams.html">Our Team</a></li>
-                        <li><a href="../healthtips.html">HEALTH TIPS</a></li>
-                        <li><a href="../appointment.html">APPOINTMENT</a></li>
-                    </ul>
-                </div>
+        <!-- Quick Links -->
+        <div class="footer-links">
+          <h4>QUICK LINKS</h4>
+          <ul>
+            <li><a href="../index.html">HOME</a></li>
+            <li><a href="../about.html">ABOUT US</a></li>
+            <li><a href="../index.html#departmentssection">DEPARTMENTS</a></li>
+            <li><a href="../our-doctors.html">OUR DOCTORS</a></li>
+            <li><a href="../ourteams.html">Our Team</a></li>
+            <li><a href="../healthtips.html">HEALTH TIPS</a></li>
+            <li><a href="../appointment.html">APPOINTMENT</a></li>
+          </ul>
+        </div>
 
-                <!-- Contact -->
-                <div class="footer-contact">
-                    <h4>CONTACT US</h4>
-                    <p>
-                        <span>PONDICHERRY BRANCH:</span><br> 📍 Location: No. 24, First Main Road, Ambal Nagar, Puducherry – 605009<br> ☎ Tel: 0413-2200017 / 0413-2200018<br> 📱 +91 9677073462 / +91 8056555330
-                    </p>
-                    <p>
-                        <span>THE POSH @ KALPAKKAM:</span><br> 🚑 Emergency & Trauma Day Care Unit<br> ECR Road, Prabaliyamedu, Pudhupattinam, Thirukazhukundram Taluk,<br> Chengalpattu District – 603102<br> 📱 8925733344 | ☎ 044 2748 8981
-                    </p>
-                    <p>
-                        <span>Email:</span><br>
-                        <a href="mailto:theposhmarketing@gmail.com">theposhmarketing@gmail.com</a><br>
-                        <a href="mailto:theposhhospital@gmail.com">theposhhospital@gmail.com</a>
-                    </p>
-                </div>
+        <!-- Contact -->
+        <div class="footer-contact">
+          <h4>CONTACT US</h4>
+          <p>
+            <span>PONDICHERRY BRANCH:</span><br> 📍 Location: No. 24, First Main Road, Ambal Nagar, Puducherry –
+            605009<br> ☎ Tel: 0413-2200017 / 0413-2200018<br> 📱 +91 9677073462 / +91 8056555330
+          </p>
+          <p>
+            <span>THE POSH @ KALPAKKAM:</span><br> 🚑 Emergency & Trauma Day Care Unit<br> ECR Road, Prabaliyamedu,
+            Pudhupattinam, Thirukazhukundram Taluk,<br> Chengalpattu District – 603102<br> 📱 8925733344 | ☎ 044 2748
+            8981
+          </p>
+          <p>
+            <span>Email:</span><br>
+            <a href="mailto:theposhmarketing@gmail.com">theposhmarketing@gmail.com</a><br>
+            <a href="mailto:theposhhospital@gmail.com">theposhhospital@gmail.com</a>
+          </p>
+        </div>
 
-                <!-- Location -->
-                <div class="footer-map">
-                    <h4>LOCATION</h4>
-                <iframe
-  src="https://www.google.com/maps?q=The+Posh+Hospital+Pondicherry&output=embed"
-  width="100%"
-  height="450"
-  style="border:0;"
-  allowfullscreen=""
-  loading="lazy"
-  referrerpolicy="no-referrer-when-downgrade">
-</iframe>
+        <!-- Location -->
+        <div class="footer-map">
+          <h4>LOCATION</h4>
+          <iframe src="https://www.google.com/maps?q=The+Posh+Hospital+Pondicherry&output=embed" width="100%"
+            height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
 
-                </div>
-            </div>
+        </div>
+      </div>
 
-            <!-- Footer Bottom -->
-                       <div class="footer-bottom">
-                © 2025 by The POSH - Pondy Ortho Speciality Hospital. Proudly created with
-                <a href="https://www.getitmediasolutions.com/">GETIT MEDIA SOLUTIONS PVT LTD</a>
-            </div>
-        </footer> <script>
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        © 2025 by The POSH - Pondy Ortho Speciality Hospital. Proudly created with
+        <a href="https://www.getitmediasolutions.com/">GETIT MEDIA SOLUTIONS PVT LTD</a>
+      </div>
+    </footer> <script>
 document.addEventListener("click", function (e) {
 
     const button = e.target.closest(".appointment-btn");

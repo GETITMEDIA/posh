@@ -36,7 +36,7 @@
 
 
     <!-- Custom CSS -->
-
+    <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/mobile-header.css">
   <link href="assets/css/site-header.css" rel="stylesheet">
@@ -400,7 +400,7 @@
             </ul>
           </li>
 
-          <li><a href="achieve.html">Achievements</a></li>
+          <li><a href="achievement.html">Achievements</a></li>
           <li><a href="contact.html">Contact Us</a></li>
 
         </ul>
@@ -494,7 +494,7 @@
             </ul>
           </li>
 
-          <li><a href="achieve.html">Achievements</a></li>
+          <li><a href="achievement.html">Achievements</a></li>
           <li><a href="contact.html">Contact Us</a></li>
 
         </ul>
@@ -995,7 +995,7 @@
                     .doctor-card {
                         background: #ffffff;
                         border-radius: 14px;
-                        box-shadow: 0 4px 20px rgb(248, 113, 214), 0 1px 4px rgba(0, 0, 0, 0.06);
+                        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
                         border: 1px solid #ffffff;
                         transition: transform 0.3s, box-shadow 0.3s;
                         height: 100%;
@@ -1064,20 +1064,27 @@
 
                     .dc-btn {
                         display: block;
-                        background: #fff;
-                        color: #e91e63;
+                        background: #e91e63;
+                        color: #fff;
                         font-weight: 700;
                         font-size: 0.95rem;
                         padding: 10px 0;
                         border-radius: 6px;
                         text-decoration: none;
-                        transition: background 0.2s;
-                        border: 2px solid #e91e63;
+                        transition: background 0.3s, transform 0.2s;
+                        border: none;
+                        position: relative;
+                        z-index: 10;
                     }
 
                     .dc-btn:hover {
-                        background: #e91e63;
+                        background: #d81b60;
                         color: #fff;
+                        transform: translateY(-2px);
+                    }
+
+                    .doctor-card::after {
+                        display: none !important;
                     }
 
                     .doctor-card::before {
@@ -3143,130 +3150,7 @@
                         }
                     }
 
-                    footer {
-                        position: relative;
-                        color: #fff;
-                        font-family: var(--posh-font);
-                        overflow: hidden;
-                    }
-
-                    /* Background Image */
-                    footer::before {
-                        content: "";
-                        position: absolute;
-                        inset: 0;
-                        background: url("assets/images/posh/footer.gif") center/cover no-repeat;
-                        z-index: 0;
-                    }
-
-                    /* Dark Overlay */
-                    footer::after {
-                        content: "";
-                        position: absolute;
-                        inset: 0;
-                        background: rgba(0, 0, 0, 0.65);
-                        z-index: 1;
-                    }
-
-                    /* Main Container */
-                    .footer-container {
-                        position: relative;
-                        z-index: 2;
-                        display: grid;
-                        grid-template-columns: repeat(4, 1fr);
-                        gap: 30px;
-                        padding: 60px 80px;
-                    }
-
-                    /* Headings */
-                    .footer-container h4 {
-                        margin-bottom: 15px;
-                        font-size: 18px;
-                        font-weight: 600;
-                    }
-
-                    /* About */
-                    .footer-about p {
-                        font-size: 14px;
-                        line-height: 1.6;
-                        color: white;
-                    }
-
-                    .footer-about a {
-                        color: #9acd32;
-                        text-decoration: none;
-                    }
-
-                    /* Links */
-                    .footer-links ul {
-                        list-style: none;
-                        padding: 0;
-                    }
-
-                    .footer-links li {
-                        margin-bottom: 8px;
-                    }
-
-                    .footer-links a {
-                        color: #fff;
-                        text-decoration: none;
-                        font-size: 14px;
-                    }
-
-                    .footer-links a:hover {
-                        color: #9acd32;
-                    }
-
-                    /* Contact */
-                    .footer-contact p {
-                        font-size: 14px;
-                        line-height: 1.6;
-                        color: white;
-
-                    }
-
-                    .footer-contact span {
-                        color: #9acd32;
-                        font-weight: 600;
-                    }
-
-                    .footer-contact a {
-                        color: #fff;
-                        text-decoration: none;
-                    }
-
-                    /* Map */
-                    .footer-map iframe {
-                        width: 100%;
-                        height: 200px;
-                        border: 0;
-                        border-radius: 6px;
-                    }
-
-                    /* Bottom Bar */
-                    .footer-bottom {
-                        position: relative;
-                        z-index: 2;
-                        text-align: center;
-                        padding: 15px;
-                        font-size: 13px;
-                        background: rgba(0, 0, 0, 0.8);
-                    }
-
-                    .footer-bottom a {
-                        color: #9acd32;
-                        text-decoration: none;
-                    }
-
                     @media (max-width: 768px) {
-                        .footer-container {
-                            grid-template-columns: 1fr;
-                            padding: 40px 20px;
-                        }
-
-                        .footer-map iframe {
-                            height: 180px;
-                        }
                     }
 
 
@@ -3297,7 +3181,7 @@
                             flex-wrap: wrap !important;
                         }
                     }
-                </style>
+</style>
                 <style>
                     .dept-dropdown {
                         max-height: 320px !important;
@@ -4031,69 +3915,68 @@
 
                 </script>
                 <footer>
-                    <div class="footer-container" id="footernav">
+      <div class="footer-container" id="footernav">
 
-                        <!-- About -->
-                        <div class="footer-about">
-                            <h4>ABOUT US</h4>
-                            <p>
-                                Welcome to <strong>THE POSH</strong>. We operate at PONDICHERRY as a private surgical
-                                hospital, and our focus is on delivering quality care and value for money. We play a key
-                                role in improving the health of PONDICHERRY.
-                            </p>
-                        </div>
+        <!-- About -->
+        <div class="footer-about">
+          <h4>ABOUT US</h4>
+          <p>
+            Welcome to <strong>THE POSH</strong>. We operate at PONDICHERRY as a private surgical hospital, and our
+            focus is on delivering quality care and value for money. We play a key role in improving the health of
+            PONDICHERRY.
+          </p>
+        </div>
 
-                        <!-- Quick Links -->
-                        <div class="footer-links">
-                            <h4>QUICK LINKS</h4>
-                            <ul>
-                                <li><a href="index.html">HOME</a></li>
-                                <li><a href="about.html">ABOUT US</a></li>
-                                <li><a href="index.html#departmentssection">DEPARTMENTS</a></li>
-                                <li><a href="our-doctors.html">OUR DOCTORS</a></li>
-                                <li><a href="ourteams.html">Our Team</a></li>
-                                <li><a href="healthtips.html">HEALTH TIPS</a></li>
-                                <li><a href="appointment.html">APPOINTMENT</a></li>
-                            </ul>
-                        </div>
+        <!-- Quick Links -->
+        <div class="footer-links">
+          <h4>QUICK LINKS</h4>
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT US</a></li>
+            <li><a href="index.html#departmentssection">DEPARTMENTS</a></li>
+            <li><a href="our-doctors.html">OUR DOCTORS</a></li>
+            <li><a href="ourteams.html">Our Team</a></li>
+            <li><a href="healthtips.html">HEALTH TIPS</a></li>
+            <li><a href="appointment.html">APPOINTMENT</a></li>
+          </ul>
+        </div>
 
-                        <!-- Contact -->
-                        <div class="footer-contact">
-                            <h4>CONTACT US</h4>
-                            <p>
-                                <span>PONDICHERRY BRANCH:</span><br> 📍 Location: No. 24, First Main Road, Ambal Nagar,
-                                Puducherry – 605009<br> ☎ Tel: 0413-2200017 / 0413-2200018<br> 📱 +91 9677073462 / +91
-                                8056555330
-                            </p>
-                            <p>
-                                <span>THE POSH @ KALPAKKAM:</span><br> 🚑 Emergency & Trauma Day Care Unit<br> ECR Road,
-                                Prabaliyamedu, Pudhupattinam, Thirukazhukundram Taluk,<br> Chengalpattu District –
-                                603102<br> 📱 8925733344 | ☎ 044 2748 8981
-                            </p>
-                            <p>
-                                <span>Email:</span><br>
-                                <a href="mailto:theposhmarketing@gmail.com">theposhmarketing@gmail.com</a><br>
-                                <a href="mailto:theposhhospital@gmail.com">theposhhospital@gmail.com</a>
-                            </p>
-                        </div>
+        <!-- Contact -->
+        <div class="footer-contact">
+          <h4>CONTACT US</h4>
+          <p>
+            <span>PONDICHERRY BRANCH:</span><br> 📍 Location: No. 24, First Main Road, Ambal Nagar, Puducherry –
+            605009<br> ☎ Tel: 0413-2200017 / 0413-2200018<br> 📱 +91 9677073462 / +91 8056555330
+          </p>
+          <p>
+            <span>THE POSH @ KALPAKKAM:</span><br> 🚑 Emergency & Trauma Day Care Unit<br> ECR Road, Prabaliyamedu,
+            Pudhupattinam, Thirukazhukundram Taluk,<br> Chengalpattu District – 603102<br> 📱 8925733344 | ☎ 044 2748
+            8981
+          </p>
+          <p>
+            <span>Email:</span><br>
+            <a href="mailto:theposhmarketing@gmail.com">theposhmarketing@gmail.com</a><br>
+            <a href="mailto:theposhhospital@gmail.com">theposhhospital@gmail.com</a>
+          </p>
+        </div>
 
-                        <!-- Location -->
-                        <div class="footer-map">
-                            <h4>LOCATION</h4>
-                            <iframe src="https://www.google.com/maps?q=The+Posh+Hospital+Pondicherry&output=embed"
-                                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade">
-                            </iframe>
+        <!-- Location -->
+        <div class="footer-map">
+          <h4>LOCATION</h4>
+          <iframe src="https://www.google.com/maps?q=The+Posh+Hospital+Pondicherry&output=embed" width="100%"
+            height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
 
-                        </div>
-                    </div>
+        </div>
+      </div>
 
-                    <!-- Footer Bottom -->
-                    <div class="footer-bottom">
-                        © 2025 by The POSH - Pondy Ortho Speciality Hospital. Proudly created with
-                        <a href="https://www.getitmediasolutions.com/">GETIT MEDIA SOLUTIONS PVT LTD</a>
-                    </div>
-                </footer>
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        © 2025 by The POSH - Pondy Ortho Speciality Hospital. Proudly created with
+        <a href="https://www.getitmediasolutions.com/">GETIT MEDIA SOLUTIONS PVT LTD</a>
+      </div>
+    </footer>
                 <script>
                     document.addEventListener("click", function (e) {
 

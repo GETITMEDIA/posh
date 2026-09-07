@@ -265,7 +265,7 @@
             </ul>
           </li>
 
-          <li><a href="achieve.html">Achievements</a></li>
+          <li><a href="achievement.html">Achievements</a></li>
           <li><a href="contact.html">Contact Us</a></li>
 
         </ul>
@@ -359,7 +359,7 @@
             </ul>
           </li>
 
-          <li><a href="achieve.html">Achievements</a></li>
+          <li><a href="achievement.html">Achievements</a></li>
           <li><a href="contact.html">Contact Us</a></li>
 
         </ul>
@@ -567,7 +567,7 @@
                   <span class="mv-award-badge">Mrs.Kalaivani</span>
                   <h4>OPD</h4>
                 </div>
-                <div class="mv-award-images">
+                <div class="mv-award-images mv-award-images-single">
                   <div class="mv-img-wrap" onclick="openCert('assets/images/awards/department-6.jpg')">
                     <img decoding="async" src="assets/images/awards/department-6.jpg"
                       alt="Nursing Department receiving the Shripanjavarnam Award" loading="lazy">
@@ -580,7 +580,7 @@
                   <span class="mv-award-badge">Mr.Madhan</span>
                   <h4>MRI</h4>
                 </div>
-                <div class="mv-award-images">
+                <div class="mv-award-images mv-award-images-single">
                   <div class="mv-img-wrap" onclick="openCert('assets/images/awards/department-8.jpg')">
                     <img decoding="async" src="assets/images/awards/department-8.jpg"
                       alt="Nursing Department receiving the Shripanjavarnam Award" loading="lazy">
@@ -593,7 +593,7 @@
                   <span class="mv-award-badge">Dr.Murugaraj</span>
                   <h4>Physiotherapy</h4>
                 </div>
-                <div class="mv-award-images">
+                <div class="mv-award-images mv-award-images-single">
                   <div class="mv-img-wrap" onclick="openCert('assets/images/awards/department-9.jpg')">
                     <img decoding="async" src="assets/images/awards/department-9.jpg"
                       alt="Nursing Department receiving the Shripanjavarnam Award" loading="lazy">
@@ -606,7 +606,7 @@
                   <span class="mv-award-badge">Mr.Kamaraj</span>
                   <h4>Operation Manager - Administration</h4>
                 </div>
-                <div class="mv-award-images">
+                <div class="mv-award-images mv-award-images-single">
                   <div class="mv-img-wrap" onclick="openCert('assets/images/awards/department-10.jpg')">
                     <img decoding="async" src="assets/images/awards/department-10.jpg"
                       alt="Nursing Department receiving the Shripanjavarnam Award" loading="lazy">
@@ -629,7 +629,7 @@
                   <h4>Mrs. Mathi</h4>
                   <p>Nursing Department</p>
                 </div>
-                <div class="mv-award-images">
+                <div class="mv-award-images mv-award-images-single">
                   <div class="mv-img-wrap" onclick="openCert('assets/images/awards/employee-1.jpeg')">
                     <img decoding="async" src="assets/images/awards/employee-1.jpeg"
                       alt="Mrs. Mathi receiving the Best Employee Award, Nursing Department" loading="lazy">
@@ -643,7 +643,7 @@
                   <h4>Mr. Vinothkumar</h4>
                   <p>Maintenance Department</p>
                 </div>
-                <div class="mv-award-images">
+                <div class="mv-award-images mv-award-images-single">
                   <div class="mv-img-wrap" onclick="openCert('assets/images/awards/employee-1.jpeg')">
                     <img decoding="async" src="assets/images/awards/employee-2.jpeg"
                       alt="Maintenance Department receiving the Best Employee Award" loading="lazy">
@@ -1084,6 +1084,10 @@
       gap: 12px;
       padding: 18px;
       background: linear-gradient(135deg, #f9f0ff 0%, #fff0f8 100%);
+    }
+
+    .mv-award-images.mv-award-images-single {
+      grid-template-columns: 1fr;
     }
 
     .mv-award-images img {
@@ -2216,66 +2220,68 @@
 
   <!-- Footer -->
   <footer>
-    <div class="footer-container" id="footernav">
+      <div class="footer-container" id="footernav">
 
-      <!-- About -->
-      <div class="footer-about">
-        <h4>ABOUT US</h4>
-        <p>
-          Welcome to <strong>THE POSH</strong>. We operate at PONDICHERRY as a private surgical hospital, and our focus
-          is on delivering quality care and value for money. We play a key role in improving the health of
-          PONDICHERRY.
-        </p>
+        <!-- About -->
+        <div class="footer-about">
+          <h4>ABOUT US</h4>
+          <p>
+            Welcome to <strong>THE POSH</strong>. We operate at PONDICHERRY as a private surgical hospital, and our
+            focus is on delivering quality care and value for money. We play a key role in improving the health of
+            PONDICHERRY.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-links">
+          <h4>QUICK LINKS</h4>
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT US</a></li>
+            <li><a href="index.html#departmentssection">DEPARTMENTS</a></li>
+            <li><a href="our-doctors.html">OUR DOCTORS</a></li>
+            <li><a href="ourteams.html">Our Team</a></li>
+            <li><a href="healthtips.html">HEALTH TIPS</a></li>
+            <li><a href="appointment.html">APPOINTMENT</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-contact">
+          <h4>CONTACT US</h4>
+          <p>
+            <span>PONDICHERRY BRANCH:</span><br> 📍 Location: No. 24, First Main Road, Ambal Nagar, Puducherry –
+            605009<br> ☎ Tel: 0413-2200017 / 0413-2200018<br> 📱 +91 9677073462 / +91 8056555330
+          </p>
+          <p>
+            <span>THE POSH @ KALPAKKAM:</span><br> 🚑 Emergency & Trauma Day Care Unit<br> ECR Road, Prabaliyamedu,
+            Pudhupattinam, Thirukazhukundram Taluk,<br> Chengalpattu District – 603102<br> 📱 8925733344 | ☎ 044 2748
+            8981
+          </p>
+          <p>
+            <span>Email:</span><br>
+            <a href="mailto:theposhmarketing@gmail.com">theposhmarketing@gmail.com</a><br>
+            <a href="mailto:theposhhospital@gmail.com">theposhhospital@gmail.com</a>
+          </p>
+        </div>
+
+        <!-- Location -->
+        <div class="footer-map">
+          <h4>LOCATION</h4>
+          <iframe src="https://www.google.com/maps?q=The+Posh+Hospital+Pondicherry&output=embed" width="100%"
+            height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+
+        </div>
       </div>
 
-      <!-- Quick Links -->
-      <div class="footer-links">
-        <h4>QUICK LINKS</h4>
-        <ul>
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="about.html">ABOUT US</a></li>
-          <li><a href="index.html#departmentssection">DEPARTMENTS</a></li>
-          <li><a href="our-doctors.html">OUR DOCTORS</a></li>
-          <li><a href="ourteams.html">Our Team</a></li>
-          <li><a href="healthtips.html">HEALTH TIPS</a></li>
-          <li><a href="appointment.html">APPOINTMENT</a></li>
-        </ul>
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        © 2025 by The POSH - Pondy Ortho Speciality Hospital. Proudly created with
+        <a href="https://www.getitmediasolutions.com/">GETIT MEDIA SOLUTIONS PVT LTD</a>
       </div>
-
-      <!-- Contact -->
-      <div class="footer-contact">
-        <h4>CONTACT US</h4>
-        <p>
-          <span>PONDICHERRY BRANCH:</span><br> 📍 Location: No. 24, First Main Road, Ambal Nagar, Puducherry –
-          605009<br> ☎ Tel: 0413-2200017 / 0413-2200018<br> 📱 +91 9677073462 / +91 8056555330
-        </p>
-        <p>
-          <span>THE POSH @ KALPAKKAM:</span><br> 🚑 Emergency & Trauma Day Care Unit<br> ECR Road, Prabaliyamedu,
-          Pudhupattinam, Thirukazhukundram Taluk,<br> Chengalpattu District – 603102<br> 📱 8925733344 | ☎ 044 2748 8981
-        </p>
-        <p>
-          <span>Email:</span><br>
-          <a href="mailto:theposhmarketing@gmail.com">theposhmarketing@gmail.com</a><br>
-          <a href="mailto:theposhhospital@gmail.com">theposhhospital@gmail.com</a>
-        </p>
-      </div>
-
-      <!-- Location -->
-      <div class="footer-map">
-        <h4>LOCATION</h4>
-        <iframe src="https://www.google.com/maps?q=The+Posh+Hospital+Pondicherry&output=embed" width="100%" height="450"
-          style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-
-      </div>
-    </div>
-
-    <!-- Footer Bottom -->
-    <div class="footer-bottom">
-      © 2025 by The POSH - Pondy Ortho Speciality Hospital. Proudly created with
-      <a href="https://www.getitmediasolutions.com/">GETIT MEDIA SOLUTIONS PVT LTD</a>
-    </div>
-  </footer>
+    </footer>
   <script>
     document.addEventListener("click", function (e) {
 

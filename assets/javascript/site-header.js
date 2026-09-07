@@ -212,16 +212,28 @@
     }
   }
 
+  function initFooterCopyright() {
+    var footerBottoms = document.querySelectorAll(".footer-bottom");
+    if (footerBottoms.length > 0) {
+      var year = new Date().getFullYear();
+      var copyHTML = "&copy; " + year + " by The POSH - Pondy Ortho Speciality Hospital. Proudly created with <a href=\"https://www.getitmediasolutions.com/\" target=\"_blank\" rel=\"noopener\">GETIT MEDIA SOLUTIONS PVT LTD</a>";
+      for (var i = 0; i < footerBottoms.length; i++) {
+        footerBottoms[i].innerHTML = copyHTML;
+      }
+    }
+  }
+
   window.addEventListener("hashchange", function () {
     window.__poshHashLanding = false;
     landOnHash();
   });
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", function () { init(); initStickyHeader(); landOnHash(); });
+    document.addEventListener("DOMContentLoaded", function () { init(); initStickyHeader(); landOnHash(); initFooterCopyright(); });
   } else {
     init();
     initStickyHeader();
     landOnHash();
+    initFooterCopyright();
   }
 })();

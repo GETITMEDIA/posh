@@ -8751,12 +8751,12 @@ button {
 
 .clients-section {
     /* padding: 4rem 2rem; */
-    background: #0f0f0f;
+    background: #f8f9fa;
 }
 
 .clients-title {
     text-align: center;
-    color: #fff;
+    color: #1a1a2e;
     letter-spacing: 4px;
     margin-bottom: 3rem;
 }
@@ -9156,12 +9156,12 @@ header img:hover {
 
 .clients-section {
     /* padding: 4rem 2rem; */
-    /* background: #0f0f0f; */
+    background: #f8f9fa;
 }
 
 .clients-title {
     text-align: center;
-    color: #fff;
+    color: #1a1a2e;
     letter-spacing: 4px;
     margin-bottom: 3rem;
 }
