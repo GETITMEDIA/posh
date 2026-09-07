@@ -224,7 +224,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: url('assets/images/counterbg.jfif') center/cover no-repeat;
+      background: url('assets/images/counterbg.png') center/cover no-repeat;
       opacity: 0.35;
       pointer-events: none;
     }
@@ -2258,8 +2258,8 @@
         <div class="card">
           <ul>
             <li>
-              <a class="social facebook" href="https://www.facebook.com/theposhin/reels/" target="_blank"
-                rel="noopener" aria-label="Facebook">
+              <a class="social facebook" href="https://www.facebook.com/theposhin/reels/" target="_blank" rel="noopener"
+                aria-label="Facebook">
                 <i class="fa-brands fa-facebook-f"></i>
               </a>
             </li>
@@ -2289,7 +2289,8 @@
 
         <!-- Left -->
         <div class="flex items-center gap-4">
-          <img decoding="async" src="assets/images/posh/247-emergency.avif" alt="24/7 Emergency Services" class="emergency-icon">
+          <img decoding="async" src="assets/images/posh/247-emergency.avif" alt="24/7 Emergency Services"
+            class="emergency-icon">
         </div>
 
         <!-- Center -->
@@ -2415,7 +2416,8 @@
               <li><a href="departments/oncology.html">Oncology &amp; Surgical Oncology</a></li>
               <li><a href="departments/ophthalmology.html">Ophthalmology</a></li>
               <li><a href="departments/paediatrics.html">Paediatrics</a></li>
-              <li><a href="departments/physical-medicine-rehabilitation.html">Physical Medicine and Rehabilitation</a></li>
+              <li><a href="departments/physical-medicine-rehabilitation.html">Physical Medicine and Rehabilitation</a>
+              </li>
               <li><a href="departments/physiotherapy.html">Physiotherapy</a></li>
               <li><a href="departments/plastic-surgery.html">Plastic Surgery</a></li>
               <li><a href="departments/psychiatry.html">Psychiatry</a></li>
@@ -2505,7 +2507,8 @@
               <li><a href="departments/oncology.html">Oncology &amp; Surgical Oncology</a></li>
               <li><a href="departments/ophthalmology.html">Ophthalmology</a></li>
               <li><a href="departments/paediatrics.html">Paediatrics</a></li>
-              <li><a href="departments/physical-medicine-rehabilitation.html">Physical Medicine and Rehabilitation</a></li>
+              <li><a href="departments/physical-medicine-rehabilitation.html">Physical Medicine and Rehabilitation</a>
+              </li>
               <li><a href="departments/physiotherapy.html">Physiotherapy</a></li>
               <li><a href="departments/plastic-surgery.html">Plastic Surgery</a></li>
               <li><a href="departments/psychiatry.html">Psychiatry</a></li>
@@ -2563,7 +2566,7 @@
 
 
 
-  
+
 
 
   <main class="relative">
@@ -3070,8 +3073,6 @@
 
       .pa-main-img {
         width: 100%;
-        height: 460px;
-        object-fit: cover;
         display: block;
         transition: transform 0.7s ease;
       }
@@ -3480,7 +3481,6 @@
         }
 
         .pa-main-img {
-          height: 320px;
         }
 
         .pa-heading {
@@ -4234,7 +4234,7 @@
       </div>
 
       <div class="about-right">
-        <h5 class="tag">OUR ABOUT US</h5>
+        <h5 class="tag">ABOUT US</h5>
 
         <p class="description">
           We are privileged to work with hundreds of future-thinking medical providers and tech innovators.
@@ -4264,753 +4264,765 @@
 
 
 
-        <section class="departments-section" id="departmentssection">
-          <style>
-            /* ===== DEPARTMENTS REBUILD — reference match ===== */
-            .departments-section {
-              position: relative;
-              z-index: 4;
-              overflow: hidden;
-              padding: 0 !important;
-              margin-top: 0 !important;
-              background: #ffffff !important;
-            }
-
-            .departments-section .dept-item::before {
-              content: none !important;
-              display: none !important;
-            }
-
-            /* ── HERO ── */
-            .dept-hero {
-              background: url('assets/images/posh/817102d2-114f-4353-9a3f-8e9e306038a3.png') center bottom/cover no-repeat, linear-gradient(135deg, #fff0f5 0%, #ffd6e8 45%, #fff5f9 100%);
-              padding: 100px 30px 120px;
-              position: relative;
-              overflow: hidden;
-            }
-
-            .dept-hero-inner {
-              max-width: 1200px;
-              margin: 0 auto;
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-              gap: 40px;
-              position: relative;
-              z-index: 2;
-            }
-
-            /* LEFT */
-            .dept-hero-left {
-              flex: 1;
-              max-width: 620px;
-              position: relative;
-            }
-
-            .dept-tagline {
-              color: #e91e63;
-              font-size: .72rem;
-              font-weight: 700;
-              letter-spacing: 2.5px;
-              text-transform: uppercase;
-              margin-bottom: 18px;
-            }
-
-            .dept-title {
-              color: #e91e63;
-              font-size: clamp(3.6rem, 9vw, 6.4rem);
-              font-weight: 900;
-              letter-spacing: 3px;
-              line-height: 1;
-              margin-bottom: 22px;
-            }
-
-            .dept-ecg-div {
-              display: flex;
-              align-items: center;
-              gap: 12px;
-              margin-bottom: 22px;
-            }
-
-            .dept-ecg-line {
-              display: inline-block;
-              height: 2px;
-              width: 70px;
-            }
-
-            .dept-ecg-line.l {
-              background: linear-gradient(to right, transparent, #e91e63);
-            }
-
-            .dept-ecg-line.r {
-              background: linear-gradient(to left, transparent, #e91e63);
-            }
-
-            .dept-ecg-icon {
-              font-size: 22px;
-            }
-
-            .dept-subtitle-txt {
-              color: #555;
-              font-size: 1rem;
-              line-height: 1.8;
-              max-width: 480px;
-            }
-
-            /* dot grid */
-            .dept-dots {
-              position: absolute;
-              top: -50px;
-              left: -70px;
-              width: 130px;
-              height: 130px;
-              background-image: radial-gradient(circle, rgba(244, 143, 177, .28) 1.5px, transparent 1.5px);
-              background-size: 16px 16px;
-              pointer-events: none;
-            }
-
-            /* cross decorations */
-            .dept-cross {
-              position: absolute;
-              color: #e91e63;
-              font-weight: 900;
-              line-height: 1;
-              pointer-events: none;
-              user-select: none;
-            }
-
-            .dept-cross.c1 {
-              top: 10px;
-              left: 20px;
-              font-size: 64px;
-              opacity: .16;
-            }
-
-            .dept-cross.c2 {
-              bottom: 30px;
-              left: 60px;
-              font-size: 36px;
-              opacity: .1;
-            }
-
-            .dept-cross.c3 {
-              top: 30px;
-              right: 50px;
-              font-size: 54px;
-              opacity: .14;
-            }
-
-            .dept-cross.c4 {
-              bottom: 50px;
-              right: 30px;
-              font-size: 32px;
-              opacity: .1;
-            }
-
-            /* RIGHT heart */
-            .dept-hero-right {
-              flex: 0 0 400px;
-              position: relative;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            }
-
-            .dept-heart-wrap {
-              position: relative;
-              width: 380px;
-              height: 360px;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            }
-
-            .dept-heart-glow {
-              position: absolute;
-              inset: 0;
-              background: radial-gradient(circle, rgba(244, 143, 177, .22) 0%, transparent 70%);
-              border-radius: 50%;
-              animation: heartPulse 2.5s ease-in-out infinite;
-            }
-
-            @keyframes heartPulse {
-
-              0%,
-              100% {
-                transform: scale(1);
-                opacity: .8;
-              }
-
-              50% {
-                transform: scale(1.08);
-                opacity: 1;
-              }
-            }
-
-            .dept-heart-img {
-              width: 300px;
-              height: 300px;
-              object-fit: contain;
-              position: relative;
-              z-index: 1;
-              filter: drop-shadow(0 12px 32px rgba(244, 143, 177, .45)) drop-shadow(0 0 60px rgba(244, 143, 177, .2));
-              animation: heartFloat 3s ease-in-out infinite;
-            }
-
-            @keyframes heartFloat {
-
-              0%,
-              100% {
-                transform: translateY(0);
-              }
-
-              50% {
-                transform: translateY(-12px);
-              }
-            }
-
-            .dept-ecg-svg {
-              position: absolute;
-              bottom: 20px;
-              left: 0;
-              right: 0;
-              width: 100%;
-              height: 55px;
-              z-index: 2;
-              opacity: .7;
-            }
-
-            /* wave */
-            .dept-hero-wave {
-              position: absolute;
-              bottom: -2px;
-              left: 0;
-              right: 0;
-              line-height: 0;
-            }
-
-            .dept-hero-wave svg {
-              display: block;
-              width: 100%;
-              height: 80px;
-            }
-
-            /* ── CARDS ── */
-            .dept-cards-wrap {
-              background: #fff;
-              padding: 52px 60px 64px;
-              position: relative;
-              overflow: hidden;
-            }
-
-            .dept-cards-wrap::before {
-              display: none;
-            }
-
-            .dept-grid {
-              display: grid;
-              grid-template-columns: repeat(3, 1fr);
-              gap: 25px;
-              max-width: 1200px;
-              margin: 0 auto;
-            }
-
-            /* HORIZONTAL card */
-            .dept-item {
-              --ac: #e91e63;
-              background: #ffffff !important;
-              border-radius: 20px !important;
-              padding: 20px 16px !important;
-              text-decoration: none;
-              color: inherit;
-              display: flex !important;
-              flex-direction: row !important;
-              align-items: flex-start !important;
-              gap: 14px !important;
-              box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
-              border: 1.5px solid #eee !important;
-              border-bottom: 3px solid var(--ac) !important;
-              transition: all .3s ease !important;
-              position: relative !important;
-              overflow: hidden !important;
-            }
-
-            .dept-item:hover {
-              transform: translateY(-6px) !important;
-              box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12) !important;
-            }
-
-            /* icon circle */
-            .icon-box {
-              width: 76px !important;
-              height: 76px !important;
-              min-width: 76px !important;
-              border-radius: 50% !important;
-              background: color-mix(in srgb, var(--ac) 12%, white) !important;
-              border: none !important;
-              box-shadow: none !important;
-              display: flex !important;
-              align-items: center !important;
-              justify-content: center !important;
-              flex-shrink: 0 !important;
-              transition: .3s ease !important;
-              position: relative !important;
-              z-index: 1 !important;
-              isolation: isolate !important;
-            }
-
-            .icon-box::before {
-              content: '';
-              position: absolute;
-              inset: 0;
-              border-radius: 50%;
-              background: var(--ac);
-              mix-blend-mode: color;
-              opacity: .75;
-              pointer-events: none;
-              z-index: 2;
-            }
-
-            .icon-box img {
-              width: 46px !important;
-              height: 46px !important;
-              object-fit: contain;
-              filter: none !important;
-              position: relative;
-              z-index: 1 !important;
-            }
-
-            .dept-item:hover .icon-box {
-              transform: scale(1.1) rotate(-4deg) !important;
-            }
-
-            /* text */
-            .dept-text {
-              flex: 1;
-              min-width: 0;
-              display: flex;
-              flex-direction: column;
-              align-items: flex-start;
-              text-align: left;
-            }
-
-            .dept-name {
-              font-size: .8rem;
-              font-weight: 800;
-              color: #111;
-              text-transform: uppercase;
-              letter-spacing: .5px;
-              line-height: 1.3;
-              margin: 0 0 7px;
-            }
-
-            .dept-dash {
-              display: block;
-              width: 26px;
-              height: 2.5px;
-              background: var(--ac);
-              border-radius: 2px;
-              margin-bottom: 8px;
-              flex-shrink: 0;
-            }
-
-            .dept-item .dept-desc,
-            .dept-item p {
-              font-size: .77rem !important;
-              color: #666 !important;
-              line-height: 1.6 !important;
-              margin: 0 0 12px !important;
-              flex: 1 !important;
-              text-transform: none !important;
-              letter-spacing: 0 !important;
-              font-weight: 400 !important;
-            }
-
-            .dept-explore {
-              display: inline-flex;
-              align-items: center;
-              gap: 7px;
-              font-size: .74rem;
-              font-weight: 700;
-              color: var(--ac);
-              border: 1.5px solid var(--ac);
-              border-radius: 22px;
-              padding: 5px 8px 5px 14px;
-              transition: .25s ease;
-              margin-top: auto;
-            }
-
-            .dept-explore-arr {
-              width: 22px;
-              height: 22px;
-              background: var(--ac);
-              border-radius: 50%;
-              display: inline-flex;
-              align-items: center;
-              justify-content: center;
-              color: #fff;
-              font-size: 12px;
-              transition: .25s ease;
-            }
-
-            .dept-item:hover .dept-explore {
-              background: color-mix(in srgb, var(--ac) 8%, white);
-            }
-
-            .dept-item:hover .dept-explore-arr {
-              opacity: .85;
-            }
-
-            /* ── FEATURE STRIP ── */
-            .dept-features {
-              background: linear-gradient(135deg, #e91e63 0%, #c2185b 55%, #ad1457 100%);
-              padding: 34px 20px;
-            }
-
-            .dept-feat-wrap {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              max-width: 1200px;
-              margin: 0 auto;
-              flex-wrap: wrap;
-            }
-
-            .dept-feat {
-              display: flex;
-              flex-direction: row;
-              align-items: center;
-              gap: 16px;
-              padding: 0 36px;
-              border-right: 1px solid rgba(255, 255, 255, .22);
-              flex: 1;
-              min-width: 220px;
-            }
-
-            .dept-feat:last-child {
-              border-right: none;
-            }
-
-            .dept-feat-ico {
-              width: 52px;
-              height: 52px;
-              border-radius: 50%;
-              background: rgba(255, 255, 255, .22);
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              font-size: 24px;
-              flex-shrink: 0;
-            }
-
-            .dept-feat-txt h4 {
-              color: #fff;
-              font-size: .76rem;
-              font-weight: 800;
-              letter-spacing: 1.5px;
-              text-transform: uppercase;
-              margin: 0 0 3px;
-            }
-
-            .dept-feat-txt p {
-              color: rgba(255, 255, 255, .85);
-              font-size: .72rem;
-              margin: 0;
-              line-height: 1.45;
-            }
-
-            /* Responsive */
-            @media(max-width:1200px) {
-              .dept-cards-wrap {
-                padding: 40px 30px 48px;
-              }
-            }
-
-            @media(max-width:1024px) {
-              .dept-hero-right {
-                display: none;
-              }
-            }
-
-            @media(max-width:900px) {
-              .dept-grid {
-                grid-template-columns: repeat(2, 1fr);
-              }
-
-              .dept-feat {
-                padding: 12px 20px;
-                min-width: 160px;
-              }
-            }
-
-            @media(max-width:480px) {
-              .dept-grid {
-                grid-template-columns: 1fr;
-              }
-
-              .dept-cards-wrap {
-                padding: 30px 15px 40px;
-              }
-            }
-          </style>
-
-
-          <!-- ── CARDS ── -->
-          <div class="dept-cards-wrap">
-            <div style="text-align:center;margin-bottom:36px;">
-              <h2 style="font-size:2rem;font-weight:900;color:#111;letter-spacing:1px;margin:0 0 8px;">OUR DEPARTMENTS
-              </h2>
-              <p style="font-size:.95rem;color:#888;margin:0;">Comprehensive speciality care under one roof</p>
-              <div
-                style="width:60px;height:3px;background:linear-gradient(to right,#e91e63,#7c3aed);border-radius:4px;margin:12px auto 0;">
-              </div>
-            </div>
-            <div class="dept-grid">
-
-              <a href="departments/orthopedics-spine-care.html" class="dept-item" style="--ac:#6c3fe8">
-                <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/spine2.png" alt=""></div>
-                <div class="dept-text">
-                  <h3 class="dept-name">Orthopedics &amp; Spine Care</h3><span class="dept-dash"></span>
-                  <p class="dept-desc">Advanced care for bones, joints, and spine problems.</p><span
-                    class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
-                </div>
-              </a>
-
-              <a href="departments/anaesthesiology.html" class="dept-item" style="--ac:#00b894">
-                <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/ana.png" alt=""></div>
-                <div class="dept-text">
-                  <h3 class="dept-name">Anaesthesiology</h3><span class="dept-dash"></span>
-                  <p class="dept-desc">Safe anaesthesia care for a pain-free experience.</p><span
-                    class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
-                </div>
-              </a>
-
-              <a href="departments/cardiology.html" class="dept-item" style="--ac:#e74c3c">
-                <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/heart-cardiology-icon.png" alt=""></div>
-                <div class="dept-text">
-                  <h3 class="dept-name">Cardiology</h3><span class="dept-dash"></span>
-                  <p class="dept-desc">Comprehensive heart care for a healthier tomorrow.</p><span
-                    class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
-                </div>
-              </a>
-
-              <a href="departments/cardiothoracic-vascular.html" class="dept-item" style="--ac:#2980b9">
-                <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/cvs.png" alt=""></div>
-                <div class="dept-text">
-                  <h3 class="dept-name">Cardiothoracic &amp; Vascular</h3><span class="dept-dash"></span>
-                  <p class="dept-desc">Expert care for heart, lungs and blood vessels.</p><span
-                    class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
-                </div>
-              </a>
-
-              <a href="departments/dental.html" class="dept-item" style="--ac:#00b4d8">
-                <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/dentist-icon.png" alt=""></div>
-                <div class="dept-text">
-                  <h3 class="dept-name">Dental</h3><span class="dept-dash"></span>
-                  <p class="dept-desc">Complete dental care for a confident smile.</p><span class="dept-explore">Explore
-                    <span class="dept-explore-arr">&#8250;</span></span>
-                </div>
-              </a>
-
-              <a href="departments/dermatology.html" class="dept-item" style="--ac:#8e44ad">
-                <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/dermatology1.png" alt=""></div>
-                <div class="dept-text">
-                  <h3 class="dept-name">Dermatology &amp; Cosmetology</h3><span class="dept-dash"></span>
-                  <p class="dept-desc">Healthy skin, hair and beauty with expert care.</p><span
-                    class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
-                </div>
-              </a>
-
-              <a href="departments/endocrinology.html" class="dept-item" style="--ac:#e91e63">
-                <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/endo.png" alt=""></div>
-                <div class="dept-text">
-                  <h3 class="dept-name">Endocrinology</h3><span class="dept-dash"></span>
-                  <p class="dept-desc">Specialized care for hormonal and metabolic disorders.</p><span
-                    class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
-                </div>
-              </a>
-
-              <a href="departments/ent.html" class="dept-item" style="--ac:#7c3aed">
-                <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/ent.png" alt=""></div>
-                <div class="dept-text">
-                  <h3 class="dept-name">ENT</h3><span class="dept-dash"></span>
-                  <p class="dept-desc">Expert ear, nose and throat treatment and surgery.</p><span
-                    class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
-                </div>
-              </a>
-
-              <a href="departments/gastroenterology.html" class="dept-item" style="--ac:#27ae60">
-                <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/gas.png" alt=""></div>
-                <div class="dept-text">
-                  <h3 class="dept-name">Gastroenterology</h3><span class="dept-dash"></span>
-                  <p class="dept-desc">Comprehensive care for the digestive system.</p><span
-                    class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
-                </div>
-              </a>
-
-              <a href="departments/general-medicine.html" class="dept-item" style="--ac:#1976d2">
-                <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/genrlmed.png" alt=""></div>
-                <div class="dept-text">
-                  <h3 class="dept-name">General Medicine</h3><span class="dept-dash"></span>
-                  <p class="dept-desc">Complete general medical care and consultation.</p><span
-                    class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
-                </div>
-              </a>
-
-              <a href="departments/general-surgery.html" class="dept-item" style="--ac:#1565c0">
-                <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/gensurgry.png" alt=""></div>
-                <div class="dept-text">
-                  <h3 class="dept-name">General Surgery</h3><span class="dept-dash"></span>
-                  <p class="dept-desc">Precision surgical care with expert outcomes.</p><span
-                    class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
-                </div>
-              </a>
-
-              <a href="departments/hepatology.html" class="dept-item" style="--ac:#f39c12">
-                <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/heptology.png" alt=""></div>
-                <div class="dept-text">
-                  <h3 class="dept-name">Hepatology</h3><span class="dept-dash"></span>
-                  <p class="dept-desc">Expert care for liver and hepatic conditions.</p><span
-                    class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
-                </div>
-              </a>
-
-              <a href="departments/nephrology.html" class="dept-item" style="--ac:#16a085">
-                <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/neprology.png" alt=""></div>
-                <div class="dept-text">
-                  <h3 class="dept-name">Nephrology</h3><span class="dept-dash"></span>
-                  <p class="dept-desc">Advanced kidney care and dialysis treatment.</p><span
-                    class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
-                </div>
-              </a>
-
-              <a href="departments/neurology.html" class="dept-item" style="--ac:#6c3fe8">
-                <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/neuro.png" alt=""></div>
-                <div class="dept-text">
-                  <h3 class="dept-name">Neurology</h3><span class="dept-dash"></span>
-                  <p class="dept-desc">Expert brain and nervous system care.</p><span class="dept-explore">Explore <span
-                      class="dept-explore-arr">&#8250;</span></span>
-                </div>
-              </a>
-
-              <a href="departments/neurosurgery.html" class="dept-item" style="--ac:#c0392b">
-                <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/neurosur.png" alt=""></div>
-                <div class="dept-text">
-                  <h3 class="dept-name">Neurosurgery</h3><span class="dept-dash"></span>
-                  <p class="dept-desc">Precise surgical care for neurological conditions.</p><span
-                    class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
-                </div>
-              </a>
-
-              <a href="departments/obstetrics-gynaecology.html" class="dept-item" style="--ac:#e91e63">
-                <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/gyno.png" alt=""></div>
-                <div class="dept-text">
-                  <h3 class="dept-name">Obstetrics &amp; Gynaecology</h3><span class="dept-dash"></span>
-                  <p class="dept-desc">Comprehensive women's health and maternity care.</p><span
-                    class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
-                </div>
-              </a>
-
-              <a href="departments/oncology.html" class="dept-item" style="--ac:#8e44ad">
-                <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/onco.png" alt=""></div>
-                <div class="dept-text">
-                  <h3 class="dept-name">Oncology &amp; Surgical Oncology</h3><span class="dept-dash"></span>
-                  <p class="dept-desc">Compassionate cancer care and treatment.</p><span class="dept-explore">Explore
-                    <span class="dept-explore-arr">&#8250;</span></span>
-                </div>
-              </a>
-
-              <a href="departments/ophthalmology.html" class="dept-item" style="--ac:#0288d1">
-                <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/optho.png" alt=""></div>
-                <div class="dept-text">
-                  <h3 class="dept-name">Ophthalmology</h3><span class="dept-dash"></span>
-                  <p class="dept-desc">Expert eye care for a clearer, healthier vision.</p><span
-                    class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
-                </div>
-              </a>
-
-              <a href="departments/paediatrics.html" class="dept-item" style="--ac:#43a047">
-                <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/baby.png" alt=""></div>
-                <div class="dept-text">
-                  <h3 class="dept-name">Paediatrics</h3><span class="dept-dash"></span>
-                  <p class="dept-desc">Specialized healthcare for infants and children.</p><span
-                    class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
-                </div>
-              </a>
-
-              <a href="departments/physiotherapy.html" class="dept-item" style="--ac:#00897b">
-                <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/physio.png" alt=""></div>
-                <div class="dept-text">
-                  <h3 class="dept-name">Physiotherapy</h3><span class="dept-dash"></span>
-                  <p class="dept-desc">Rehabilitation and physical therapy for recovery.</p><span
-                    class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
-                </div>
-              </a>
-
-              <a href="departments/plastic-surgery.html" class="dept-item" style="--ac:#e91e63">
-                <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/plastic.png" alt=""></div>
-                <div class="dept-text">
-                  <h3 class="dept-name">Plastic Surgery</h3><span class="dept-dash"></span>
-                  <p class="dept-desc">Reconstructive and aesthetic surgical care.</p><span class="dept-explore">Explore
-                    <span class="dept-explore-arr">&#8250;</span></span>
-                </div>
-              </a>
-
-              <a href="departments/psychiatry.html" class="dept-item" style="--ac:#5c6bc0">
-                <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/pyschitry.png" alt=""></div>
-                <div class="dept-text">
-                  <h3 class="dept-name">Psychiatry</h3><span class="dept-dash"></span>
-                  <p class="dept-desc">Mental health care with compassion and expertise.</p><span
-                    class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
-                </div>
-              </a>
-
-              <a href="departments/pulmonology.html" class="dept-item" style="--ac:#1976d2">
-                <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/pulmonology.png" alt=""></div>
-                <div class="dept-text">
-                  <h3 class="dept-name">Pulmonology &amp; Chest Medicine</h3><span class="dept-dash"></span>
-                  <p class="dept-desc">Expert respiratory and lung disease care.</p><span class="dept-explore">Explore
-                    <span class="dept-explore-arr">&#8250;</span></span>
-                </div>
-              </a>
-
-              <a href="departments/radiology.html" class="dept-item" style="--ac:#607d8b">
-                <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/radio.png" alt=""></div>
-                <div class="dept-text">
-                  <h3 class="dept-name">Radiology</h3><span class="dept-dash"></span>
-                  <p class="dept-desc">Precision diagnostic imaging and radiology services.</p><span
-                    class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
-                </div>
-              </a>
-              <a href="departments/physical-medicine-rehabilitation.html" class="dept-item" style="--ac:#4caf50">
-                <div class="icon-box">
-                  <img loading="lazy" decoding="async" src="assets/images/posh/physical-medicine.png" alt="Physical Medicine and Rehabilitation">
-                </div>
-                <div class="dept-text">
-                  <h3 class="dept-name">Physical Medicine and Rehabilitation</h3>
-                  <span class="dept-dash"></span>
-                  <p class="dept-desc">
-                    Comprehensive rehabilitation care to restore mobility, function, and quality of life.
-                  </p>
-                  <span class="dept-explore">
-                    Explore <span class="dept-explore-arr">&#8250;</span>
-                  </span>
-                </div>
-              </a>
-
-              <a href="departments/urology.html" class="dept-item" style="--ac:#0288d1">
-                <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/uro.png" alt=""></div>
-                <div class="dept-text">
-                  <h3 class="dept-name">Urology</h3><span class="dept-dash"></span>
-                  <p class="dept-desc">Advanced urological and kidney care for all ages.</p><span
-                    class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
-                </div>
-              </a>
-
-            </div>
+    <section class="departments-section" id="departmentssection">
+      <style>
+        /* ===== DEPARTMENTS REBUILD — reference match ===== */
+        .departments-section {
+          position: relative;
+          z-index: 4;
+          overflow: hidden;
+          padding: 0 !important;
+          margin-top: 0 !important;
+          background: #ffffff !important;
+        }
+
+        .departments-section .dept-item::before {
+          content: none !important;
+          display: none !important;
+        }
+
+        /* ── HERO ── */
+        .dept-hero {
+          background: url('assets/images/posh/817102d2-114f-4353-9a3f-8e9e306038a3.png') center bottom/cover no-repeat, linear-gradient(135deg, #fff0f5 0%, #ffd6e8 45%, #fff5f9 100%);
+          padding: 100px 30px 120px;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .dept-hero-inner {
+          max-width: 1200px;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 40px;
+          position: relative;
+          z-index: 2;
+        }
+
+        /* LEFT */
+        .dept-hero-left {
+          flex: 1;
+          max-width: 620px;
+          position: relative;
+        }
+
+        .dept-tagline {
+          color: #e91e63;
+          font-size: .72rem;
+          font-weight: 700;
+          letter-spacing: 2.5px;
+          text-transform: uppercase;
+          margin-bottom: 18px;
+        }
+
+        .dept-title {
+          color: #e91e63;
+          font-size: clamp(3.6rem, 9vw, 6.4rem);
+          font-weight: 900;
+          letter-spacing: 3px;
+          line-height: 1;
+          margin-bottom: 22px;
+        }
+
+        .dept-ecg-div {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          margin-bottom: 22px;
+        }
+
+        .dept-ecg-line {
+          display: inline-block;
+          height: 2px;
+          width: 70px;
+        }
+
+        .dept-ecg-line.l {
+          background: linear-gradient(to right, transparent, #e91e63);
+        }
+
+        .dept-ecg-line.r {
+          background: linear-gradient(to left, transparent, #e91e63);
+        }
+
+        .dept-ecg-icon {
+          font-size: 22px;
+        }
+
+        .dept-subtitle-txt {
+          color: #555;
+          font-size: 1rem;
+          line-height: 1.8;
+          max-width: 480px;
+        }
+
+        /* dot grid */
+        .dept-dots {
+          position: absolute;
+          top: -50px;
+          left: -70px;
+          width: 130px;
+          height: 130px;
+          background-image: radial-gradient(circle, rgba(244, 143, 177, .28) 1.5px, transparent 1.5px);
+          background-size: 16px 16px;
+          pointer-events: none;
+        }
+
+        /* cross decorations */
+        .dept-cross {
+          position: absolute;
+          color: #e91e63;
+          font-weight: 900;
+          line-height: 1;
+          pointer-events: none;
+          user-select: none;
+        }
+
+        .dept-cross.c1 {
+          top: 10px;
+          left: 20px;
+          font-size: 64px;
+          opacity: .16;
+        }
+
+        .dept-cross.c2 {
+          bottom: 30px;
+          left: 60px;
+          font-size: 36px;
+          opacity: .1;
+        }
+
+        .dept-cross.c3 {
+          top: 30px;
+          right: 50px;
+          font-size: 54px;
+          opacity: .14;
+        }
+
+        .dept-cross.c4 {
+          bottom: 50px;
+          right: 30px;
+          font-size: 32px;
+          opacity: .1;
+        }
+
+        /* RIGHT heart */
+        .dept-hero-right {
+          flex: 0 0 400px;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .dept-heart-wrap {
+          position: relative;
+          width: 380px;
+          height: 360px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .dept-heart-glow {
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(circle, rgba(244, 143, 177, .22) 0%, transparent 70%);
+          border-radius: 50%;
+          animation: heartPulse 2.5s ease-in-out infinite;
+        }
+
+        @keyframes heartPulse {
+
+          0%,
+          100% {
+            transform: scale(1);
+            opacity: .8;
+          }
+
+          50% {
+            transform: scale(1.08);
+            opacity: 1;
+          }
+        }
+
+        .dept-heart-img {
+          width: 300px;
+          height: 300px;
+          object-fit: contain;
+          position: relative;
+          z-index: 1;
+          filter: drop-shadow(0 12px 32px rgba(244, 143, 177, .45)) drop-shadow(0 0 60px rgba(244, 143, 177, .2));
+          animation: heartFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes heartFloat {
+
+          0%,
+          100% {
+            transform: translateY(0);
+          }
+
+          50% {
+            transform: translateY(-12px);
+          }
+        }
+
+        .dept-ecg-svg {
+          position: absolute;
+          bottom: 20px;
+          left: 0;
+          right: 0;
+          width: 100%;
+          height: 55px;
+          z-index: 2;
+          opacity: .7;
+        }
+
+        /* wave */
+        .dept-hero-wave {
+          position: absolute;
+          bottom: -2px;
+          left: 0;
+          right: 0;
+          line-height: 0;
+        }
+
+        .dept-hero-wave svg {
+          display: block;
+          width: 100%;
+          height: 80px;
+        }
+
+        /* ── CARDS ── */
+        .dept-cards-wrap {
+          background: #fff;
+          padding: 52px 60px 64px;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .dept-cards-wrap::before {
+          display: none;
+        }
+
+        .dept-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 25px;
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+
+        /* HORIZONTAL card */
+        .dept-item {
+          --ac: #e91e63;
+          background: #ffffff !important;
+          border-radius: 20px !important;
+          padding: 20px 16px !important;
+          text-decoration: none;
+          color: inherit;
+          display: flex !important;
+          flex-direction: row !important;
+          align-items: flex-start !important;
+          gap: 14px !important;
+          box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+          border: 1.5px solid #eee !important;
+          border-bottom: 3px solid var(--ac) !important;
+          transition: all .3s ease !important;
+          position: relative !important;
+          overflow: hidden !important;
+        }
+
+        .dept-item:hover {
+          transform: translateY(-6px) !important;
+          box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12) !important;
+        }
+
+        /* icon circle */
+        .icon-box {
+          width: 76px !important;
+          height: 76px !important;
+          min-width: 76px !important;
+          border-radius: 50% !important;
+          background: color-mix(in srgb, var(--ac) 12%, white) !important;
+          border: none !important;
+          box-shadow: none !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          flex-shrink: 0 !important;
+          transition: .3s ease !important;
+          position: relative !important;
+          z-index: 1 !important;
+          isolation: isolate !important;
+        }
+
+        .icon-box::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          border-radius: 50%;
+          background: var(--ac);
+          mix-blend-mode: color;
+          opacity: .75;
+          pointer-events: none;
+          z-index: 2;
+        }
+
+        .icon-box img {
+          width: 46px !important;
+          height: 46px !important;
+          object-fit: contain;
+          filter: none !important;
+          position: relative;
+          z-index: 1 !important;
+        }
+
+        .dept-item:hover .icon-box {
+          transform: scale(1.1) rotate(-4deg) !important;
+        }
+
+        /* text */
+        .dept-text {
+          flex: 1;
+          min-width: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          text-align: left;
+        }
+
+        .dept-name {
+          font-size: .8rem;
+          font-weight: 800;
+          color: #111;
+          text-transform: uppercase;
+          letter-spacing: .5px;
+          line-height: 1.3;
+          margin: 0 0 7px;
+        }
+
+        .dept-dash {
+          display: block;
+          width: 26px;
+          height: 2.5px;
+          background: var(--ac);
+          border-radius: 2px;
+          margin-bottom: 8px;
+          flex-shrink: 0;
+        }
+
+        .dept-item .dept-desc,
+        .dept-item p {
+          font-size: .77rem !important;
+          color: #666 !important;
+          line-height: 1.6 !important;
+          margin: 0 0 12px !important;
+          flex: 1 !important;
+          text-transform: none !important;
+          letter-spacing: 0 !important;
+          font-weight: 400 !important;
+        }
+
+        .dept-explore {
+          display: inline-flex;
+          align-items: center;
+          gap: 7px;
+          font-size: .74rem;
+          font-weight: 700;
+          color: var(--ac);
+          border: 1.5px solid var(--ac);
+          border-radius: 22px;
+          padding: 5px 8px 5px 14px;
+          transition: .25s ease;
+          margin-top: auto;
+        }
+
+        .dept-explore-arr {
+          width: 22px;
+          height: 22px;
+          background: var(--ac);
+          border-radius: 50%;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          color: #fff;
+          font-size: 12px;
+          transition: .25s ease;
+        }
+
+        .dept-item:hover .dept-explore {
+          background: color-mix(in srgb, var(--ac) 8%, white);
+        }
+
+        .dept-item:hover .dept-explore-arr {
+          opacity: .85;
+        }
+
+        /* ── FEATURE STRIP ── */
+        .dept-features {
+          background: linear-gradient(135deg, #e91e63 0%, #c2185b 55%, #ad1457 100%);
+          padding: 34px 20px;
+        }
+
+        .dept-feat-wrap {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          max-width: 1200px;
+          margin: 0 auto;
+          flex-wrap: wrap;
+        }
+
+        .dept-feat {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 16px;
+          padding: 0 36px;
+          border-right: 1px solid rgba(255, 255, 255, .22);
+          flex: 1;
+          min-width: 220px;
+        }
+
+        .dept-feat:last-child {
+          border-right: none;
+        }
+
+        .dept-feat-ico {
+          width: 52px;
+          height: 52px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, .22);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 24px;
+          flex-shrink: 0;
+        }
+
+        .dept-feat-txt h4 {
+          color: #fff;
+          font-size: .76rem;
+          font-weight: 800;
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+          margin: 0 0 3px;
+        }
+
+        .dept-feat-txt p {
+          color: rgba(255, 255, 255, .85);
+          font-size: .72rem;
+          margin: 0;
+          line-height: 1.45;
+        }
+
+        /* Responsive */
+        @media(max-width:1200px) {
+          .dept-cards-wrap {
+            padding: 40px 30px 48px;
+          }
+        }
+
+        @media(max-width:1024px) {
+          .dept-hero-right {
+            display: none;
+          }
+        }
+
+        @media(max-width:900px) {
+          .dept-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+
+          .dept-feat {
+            padding: 12px 20px;
+            min-width: 160px;
+          }
+        }
+
+        @media(max-width:480px) {
+          .dept-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .dept-cards-wrap {
+            padding: 30px 15px 40px;
+          }
+        }
+      </style>
+
+
+      <!-- ── CARDS ── -->
+      <div class="dept-cards-wrap">
+        <div style="text-align:center;margin-bottom:36px;">
+          <h2 style="font-size:2rem;font-weight:900;color:#111;letter-spacing:1px;margin:0 0 8px;">OUR DEPARTMENTS
+          </h2>
+          <p style="font-size:.95rem;color:#888;margin:0;">Comprehensive speciality care under one roof</p>
+          <div
+            style="width:60px;height:3px;background:linear-gradient(to right,#e91e63,#7c3aed);border-radius:4px;margin:12px auto 0;">
           </div>
+        </div>
+        <div class="dept-grid">
 
-        </section>
+          <a href="departments/orthopedics-spine-care.html" class="dept-item" style="--ac:#6c3fe8">
+            <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/spine2.png" alt=""></div>
+            <div class="dept-text">
+              <h3 class="dept-name">Orthopedics &amp; Spine Care</h3><span class="dept-dash"></span>
+              <p class="dept-desc">Advanced care for bones, joints, and spine problems.</p><span
+                class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
+            </div>
+          </a>
+
+          <a href="departments/anaesthesiology.html" class="dept-item" style="--ac:#00b894">
+            <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/ana.png" alt=""></div>
+            <div class="dept-text">
+              <h3 class="dept-name">Anaesthesiology</h3><span class="dept-dash"></span>
+              <p class="dept-desc">Safe anaesthesia care for a pain-free experience.</p><span
+                class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
+            </div>
+          </a>
+
+          <a href="departments/cardiology.html" class="dept-item" style="--ac:#e74c3c">
+            <div class="icon-box"><img loading="lazy" decoding="async"
+                src="assets/images/posh/heart-cardiology-icon.png" alt=""></div>
+            <div class="dept-text">
+              <h3 class="dept-name">Cardiology</h3><span class="dept-dash"></span>
+              <p class="dept-desc">Comprehensive heart care for a healthier tomorrow.</p><span
+                class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
+            </div>
+          </a>
+
+          <a href="departments/cardiothoracic-vascular.html" class="dept-item" style="--ac:#2980b9">
+            <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/cvs.png" alt=""></div>
+            <div class="dept-text">
+              <h3 class="dept-name">Cardiothoracic &amp; Vascular</h3><span class="dept-dash"></span>
+              <p class="dept-desc">Expert care for heart, lungs and blood vessels.</p><span class="dept-explore">Explore
+                <span class="dept-explore-arr">&#8250;</span></span>
+            </div>
+          </a>
+
+          <a href="departments/dental.html" class="dept-item" style="--ac:#00b4d8">
+            <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/dentist-icon.png" alt="">
+            </div>
+            <div class="dept-text">
+              <h3 class="dept-name">Dental</h3><span class="dept-dash"></span>
+              <p class="dept-desc">Complete dental care for a confident smile.</p><span class="dept-explore">Explore
+                <span class="dept-explore-arr">&#8250;</span></span>
+            </div>
+          </a>
+
+          <a href="departments/dermatology.html" class="dept-item" style="--ac:#8e44ad">
+            <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/dermatology1.png" alt="">
+            </div>
+            <div class="dept-text">
+              <h3 class="dept-name">Dermatology &amp; Cosmetology</h3><span class="dept-dash"></span>
+              <p class="dept-desc">Healthy skin, hair and beauty with expert care.</p><span class="dept-explore">Explore
+                <span class="dept-explore-arr">&#8250;</span></span>
+            </div>
+          </a>
+
+          <a href="departments/endocrinology.html" class="dept-item" style="--ac:#e91e63">
+            <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/endo.png" alt=""></div>
+            <div class="dept-text">
+              <h3 class="dept-name">Endocrinology</h3><span class="dept-dash"></span>
+              <p class="dept-desc">Specialized care for hormonal and metabolic disorders.</p><span
+                class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
+            </div>
+          </a>
+
+          <a href="departments/ent.html" class="dept-item" style="--ac:#7c3aed">
+            <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/ent.png" alt=""></div>
+            <div class="dept-text">
+              <h3 class="dept-name">ENT</h3><span class="dept-dash"></span>
+              <p class="dept-desc">Expert ear, nose and throat treatment and surgery.</p><span
+                class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
+            </div>
+          </a>
+
+          <a href="departments/gastroenterology.html" class="dept-item" style="--ac:#27ae60">
+            <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/gas.png" alt=""></div>
+            <div class="dept-text">
+              <h3 class="dept-name">Gastroenterology</h3><span class="dept-dash"></span>
+              <p class="dept-desc">Comprehensive care for the digestive system.</p><span class="dept-explore">Explore
+                <span class="dept-explore-arr">&#8250;</span></span>
+            </div>
+          </a>
+
+          <a href="departments/general-medicine.html" class="dept-item" style="--ac:#1976d2">
+            <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/genrlmed.png" alt="">
+            </div>
+            <div class="dept-text">
+              <h3 class="dept-name">General Medicine</h3><span class="dept-dash"></span>
+              <p class="dept-desc">Complete general medical care and consultation.</p><span class="dept-explore">Explore
+                <span class="dept-explore-arr">&#8250;</span></span>
+            </div>
+          </a>
+
+          <a href="departments/general-surgery.html" class="dept-item" style="--ac:#1565c0">
+            <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/gensurgry.png" alt="">
+            </div>
+            <div class="dept-text">
+              <h3 class="dept-name">General Surgery</h3><span class="dept-dash"></span>
+              <p class="dept-desc">Precision surgical care with expert outcomes.</p><span class="dept-explore">Explore
+                <span class="dept-explore-arr">&#8250;</span></span>
+            </div>
+          </a>
+
+          <a href="departments/hepatology.html" class="dept-item" style="--ac:#f39c12">
+            <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/heptology.png" alt="">
+            </div>
+            <div class="dept-text">
+              <h3 class="dept-name">Hepatology</h3><span class="dept-dash"></span>
+              <p class="dept-desc">Expert care for liver and hepatic conditions.</p><span class="dept-explore">Explore
+                <span class="dept-explore-arr">&#8250;</span></span>
+            </div>
+          </a>
+
+          <a href="departments/nephrology.html" class="dept-item" style="--ac:#16a085">
+            <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/neprology.png" alt="">
+            </div>
+            <div class="dept-text">
+              <h3 class="dept-name">Nephrology</h3><span class="dept-dash"></span>
+              <p class="dept-desc">Advanced kidney care and dialysis treatment.</p><span class="dept-explore">Explore
+                <span class="dept-explore-arr">&#8250;</span></span>
+            </div>
+          </a>
+
+          <a href="departments/neurology.html" class="dept-item" style="--ac:#6c3fe8">
+            <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/neuro.png" alt=""></div>
+            <div class="dept-text">
+              <h3 class="dept-name">Neurology</h3><span class="dept-dash"></span>
+              <p class="dept-desc">Expert brain and nervous system care.</p><span class="dept-explore">Explore <span
+                  class="dept-explore-arr">&#8250;</span></span>
+            </div>
+          </a>
+
+          <a href="departments/neurosurgery.html" class="dept-item" style="--ac:#c0392b">
+            <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/neurosur.png" alt="">
+            </div>
+            <div class="dept-text">
+              <h3 class="dept-name">Neurosurgery</h3><span class="dept-dash"></span>
+              <p class="dept-desc">Precise surgical care for neurological conditions.</p><span
+                class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
+            </div>
+          </a>
+
+          <a href="departments/obstetrics-gynaecology.html" class="dept-item" style="--ac:#e91e63">
+            <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/gyno.png" alt=""></div>
+            <div class="dept-text">
+              <h3 class="dept-name">Obstetrics &amp; Gynaecology</h3><span class="dept-dash"></span>
+              <p class="dept-desc">Comprehensive women's health and maternity care.</p><span
+                class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
+            </div>
+          </a>
+
+          <a href="departments/oncology.html" class="dept-item" style="--ac:#8e44ad">
+            <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/onco.png" alt=""></div>
+            <div class="dept-text">
+              <h3 class="dept-name">Oncology &amp; Surgical Oncology</h3><span class="dept-dash"></span>
+              <p class="dept-desc">Compassionate cancer care and treatment.</p><span class="dept-explore">Explore
+                <span class="dept-explore-arr">&#8250;</span></span>
+            </div>
+          </a>
+
+          <a href="departments/ophthalmology.html" class="dept-item" style="--ac:#0288d1">
+            <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/optho.png" alt=""></div>
+            <div class="dept-text">
+              <h3 class="dept-name">Ophthalmology</h3><span class="dept-dash"></span>
+              <p class="dept-desc">Expert eye care for a clearer, healthier vision.</p><span
+                class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
+            </div>
+          </a>
+
+          <a href="departments/paediatrics.html" class="dept-item" style="--ac:#43a047">
+            <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/baby.png" alt=""></div>
+            <div class="dept-text">
+              <h3 class="dept-name">Paediatrics</h3><span class="dept-dash"></span>
+              <p class="dept-desc">Specialized healthcare for infants and children.</p><span
+                class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
+            </div>
+          </a>
+
+          <a href="departments/physiotherapy.html" class="dept-item" style="--ac:#00897b">
+            <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/physio.png" alt=""></div>
+            <div class="dept-text">
+              <h3 class="dept-name">Physiotherapy</h3><span class="dept-dash"></span>
+              <p class="dept-desc">Rehabilitation and physical therapy for recovery.</p><span
+                class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
+            </div>
+          </a>
+
+          <a href="departments/plastic-surgery.html" class="dept-item" style="--ac:#e91e63">
+            <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/plastic.png" alt="">
+            </div>
+            <div class="dept-text">
+              <h3 class="dept-name">Plastic Surgery</h3><span class="dept-dash"></span>
+              <p class="dept-desc">Reconstructive and aesthetic surgical care.</p><span class="dept-explore">Explore
+                <span class="dept-explore-arr">&#8250;</span></span>
+            </div>
+          </a>
+
+          <a href="departments/psychiatry.html" class="dept-item" style="--ac:#5c6bc0">
+            <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/pyschitry.png" alt="">
+            </div>
+            <div class="dept-text">
+              <h3 class="dept-name">Psychiatry</h3><span class="dept-dash"></span>
+              <p class="dept-desc">Mental health care with compassion and expertise.</p><span
+                class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
+            </div>
+          </a>
+
+          <a href="departments/pulmonology.html" class="dept-item" style="--ac:#1976d2">
+            <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/pulmonology.png" alt="">
+            </div>
+            <div class="dept-text">
+              <h3 class="dept-name">Pulmonology &amp; Chest Medicine</h3><span class="dept-dash"></span>
+              <p class="dept-desc">Expert respiratory and lung disease care.</p><span class="dept-explore">Explore
+                <span class="dept-explore-arr">&#8250;</span></span>
+            </div>
+          </a>
+
+          <a href="departments/radiology.html" class="dept-item" style="--ac:#607d8b">
+            <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/radio.png" alt=""></div>
+            <div class="dept-text">
+              <h3 class="dept-name">Radiology</h3><span class="dept-dash"></span>
+              <p class="dept-desc">Precision diagnostic imaging and radiology services.</p><span
+                class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
+            </div>
+          </a>
+          <a href="departments/physical-medicine-rehabilitation.html" class="dept-item" style="--ac:#4caf50">
+            <div class="icon-box">
+              <img loading="lazy" decoding="async" src="assets/images/posh/physical-medicine.png"
+                alt="Physical Medicine and Rehabilitation">
+            </div>
+            <div class="dept-text">
+              <h3 class="dept-name">Physical Medicine and Rehabilitation</h3>
+              <span class="dept-dash"></span>
+              <p class="dept-desc">
+                Comprehensive rehabilitation care to restore mobility, function, and quality of life.
+              </p>
+              <span class="dept-explore">
+                Explore <span class="dept-explore-arr">&#8250;</span>
+              </span>
+            </div>
+          </a>
+
+          <a href="departments/urology.html" class="dept-item" style="--ac:#0288d1">
+            <div class="icon-box"><img loading="lazy" decoding="async" src="assets/images/posh/uro.png" alt=""></div>
+            <div class="dept-text">
+              <h3 class="dept-name">Urology</h3><span class="dept-dash"></span>
+              <p class="dept-desc">Advanced urological and kidney care for all ages.</p><span
+                class="dept-explore">Explore <span class="dept-explore-arr">&#8250;</span></span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+    </section>
     <!-- ===== WHY CHOOSE POSH ===== -->
     <div class="wcp-section">
       <div class="wcp-head">
@@ -5689,7 +5701,7 @@
     </section>
 
     <section class="clients-section masonry">
-      <div class="mx-auto py-8" style="max-width: 1200px; padding-left: 20px; padding-right: 20px;">
+      <div class="mx-auto py-8">
         <h2 class="clients-title" id="clientsgrid-anchor">Happy Patients</h2>
 
         <div class="clients-grid" id="clientsgrid">
@@ -5731,191 +5743,444 @@
       <div class="testimonials-header" style="padding-top:20px; margin-bottom:10px;">
         <p class="subtitle" style="margin-top:0; font-size:0.85rem; color:#999; letter-spacing:1px; font-weight:500;">
           What our patients say about us</p>
+
+        <a class="google-rating" href="https://maps.app.goo.gl/HyEskt5ShTo1RprAA" target="_blank" rel="noopener"
+          aria-label="Read all our reviews on Google">
+          <svg class="g-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+            <path fill="#4285F4"
+              d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z" />
+            <path fill="#34A853"
+              d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z" />
+            <path fill="#FBBC05"
+              d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z" />
+            <path fill="#EA4335"
+              d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z" />
+          </svg>
+          <strong>4.8</strong>
+          <span class="gr-stars" aria-hidden="true">★★★★★</span>
+          <span class="gr-count">4,304 Google reviews</span>
+        </a>
+
         <div class="header-line" style="margin-top:6px;"></div>
       </div>
 
-      <div class="testimonials-track">
-        <!-- PATIENT SUCCESS STORIES set -->
+      <div class="testimonials-scroll-wrapper">
+        <div class="testimonials-track">
         <div class="testimonial-card">
           <div class="card-bg"></div>
-          <div class="rating">
+          <div class="rating" role="img" aria-label="5 out of 5 stars">
             <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
           </div>
           <div class="quote-icon">❝</div>
-          <p class="testimonial-text">One of the best hospital in Pondicherry. Trustworthy and service are the best in
-            the town, cleanliness is the top notch. Stuffs care a lot for patients</p>
+          <p class="testimonial-text">I recently underwent an ORIF procedure at Posh Hospital and had a very positive
+            experience. The surgery was performed successfully, and the doctors were highly professional and supportive
+            throughout the treatment. The nursing and hospital staff provided excellent care during my stay, ensuring a
+            smooth and comfortable recovery.</p>
           <div class="author">
-            <div class="author-name">Happy Patient</div>
-            <div class="author-role">Ortho Patient</div>
+            <div class="author-name">pragash</div>
+            <div class="author-role"><svg class="g-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <path fill="#4285F4"
+                  d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z" />
+                <path fill="#34A853"
+                  d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z" />
+                <path fill="#FBBC05"
+                  d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z" />
+                <path fill="#EA4335"
+                  d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z" />
+              </svg><span>Google Review</span></div>
           </div>
           <div class="card-corner"></div>
         </div>
 
         <div class="testimonial-card">
           <div class="card-bg"></div>
-          <div class="rating">
+          <div class="rating" role="img" aria-label="5 out of 5 stars">
             <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
           </div>
           <div class="quote-icon">❝</div>
-          <p class="testimonial-text">The procedure was explained very clearly and it was done good, services and care
-            was very good.</p>
+          <p class="testimonial-text">Good hospital for Ortho and Neuro problems. Dr Veerappan Sir is great with his
+            team. All doctors Nurses are very kind and patience in handling patients. They gave me a quick action for my
+            dangerous injury and i got well within 1 week. Thanks to Posh hospital</p>
           <div class="author">
-            <div class="author-name">Tibia Fracture Patient</div>
-            <div class="author-role">Fracture Treatment</div>
+            <div class="author-name">Suresh Selvaradjou</div>
+            <div class="author-role"><svg class="g-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <path fill="#4285F4"
+                  d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z" />
+                <path fill="#34A853"
+                  d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z" />
+                <path fill="#FBBC05"
+                  d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z" />
+                <path fill="#EA4335"
+                  d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z" />
+              </svg><span>Google Review</span></div>
           </div>
           <div class="card-corner"></div>
         </div>
 
         <div class="testimonial-card">
           <div class="card-bg"></div>
-          <div class="rating">
+          <div class="rating" role="img" aria-label="5 out of 5 stars">
             <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
           </div>
           <div class="quote-icon">❝</div>
-          <p class="testimonial-text">Best ortho hospital. Very great Treatment. Peaceful environment.</p>
+          <p class="testimonial-text">I had an exceptional experience at this hospital. While the medical treatment from
+            the doctors was very good, the nursing staff really made the difference. They were always there when I
+            needed them, treating me with kindness and making me feel safe and comfortable. The hospital's facilities
+            were also very clean and well-maintained.</p>
           <div class="author">
-            <div class="author-name">Satisfied Visitor</div>
-            <div class="author-role">Hospital Visitor</div>
+            <div class="author-name">Gowtham Vithiga</div>
+            <div class="author-role"><svg class="g-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <path fill="#4285F4"
+                  d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z" />
+                <path fill="#34A853"
+                  d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z" />
+                <path fill="#FBBC05"
+                  d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z" />
+                <path fill="#EA4335"
+                  d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z" />
+              </svg><span>Google Review</span></div>
           </div>
           <div class="card-corner"></div>
         </div>
 
         <div class="testimonial-card">
           <div class="card-bg"></div>
-          <div class="rating">
+          <div class="rating" role="img" aria-label="5 out of 5 stars">
             <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
           </div>
           <div class="quote-icon">❝</div>
-          <p class="testimonial-text">Excellent care and professional staff. Highly recommended for anyone seeking
-            quality medical treatment.</p>
+          <p class="testimonial-text">I had a very good experience at the orthopedic hospital. The doctors were highly
+            skilled, professional, and explained my condition clearly. The treatment provided was effective, and I
+            noticed significant improvement in a short period. The nursing staff were caring, attentive, and always
+            available when needed. The hospital environment was clean, well-maintained, and patient-friendly.</p>
           <div class="author">
-            <div class="author-name">Silva Kumar</div>
-            <div class="author-role">Patient</div>
+            <div class="author-name">Nithish Kumar</div>
+            <div class="author-role"><svg class="g-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <path fill="#4285F4"
+                  d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z" />
+                <path fill="#34A853"
+                  d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z" />
+                <path fill="#FBBC05"
+                  d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z" />
+                <path fill="#EA4335"
+                  d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z" />
+              </svg><span>Google Review</span></div>
           </div>
           <div class="card-corner"></div>
         </div>
 
         <div class="testimonial-card">
           <div class="card-bg"></div>
-          <div class="rating">
+          <div class="rating" role="img" aria-label="5 out of 5 stars">
             <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
           </div>
           <div class="quote-icon">❝</div>
-          <p class="testimonial-text">Outstanding service and attention to detail. The doctors took time to explain
-            everything thoroughly.</p>
+          <p class="testimonial-text">The doctor checked my condition properly, explained the problem in a simple way,
+            and suggested a clear treatment plan. The staff were supportive during registration and follow-up visits,
+            and I didn’t feel confused at any point. The treatment helped reduce my pain gradually, and the
+            physiotherapy advice was also useful.</p>
           <div class="author">
-            <div class="author-name">Gokula Krishna</div>
-            <div class="author-role">Patient Family</div>
+            <div class="author-name">Ruthika m</div>
+            <div class="author-role"><svg class="g-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <path fill="#4285F4"
+                  d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z" />
+                <path fill="#34A853"
+                  d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z" />
+                <path fill="#FBBC05"
+                  d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z" />
+                <path fill="#EA4335"
+                  d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z" />
+              </svg><span>Google Review</span></div>
           </div>
           <div class="card-corner"></div>
         </div>
 
         <div class="testimonial-card">
           <div class="card-bg"></div>
-          <div class="rating">
+          <div class="rating" role="img" aria-label="5 out of 5 stars">
             <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
           </div>
           <div class="quote-icon">❝</div>
-          <p class="testimonial-text">Clean facilities and compassionate staff. My recovery was much faster than
-            expected.</p>
+          <p class="testimonial-text">In this hospital, free camp was done. In this camp they adviced very well
+            especially doctor and nurses. I don't have blood pressure in this camp they found I had BP and need to take
+            tablet. Thank u For saving my life. I thank who refer this camp. Thank u for mathi sister.</p>
           <div class="author">
-            <div class="author-name">Priya Balu</div>
-            <div class="author-role">Post-op Patient</div>
-          </div>
-          <div class="card-corner"></div>
-        </div>
-
-        <!-- Duplicate set for seamless loop -->
-        <div class="testimonial-card">
-          <div class="card-bg"></div>
-          <div class="rating">
-            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-          </div>
-          <div class="quote-icon">❝</div>
-          <p class="testimonial-text">One of the best hospital in Pondicherry. Trustworthy and service are the best in
-            the town, cleanliness is the top notch. Stuffs care a lot for patients</p>
-          <div class="author">
-            <div class="author-name">Happy Patient</div>
-            <div class="author-role">Ortho Patient</div>
+            <div class="author-name">Eganathan M</div>
+            <div class="author-role"><svg class="g-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <path fill="#4285F4"
+                  d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z" />
+                <path fill="#34A853"
+                  d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z" />
+                <path fill="#FBBC05"
+                  d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z" />
+                <path fill="#EA4335"
+                  d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z" />
+              </svg><span>Google Review</span></div>
           </div>
           <div class="card-corner"></div>
         </div>
 
         <div class="testimonial-card">
           <div class="card-bg"></div>
-          <div class="rating">
-            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          <div class="rating" role="img" aria-label="4 out of 5 stars">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span class="star-dim">★</span>
           </div>
           <div class="quote-icon">❝</div>
-          <p class="testimonial-text">The procedure was explained very clearly and it was done good, services and care
-            was very good.</p>
+          <p class="testimonial-text">I had a very good experience at this orthopedic hospital. The doctors were highly
+            professional, patient, and explained the treatment clearly. The staff members were caring and supportive
+            throughout the process. The hospital was clean and well maintained. I truly appreciate the care and
+            treatment I received.</p>
           <div class="author">
-            <div class="author-name">Tribo Fracture Patient</div>
-            <div class="author-role">Fracture Treatment</div>
+            <div class="author-name">Jenny BJ</div>
+            <div class="author-role"><svg class="g-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <path fill="#4285F4"
+                  d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z" />
+                <path fill="#34A853"
+                  d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z" />
+                <path fill="#FBBC05"
+                  d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z" />
+                <path fill="#EA4335"
+                  d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z" />
+              </svg><span>Google Review</span></div>
           </div>
           <div class="card-corner"></div>
         </div>
 
         <div class="testimonial-card">
           <div class="card-bg"></div>
-          <div class="rating">
-            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          <div class="rating" role="img" aria-label="4 out of 5 stars">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span class="star-dim">★</span>
           </div>
           <div class="quote-icon">❝</div>
-          <p class="testimonial-text">Best ortho hospital. Very great Treatment. Peaceful environment.</p>
+          <p class="testimonial-text">I had a satisfactory experience at this hospital. The doctors demonstrated
+            professionalism and provided clear explanations regarding the treatment. The staff were attentive and
+            supportive, and the facility was clean and well-maintained. Overall, I am satisfied with the quality of care
+            and would recommend this hospital.</p>
           <div class="author">
-            <div class="author-name">Satisfied Visitor</div>
-            <div class="author-role">Hospital Visitor</div>
+            <div class="author-name">S. Maragathapushpam</div>
+            <div class="author-role"><svg class="g-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <path fill="#4285F4"
+                  d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z" />
+                <path fill="#34A853"
+                  d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z" />
+                <path fill="#FBBC05"
+                  d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z" />
+                <path fill="#EA4335"
+                  d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z" />
+              </svg><span>Google Review</span></div>
           </div>
           <div class="card-corner"></div>
         </div>
 
-        <div class="testimonial-card">
+        <!-- duplicate set: keeps the marquee seamless -->
+
+        <div class="testimonial-card" aria-hidden="true">
           <div class="card-bg"></div>
-          <div class="rating">
+          <div class="rating" role="img" aria-label="5 out of 5 stars">
             <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
           </div>
           <div class="quote-icon">❝</div>
-          <p class="testimonial-text">Excellent care and professional staff. Highly recommended for anyone seeking
-            quality medical treatment.</p>
+          <p class="testimonial-text">I recently underwent an ORIF procedure at Posh Hospital and had a very positive
+            experience. The surgery was performed successfully, and the doctors were highly professional and supportive
+            throughout the treatment. The nursing and hospital staff provided excellent care during my stay, ensuring a
+            smooth and comfortable recovery.</p>
           <div class="author">
-            <div class="author-name">Silva Kumar</div>
-            <div class="author-role">Patient</div>
+            <div class="author-name">pragash</div>
+            <div class="author-role"><svg class="g-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <path fill="#4285F4"
+                  d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z" />
+                <path fill="#34A853"
+                  d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z" />
+                <path fill="#FBBC05"
+                  d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z" />
+                <path fill="#EA4335"
+                  d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z" />
+              </svg><span>Google Review</span></div>
           </div>
           <div class="card-corner"></div>
         </div>
 
-        <div class="testimonial-card">
+        <div class="testimonial-card" aria-hidden="true">
           <div class="card-bg"></div>
-          <div class="rating">
+          <div class="rating" role="img" aria-label="5 out of 5 stars">
             <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
           </div>
           <div class="quote-icon">❝</div>
-          <p class="testimonial-text">Outstanding service and attention to detail. The doctors took time to explain
-            everything thoroughly.</p>
+          <p class="testimonial-text">Good hospital for Ortho and Neuro problems. Dr Veerappan Sir is great with his
+            team. All doctors Nurses are very kind and patience in handling patients. They gave me a quick action for my
+            dangerous injury and i got well within 1 week. Thanks to Posh hospital</p>
           <div class="author">
-            <div class="author-name">Gokula Krishna</div>
-            <div class="author-role">Patient Family</div>
+            <div class="author-name">Suresh Selvaradjou</div>
+            <div class="author-role"><svg class="g-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <path fill="#4285F4"
+                  d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z" />
+                <path fill="#34A853"
+                  d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z" />
+                <path fill="#FBBC05"
+                  d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z" />
+                <path fill="#EA4335"
+                  d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z" />
+              </svg><span>Google Review</span></div>
           </div>
           <div class="card-corner"></div>
         </div>
 
-        <div class="testimonial-card">
+        <div class="testimonial-card" aria-hidden="true">
           <div class="card-bg"></div>
-          <div class="rating">
+          <div class="rating" role="img" aria-label="5 out of 5 stars">
             <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
           </div>
           <div class="quote-icon">❝</div>
-          <p class="testimonial-text">Clean facilities and compassionate staff. My recovery was much faster than
-            expected.</p>
+          <p class="testimonial-text">I had an exceptional experience at this hospital. While the medical treatment from
+            the doctors was very good, the nursing staff really made the difference. They were always there when I
+            needed them, treating me with kindness and making me feel safe and comfortable. The hospital's facilities
+            were also very clean and well-maintained.</p>
           <div class="author">
-            <div class="author-name">Priya Balu</div>
-            <div class="author-role">Post-op Patient</div>
+            <div class="author-name">Gowtham Vithiga</div>
+            <div class="author-role"><svg class="g-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <path fill="#4285F4"
+                  d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z" />
+                <path fill="#34A853"
+                  d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z" />
+                <path fill="#FBBC05"
+                  d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z" />
+                <path fill="#EA4335"
+                  d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z" />
+              </svg><span>Google Review</span></div>
+          </div>
+          <div class="card-corner"></div>
+        </div>
+
+        <div class="testimonial-card" aria-hidden="true">
+          <div class="card-bg"></div>
+          <div class="rating" role="img" aria-label="5 out of 5 stars">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <div class="quote-icon">❝</div>
+          <p class="testimonial-text">I had a very good experience at the orthopedic hospital. The doctors were highly
+            skilled, professional, and explained my condition clearly. The treatment provided was effective, and I
+            noticed significant improvement in a short period. The nursing staff were caring, attentive, and always
+            available when needed. The hospital environment was clean, well-maintained, and patient-friendly.</p>
+          <div class="author">
+            <div class="author-name">Nithish Kumar</div>
+            <div class="author-role"><svg class="g-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <path fill="#4285F4"
+                  d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z" />
+                <path fill="#34A853"
+                  d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z" />
+                <path fill="#FBBC05"
+                  d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z" />
+                <path fill="#EA4335"
+                  d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z" />
+              </svg><span>Google Review</span></div>
+          </div>
+          <div class="card-corner"></div>
+        </div>
+
+        <div class="testimonial-card" aria-hidden="true">
+          <div class="card-bg"></div>
+          <div class="rating" role="img" aria-label="5 out of 5 stars">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <div class="quote-icon">❝</div>
+          <p class="testimonial-text">The doctor checked my condition properly, explained the problem in a simple way,
+            and suggested a clear treatment plan. The staff were supportive during registration and follow-up visits,
+            and I didn’t feel confused at any point. The treatment helped reduce my pain gradually, and the
+            physiotherapy advice was also useful.</p>
+          <div class="author">
+            <div class="author-name">Ruthika m</div>
+            <div class="author-role"><svg class="g-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <path fill="#4285F4"
+                  d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z" />
+                <path fill="#34A853"
+                  d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z" />
+                <path fill="#FBBC05"
+                  d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z" />
+                <path fill="#EA4335"
+                  d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z" />
+              </svg><span>Google Review</span></div>
+          </div>
+          <div class="card-corner"></div>
+        </div>
+
+        <div class="testimonial-card" aria-hidden="true">
+          <div class="card-bg"></div>
+          <div class="rating" role="img" aria-label="5 out of 5 stars">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <div class="quote-icon">❝</div>
+          <p class="testimonial-text">In this hospital, free camp was done. In this camp they adviced very well
+            especially doctor and nurses. I don't have blood pressure in this camp they found I had BP and need to take
+            tablet. Thank u For saving my life. I thank who refer this camp. Thank u for mathi sister.</p>
+          <div class="author">
+            <div class="author-name">Eganathan M</div>
+            <div class="author-role"><svg class="g-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <path fill="#4285F4"
+                  d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z" />
+                <path fill="#34A853"
+                  d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z" />
+                <path fill="#FBBC05"
+                  d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z" />
+                <path fill="#EA4335"
+                  d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z" />
+              </svg><span>Google Review</span></div>
+          </div>
+          <div class="card-corner"></div>
+        </div>
+
+        <div class="testimonial-card" aria-hidden="true">
+          <div class="card-bg"></div>
+          <div class="rating" role="img" aria-label="4 out of 5 stars">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span class="star-dim">★</span>
+          </div>
+          <div class="quote-icon">❝</div>
+          <p class="testimonial-text">I had a very good experience at this orthopedic hospital. The doctors were highly
+            professional, patient, and explained the treatment clearly. The staff members were caring and supportive
+            throughout the process. The hospital was clean and well maintained. I truly appreciate the care and
+            treatment I received.</p>
+          <div class="author">
+            <div class="author-name">Jenny BJ</div>
+            <div class="author-role"><svg class="g-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <path fill="#4285F4"
+                  d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z" />
+                <path fill="#34A853"
+                  d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z" />
+                <path fill="#FBBC05"
+                  d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z" />
+                <path fill="#EA4335"
+                  d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z" />
+              </svg><span>Google Review</span></div>
+          </div>
+          <div class="card-corner"></div>
+        </div>
+
+        <div class="testimonial-card" aria-hidden="true">
+          <div class="card-bg"></div>
+          <div class="rating" role="img" aria-label="4 out of 5 stars">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span class="star-dim">★</span>
+          </div>
+          <div class="quote-icon">❝</div>
+          <p class="testimonial-text">I had a satisfactory experience at this hospital. The doctors demonstrated
+            professionalism and provided clear explanations regarding the treatment. The staff were attentive and
+            supportive, and the facility was clean and well-maintained. Overall, I am satisfied with the quality of care
+            and would recommend this hospital.</p>
+          <div class="author">
+            <div class="author-name">S. Maragathapushpam</div>
+            <div class="author-role"><svg class="g-mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+                <path fill="#4285F4"
+                  d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z" />
+                <path fill="#34A853"
+                  d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z" />
+                <path fill="#FBBC05"
+                  d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z" />
+                <path fill="#EA4335"
+                  d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z" />
+              </svg><span>Google Review</span></div>
           </div>
           <div class="card-corner"></div>
         </div>
       </div>
-
+      </div>
 
 
       <div style="text-align:center; margin: 24px 0 10px;">
@@ -5969,7 +6234,6 @@
     <style>
       #testimonials-container {
         width: 100%;
-
         margin: 0 auto;
         padding: 10px 10px;
         background: #ffffff;
@@ -6003,6 +6267,39 @@
         margin-bottom: 20px;
         position: relative;
         z-index: 2;
+      }
+
+      .testimonials-scroll-wrapper {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .testimonials-scroll-wrapper::before,
+      .testimonials-scroll-wrapper::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 150px;
+        z-index: 10;
+        pointer-events: none;
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+      }
+
+      .testimonials-scroll-wrapper::before {
+        left: 0;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0.15), transparent);
+        -webkit-mask-image: linear-gradient(to right, black, transparent);
+        mask-image: linear-gradient(to right, black, transparent);
+      }
+
+      .testimonials-scroll-wrapper::after {
+        right: 0;
+        background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+        -webkit-mask-image: linear-gradient(to left, black, transparent);
+        mask-image: linear-gradient(to left, black, transparent);
       }
 
       .testimonials-header h2 {
@@ -6051,12 +6348,18 @@
         box-shadow: 0 0 15px rgba(244, 143, 177, 0.4);
       }
 
+      #testimonials-container {
+        --tc-width: 380px;
+        --tc-gap: 35px;
+      }
+
       .testimonials-track {
         display: flex;
-        gap: 35px;
+        gap: var(--tc-gap);
         padding: 30px 0;
-        animation: scroll-left 40s linear infinite;
+        animation: scroll-left 56s linear infinite;
         position: relative;
+        width: max-content;
       }
 
       .testimonials-track:hover {
@@ -6064,7 +6367,7 @@
       }
 
       .testimonial-card {
-        flex: 0 0 380px;
+        flex: 0 0 var(--tc-width);
         background: linear-gradient(145deg, #371554, #1a082b);
         border-radius: 20px;
         padding: 30px 28px;
@@ -6184,6 +6487,85 @@
         letter-spacing: 1px;
       }
 
+      /* =====================================================
+         GOOGLE REVIEW ATTRIBUTION
+         These testimonials are real Google reviews, so each
+         card and the section header say so plainly.
+         ===================================================== */
+      .g-mark {
+        width: 1em;
+        height: 1em;
+        flex-shrink: 0;
+      }
+
+      .testimonial-card .author-role {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 0.8rem;
+        letter-spacing: 0.6px;
+      }
+
+      /* a review can be 4 stars - show the rest as unlit rather than
+         silently rounding every card up to five */
+      .rating .star-dim {
+        color: rgba(255, 255, 255, 0.22);
+        text-shadow: none;
+        animation: none;
+      }
+
+      .google-rating {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        margin-top: 14px;
+        padding: 8px 18px;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 999px;
+        background: #ffffff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+        text-decoration: none;
+        color: #3c4043;
+        font-size: 0.95rem;
+        line-height: 1;
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+      }
+
+      .google-rating:hover {
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+        transform: translateY(-1px);
+      }
+
+      .google-rating .g-mark {
+        width: 18px;
+        height: 18px;
+      }
+
+      .google-rating strong {
+        font-weight: 700;
+        color: #202124;
+      }
+
+      .google-rating .gr-stars {
+        color: #fbbc05;
+        letter-spacing: 1px;
+      }
+
+      .google-rating .gr-count {
+        color: #5f6368;
+        font-size: 0.85rem;
+      }
+
+      @media (max-width: 480px) {
+        .google-rating {
+          flex-wrap: wrap;
+          justify-content: center;
+          max-width: 100%;
+          font-size: 0.85rem;
+          padding: 8px 14px;
+        }
+      }
+
       .card-corner {
         position: absolute;
         bottom: 0;
@@ -6201,13 +6583,16 @@
       }
 
       /* Right to left scrolling animation */
+      /* One full set of cards = 8 x (card width + gap). Derived from the
+         same custom properties the cards use, so the loop stays seamless
+         if either value is ever changed. */
       @keyframes scroll-left {
         0% {
           transform: translateX(0);
         }
 
         100% {
-          transform: translateX(calc(-420px * 6 - 35px * 6));
+          transform: translateX(calc(-1 * (var(--tc-width) + var(--tc-gap)) * 8));
         }
       }
 
@@ -6622,91 +7007,90 @@
 
     </script>
 
-    
+
 
   </main>
 
-    <footer>
-      <div class="footer-container" id="footernav">
+  <footer>
+    <div class="footer-container" id="footernav">
 
-        <!-- About -->
-        <div class="footer-about">
-          <h4>ABOUT US</h4>
-          <p>
-            Welcome to <strong>THE POSH</strong>. We operate at PONDICHERRY as a private surgical hospital, and our
-            focus is on delivering quality care and value for money. We play a key role in improving the health of
-            PONDICHERRY.
-          </p>
-        </div>
-
-        <!-- Quick Links -->
-        <div class="footer-links">
-          <h4>QUICK LINKS</h4>
-          <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="about.html">ABOUT US</a></li>
-            <li><a href="index.html#departmentssection">DEPARTMENTS</a></li>
-            <li><a href="our-doctors.html">OUR DOCTORS</a></li>
-            <li><a href="ourteams.html">Our Team</a></li>
-            <li><a href="healthtips.html">HEALTH TIPS</a></li>
-            <li><a href="appointment.html">APPOINTMENT</a></li>
-          </ul>
-        </div>
-
-        <!-- Contact -->
-        <div class="footer-contact">
-          <h4>CONTACT US</h4>
-          <p>
-            <span>PONDICHERRY BRANCH:</span><br> 📍 Location: No. 24, First Main Road, Ambal Nagar, Puducherry –
-            605009<br> ☎ Tel: 0413-2200017 / 0413-2200018<br> 📱 +91 9677073462 / +91 8056555330
-          </p>
-          <p>
-            <span>THE POSH @ KALPAKKAM:</span><br> 🚑 Emergency & Trauma Day Care Unit<br> ECR Road, Prabaliyamedu,
-            Pudhupattinam, Thirukazhukundram Taluk,<br> Chengalpattu District – 603102<br> 📱 8925733344 | ☎ 044 2748
-            8981
-          </p>
-          <p>
-            <span>Email:</span><br>
-            <a href="mailto:theposhmarketing@gmail.com">theposhmarketing@gmail.com</a><br>
-            <a href="mailto:theposhhospital@gmail.com">theposhhospital@gmail.com</a>
-          </p>
-        </div>
-
-        <!-- Location -->
-        <div class="footer-map">
-          <h4>LOCATION</h4>
-          <iframe src="https://www.google.com/maps?q=The+Posh+Hospital+Pondicherry&output=embed" width="100%"
-            height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-
-        </div>
+      <!-- About -->
+      <div class="footer-about">
+        <h4>ABOUT US</h4>
+        <p>
+          Welcome to <strong>THE POSH</strong>. We operate at PONDICHERRY as a private surgical hospital, and our
+          focus is on delivering quality care and value for money. We play a key role in improving the health of
+          PONDICHERRY.
+        </p>
       </div>
 
-      <!-- Footer Bottom -->
-      <div class="footer-bottom">
-        © 2025 by The POSH - Pondy Ortho Speciality Hospital. Proudly created with
-        <a href="https://www.getitmediasolutions.com/">GETIT MEDIA SOLUTIONS PVT LTD</a>
+      <!-- Quick Links -->
+      <div class="footer-links">
+        <h4>QUICK LINKS</h4>
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">ABOUT US</a></li>
+          <li><a href="index.html#departmentssection">DEPARTMENTS</a></li>
+          <li><a href="our-doctors.html">OUR DOCTORS</a></li>
+          <li><a href="ourteams.html">Our Team</a></li>
+          <li><a href="healthtips.html">HEALTH TIPS</a></li>
+          <li><a href="appointment.html">APPOINTMENT</a></li>
+        </ul>
       </div>
-    </footer>
-    <script>
-      document.addEventListener("click", function (e) {
 
-        const button = e.target.closest(".appointment-btn");
-        if (!button) return;
+      <!-- Contact -->
+      <div class="footer-contact">
+        <h4>CONTACT US</h4>
+        <p>
+          <span>PONDICHERRY BRANCH:</span><br> 📍 Location: No. 24, First Main Road, Ambal Nagar, Puducherry –
+          605009<br> ☎ Tel: 0413-2200017 / 0413-2200018<br> 📱 +91 9677073462 / +91 8056555330
+        </p>
+        <p>
+          <span>THE POSH @ KALPAKKAM:</span><br> 🚑 Emergency & Trauma Day Care Unit<br> ECR Road, Prabaliyamedu,
+          Pudhupattinam, Thirukazhukundram Taluk,<br> Chengalpattu District – 603102<br> 📱 8925733344 | ☎ 044 2748
+          8981
+        </p>
+        <p>
+          <span>Email:</span><br>
+          <a href="mailto:theposhmarketing@gmail.com">theposhmarketing@gmail.com</a><br>
+          <a href="mailto:theposhhospital@gmail.com">theposhhospital@gmail.com</a>
+        </p>
+      </div>
 
-        // Find the nearest doctor card
-        const card = button.closest(".doctor-card");
-        if (!card) return;
+      <!-- Location -->
+      <div class="footer-map">
+        <h4>LOCATION</h4>
+        <iframe src="https://www.google.com/maps?q=The+Posh+Hospital+Pondicherry&output=embed" width="100%" height="450"
+          style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
 
-        // Extract doctor name and specialization from existing HTML
-        const doctorName = card.querySelector("h3")?.innerText.trim();
-        const specialization = card.querySelector(".specialization")?.innerText.trim();
+      </div>
+    </div>
 
-        // Your clinic WhatsApp number (with country code)
-        const phoneNumber = "918056555330"; // CHANGE THIS
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      © 2025 by The POSH - Pondy Ortho Speciality Hospital. Proudly created with
+      <a href="https://www.getitmediasolutions.com/">GETIT MEDIA SOLUTIONS PVT LTD</a>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener("click", function (e) {
 
-        const message = `Hello,
+      const button = e.target.closest(".appointment-btn");
+      if (!button) return;
+
+      // Find the nearest doctor card
+      const card = button.closest(".doctor-card");
+      if (!card) return;
+
+      // Extract doctor name and specialization from existing HTML
+      const doctorName = card.querySelector("h3")?.innerText.trim();
+      const specialization = card.querySelector(".specialization")?.innerText.trim();
+
+      // Your clinic WhatsApp number (with country code)
+      const phoneNumber = "918056555330"; // CHANGE THIS
+
+      const message = `Hello,
   I would like to book an appointment.
 
   Doctor: ${doctorName}
@@ -6714,45 +7098,108 @@
 
   Please share available slots.`;
 
-        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
-        window.open(whatsappURL, "_blank");
-      });
-    </script>
+      window.open(whatsappURL, "_blank");
+    });
+  </script>
 
-    <!-- Video Lightbox Modal -->
-    <div id="videoLightbox"
-      style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.92); z-index:99999; align-items:center; justify-content:center;">
-      <span onclick="closeVideoLightbox()"
-        style="position:absolute; top:20px; right:30px; font-size:2.5rem; color:#fff; cursor:pointer; font-weight:bold;">&times;</span>
-      <video preload="metadata" id="lightboxVideo" controls autoplay playsinline
-        style="max-width:90%; max-height:90vh; border-radius:12px; outline:none;"></video>
-    </div>
+  <!-- Video Lightbox Modal -->
+  <div id="videoLightbox"
+    style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.92); z-index:99999; align-items:center; justify-content:center;">
+    <span onclick="closeVideoLightbox()"
+      style="position:absolute; top:20px; right:30px; font-size:2.5rem; color:#fff; cursor:pointer; font-weight:bold;">&times;</span>
+    <video preload="metadata" id="lightboxVideo" controls autoplay playsinline
+      style="max-width:90%; max-height:90vh; border-radius:12px; outline:none;"></video>
+  </div>
 
-    <script>
-      document.querySelectorAll('.client-grid-video').forEach(function (vid) {
-        vid.style.cursor = 'pointer';
-        vid.addEventListener('click', function () {
-          var src = this.querySelector('source').src;
-          var lb = document.getElementById('videoLightbox');
-          var lbVid = document.getElementById('lightboxVideo');
-          lbVid.src = src;
-          lb.style.display = 'flex';
-          lbVid.play();
-        });
-      });
-
-      function closeVideoLightbox() {
+  <script>
+    document.querySelectorAll('.client-grid-video').forEach(function (vid) {
+      vid.style.cursor = 'pointer';
+      vid.addEventListener('click', function () {
+        var src = this.querySelector('source').src;
         var lb = document.getElementById('videoLightbox');
         var lbVid = document.getElementById('lightboxVideo');
-        lbVid.pause();
-        lbVid.src = '';
-        lb.style.display = 'none';
-      }
-
-      document.getElementById('videoLightbox').addEventListener('click', function (e) {
-        if (e.target === this) closeVideoLightbox();
+        lbVid.src = src;
+        lb.style.display = 'flex';
+        lbVid.play();
       });
-    </script>
+    });
+
+    function closeVideoLightbox() {
+      var lb = document.getElementById('videoLightbox');
+      var lbVid = document.getElementById('lightboxVideo');
+      lbVid.pause();
+      lbVid.src = '';
+      lb.style.display = 'none';
+    }
+
+    document.getElementById('videoLightbox').addEventListener('click', function (e) {
+      if (e.target === this) closeVideoLightbox();
+    });
+  </script>
+
+  <!-- =========================================================
+         PAGE CONTAINER — Bootstrap 5 sizing
+         ---------------------------------------------------------
+         Bootstrap 5's .container breakpoint scale, capped at the xl
+         value (1140px) as asked. Applied to the blocks on this page
+         that were each carrying their own max-width (1200 / 1300 /
+         1400px), which is why their left and right edges did not
+         line up with one another.
+
+         Loaded last so it wins over the per-section rules above.
+         Scoped to index.html only for now.
+         ========================================================= -->
+  <style>
+    :root {
+      --posh-container: 100%;
+      --posh-container-gutter: 12px;
+    }
+
+    @media (min-width: 576px) {
+      :root {
+        --posh-container: 540px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      :root {
+        --posh-container: 720px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      :root {
+        --posh-container: 960px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      :root {
+        --posh-container: 1140px;
+      }
+    }
+
+    /* Every content block on this page now shares one width and one
+         pair of left/right margins. Full-bleed backgrounds are left
+         alone - only the content inside them is aligned. */
+    .pa-inner,
+    .stats-container,
+    .dept-hero-inner,
+    .dept-grid,
+    .dept-feat-wrap,
+    .wcp-cards,
+    .wcp-head,
+    .masonry .clients-grid,
+    .patient-video-gallery-container,
+    .ortho-header-container,
+    .ortho-why-choose-container,
+    .ortho-doctors-container,
+    .ortho-gallery-container,
+    .ortho-expertise-container,
+  </style>
+
 </body>
+
 </html>
