@@ -667,10 +667,10 @@
     const container = document.getElementById('toastContainer');
     if (!container) return;
 
-    // Remove any identical or older toast messages so they don't pile up
+    // Remove old identical or theme toasts so notifications don't accumulate
     const existing = container.querySelectorAll('.toast');
     existing.forEach(t => {
-      if (t.textContent.includes(message) || existing.length >= 2) {
+      if (t.textContent.includes(message) || (message.includes('Switched') && t.textContent.includes('Switched'))) {
         t.remove();
       }
     });
@@ -695,10 +695,10 @@
     setTimeout(() => {
       if (toast.parentElement) {
         toast.style.opacity = '0';
-        toast.style.transform = 'translateY(10px) scale(0.95)';
+        toast.style.transform = 'translateY(12px) scale(0.95)';
         setTimeout(() => toast.remove(), 250);
       }
-    }, 2600);
+    }, 2800);
   }
 
   // ===== EXPORT TO EXCEL / CSV =====
