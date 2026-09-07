@@ -212,25 +212,27 @@
               </div>
             </div>
 
-            <div style="display:flex; align-items:center; gap:0.75rem;">
-              <!-- Table Scroll Arrows -->
-              <div class="table-scroll-controls" style="display:flex; gap:6px;">
-                <button type="button" class="btn btn-secondary scroll-btn" onclick="scrollTable('left')" title="Scroll Table Left" style="padding:0.45rem 0.75rem; font-size:0.85rem; background:var(--bg-input); border-color:var(--border-color); color:var(--text-primary); cursor:pointer;">
-                  <i class="fas fa-chevron-left"></i>
-                </button>
-                <button type="button" class="btn btn-secondary scroll-btn" onclick="scrollTable('right')" title="Scroll Table Right" style="padding:0.45rem 0.75rem; font-size:0.85rem; background:var(--bg-input); border-color:var(--border-color); color:var(--text-primary); cursor:pointer;">
-                  <i class="fas fa-chevron-right"></i>
-                </button>
-              </div>
+            <div class="toolbar-right">
+              <div class="toolbar-controls-row">
+                <!-- Table Scroll Arrows -->
+                <div class="table-scroll-controls" style="display:flex; gap:6px;">
+                  <button type="button" class="btn btn-secondary scroll-btn" onclick="scrollTable('left')" title="Scroll Table Left" style="padding:0.45rem 0.75rem; font-size:0.85rem; background:var(--bg-input); border-color:var(--border-color); color:var(--text-primary); cursor:pointer;">
+                    <i class="fas fa-chevron-left"></i>
+                  </button>
+                  <button type="button" class="btn btn-secondary scroll-btn" onclick="scrollTable('right')" title="Scroll Table Right" style="padding:0.45rem 0.75rem; font-size:0.85rem; background:var(--bg-input); border-color:var(--border-color); color:var(--text-primary); cursor:pointer;">
+                    <i class="fas fa-chevron-right"></i>
+                  </button>
+                </div>
 
-              <!-- View Switcher -->
-              <div class="view-toggle-group">
-                <button id="tableViewBtn" class="view-btn active" title="Table View">
-                  <i class="fas fa-list"></i>
-                </button>
-                <button id="gridViewBtn" class="view-btn" title="Grid Card View">
-                  <i class="fas fa-th-large"></i>
-                </button>
+                <!-- View Switcher -->
+                <div class="view-toggle-group">
+                  <button id="tableViewBtn" class="view-btn active" title="Table View">
+                    <i class="fas fa-list"></i>
+                  </button>
+                  <button id="gridViewBtn" class="view-btn" title="Grid Card View">
+                    <i class="fas fa-th-large"></i>
+                  </button>
+                </div>
               </div>
 
               <div class="table-count-badge" id="tableCount">
