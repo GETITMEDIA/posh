@@ -686,15 +686,39 @@ header .text-sm {
    ========================================================= */
 @media (max-width: 1024px) {
 
-  /* ---- TOP INFO BAR: SHOW ALL, STACKED NEATLY ---- */
+  /* ---- TOP INFO BAR: SHOW ALL, STACKED NEATLY ----
+     Explicit grid so the rows land in the approved order and the
+     hamburger sits on the bottom row beside the ambulance and the
+     Appointment button, even though in the DOM it is the bar's
+     first child. A column flex could not do this and also let the
+     phone line wrap, because align-items:center sizes each child
+     to fit-content, so the long number string overflowed. */
   header .max-w-7xl.mx-auto.px-4.py-3 {
-    display: flex !important;
-    flex-direction: column;
+    display: grid !important;
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-areas:
+      "social social"
+      "emerg  emerg"
+      "phone  phone"
+      "menu   right";
     align-items: center;
-    justify-content: center;
-    gap: 6px;
+    justify-items: center;
+    gap: 8px;
     padding: 10px 12px;
     text-align: center;
+  }
+
+  header .max-w-7xl.mx-auto.px-4.py-3 > #menuBtn        { grid-area: menu; justify-self: start; }
+  header .max-w-7xl.mx-auto.px-4.py-3 > .card           { grid-area: social; }
+  header .max-w-7xl.mx-auto.px-4.py-3 > div:nth-of-type(2) { grid-area: emerg; }
+
+  /* Phone line: full width of the grid row so it wraps instead of
+     overflowing behind the body's overflow-x guard. */
+  header .max-w-7xl.mx-auto.px-4.py-3 > .header-call-now {
+    grid-area: phone;
+    justify-self: stretch;
+    width: 100%;
+    overflow-wrap: break-word;
   }
 
   /* Social icons — compact row */
@@ -721,16 +745,18 @@ header .text-sm {
     font-size: 12px;
     line-height: 1.4;
   }
-
-  /* Bottom row: Hamburger | Ambulance | Appointment */
+  /* Bottom row, right cell: Ambulance | Appointment
+     (the hamburger occupies the "menu" cell to its left) */
   header .max-w-7xl.mx-auto.px-4.py-3 > .flex:last-child {
+    grid-area: right;
+    justify-self: stretch;
     display: flex;
     width: 100%;
-    justify-content: center;
+    min-width: 0;
+    justify-content: space-between;
     align-items: center;
     gap: 12px;
     flex-wrap: nowrap;
-    margin-top: 4px;
   }
 
   /* Hamburger button */
