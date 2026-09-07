@@ -1571,3 +1571,15 @@ header a[href*="appointment.html"]:hover {
     transform: rotate(45deg) scale(1) !important;
   }
 }
+
+/* 5. Move profile image to top when stacked on mobile */
+@media (max-width: 1200px) {
+  .profile-card {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .profile-card .profile-image-wrapper {
+    order: -1 !important;
+    margin-bottom: 20px;
+  }
+}
