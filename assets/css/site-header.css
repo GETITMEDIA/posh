@@ -149,71 +149,223 @@ nav ul li .dropdown {
   }
 }
 
-/* =========================
-   MOBILE NAV STYLES
-   ========================= */
+/* =========================================================
+   MOBILE NAV PANEL — LIGHT THEME
+   ---------------------------------------------------------
+   Light container, close button pinned to the right, and the
+   dropdown "+" replaced by a chevron in a soft pill at the
+   end of the row. Everything here is CSS-only so all pages
+   pick it up from the shared markup without edits.
+   ========================================================= */
 
-#mobilePanel {
-  overflow-y: auto;
+:root {
+  --posh-panel-bg: #ffffff;
+  --posh-panel-tint: #faf5fd;
+  --posh-ink: #3d0a4a;
+  --posh-ink-soft: #6b4a76;
+  --posh-accent: #a3129c;
+  --posh-line: #efe4f4;
 }
 
-/* Links & buttons */
+/* Backdrop */
+#mobileMenu {
+  background: rgba(43, 0, 47, 0.45) !important;
+  backdrop-filter: blur(2px);
+}
+
+/* The panel itself */
+#mobilePanel {
+  width: 300px !important;
+  max-width: 86vw;
+  background: var(--posh-panel-bg) !important;
+  color: var(--posh-ink) !important;
+  padding: 0 !important;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  box-shadow: 8px 0 32px rgba(43, 0, 47, 0.28);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- Panel header: logo left, close button right ---- */
+#mobilePanel > .flex:first-child {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  margin: 0 !important;
+  padding: 14px 16px;
+  background: var(--posh-panel-tint);
+  border-bottom: 1px solid var(--posh-line);
+  gap: 12px;
+}
+
+/* The logo must not stretch and push the close button off-centre */
+#mobilePanel > .flex:first-child img {
+  height: 40px;
+  width: auto;
+  flex: 0 0 auto;
+}
+
+/* Close button — a round tinted target at the far right.
+   The generic full-width rule below must not touch it. */
+#mobilePanel #closeMenu {
+  width: 36px !important;
+  height: 36px;
+  flex: 0 0 auto;
+  margin-left: auto;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+  font-size: 22px !important;
+  line-height: 1;
+  color: var(--posh-accent) !important;
+  background: #ffffff !important;
+  border: 1px solid var(--posh-line) !important;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(43, 0, 47, 0.12);
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+#mobilePanel #closeMenu:hover,
+#mobilePanel #closeMenu:focus-visible {
+  background: var(--posh-accent) !important;
+  color: #ffffff !important;
+  transform: rotate(90deg);
+}
+
+/* ---- Nav list ---- */
+#mobilePanel > ul {
+  margin: 0 !important;
+  padding: 6px 10px 24px !important;
+  list-style: none;
+}
+
+#mobilePanel > ul > li {
+  border-bottom: 1px solid var(--posh-line) !important;
+}
+
+#mobilePanel > ul > li:last-child {
+  border-bottom: 0 !important;
+}
+
+/* Top-level links & dropdown buttons */
 #mobilePanel a,
 #mobilePanel button {
   width: 100%;
   display: block;
-  padding: 12px 0;
-  color: #ffffff;
+  padding: 13px 10px;
+  color: var(--posh-ink) !important;
   background: none;
   border: none;
+  border-radius: 8px;
   text-align: left;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-shadow: none;
+  filter: none;
+  animation: none;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-/* Divider line */
-#mobilePanel ul>li {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+#mobilePanel a:hover,
+#mobilePanel button:hover,
+#mobilePanel a:focus-visible {
+  background: var(--posh-panel-tint);
+  color: var(--posh-accent) !important;
 }
 
-/* Dropdown toggle */
+/* ---- Dropdown toggle: chevron in a soft pill at the end ---- */
 .dropdown-toggle {
-  display: flex;
+  display: flex !important;
   justify-content: space-between;
   align-items: center;
-  font-weight: 600;
+  gap: 10px;
   text-transform: uppercase;
 }
 
-/* + icon */
+/* The markup ships a literal "+" inside the span. Hide the glyph
+   and draw a chevron instead, so no page markup has to change. */
 .dropdown-toggle span {
-  font-size: 18px;
-  transition: transform 0.3s ease;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0 !important;
+  border-radius: 50%;
+  background: var(--posh-panel-tint);
+  border: 1px solid var(--posh-line);
+  transition: transform 0.3s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
-/* Rotate + */
+.dropdown-toggle span::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid var(--posh-accent);
+  border-bottom: 2px solid var(--posh-accent);
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+/* Open state: chevron points up */
 .dropdown-toggle.active span {
-  transform: rotate(45deg);
+  transform: rotate(180deg);
+  background: var(--posh-accent);
+  border-color: var(--posh-accent);
 }
 
-/* Dropdown container */
+.dropdown-toggle.active span::before {
+  border-color: #ffffff;
+}
+
+.dropdown-toggle.active {
+  color: var(--posh-accent) !important;
+}
+
+/* ---- Sub-menu: its own light container ---- */
 .mobile-dropdown {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.35s ease;
-  margin-left: 12px;
-  padding-left: 10px;
-  border-left: 2px solid rgba(255, 255, 255, 0.2);
+  margin: 0 0 0 6px;
+  padding-left: 0;
+  border-left: 0;
+  list-style: none;
 }
 
-/* Open dropdown */
 .mobile-dropdown.open {
-  max-height: 1000px;
+  max-height: 1400px;
+  overflow-y: auto;
+  margin-bottom: 10px;
 }
 
-/* Dropdown links */
+.mobile-dropdown li {
+  border-bottom: 0 !important;
+}
+
 .mobile-dropdown li a {
-  font-size: 13px;
-  padding: 8px 0;
+  font-size: 12.5px !important;
+  font-weight: 500 !important;
+  padding: 9px 12px !important;
   text-transform: none;
+  color: var(--posh-ink-soft) !important;
+  border-radius: 6px;
+}
+
+.mobile-dropdown li a:hover {
+  background: #ffffff !important;
+  color: var(--posh-accent) !important;
+}
+
+/* Give the open sub-list a tinted container of its own */
+.mobile-dropdown.open {
+  background: var(--posh-panel-tint);
+  border: 1px solid var(--posh-line);
+  border-radius: 10px;
+  padding: 6px;
 }
 
 
