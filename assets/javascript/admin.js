@@ -667,6 +667,14 @@
     const container = document.getElementById('toastContainer');
     if (!container) return;
 
+    // Remove any identical or older toast messages so they don't pile up
+    const existing = container.querySelectorAll('.toast');
+    existing.forEach(t => {
+      if (t.textContent.includes(message) || existing.length >= 2) {
+        t.remove();
+      }
+    });
+
     const iconMap = {
       success: 'fa-check-circle',
       error: 'fa-exclamation-circle',
@@ -686,10 +694,11 @@
 
     setTimeout(() => {
       if (toast.parentElement) {
-        toast.style.animation = 'slideInRight 0.3s cubic-bezier(0.4, 0, 0.2, 1) reverse';
-        setTimeout(() => toast.remove(), 300);
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(10px) scale(0.95)';
+        setTimeout(() => toast.remove(), 250);
       }
-    }, 4000);
+    }, 2600);
   }
 
   // ===== EXPORT TO EXCEL / CSV =====

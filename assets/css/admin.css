@@ -1454,6 +1454,19 @@ body {
   font-size: 0.875rem;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.3s ease, opacity 0.3s ease, margin-bottom 0.3s ease;
+}
+
+.toast:nth-last-child(2) {
+  transform: translateY(-8px) scale(0.95);
+  opacity: 0.75;
+  margin-bottom: -45px;
+  filter: brightness(0.85);
+  z-index: 5;
+}
+
+.toast:nth-last-child(n+3) {
+  display: none;
 }
 
 @keyframes toastSlideIn {
