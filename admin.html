@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POSH Hospital — Ultra Admin Portal</title>
+  <link rel="icon" type="image/x-icon" href="assets/images/headerlogo.avif">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6.5 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Luxury Admin CSS -->
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+
+  <!-- ============================================
+       1. SPLIT & GLASS LOGIN INTERFACE
+       ============================================ -->
+  <div id="loginPage" class="login-wrapper">
+    <div class="login-blob login-blob-1"></div>
+    <div class="login-blob login-blob-2"></div>
+    <div class="login-particles" id="loginParticles"></div>
+
+    <div class="login-card">
+      <div class="brand">
+        <div class="brand-badge-container">
+          <img src="assets/images/logo/logo.png" alt="POSH Logo">
+        </div>
+        <h1>THE POSH ADMIN</h1>
+        <p>Pondy Ortho Speciality Hospital Portal</p>
+      </div>
+
+      <div id="loginError" class="login-error">
+        <i class="fas fa-exclamation-circle"></i>
+        <span>Invalid credentials</span>
+      </div>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="loginEmail">Email Address</label>
+          <div class="input-wrapper">
+            <i class="fas fa-envelope input-icon"></i>
+            <input type="email" id="loginEmail" placeholder="Enter Email" autocomplete="email" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <div class="input-wrapper">
+            <i class="fas fa-lock input-icon"></i>
+            <input type="password" id="loginPassword" placeholder="Enter Password" autocomplete="current-password" required>
+            <i class="fas fa-eye password-toggle" id="passToggle" title="Toggle password visibility"></i>
+          </div>
+        </div>
+
+        <button type="submit" id="loginBtn" class="btn btn-primary btn-block">
+          <span class="btn-text"><i class="fas fa-sign-in-alt"></i> Sign In</span>
+          <div class="spinner"></div>
+        </button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- ============================================
+       2. DASHBOARD LAYOUT
+       ============================================ -->
+  <div id="dashboard" class="dashboard-layout">
+
+    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+      <!-- Sidebar Navigation -->
+      <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+          <img src="assets/images/logo/logo.png" alt="POSH Logo" class="sidebar-logo">
+          <div class="sidebar-brand-text">
+            <h2>THE POSH</h2>
+            <span>ADMIN PORTAL</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <div class="nav-section">
+            <div class="nav-section-title">MAIN MANAGEMENT</div>
+            <a href="#" class="nav-item active">
+              <i class="fas fa-user-md"></i>
+              <span>Doctor Roster</span>
+            </a>
+            <a href="our-doctors.html" target="_blank" class="nav-item">
+              <i class="fas fa-globe"></i>
+              <span>Live Doctors Page</span>
+            </a>
+            <a href="index.html" target="_blank" class="nav-item">
+              <i class="fas fa-hospital"></i>
+              <span>Hospital Website</span>
+            </a>
+          </div>
+
+          <div class="nav-section" style="margin-top: auto;">
+            <div class="nav-section-title">SYSTEM TOOLS</div>
+            <a href="#" id="exportBtn" class="nav-item">
+              <i class="fas fa-file-excel" style="color: #10b981;"></i>
+              <span>Export Doctors (Excel / CSV)</span>
+            </a>
+          </div>
+        </nav>
+
+        <div class="sidebar-user">
+          <div class="user-avatar">
+            <i class="fas fa-user-shield"></i>
+          </div>
+          <div class="user-info">
+            <div class="user-name" id="userName">Admin</div>
+          </div>
+          <button id="logoutBtn" class="btn-logout" title="Sign Out">
+            <i class="fas fa-sign-out-alt"></i>
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="main-content">
+
+        <!-- Top Header -->
+        <header class="top-header">
+          <div class="header-left">
+            <button id="menuToggle" class="menu-toggle-btn" aria-label="Toggle menu">
+              <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="header-title-group">
+              <h1>Doctor Management</h1>
+              <p>View, edit, filter and update POSH medical specialists roster</p>
+            </div>
+
+            <button id="themeToggleBtn" class="theme-toggle-btn" title="Toggle Light/Dark Theme">
+              <i class="fas fa-sun"></i>
+            </button>
+          </div>
+
+          <div class="header-actions">
+            <button id="addDoctorBtn" class="btn btn-accent">
+              <i class="fas fa-plus-circle"></i>
+              <span>Add Specialist</span>
+            </button>
+          </div>
+        </header>
+
+
+        <!-- Stats Grid -->
+        <section class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon icon-primary">
+              <i class="fas fa-user-md"></i>
+            </div>
+            <div class="stat-details">
+              <div class="stat-label">Total Specialists</div>
+              <div class="stat-value" id="statTotal">0</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon icon-success">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="stat-details">
+              <div class="stat-label">Active Doctors</div>
+              <div class="stat-value" id="statActive">0</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon icon-info">
+              <i class="fas fa-clinic-medical"></i>
+            </div>
+            <div class="stat-details">
+              <div class="stat-label">Departments</div>
+              <div class="stat-value" id="statDepts">0</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon icon-warning">
+              <i class="fas fa-user-clock"></i>
+            </div>
+            <div class="stat-details">
+              <div class="stat-label">Inactive Doctors</div>
+              <div class="stat-value" id="statInactive">0</div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- Content Panel -->
+        <section class="content-card">
+          <div class="card-toolbar">
+            <div class="toolbar-left">
+              <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="searchDoctors" placeholder="Search doctor by name, qualification, specialty..." class="search-input">
+              </div>
+
+              <div class="filter-box">
+                <select id="deptFilter" class="filter-select">
+                  <option value="all">All Departments</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="toolbar-right">
+              <div class="toolbar-controls-row">
+                <!-- Table Scroll Arrows -->
+                <div class="table-scroll-controls" style="display:flex; gap:6px;">
+                  <button type="button" class="btn btn-secondary scroll-btn" onclick="scrollTable('left')" title="Scroll Table Left" style="padding:0.45rem 0.75rem; font-size:0.85rem; background:var(--bg-input); border-color:var(--border-color); color:var(--text-primary); cursor:pointer;">
+                    <i class="fas fa-chevron-left"></i>
+                  </button>
+                  <button type="button" class="btn btn-secondary scroll-btn" onclick="scrollTable('right')" title="Scroll Table Right" style="padding:0.45rem 0.75rem; font-size:0.85rem; background:var(--bg-input); border-color:var(--border-color); color:var(--text-primary); cursor:pointer;">
+                    <i class="fas fa-chevron-right"></i>
+                  </button>
+                </div>
+
+                <!-- View Switcher -->
+                <div class="view-toggle-group">
+                  <button id="tableViewBtn" class="view-btn active" title="Table View">
+                    <i class="fas fa-list"></i>
+                  </button>
+                  <button id="gridViewBtn" class="view-btn" title="Grid Card View">
+                    <i class="fas fa-th-large"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="table-count-badge" id="tableCount">
+                Showing 0 doctors
+              </div>
+            </div>
+          </div>
+
+          <!-- Table View -->
+          <div class="table-responsive" id="tableCard">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th style="min-width: 240px;">Doctor Specialist</th>
+                  <th style="min-width: 200px;">Specialty</th>
+                  <th style="min-width: 170px;">Department</th>
+                  <th style="min-width: 110px;">Status</th>
+                  <th style="text-align: center; width: 110px; min-width: 110px;">Actions</th>
+                </tr>
+              </thead>
+            <tbody id="doctorsTableBody">
+              <!-- Rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Grid View -->
+        <div class="doctors-cards-grid" id="gridCard" style="display: none;">
+          <!-- Rendered via JS -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="empty-state" style="display: none;">
+          <i class="fas fa-user-slash"></i>
+          <h3>No Doctors Found</h3>
+          <p>No doctor records match your search or filter criteria.</p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+
+  <!-- ============================================
+       3. ADD / EDIT DOCTOR MODAL
+       ============================================ -->
+  <div id="doctorModal" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modalTitle"><i class="fas fa-user-plus" style="color:var(--accent-pink);"></i> Add New Doctor</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+
+      <form id="doctorForm">
+        <div class="modal-body">
+          <div class="form-row">
+            <div class="form-group" style="flex: 1;">
+              <label for="docName">Doctor Name <span class="req">*</span></label>
+              <input type="text" id="docName" placeholder="e.g. Dr. Harish Jayakumar" required>
+            </div>
+            <div class="form-group" style="flex: 1;">
+              <label for="docQual">Qualification / Degrees </label>
+              <input type="text" id="docQual" placeholder="e.g. MBBS, MS (ORTHO)">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group" style="flex: 1;">
+              <label for="docSpecialty">Specialty <span class="req">*</span></label>
+              <input type="text" id="docSpecialty" placeholder="e.g. Trauma & Orthopedic Surgeon" required>
+            </div>
+
+            <div class="form-group" style="flex: 1;">
+              <label for="docDepartment">Department <span class="req">*</span></label>
+              <div style="display:flex; gap:8px; align-items:center;">
+                <select id="docDepartment" required style="flex:1; min-width:0; text-overflow:ellipsis;">
+                  <option value="">Select Department</option>
+                </select>
+                <button type="button" id="addNewDeptBtn" onclick="openModal('deptModal')" class="btn btn-secondary" style="padding:0.75rem 10px; font-size:0.775rem; white-space:nowrap; background:rgba(217, 70, 239, 0.15); border-color:rgba(217, 70, 239, 0.3); color:var(--accent-pink); font-weight:700; display:inline-flex; align-items:center; gap:5px; flex-shrink:0; border-radius: var(--radius-md); cursor:pointer;">
+                  <i class="fas fa-plus-circle"></i> New Dept
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group" style="flex: 1;">
+              <label for="docImgFile">Upload Doctor Photo</label>
+              <div style="display:flex; align-items:center; gap:10px;">
+                <img id="imgPreview" src="assets/images/doc3.avif" alt="Preview" class="img-preview" style="width:42px; height:42px; border-radius:50%; object-fit:cover; border:2px solid var(--accent-pink); flex-shrink:0;">
+                <label for="docImgFile" class="btn btn-secondary" style="flex:1; margin:0; padding:0.75rem 0.85rem; font-size:0.825rem; cursor:pointer; text-align:center; display:inline-flex; align-items:center; justify-content:center; gap:6px;">
+                  <i class="fas fa-cloud-upload-alt"></i> Choose Photo...
+                </label>
+                <input type="file" id="docImgFile" accept="image/*" style="display: none;">
+                <input type="hidden" id="docImg">
+              </div>
+            </div>
+
+            <div class="form-group" style="flex: 1;">
+              <label for="docStatus">Status</label>
+              <select id="docStatus">
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group" style="flex: 1;">
+              <label for="docPhone">Phone Number</label>
+              <input type="text" id="docPhone" placeholder="e.g. +91 98765 43210">
+            </div>
+
+            <div class="form-group" style="flex: 1;">
+              <label for="docEmail">Email Address</label>
+              <input type="email" id="docEmail" placeholder="e.g. doctor@theposh.in">
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="closeModal('doctorModal')">Cancel</button>
+          <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Save Doctor</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- ============================================
+       4. ADD NEW DEPARTMENT MODAL
+       ============================================ -->
+  <div id="deptModal" class="modal-overlay">
+    <div class="modal-card modal-sm">
+      <div class="modal-header">
+        <h3><i class="fas fa-clinic-medical" style="color:var(--accent-pink);"></i> Add New Department</h3>
+        <button type="button" class="modal-close" onclick="closeModal('deptModal')">&times;</button>
+      </div>
+
+      <form id="deptForm">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="newDeptName">Department Name <span class="req">*</span></label>
+            <input type="text" id="newDeptName" placeholder="e.g. NEW DENTAL or PEDIATRIC CARDIOLOGY" required>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="closeModal('deptModal')">Cancel</button>
+          <button type="submit" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Create Department</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- ============================================
+       5. DELETE CONFIRMATION MODAL
+       ============================================ -->
+  <div id="deleteModal" class="modal-overlay">
+    <div class="modal-card modal-sm">
+      <div class="modal-header">
+        <h3><i class="fas fa-exclamation-triangle" style="color: var(--danger);"></i> Confirm Deletion</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+
+      <div class="modal-body text-center" style="padding: 1.75rem;">
+        <i class="fas fa-trash-alt" style="font-size: 3rem; color: var(--danger); margin-bottom: 1rem;"></i>
+        <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Are you sure you want to remove</p>
+        <h4 id="deleteDocName" style="color: var(--text-primary); font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">Doctor Name</h4>
+        <p style="font-size: 0.825rem; color: var(--text-muted);">This action will remove the doctor record from local storage.</p>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" id="confirmDeleteBtn" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete Doctor</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Toast Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- JavaScript -->
+  <script src="assets/javascript/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+[
+  { "id": 1, "name": "Dr. V. Veerappan, M.S. (Ortho), FRCS (Glasgow)", "specialty": "Trauma, Spine & Joint Replacement surgeon", "department": "orthopaedics", "img": "assets/images/doc1.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 2, "name": "Dr. Harish Jayakumar, MBBS, MS (ORTHO)", "specialty": "Trauma & Orthopedic Surgeon", "department": "orthopaedics", "img": "assets/images/doc59.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 3, "name": "Dr. R. Krishnagopal, M.S. (Ortho)", "specialty": "Arthroscopic Surgeon", "department": "orthopaedics", "img": "assets/images/doc2.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 4, "name": "Dr. R. Vijayaragavan, M.S (Ortho)", "specialty": "Consultant Orthopaedic Surgeon", "department": "orthopaedics", "img": "assets/images/vijayaraghavan.jpeg", "phone": "", "email": "", "status": "active" },
+  { "id": 6, "name": "Dr. Pragwal, Ms.ortho.,FISU (SESI) ,FIASM (UK/INDIA) Executive committee member TNAS", "specialty": "Consultant Orthopaedic Surgeon", "department": "orthopaedics", "img": "assets/images/Pragwal.jpeg", "phone": "", "email": "", "status": "active" },
+
+  { "id": 7, "name": "Dr. Dilip Chander, MBBS, MD", "specialty": "Anaesthesiologist & Pain Specialist", "department": "anaesthesiology", "img": "assets/images/doc49.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 8, "name": "Dr. Vigneshwaran, MBBS, MD", "specialty": "Consultant Anaesthesiologist", "department": "anaesthesiology", "img": "assets/images/doc50.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 9, "name": "Dr. Ranjith Kumar, MBBS, MD", "specialty": "Consultant Anaesthesiologist", "department": "anaesthesiology", "img": "assets/images/doc51.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 10, "name": "Dr. Vinayagamurugan, MBBS, MD", "specialty": "MBBS MD Consultant Anaesthesiologist", "department": "anaesthesiology", "img": "assets/images/Vinayagamurugan.jpeg", "phone": "", "email": "", "status": "active" },
+
+  { "id": 13, "name": "Dr. Baskaran, MD Medicine, DM-Cardiologist", "specialty": "Interventional Cardiologist", "department": "cardiology", "img": "assets/images/baskaran.jpeg", "phone": "", "email": "", "status": "active" },
+  { "id": 14, "name": "Dr. Giridharan, MD, DM", "specialty": "Consultant Cardiologist", "department": "cardiology", "img": "assets/images/doc29.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 15, "name": "Dr. preamnath Vinayagam, MD, DM.,DEM(UK)", "specialty": "Consultant Cardiologist", "department": "cardiology", "img": "assets/images/preamnath.jpeg", "phone": "", "email": "", "status": "active" },
+  { "id": 16, "name": "Dr. Badrinath, MD,FRCP,FACP,FIAE,AFISC,FIMSA,FIACM", "specialty": "Consultant Cardiologist", "department": "cardiology", "img": "assets/images/badri.jpeg", "phone": "", "email": "", "status": "active" },
+  { "id": 89, "name": "Dr. R. Hanushraj, MD (Gen Medicine), DM (Cardiology)", "specialty": "Consultant Cardiologist", "department": "cardiology", "img": "assets/images/posh/Dr.R.Hanushra.jfif", "phone": "", "email": "", "status": "active" },
+
+  { "id": 17, "name": "Dr. Thavi Dhivagar BDS, MDS", "specialty": "Chief Dental Surgeon", "department": "dental", "img": "assets/images/Thavi.jpeg", "phone": "", "email": "", "status": "active" },
+  { "id": 19, "name": "Dr. Nithin Joseph Jude, MDS", "specialty": "Oral & Maxillofacial Surgeon", "department": "dental", "img": "assets/images/doc57.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 20, "name": "Dr. V. Venugopalan, MDS", "specialty": "Associate Professor (OMFS)", "department": "dental", "img": "assets/images/doc55.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 21, "name": "Dr. Balatandayoudam, MDS", "specialty": "Oral and maxillofacial Surgeon", "department": "dental", "img": "assets/images/tha.jpeg", "phone": "", "email": "", "status": "active" },
+
+  { "id": 22, "name": "Dr. Trishna Vaishali, MD (DVL)", "specialty": "Consultant Dermatologist", "department": "dermatology", "img": "assets/images/doc44.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 23, "name": "Dr. Dileep Jude, MD, DNB (DVL)", "specialty": "Dermatologist & Cosmetologist", "department": "dermatology", "img": "assets/images/doc45.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 26, "name": "Dr. Suruthi Purushothaman, MD,DNB-DVL", "specialty": "Dermatologist & Aesthetic Physician", "department": "dermatology", "img": "assets/images/suruthi.jpeg", "phone": "", "email": "", "status": "active" },
+
+  { "id": 27, "name": "Dr. T.C. Vikram, MS", "specialty": "Consultant ENT Surgeon", "department": "ent", "img": "assets/images/vikram.jpeg", "phone": "", "email": "", "status": "active" },
+  { "id": 28, "name": "Dr. Nishanth Savery, MS (ENT), MCIP", "specialty": "Consultant ENT Surgeon", "department": "ent", "img": "assets/images/doc41.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 29, "name": "Dr. Shanmuganathan, DLO, DNB, MNAMS", "specialty": "Consultant ENT Surgeon", "department": "ent", "img": "assets/images/doc40.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 30, "name": "Dr. Sathish, MBBS, DNB (ENT)", "specialty": "Consultant ENT Surgeon", "department": "ent", "img": "assets/images/sathish.jpeg", "phone": "", "email": "", "status": "active" },
+  { "id": 31, "name": "Dr. Naveen Kumar, MS", "specialty": "Consultant ENT Surgeon", "department": "ent", "img": "assets/images/doc42.avif", "phone": "", "email": "", "status": "active" },
+
+  { "id": 32, "name": "Dr. A. Rameshkumar, MS, MCh (SEGG)", "specialty": "Consultant Gastroenterologist", "department": "gastroenterology", "img": "assets/images/Rameshkumar.jpeg", "phone": "", "email": "", "status": "active" },
+  { "id": 33, "name": "Dr. Kishore, R M.D.,D.M.", "specialty": "Consultant Medical Gastroenterologist", "department": "gastroenterology", "img": "assets/images/Kishore.jpeg", "phone": "", "email": "", "status": "active" },
+
+  { "id": 108, "name": "Dr. S. Arthi, MS (OG), FMAS, DMAS", "specialty": "Obstetrician & Gynaecologist", "department": "gynaecology", "img": "assets/images/arthi.jpeg", "phone": "", "email": "", "status": "active" },
+  { "id": 109, "name": "Dr. Tanvi Gupta, MBBS, DNB - OBGYN, FMAS, Dip USG (USA)", "specialty": "Consultant Gynaecologist", "department": "gynaecology", "img": "assets/images/Tanvi.jpeg", "phone": "", "email": "", "status": "active" },
+
+  { "id": 34, "name": "Dr. I.Arun, MD", "specialty": "General Physician & Diabetologist", "department": "general-medicine", "img": "assets/images/doc8.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 35, "name": "Dr. Zeno, MD", "specialty": "Consultant General Physician", "department": "general-medicine", "img": "assets/images/doc10.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 36, "name": "Dr. Darshan Savery, MD", "specialty": "General Physician & Diabetologist", "department": "general-medicine", "img": "assets/images/doc9.avif", "phone": "", "email": "", "status": "active" },
+
+  { "id": 38, "name": "Dr. Vijayabhaskar Reddy, MD, MRCP", "specialty": "Endocrinologist & Diabetologist", "department": "endocrinology", "img": "assets/images/doc54.avif", "phone": "", "email": "", "status": "active" },
+
+  { "id": 39, "name": "Dr. K.V. Rajan, MS,FRCS,FMAS", "specialty": "Hernia & Laparoscopic Surgeon", "department": "general-Surgeon ", "img": "assets/images/doc11.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 40, "name": "Dr. Vinayagam, MS", "specialty": "Endoscopic & General Surgeon", "department": "general-Surgeon ", "img": "assets/images/doc12.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 41, "name": "Dr. Raj S., MBBS, DNB, FIAGES", "specialty": "General & Laparoscopic Surgeon", "department": "general-Surgeon ", "img": "assets/images/doc13.avif", "phone": "", "email": "", "status": "active" },
+
+  { "id": 44, "name": "Dr. Sivaramakrishnan, DNB, MNAMS, DM Gold Medalist", "specialty": "Consultant Hepatologist", "department": "hepatology", "img": "assets/images/doc23.avif", "phone": "", "email": "", "status": "active" },
+
+  { "id": 45, "name": "Dr. K. Kumar, MD, DM", "specialty": "Nephrologist & Transplant Physician", "department": "nephrology", "img": "assets/images/doc20.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 46, "name": "Dr. M. M. Murali Krishna, DNB", "specialty": "Consultant Nephrologist", "department": "nephrology", "img": "assets/images/doc21.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 47, "name": "Dr. Kathiravan", "specialty": "Nephrologist & Transplant Physician", "department": "nephrology", "img": "assets/images/doc3.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 48, "name": "Dr. T. Sugan Gandhi, MD, DM", "specialty": "Nephrologist & Transplant Physician", "department": "nephrology", "img": "assets/images/doc22.avif", "phone": "", "email": "", "status": "active" },
+
+  { "id": 49, "name": "Dr. Ganesh, MD, DM", "specialty": "Consultant Neurologist", "department": "neurology", "img": "assets/images/doc18.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 50, "name": "Dr. Shobana, MD, DM", "specialty": "Consultant Neurologist", "department": "neurology", "img": "assets/images/doc17.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 51, "name": "Dr. Arul Prasad, MD, DM", "specialty": "Consultant Neurologist", "department": "neurology", "img": "assets/images/arun.jpeg", "phone": "", "email": "", "status": "active" },
+
+  { "id": 52, "name": "Dr. Prabakaran, MS, MCh", "specialty": "Consultant Neurosurgeon", "department": "neuroSurgeon ", "img": "assets/images/doc15.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 53, "name": "Dr. M. Shanmugapathy, MS, MCh", "specialty": "Consultant Neurosurgeon", "department": "neuroSurgeon ", "img": "assets/images/doc16.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 54, "name": "Dr. Santhosh, DNB-Neuro Surgeon", "specialty": "Consultant Neurosurgeon", "department": "neuroSurgeon ", "img": "assets/images/santhosh.jpeg", "phone": "", "email": "", "status": "active" },
+  { "id": 88, "name": "Dr. Praveen", "specialty": "Specialist in Trauma, Endoscopic Spine & Skullbase Surgery", "department": "neuroSurgeon ", "img": "assets/images/posh/Dr_Praveen.jfif", "phone": "", "email": "", "status": "active" },
+
+  { "id": 55, "name": "Dr. Karunanithy, DO, DNB", "specialty": "Consultant Ophthalmologist", "department": "ophthalmology", "img": "assets/images/doc37.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 56, "name": "Dr. Senthamizh Rene, DO, DNB", "specialty": "Consultant Ophthalmologist", "department": "ophthalmology", "img": "assets/images/doc38.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 57, "name": "Dr. Malarmozhi, DO, DNB", "specialty": "Consultant Ophthalmologist", "department": "ophthalmology", "img": "assets/images/doc3.avif", "phone": "", "email": "", "status": "active" },
+
+  { "id": 59, "name": "Dr. P. Ravi Shankar, MS, MCh, DNB, FAS, GOLF", "specialty": "Consultant Oncologist", "department": "oncology", "img": "assets/images/Dr-Ravi-Shankar.png", "phone": "", "email": "", "status": "active" },
+  { "id": 60, "name": "Dr. Damodara Kumaran P, MD, DMRT, ECMO", "specialty": "Medical & Radiation Oncologist", "department": "oncology", "img": "assets/images/doc27.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 61, "name": "Dr. Vikas Babu, MBBS MD", "specialty": "Consultant Clinical Oncologist", "department": "oncology", "img": "assets/images/vikas.jpeg", "phone": "", "email": "", "status": "active" },
+  { "id": 62, "name": "Dr. Pandian Baskaran Rao, MD(rad.onco.)DM(Med.onco)", "specialty": "Consultant Oncologist", "department": "oncology", "img": "assets/images/pandiyan.jpeg", "phone": "", "email": "", "status": "active" },
+  { "id": 63, "name": "Dr. Vigneshwaran, MS,MCH,MCHIR", "specialty": "Consultant Oncologist", "department": "oncology", "img": "assets/images/vignesh.jpeg", "phone": "", "email": "", "status": "active" },
+
+  { "id": 64, "name": "Dr. Thiyagarajan, MD", "specialty": "Consultant Paediatrician", "department": "paediatrics", "img": "assets/images/doc47.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 65, "name": "Dr. C. Hemarani, DNB, PGPN (Boston)", "specialty": "Consultant Paediatrician", "department": "paediatrics", "img": "assets/images/doc39.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 66, "name": "Dr. Abirami Selvaganapathy, MBBS MD MIYCF", "specialty": "Consultant Paediatrician", "department": "paediatrics", "img": "assets/images/abirami.jpeg", "phone": "", "email": "", "status": "active" },
+  { "id": 67, "name": "Dr. Meena", "specialty": "Consultant Paediatrician", "department": "paediatrics", "img": "assets/images/doc3.avif", "phone": "", "email": "", "status": "active" },
+
+  { "id": 68, "name": "Dr. A. Vaithiswaran, MS, MCh", "specialty": "Plastic & Reconstructive Surgeon", "department": "plastic-surgeon", "img": "assets/images/doc15.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 69, "name": "Dr. Vijayaragavan, MS, MCh", "specialty": "Consultant Plastic Surgeon", "department": "plastic-surgeon", "img": "assets/images/doc14.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 70, "name": "Dr. K. Ashok Kumar, MCh", "specialty": "Hand, Burns & Reconstructive Surgeon", "department": "plastic-surgeon", "img": "assets/images/doc15.avif", "phone": "", "email": "", "status": "active" },
+
+  { "id": 72, "name": "Dr. T. Murugaraj, MPT", "specialty": "Ortho Consultant Physiotherapist", "department": "physiotherapy", "img": "assets/images/doc58.avif", "phone": "", "email": "", "status": "active" },
+
+  { "id": 101, "name": "Dr. Agalaya Kandavelu, MBBS, DNB (PMR), FIPM (Delhi), FIPC (UK), EULAR (UK)", "specialty": "Physical medicine and Rehabilitation Consultant", "department": "physiotherapy-two", "img": "assets/images/Agalya.jpeg", "phone": "", "email": "", "status": "active" },
+
+  { "id": 73, "name": "Dr. S. Karthik, MD (Psychiatry)", "specialty": "Consultant Psychiatrist", "department": "psychiatry", "img": "assets/images/doc46.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 90, "name": "Dr. V. Gokoul, MBBS., MD", "specialty": "Consultant Psychiatrist", "department": "psychiatry", "img": "assets/images/posh/dr.v.gokul.jfif", "phone": "", "email": "", "status": "active" },
+
+  { "id": 74, "name": "Dr. Praveen, MD (Respiratory Medicine)", "specialty": "Interventional Pulmonologist", "department": "pulmonology", "img": "assets/images/doc53.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 75, "name": "Prof. Dr. S. Yuvarajan, MD, DNB, FCCP", "specialty": "Pulmonologist & Interventional Bronchoscopist", "department": "pulmonology", "img": "assets/images/doc52.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 77, "name": "Dr. Arif", "specialty": "Consultant Pulmonologist", "department": "pulmonology", "img": "assets/images/Arif.jpeg", "phone": "", "email": "", "status": "active" },
+  { "id": 78, "name": "Dr. UVARAJAN E, M.B.B.S., M.D., (RESPIRATORY MEDICINE)", "specialty": "Consultant Pulmonologist", "department": "pulmonology", "img": "assets/images/Dr-UVARAJAN-E.jpeg", "phone": "", "email": "", "status": "active" },
+
+  { "id": 79, "name": "Dr. A. Sivarajan, MD, RD", "specialty": "Consultant Radiologist", "department": "radiology", "img": "assets/images/doc33.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 80, "name": "Dr. Avinesh, MD, RD, CCFRG", "specialty": "Consultant Radiologist", "department": "radiology", "img": "assets/images/doc34.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 81, "name": "Dr. Micheal, MD, RD", "specialty": "Assistant Professor & Consultant Radiologist", "department": "radiology", "img": "assets/images/doc35.avif", "phone": "", "email": "", "status": "active" },
+
+  { "id": 84, "name": "Dr. Vijayaganapathy, MS, DNB, MCh", "specialty": "Consultant Uro Surgeon", "department": "urology", "img": "assets/images/doc36.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 91, "name": "Dr. J. Rathinavel Kamarajan, MBBS, DNB (General Surgery), DrNB (Urology), FAIS, FIAGES", "specialty": "Consultant Urologist", "department": "urology", "img": "assets/images/posh/RathinavelKamarajan.png", "phone": "", "email": "", "status": "active" },
+  { "id": 92, "name": "Dr. SUBRAMANIAN .E, MS, Mch - Urology", "specialty": "Consultant Urologist", "department": "urology", "img": "assets/images/SUBRAMANIAN.jpeg", "phone": "", "email": "", "status": "active" },
+
+  { "id": 85, "name": "Dr. P. Sudarasan Reddy, MS, MCh, DNB (CTVS)", "specialty": "Consultant CTVS Surgeon", "department": "cardiothoracic", "img": "assets/images/doc19.avif", "phone": "", "email": "", "status": "active" },
+  { "id": 87, "name": "Dr. Elamaran, Ms,Mch", "specialty": "Consultant CTVS Surgeon", "department": "cardiothoracic", "img": "assets/images/Elamaran.jpeg", "phone": "", "email": "", "status": "active" }
+]

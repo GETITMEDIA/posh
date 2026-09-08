@@ -3492,7 +3492,7 @@
                 <script>
 
                     // Doctor data
-                    const doctorsData = [
+                    let doctorsData = [
                         // ... keep ALL your doctors data exactly as it is ...
                         /* ================= ORTHOPAEDICS ================= */
                         { id: 1, name: "Dr. V. Veerappan, M.S. (Ortho), FRCS (Glasgow)", specialty: "Trauma, Spine & Joint Replacement surgeon", department: "orthopaedics", img: "assets/images/doc1.avif" },
@@ -3629,7 +3629,7 @@
                     ];
 
                     // Department mapping
-                    const departmentInfo = {
+                    let departmentInfo = {
                         "orthopaedics": { name: "ORTHOPAEDICS", icon: "fas fa-bone", color: "#d63384" },
                         "anaesthesiology": { name: "ANAESTHESIOLOGY", icon: "fas fa-syringe", color: "#4361ee" },
                         "cardiology": { name: "CARDIOLOGY", icon: "fas fa-heart", color: "#ef476f" },
@@ -3661,9 +3661,52 @@
                     let currentFilter = "all";
                     let currentSearch = "";
 
+                    function loadStoredDepartments() {
+                        const storedDepts = localStorage.getItem('posh_departments');
+                        if (storedDepts) {
+                            try {
+                                const parsed = JSON.parse(storedDepts);
+                                departmentInfo = { ...departmentInfo, ...parsed };
+                            } catch (e) {}
+                        }
+                    }
+
                     // Initialize
                     document.addEventListener('DOMContentLoaded', function () {
                         console.log("Doctors page loaded");
+                        
+                        loadStoredDepartments();
+
+                        // Load updated doctors from localStorage if available
+                        const storedDocs = localStorage.getItem('posh_doctors');
+                        if (storedDocs) {
+                            try {
+                                const parsed = JSON.parse(storedDocs);
+                                if (Array.isArray(parsed) && parsed.length > 0) {
+                                    doctorsData = parsed;
+                                }
+                            } catch (e) {
+                                console.error("Error reading posh_doctors from localStorage:", e);
+                            }
+                        }
+
+                        // Listen for live updates from admin panel in another tab
+                        window.addEventListener('storage', function (e) {
+                            if (e.key === 'posh_departments') {
+                                loadStoredDepartments();
+                                filterDoctors();
+                            }
+                            if (e.key === 'posh_doctors' && e.newValue) {
+                                try {
+                                    const parsed = JSON.parse(e.newValue);
+                                    if (Array.isArray(parsed)) {
+                                        doctorsData = parsed;
+                                        filterDoctors();
+                                    }
+                                } catch (err) {}
+                            }
+                        });
+
                         createParticles();
                         renderDoctors();
                         setupEventListeners();
@@ -3701,10 +3744,12 @@
                     }
 
                     // Render doctors
-                    function renderDoctors(filteredDoctors = doctorsData) {
+                    function renderDoctors(filteredDoctors = null) {
                         const container = document.getElementById('doctorsContainer');
                         const spinner = document.getElementById('loadingSpinner');
                         const noResults = document.getElementById('noResults');
+
+                        let listToRender = (filteredDoctors || doctorsData).filter(doc => doc.status !== 'inactive');
 
                         container.innerHTML = '';
                         spinner.style.display = 'flex';
@@ -3712,7 +3757,7 @@
                         setTimeout(() => {
                             spinner.style.display = 'none';
 
-                            if (filteredDoctors.length === 0) {
+                            if (listToRender.length === 0) {
                                 noResults.style.display = 'block';
                                 updateResultCount(0);
                                 return;
@@ -3722,62 +3767,112 @@
 
                             // Group doctors by department
                             const doctorsByDept = {};
-                            filteredDoctors.forEach(doc => {
+                            listToRender.forEach(doc => {
                                 if (!doctorsByDept[doc.department]) {
                                     doctorsByDept[doc.department] = [];
                                 }
                                 doctorsByDept[doc.department].push(doc);
                             });
 
-                            // Render in fixed department order
-                            Object.keys(departmentInfo).forEach(deptKey => {
-                                if (!doctorsByDept[deptKey]) return;
+                            // Track rendered departments
+                            const renderedDepts = new Set();
 
-                                const deptInfo = departmentInfo[deptKey];
-                                const doctors = doctorsByDept[deptKey];
-
+                            const renderDeptSection = (deptKey, deptInfo, doctors) => {
                                 const section = document.createElement('section');
                                 section.className = 'department-section container my-5';
                                 section.id = deptKey;
 
+                                const sectionId = `dept-${deptKey.replace(/[^a-zA-Z0-0_-]/g, '')}`;
+
                                 section.innerHTML = `
-                    <h2 class="section-title">
-                        <i class="${deptInfo.icon} me-3"></i>${deptInfo.name}
-                    </h2>
-                    <div class="row g-4 justify-content-center" id="dept-${deptKey}"></div>
-                `;
+                                    <h2 class="section-title">
+                                        <i class="${deptInfo.icon || 'fas fa-user-md'} me-3"></i>${deptInfo.name || deptKey.toUpperCase()}
+                                    </h2>
+                                    <div class="row g-4 justify-content-center" id="${sectionId}"></div>
+                                `;
 
                                 container.appendChild(section);
-
-                                const row = document.getElementById(`dept-${deptKey}`);
+                                const row = document.getElementById(sectionId);
 
                                 doctors.forEach(doctor => {
                                     const col = document.createElement('div');
                                     col.className = 'col-lg-4 col-md-6';
 
-                                    const commaIdx = doctor.name.indexOf(', ');
-                                    const drName = commaIdx !== -1 ? doctor.name.substring(0, commaIdx) : doctor.name;
-                                    const drQual = commaIdx !== -1 ? doctor.name.substring(commaIdx + 2) : '';
+                                    let drName = doctor.name || '';
+                                    let drQual = doctor.qual || doctor.qualification || '';
+
+                                    if (drName.indexOf(', ') !== -1) {
+                                        const commaIdx = drName.indexOf(', ');
+                                        if (!drQual) {
+                                            drQual = drName.substring(commaIdx + 2);
+                                        }
+                                        drName = drName.substring(0, commaIdx);
+                                    }
 
                                     col.innerHTML = `
-                        <div class="doctor-card">
-                            <div class="dc-photo-wrap">
-                                <img src="${doctor.img}" class="dc-photo"
-                                     onerror="this.src='assets/images/doc3.avif'">
-                            </div>
-                            <div class="dc-body">
-                                <h5 class="dc-name">${drName}</h5>
-                                ${drQual ? `<div class="dc-qual">${drQual}</div>` : ''}
-                                <div class="dc-specialty">${doctor.specialty}</div>
-                                <a href="https://wa.me/918056555330?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20with%20${encodeURIComponent(drName)}%20at%20The%20Posh%20Hospital.%20Please%20let%20me%20know%20the%20available%20date%20and%20time."
-                                   class="dc-btn" target="_blank">
-                                    Book Appointment
-                                </a>
-                            </div>
-                        </div>
-                    `;
+                                        <div class="doctor-card">
+                                            <div class="dc-photo-wrap">
+                                                <img src="${doctor.img}" class="dc-photo"
+                                                     onerror="this.src='assets/images/doc3.avif'">
+                                            </div>
+                                            <div class="dc-body">
+                                                <h5 class="dc-name">${drName}</h5>
+                                                ${drQual ? `<div class="dc-qual">${drQual}</div>` : ''}
+                                                <div class="dc-specialty">${doctor.specialty}</div>
+                                                <a href="https://wa.me/918056555330?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20with%20${encodeURIComponent(drName)}%20at%20The%20Posh%20Hospital.%20Please%20let%20me%20know%20the%20available%20date%20and%20time."
+                                                   class="dc-btn" target="_blank">
+                                                    Book Appointment
+                                                </a>
+                                            </div>
+                                        </div>
+                                    `;
                                     row.appendChild(col);
                                 });
+                            };
+
+                            // Render in fixed department order
+                            Object.keys(departmentInfo).forEach(deptKey => {
+                                if (doctorsByDept[deptKey] && doctorsByDept[deptKey].length > 0) {
+                                    renderedDepts.add(deptKey);
+                                    renderDeptSection(deptKey, departmentInfo[deptKey], doctorsByDept[deptKey]);
+                                }
+                            });
+
+                            function getAutoIconForDept(name) {
+                                const n = (name || '').toLowerCase();
+                                if (n.includes('tooth') || n.includes('dental') || n.includes('denti')) return 'fas fa-tooth';
+                                if (n.includes('heart') || n.includes('cardio')) return 'fas fa-heartbeat';
+                                if (n.includes('eye') || n.includes('ophthalm') || n.includes('vision')) return 'fas fa-eye';
+                                if (n.includes('skin') || n.includes('derma')) return 'fas fa-allergies';
+                                if (n.includes('child') || n.includes('pedia') || n.includes('kids') || n.includes('baby')) return 'fas fa-baby';
+                                if (n.includes('bone') || n.includes('ortho') || n.includes('joint') || n.includes('spine')) return 'fas fa-bone';
+                                if (n.includes('brain') || n.includes('neuro') || n.includes('mind') || n.includes('psych')) return 'fas fa-brain';
+                                if (n.includes('ear') || n.includes('nose') || n.includes('throat') || n.includes('ent')) return 'fas fa-head-side-cough';
+                                if (n.includes('women') || n.includes('gynae') || n.includes('obgyn') || n.includes('matern') || n.includes('female')) return 'fas fa-female';
+                                if (n.includes('stomach') || n.includes('gastro') || n.includes('liver')) return 'fas fa-disease';
+                                if (n.includes('kidney') || n.includes('nephro') || n.includes('uro')) return 'fas fa-procedures';
+                                if (n.includes('lung') || n.includes('pulmo') || n.includes('chest')) return 'fas fa-lungs';
+                                if (n.includes('cancer') || n.includes('onco')) return 'fas fa-ribbon';
+                                if (n.includes('radiolog') || n.includes('x-ray') || n.includes('mri') || n.includes('scan')) return 'fas fa-x-ray';
+                                if (n.includes('surg') || n.includes('operation') || n.includes('laparo')) return 'fas fa-scalpel';
+                                if (n.includes('emerg') || n.includes('trauma') || n.includes('casualty')) return 'fas fa-ambulance';
+                                if (n.includes('blood') || n.includes('lab')) return 'fas fa-vials';
+                                if (n.includes('physio') || n.includes('rehab')) return 'fas fa-running';
+                                return 'fas fa-clinic-medical';
+                            }
+
+                            // Render any newly added/other departments
+                            Object.keys(doctorsByDept).forEach(deptKey => {
+                                if (!renderedDepts.has(deptKey) && doctorsByDept[deptKey].length > 0) {
+                                    const deptObj = departmentInfo[deptKey] || {};
+                                    const autoIcon = getAutoIconForDept(deptObj.name || deptKey);
+                                    const fallbackInfo = {
+                                        name: deptObj.name || deptKey.toUpperCase().replace(/-/g, ' '),
+                                        icon: deptObj.icon || autoIcon,
+                                        color: deptObj.color || '#d63384'
+                                    };
+                                    renderDeptSection(deptKey, fallbackInfo, doctorsByDept[deptKey]);
+                                }
                             });
 
                             updateResultCount(filteredDoctors.length);
@@ -3793,27 +3888,52 @@
 
                         let results = doctorsData;
 
+                        // Filter out inactive doctors
+                        results = results.filter(doctor => doctor.status !== 'inactive');
+
                         // Apply search filter
                         if (currentSearch && currentSearch.trim() !== '') {
                             const searchTerm = currentSearch.toLowerCase().trim();
-                            console.log("Searching for:", searchTerm);
 
                             results = results.filter(doctor => {
-                                return doctor.name.toLowerCase().includes(searchTerm) ||
-                                    doctor.specialty.toLowerCase().includes(searchTerm) ||
-                                    departmentInfo[doctor.department].name.toLowerCase().includes(searchTerm);
+                                const deptName = departmentInfo[doctor.department]?.name || doctor.department || '';
+                                return (doctor.name || '').toLowerCase().includes(searchTerm) ||
+                                    (doctor.specialty || '').toLowerCase().includes(searchTerm) ||
+                                    deptName.toLowerCase().includes(searchTerm);
                             });
-
-                            console.log("Found after search:", results.length, "doctors");
                         }
 
                         // Apply department filter
                         if (currentFilter && currentFilter !== 'all') {
                             results = results.filter(doctor => doctor.department === currentFilter);
-                            console.log("Found after department filter:", results.length, "doctors");
                         }
 
                         renderDoctors(results);
+
+                        if (currentFilter !== 'all' && results.length > 0) {
+                            setTimeout(() => {
+                                scrollToDepartment(currentFilter);
+                            }, 300);
+                        }
+                    }
+
+                    function scrollToDepartment(departmentId) {
+                        const section = document.getElementById(departmentId);
+                        if (section) {
+                            section.classList.add('section-highlight');
+                            const headerHeight = 180;
+                            const elementPosition = section.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+
+                            setTimeout(() => {
+                                section.classList.remove('section-highlight');
+                            }, 2000);
+                        }
                     }
 
                     // Setup event listeners
@@ -4007,134 +4127,5 @@ Please share available slots.`;
                         window.open(whatsappURL, "_blank");
                     });
                 </script>
-
-                <SCript>// Modify the existing filterDoctors function to include scrolling
-                    function filterDoctors() {
-                        console.log("Filtering doctors...");
-                        console.log("Search term:", currentSearch);
-                        console.log("Department filter:", currentFilter);
-
-                        let results = doctorsData;
-
-                        // Apply search filter
-                        if (currentSearch && currentSearch.trim() !== '') {
-                            const searchTerm = currentSearch.toLowerCase().trim();
-                            console.log("Searching for:", searchTerm);
-
-                            results = results.filter(doctor => {
-                                return doctor.name.toLowerCase().includes(searchTerm) ||
-                                    doctor.specialty.toLowerCase().includes(searchTerm) ||
-                                    departmentInfo[doctor.department].name.toLowerCase().includes(searchTerm);
-                            });
-
-                            console.log("Found after search:", results.length, "doctors");
-                        }
-
-                        // Apply department filter
-                        if (currentFilter && currentFilter !== 'all') {
-                            results = results.filter(doctor => doctor.department === currentFilter);
-                            console.log("Found after department filter:", results.length, "doctors");
-                        }
-
-                        renderDoctors(results);
-
-                        // Scroll to the department section if not "all"
-                        if (currentFilter !== 'all' && results.length > 0) {
-                            // Wait a bit for the DOM to update with the filtered results
-                            setTimeout(() => {
-                                scrollToDepartment(currentFilter);
-                            }, 300);
-                        }
-                    }
-
-                    // Function to smoothly scroll to the department section
-                    function scrollToDepartment(departmentId) {
-                        const section = document.getElementById(departmentId);
-
-                        if (section) {
-                            // Highlight the section with a temporary animation
-                            section.classList.add('section-highlight');
-
-                            // Calculate offset for fixed header (adjust based on your header height)
-                            const headerHeight = 180; // You may need to adjust this value
-                            const elementPosition = section.getBoundingClientRect().top;
-                            const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
-
-                            // Smooth scroll to the section
-                            window.scrollTo({
-                                top: offsetPosition,
-                                behavior: 'smooth'
-                            });
-
-                            // Remove highlight after animation
-                            setTimeout(() => {
-                                section.classList.remove('section-highlight');
-                            }, 2000);
-                        }
-                    }
-
-                    // Update the setupEventListeners function to handle scrolling
-                    function setupEventListeners() {
-                        console.log("Setting up event listeners...");
-
-                        // SEARCH INPUT - FIXED VERSION
-                        const searchInput = document.getElementById('searchInput');
-                        console.log("Search input element:", searchInput);
-
-                        if (searchInput) {
-                            // Clear any existing event listeners first
-                            const newSearchInput = searchInput.cloneNode(true);
-                            searchInput.parentNode.replaceChild(newSearchInput, searchInput);
-
-                            // Add new event listener
-                            (document.getElementById('searchInput') || { addEventListener: function () {} }).addEventListener('input', function (e) {
-                                currentSearch = this.value;
-                                console.log("Search input changed to:", currentSearch);
-                                filterDoctors();
-                            });
-
-                            // Also add keyup for immediate feedback
-                            (document.getElementById('searchInput') || { addEventListener: function () {} }).addEventListener('keyup', function (e) {
-                                currentSearch = this.value;
-                                console.log("Search keyup:", currentSearch);
-                                filterDoctors();
-                            });
-                        }
-
-                        // Department buttons
-                        document.querySelectorAll('.dept-btn').forEach(btn => {
-                            btn.addEventListener('click', function () {
-                                // Remove active from all buttons
-                                document.querySelectorAll('.dept-btn').forEach(b => b.classList.remove('active'));
-                                this.classList.add('active');
-
-                                // Update filter
-                                currentFilter = this.dataset.dept;
-                                console.log("Department selected:", currentFilter);
-
-                                // Scroll to the department section if not "all"
-                                if (currentFilter !== 'all') {
-                                    // Check if the section already exists
-                                    const section = document.getElementById(currentFilter);
-                                    if (section) {
-                                        // If section exists, scroll to it first
-                                        scrollToDepartment(currentFilter);
-                                    }
-                                }
-
-                                filterDoctors();
-                            });
-                        });
-
-                        // Reset button
-                        (document.getElementById('resetBtn') || { addEventListener: function () {} }).addEventListener('click', function () {
-                            resetFilters();
-                        });
-
-                        // Reset from no results button
-                        (document.getElementById('resetFromNoResults') || { addEventListener: function () {} }).addEventListener('click', function () {
-                            resetFilters();
-                        });
-                    }</SCript>
 </body>
 </html>

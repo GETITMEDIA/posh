@@ -32,15 +32,6 @@ header h1 {
   text-shadow: 0 2px 6px rgba(233, 30, 99, 0.35) !important;
 }
 
-header a[href*="appointment.html"] {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.45) !important;
-  transition: all 0.3s ease !important;
-}
-
-header a[href*="appointment.html"]:hover {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 6px 18px rgba(233, 30, 99, 0.6) !important;
-}
 
 header nav {
   background-color: #59016b !important;
@@ -149,71 +140,223 @@ nav ul li .dropdown {
   }
 }
 
-/* =========================
-   MOBILE NAV STYLES
-   ========================= */
+/* =========================================================
+   MOBILE NAV PANEL — LIGHT THEME
+   ---------------------------------------------------------
+   Light container, close button pinned to the right, and the
+   dropdown "+" replaced by a chevron in a soft pill at the
+   end of the row. Everything here is CSS-only so all pages
+   pick it up from the shared markup without edits.
+   ========================================================= */
 
-#mobilePanel {
-  overflow-y: auto;
+:root {
+  --posh-panel-bg: #ffffff;
+  --posh-panel-tint: #faf5fd;
+  --posh-ink: #3d0a4a;
+  --posh-ink-soft: #6b4a76;
+  --posh-accent: #a3129c;
+  --posh-line: #efe4f4;
 }
 
-/* Links & buttons */
+/* Backdrop */
+#mobileMenu {
+  background: rgba(43, 0, 47, 0.45) !important;
+  backdrop-filter: blur(2px);
+}
+
+/* The panel itself */
+#mobilePanel {
+  width: 300px !important;
+  max-width: 86vw;
+  background: var(--posh-panel-bg) !important;
+  color: var(--posh-ink) !important;
+  padding: 0 !important;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  box-shadow: 8px 0 32px rgba(43, 0, 47, 0.28);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- Panel header: logo left, close button right ---- */
+#mobilePanel > .flex:first-child {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  margin: 0 !important;
+  padding: 14px 16px;
+  background: var(--posh-panel-tint);
+  border-bottom: 1px solid var(--posh-line);
+  gap: 12px;
+}
+
+/* The logo must not stretch and push the close button off-centre */
+#mobilePanel > .flex:first-child img {
+  height: 40px;
+  width: auto;
+  flex: 0 0 auto;
+}
+
+/* Close button — a round tinted target at the far right.
+   The generic full-width rule below must not touch it. */
+#mobilePanel #closeMenu {
+  width: 36px !important;
+  height: 36px;
+  flex: 0 0 auto;
+  margin-left: auto;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+  font-size: 22px !important;
+  line-height: 1;
+  color: var(--posh-accent) !important;
+  background: #ffffff !important;
+  border: 1px solid var(--posh-line) !important;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(43, 0, 47, 0.12);
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+#mobilePanel #closeMenu:hover,
+#mobilePanel #closeMenu:focus-visible {
+  background: var(--posh-accent) !important;
+  color: #ffffff !important;
+  transform: rotate(90deg);
+}
+
+/* ---- Nav list ---- */
+#mobilePanel > ul {
+  margin: 0 !important;
+  padding: 6px 10px 24px !important;
+  list-style: none;
+}
+
+#mobilePanel > ul > li {
+  border-bottom: 1px solid var(--posh-line) !important;
+}
+
+#mobilePanel > ul > li:last-child {
+  border-bottom: 0 !important;
+}
+
+/* Top-level links & dropdown buttons */
 #mobilePanel a,
 #mobilePanel button {
   width: 100%;
   display: block;
-  padding: 12px 0;
-  color: #ffffff;
+  padding: 13px 10px;
+  color: var(--posh-ink) !important;
   background: none;
   border: none;
+  border-radius: 8px;
   text-align: left;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-shadow: none;
+  filter: none;
+  animation: none;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-/* Divider line */
-#mobilePanel ul>li {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+#mobilePanel a:hover,
+#mobilePanel button:hover,
+#mobilePanel a:focus-visible {
+  background: var(--posh-panel-tint);
+  color: var(--posh-accent) !important;
 }
 
-/* Dropdown toggle */
+/* ---- Dropdown toggle: chevron in a soft pill at the end ---- */
 .dropdown-toggle {
-  display: flex;
+  display: flex !important;
   justify-content: space-between;
   align-items: center;
-  font-weight: 600;
+  gap: 10px;
   text-transform: uppercase;
 }
 
-/* + icon */
+/* The markup ships a literal "+" inside the span. Hide the glyph
+   and draw a chevron instead, so no page markup has to change. */
 .dropdown-toggle span {
-  font-size: 18px;
-  transition: transform 0.3s ease;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0 !important;
+  border-radius: 50%;
+  background: var(--posh-panel-tint);
+  border: 1px solid var(--posh-line);
+  transition: transform 0.3s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
-/* Rotate + */
+.dropdown-toggle span::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid var(--posh-accent);
+  border-bottom: 2px solid var(--posh-accent);
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+/* Open state: chevron points up */
 .dropdown-toggle.active span {
-  transform: rotate(45deg);
+  transform: rotate(180deg);
+  background: var(--posh-accent);
+  border-color: var(--posh-accent);
 }
 
-/* Dropdown container */
+.dropdown-toggle.active span::before {
+  border-color: #ffffff;
+}
+
+.dropdown-toggle.active {
+  color: var(--posh-accent) !important;
+}
+
+/* ---- Sub-menu: its own light container ---- */
 .mobile-dropdown {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.35s ease;
-  margin-left: 12px;
-  padding-left: 10px;
-  border-left: 2px solid rgba(255, 255, 255, 0.2);
+  margin: 0 0 0 6px;
+  padding-left: 0;
+  border-left: 0;
+  list-style: none;
 }
 
-/* Open dropdown */
 .mobile-dropdown.open {
-  max-height: 1000px;
+  max-height: 1400px;
+  overflow-y: auto;
+  margin-bottom: 10px;
 }
 
-/* Dropdown links */
+.mobile-dropdown li {
+  border-bottom: 0 !important;
+}
+
 .mobile-dropdown li a {
-  font-size: 13px;
-  padding: 8px 0;
+  font-size: 12.5px !important;
+  font-weight: 500 !important;
+  padding: 9px 12px !important;
   text-transform: none;
+  color: var(--posh-ink-soft) !important;
+  border-radius: 6px;
+}
+
+.mobile-dropdown li a:hover {
+  background: #ffffff !important;
+  color: var(--posh-accent) !important;
+}
+
+/* Give the open sub-list a tinted container of its own */
+.mobile-dropdown.open {
+  background: var(--posh-panel-tint);
+  border: 1px solid var(--posh-line);
+  border-radius: 10px;
+  padding: 6px;
 }
 
 
@@ -686,19 +829,224 @@ header .text-sm {
    ========================================================= */
 @media (max-width: 1024px) {
 
-  /* Stack top info bar items vertically */
-  header .max-w-7xl.mx-auto.px-4.py-3 {
-    flex-direction: column;
+  /* ---- Shared below desktop: chrome that is the same on
+     phone and tablet. The bar's *arrangement* differs, so it
+     lives in the two range blocks further down. ---- */
+
+  /* Social icons — compact row */
+  .card ul {
+    gap: 8px;
+    margin-bottom: 2px;
+  }
+
+  .social {
+    height: 30px;
+    width: 30px;
+    font-size: 15px;
+    line-height: 30px;
+  }
+
+  /* Hamburger button */
+  #menuBtn {
+    display: flex !important;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    font-size: 22px !important;
+    padding: 0 !important;
+    border: 2px solid rgba(255, 255, 255, 0.35) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    border-radius: 8px !important;
+    cursor: pointer;
+    line-height: 1;
+    width: 38px;
+    height: 38px;
+  }
+
+  /* Ambulance gif — the "Ambulance Service" label is dropped */
+  header img[alt="Ambulance Service"] {
+    height: 30px !important;
+  }
+
+  header img[alt="Ambulance Service"] + span {
+    display: none !important;
+  }
+
+
+
+  /* ---- BRANDING ROW ---- */
+  header .bg-white {
+    padding: 10px 16px !important;
+  }
+
+  .logo-header {
+    gap: 12px !important;
+    width: 100% !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .logo-header > a:first-child img,
+  .logo-header > a:first-child {
+    flex-shrink: 0;
+  }
+
+  .logo-header > a:first-child img {
+    height: 45px !important;
+    width: auto !important;
+  }
+
+  .logo-header h1 {
+    line-height: 1.3 !important;
+    text-align: center !important;
+    letter-spacing: normal !important;
+    text-shadow: none !important;
+    flex: 1;
+    min-width: 0;
+    overflow-wrap: break-word;
+  }
+
+  .logo-header > img:last-child {
+    height: 40px !important;
+    width: auto !important;
+    flex-shrink: 0;
+  }
+
+  /* Hide desktop nav — both phone and tablet use the panel */
+  header nav {
+    display: none !important;
+  }
+}
+
+/* =========================================================
+   TABLET (768px - 1024px) — TWO COMPACT ROWS
+   ---------------------------------------------------------
+   A tablet has plenty of horizontal room, so the phone's
+   four-row stack left a tall band of empty purple and pushed
+   the page content below the fold. Pack the bar into two
+   rows instead:
+
+     row 1   24/7 badge | phone numbers | social icons
+     row 2   hamburger  |               | ambulance + appointment
+
+   One row would need roughly 900px, so it would break at the
+   768px end of this range — two rows stay stable across it.
+   ========================================================= */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  header .max-w-7xl.mx-auto.px-4.py-3 {
+    display: grid !important;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas:
+      "emerg phone  social"
+      "menu  right  right";
+    align-items: center;
+    gap: 8px 16px;
+    padding: 10px 20px;
+  }
+
+  header .max-w-7xl.mx-auto.px-4.py-3 > #menuBtn        { grid-area: menu; justify-self: start; }
+  header .max-w-7xl.mx-auto.px-4.py-3 > .card           { grid-area: social; justify-self: end; }
+  header .max-w-7xl.mx-auto.px-4.py-3 > div:nth-of-type(2) { grid-area: emerg; justify-self: start; }
+
+  header .max-w-7xl.mx-auto.px-4.py-3 > .header-call-now {
+    grid-area: phone;
+    justify-self: center;
+    text-align: center;
+    font-size: clamp(12px, 1.45vw, 14px);
+    line-height: 1.4;
+  }
+
+  header .max-w-7xl.mx-auto.px-4.py-3 > .flex:last-child {
+    grid-area: right;
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .emergency-icon {
+    height: 44px;
+    width: auto;
+  }
+
+  /* Branding row can afford real sizes at this width */
+  header .bg-white {
+    padding: 12px 24px !important;
+  }
+
+  .logo-header {
+    gap: 20px !important;
+  }
+
+  .logo-header > a:first-child img { height: 58px !important; }
+  .logo-header > img:last-child    { height: 52px !important; }
+  .logo-header h1                  { font-size: 1.25rem !important; }
+}
+
+/* =========================================================
+   PHONE (≤ 767px) — FOUR STACKED ROWS
+   ---------------------------------------------------------
+   Explicit grid so the rows land in the approved order and the
+   hamburger sits on the bottom row beside the ambulance and the
+   Appointment button, even though in the DOM it is the bar's
+   first child. A column flex could not do this and also let the
+   phone line wrap, because align-items:center sizes each child
+   to fit-content, so the long number string overflowed.
+   ========================================================= */
+@media (max-width: 767px) {
+
+  header .max-w-7xl.mx-auto.px-4.py-3 {
+    display: grid !important;
+    position: relative;
+    grid-template-columns: max-content 1fr max-content;
+    grid-template-areas:
+      "social . ambulance"
+      "phone  phone phone"
+      "menu   .     appt";
+    align-items: center;
+    justify-items: center;
+    gap: 8px;
     padding: 10px 12px;
     text-align: center;
   }
 
-  .header-call-now {
+  header .max-w-7xl.mx-auto.px-4.py-3 > #menuBtn        { grid-area: menu; justify-self: start; }
+  header .max-w-7xl.mx-auto.px-4.py-3 > .card           { grid-area: social; justify-self: start; }
+  header .max-w-7xl.mx-auto.px-4.py-3 > .card ul        { flex-wrap: nowrap !important; gap: 6px !important; }
+  header .max-w-7xl.mx-auto.px-4.py-3 > .card .social   { height: 26px !important; width: 26px !important; font-size: 13px !important; line-height: 26px !important; }
+  header .max-w-7xl.mx-auto.px-4.py-3 > div:nth-of-type(2) { 
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Phone line */
+  header .max-w-7xl.mx-auto.px-4.py-3 > .header-call-now {
+    grid-area: phone;
+    justify-self: stretch;
+    width: 100%;
+    overflow-wrap: break-word;
     font-size: 12px;
     line-height: 1.4;
+  }
+
+  /* Right div has both Ambulance and Appt Button.
+     We use display:contents so they can act as separate grid items. */
+  header .max-w-7xl.mx-auto.px-4.py-3 > .flex:last-child {
+    display: contents;
+  }
+  
+  header .max-w-7xl.mx-auto.px-4.py-3 > .flex:last-child > span {
+    grid-area: ambulance;
+    justify-self: end;
+  }
+
+  header .max-w-7xl.mx-auto.px-4.py-3 > .flex:last-child > a {
+    grid-area: appt;
+    justify-self: end;
   }
 
   .emergency-icon {
@@ -706,89 +1054,89 @@ header .text-sm {
     width: auto;
   }
 
-  header img[alt="Ambulance Service"] {
-    height: 35px;
-  }
-
-  header img[alt="Ambulance Service"]+span {
-    display: none;
-  }
-
-  /* Appointment button — matched on suffix so it also works
-     from pages inside a sub-folder (../appointment.html) */
-  header a[href$="appointment.html"] {
-    font-size: 12px;
-    padding: 6px 14px;
-    border-radius: 6px;
-  }
-
-  /* The desktop nav is hidden below 1024px (assets/css/mobile-header.css)
-     while Tailwind's lg: breakpoint in this project is 992px, so between
-     992px and 1024px neither the nav nor the burger was shown. Keep the
-     burger visible for the whole range in which the nav is hidden. */
-  #menuBtn {
-    display: block;
-    font-size: 18px;
-  }
+  .logo-header h1 { font-size: 0.8rem !important; }
 }
 
-/* The header must never be wider than the viewport. Scoped to the
-   widths where the top bar stacks, so the centred desktop container
-   is left exactly as it was. */
-@media (max-width: 1024px) {
-
-  header,
-  header .logo-header,
-  header .max-w-7xl {
-    max-width: 100%;
-  }
-}
-
-/* Branding row: let the hospital name shrink/wrap instead of
-   overflowing on narrow screens. Desktop sizing is untouched. */
-.logo-header>div {
-  min-width: 0;
-}
-
-.logo-header h1 {
-  overflow-wrap: anywhere;
-}
-
-@media (max-width: 1024px) {
-  .logo-header {
-    gap: 20px;
-  }
-
-  .logo-header h1 {
-    font-size: 1.5rem;
-    line-height: 1.25;
-  }
-}
-
+/* ---- MOBILE (≤ 767px) ---- */
 @media (max-width: 767px) {
+
+  header .bg-white {
+    padding: 8px 12px !important;
+  }
+
   .logo-header {
-    gap: 12px;
+    gap: 8px !important;
+  }
+
+  .logo-header > a:first-child img {
+    height: 38px !important;
   }
 
   .logo-header h1 {
-    font-size: 1.15rem;
-    line-height: 1.3;
-    letter-spacing: normal;
+    font-size: clamp(0.7rem, 2.1vw, 1.05rem) !important;
+    line-height: 1.2 !important;
   }
 
-  .logo-header img {
-    height: 3rem;
+  .logo-header > img:last-child {
+    height: 35px !important;
   }
 
-  /* keep the appointment button and its neighbours inside the bar */
-  header .max-w-7xl>div {
-    flex-wrap: wrap;
-    justify-content: center;
+  .social {
+    height: 28px;
+    width: 28px;
+    font-size: 14px;
+    line-height: 28px;
   }
 
-  .appt-button {
-    min-width: 110px;
-    padding: 10px;
+  .header-call-now {
+    font-size: 11px;
+  }
+
+  #menuBtn {
+    width: 34px;
+    height: 34px;
+    font-size: 20px !important;
+  }
+}
+
+/* ---- SMALL PHONES (≤ 480px) ---- */
+@media (max-width: 480px) {
+
+  .logo-header h1 {
+    font-size: 0.6rem !important;
+  }
+
+  .logo-header > a:first-child img {
+    height: 32px !important;
+  }
+
+  .logo-header > img:last-child {
+    height: 30px !important;
+  }
+
+  .logo-header {
+    gap: 6px !important;
+  }
+
+  .social {
+    height: 26px;
+    width: 26px;
+    font-size: 13px;
+    line-height: 26px;
+  }
+
+  .header-call-now {
+    font-size: 10px;
+  }
+
+  #menuBtn {
+    width: 32px;
+    height: 32px;
+    font-size: 18px !important;
+  }
+
+  .emergency-icon {
+    height: 30px;
   }
 }
 
@@ -1089,3 +1437,157 @@ header {
 /* Department pages — emergency hero is full-bleed, 
    but the .container inside should already be 1200px
    via the @media rule above. */
+
+/* Remove legacy container effect around the appointment button link */
+header a[href*="appointment.html"] {
+  box-shadow: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  display: inline-block !important;
+}
+header a[href*="appointment.html"]:hover {
+  box-shadow: none !important;
+  background: transparent !important;
+  transform: none !important;
+}
+
+/* =========================================================
+   GLOBAL BUTTON TWEAKS
+   ========================================================= */
+
+/* 1. Reduce button sizes globally */
+.btn, .btn-primary, .btn-secondary, .btn-appoint, .appointment-btn, .whatsapp-btn, .ortho-appointment-btn {
+  padding: 8px 18px !important;
+  font-size: 14px !important;
+  transition: all 0.3s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px; /* space between text and existing icon */
+}
+
+/* 2. Animate existing icons (if any) on hover */
+.btn i, .btn-primary i, .btn-secondary i, .btn-appoint i, .appointment-btn i, .whatsapp-btn i, .ortho-appointment-btn i {
+  transition: transform 0.3s ease !important;
+}
+
+.btn:hover i, .btn-primary:hover i, .btn-secondary:hover i, .btn-appoint:hover i, .appointment-btn:hover i, .whatsapp-btn:hover i, .ortho-appointment-btn:hover i {
+  transform: translateX(6px) !important;
+}
+
+/* 3. Add sliding arrow for buttons without an <i> icon */
+.btn:not(:has(i))::after, 
+.btn-primary:not(:has(i))::after, 
+.btn-secondary:not(:has(i))::after, 
+.btn-appoint:not(:has(i))::after, 
+.whatsapp-btn:not(:has(i))::after, 
+.ortho-appointment-btn:not(:has(i))::after {
+  content: '\f061'; /* FontAwesome right arrow */
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  display: inline-block;
+  opacity: 0;
+  max-width: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+  font-size: 13px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.btn:not(:has(i)):hover::after, 
+.btn-primary:not(:has(i)):hover::after, 
+.btn-secondary:not(:has(i)):hover::after, 
+.btn-appoint:not(:has(i)):hover::after, 
+.whatsapp-btn:not(:has(i)):hover::after, 
+.ortho-appointment-btn:not(:has(i)):hover::after {
+  opacity: 1;
+  max-width: 20px;
+  margin-left: 6px;
+  transform: translateX(0);
+}
+
+/* =========================================================
+   USER FEEDBACK FIXES (Global)
+   ========================================================= */
+
+/* 1. Reduce .pa-btn (Explore More) size */
+.pa-btn {
+  padding: 8px 18px !important;
+  font-size: 14px !important;
+}
+
+/* 2. Make department cards smaller on mobile */
+@media (max-width: 768px) {
+  .dept-item {
+    padding: 12px 10px !important;
+    gap: 10px !important;
+  }
+  .dept-item .icon-box {
+    width: 50px !important;
+    height: 50px !important;
+    min-width: 50px !important;
+  }
+  .dept-item .icon-box img {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  .dept-item .dept-name {
+    font-size: 0.75rem !important;
+    margin: 0 0 4px !important;
+  }
+  .dept-item p.dept-desc {
+    font-size: 0.7rem !important;
+    margin: 0 0 8px !important;
+    line-height: 1.4 !important;
+  }
+  .dept-item .dept-explore {
+    font-size: 0.7rem !important;
+    padding: 4px 6px 4px 10px !important;
+  }
+  .dept-item .dept-explore-arr {
+    width: 18px !important;
+    height: 18px !important;
+  }
+}
+
+/* 3. Make video background text white in Consultants section */
+.consultants-section .section-header h2,
+.consultants-section .section-header h2::after,
+.consultants-section .section-header p {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6) !important;
+}
+
+/* 4. Reduce APPOINTMENT button size on mobile */
+@media (max-width: 768px) {
+  .appt-button {
+    min-width: 100px !important;
+    padding: 6px 10px !important;
+    height: 30px !important;
+    font-size: 10px !important;
+  }
+  .appt-button .ab-state {
+    padding-left: 20px !important;
+  }
+  .appt-button .ab-icon {
+    transform: scale(1) !important;
+  }
+  .appt-button:hover .ab-state--default .ab-icon {
+    transform: rotate(45deg) scale(1) !important;
+  }
+}
+
+/* 5. Move profile image to top when stacked on mobile */
+@media (max-width: 1200px) {
+  .profile-card {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .profile-card .profile-image-wrapper {
+    order: -1 !important;
+    margin-bottom: 20px;
+  }
+}

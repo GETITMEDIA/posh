@@ -1507,197 +1507,6 @@
       }
     }
 
-    /* ===============================
-    MOBILE HEADER FIXES
-    (max-width: 1024px)
-  ================================ */
-    @media (max-width: 1024px) {
-
-      /* Prevent horizontal scroll */
-      body {
-        overflow-x: hidden;
-      }
-
-      /* HEADER STACKING */
-      header {
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-      }
-
-      /* -------- TOP INFO BAR -------- */
-      header .text-sm {
-        font-size: 12px;
-        line-height: 1.4;
-      }
-
-      /* Stack items vertically */
-      header .max-w-7xl.mx-auto.px-4.py-3 {
-        flex-direction: column;
-        text-align: center;
-        gap: 8px;
-      }
-
-      /* Hide ambulance text (emoji only) */
-      header span:has(🚑) {
-        display: none;
-      }
-
-      /* Appointment button smaller */
-      header a[href="appointment.html"] {
-        font-size: 12px;
-        padding: 6px 12px;
-      }
-
-      /* -------- BRANDING ROW -------- */
-      header .bg-white .max-w-7xl {
-        flex-direction: row;
-        align-items: center;
-        gap: 8px;
-      }
-
-      /* Logo sizes */
-      header img {
-        height: 42px;
-      }
-
-      /* Title resize */
-      header h1 {
-        font-size: 18px;
-        line-height: 1.2;
-      }
-
-      header p {
-        font-size: 11px;
-        line-height: 1.2;
-      }
-
-      /* -------- DESKTOP NAV OFF -------- */
-      header nav {
-        display: none;
-      }
-    }
-
-    /* ===============================
-    MOBILE MENU PANEL
-  ================================ */
-    #mobilePanel {
-      box-shadow: 4px 0 20px rgba(0, 0, 0, 0.5);
-    }
-
-    /* Menu links */
-    #mobilePanel ul li a {
-      display: block;
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    }
-
-    /* Hover */
-    #mobilePanel ul li a:hover {
-      color: #f9a8d4;
-    }
-
-    /* Close button */
-    #closeMenu {
-      line-height: 1;
-    }
-
-    /* ===============================
-    SMALL DEVICES (≤ 480px)
-  ================================ */
-    @media (max-width: 480px) {
-
-      /* Reduce header padding */
-      header .bg-white {
-        padding: 12px 8px;
-      }
-
-      /* Smaller title */
-      header h1 {
-        font-size: 16px;
-      }
-
-      header p {
-        font-size: 10px;
-      }
-
-      /* Mobile menu width */
-      #mobilePanel {
-        width: 90%;
-      }
-    }
-
-    #mobilePanel ul {
-      margin-top: 10px;
-    }
-
-    #mobilePanel ul li {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    }
-
-    #mobilePanel ul li a {
-      display: block;
-      padding: 14px 6px;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      color: #ffffff;
-    }
-
-    #mobilePanel ul li a:hover {
-      color: #f9a8d4;
-    }
-
-    #mobileMenu {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-    }
-
-    #mobileMenu::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(255, 223, 223, 0.7);
-    }
-
-    #mobilePanel {
-      position: relative;
-      width: 90%;
-      max-width: 320px;
-      height: 100%;
-      background: linear-gradient(180deg, #59016b, #2b002f);
-      padding: 20px;
-      overflow-y: auto;
-      box-shadow: 6px 0 30px rgba(0, 0, 0, 0.6);
-    }
-
-    #mobilePanel ul {
-      margin-top: 10px;
-    }
-
-    #mobilePanel ul li {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    }
-
-    #mobilePanel ul li a {
-      display: block;
-      padding: 14px 6px;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      color: #ffffff;
-    }
-
-    #mobilePanel ul li a:hover {
-      color: #f9a8d4;
-    }
-
-    @media (max-width: 480px) {
-      header img[alt="Ambulance Service"] {
-        height: 20px;
-      }
-    }
 
     /* Smooth fade mask before/after the ambulance gif so its edges blend into the header bg */
     .header-ambulance-wrap {
@@ -1826,52 +1635,6 @@
 
     }
 
-    @media (max-width: 1024px) {
-
-      /* Stack items vertically */
-      header .max-w-7xl.mx-auto.px-4.py-3 {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        padding: 10px 12px;
-        text-align: center;
-      }
-
-      /* Phone text */
-      header .text-center.font-semibold {
-        font-size: 12px;
-        line-height: 1.4;
-      }
-
-      /* Emergency icon */
-      .emergency-icon {
-        height: 36px;
-        width: auto;
-      }
-
-      /* Ambulance gif */
-      header img[alt="Ambulance Service"] {
-        height: 35px;
-      }
-
-      /* Hide ambulance text on small screens */
-      header img[alt="Ambulance Service"]+span {
-        display: none;
-      }
-
-      /* Appointment button */
-      header a[href="appointment.html"] {
-        font-size: 12px;
-        padding: 6px 14px;
-        border-radius: 6px;
-      }
-
-      /* Hamburger */
-      #menuBtn {
-        font-size: 18px;
-      }
-    }
 
     .hero-title {
       font-size: clamp(2.5rem, 6vw, 5.5rem);
@@ -2254,6 +2017,13 @@
       <!-- ROW 1 : TOP INFO -->
       <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-4 text-sm"
         style="background-color: #8e09a8c2;">
+
+        <!-- MOBILE HAMBURGER -->
+        <button id="menuBtn" class="lg:hidden text-white text-3xl font-bold focus:outline-none" type="button"
+          aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+          &#9776;
+        </button>
+
         <!-- From Uiverse.io by jolprince_5263 -->
         <div class="card">
           <ul>
@@ -2300,10 +2070,6 @@
 
         <!-- Right -->
         <div class="flex items-center gap-4">
-          <button id="menuBtn" class="lg:hidden text-white text-3xl font-bold focus:outline-none" type="button"
-            aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
-            &#9776;
-          </button>
           <span class="flex items-center gap-2 font-semibold">
             <span class="header-ambulance-wrap">
               <img decoding="async" src="assets/images/ambulance.gif" alt="Ambulance Service"
@@ -3707,72 +3473,6 @@
         }
       }
 
-      /* =========================
-    MOBILE NAV STYLES
-    ========================= */
-
-      #mobilePanel {
-        overflow-y: auto;
-      }
-
-      /* Links & buttons */
-      #mobilePanel a,
-      #mobilePanel button {
-        width: 100%;
-        display: block;
-        padding: 12px 0;
-        color: #ffffff;
-        background: none;
-        border: none;
-        text-align: left;
-      }
-
-      /* Divider line */
-      #mobilePanel ul>li {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-      }
-
-      /* Dropdown toggle */
-      .dropdown-toggle {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-weight: 600;
-        text-transform: uppercase;
-      }
-
-      /* + icon */
-      .dropdown-toggle span {
-        font-size: 18px;
-        transition: transform 0.3s ease;
-      }
-
-      /* Rotate + */
-      .dropdown-toggle.active span {
-        transform: rotate(45deg);
-      }
-
-      /* Dropdown container */
-      .mobile-dropdown {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.35s ease;
-        margin-left: 12px;
-        padding-left: 10px;
-        border-left: 2px solid rgba(255, 255, 255, 0.2);
-      }
-
-      /* Open dropdown */
-      .mobile-dropdown.open {
-        max-height: 1000px;
-      }
-
-      /* Dropdown links */
-      .mobile-dropdown li a {
-        font-size: 13px;
-        padding: 8px 0;
-        text-transform: none;
-      }
     </style>
     <style>
       nav ul li {
@@ -3829,72 +3529,6 @@
         }
       }
 
-      /* =========================
-    MOBILE NAV STYLES
-    ========================= */
-
-      #mobilePanel {
-        overflow-y: auto;
-      }
-
-      /* Links & buttons */
-      #mobilePanel a,
-      #mobilePanel button {
-        width: 100%;
-        display: block;
-        padding: 12px 0;
-        color: #ffffff;
-        background: none;
-        border: none;
-        text-align: left;
-      }
-
-      /* Divider line */
-      #mobilePanel ul>li {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-      }
-
-      /* Dropdown toggle */
-      .dropdown-toggle {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-weight: 600;
-        text-transform: uppercase;
-      }
-
-      /* + icon */
-      .dropdown-toggle span {
-        font-size: 18px;
-        transition: transform 0.3s ease;
-      }
-
-      /* Rotate + */
-      .dropdown-toggle.active span {
-        transform: rotate(45deg);
-      }
-
-      /* Dropdown container */
-      .mobile-dropdown {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.35s ease;
-        margin-left: 12px;
-        padding-left: 10px;
-        border-left: 2px solid rgba(255, 255, 255, 0.2);
-      }
-
-      /* Open dropdown */
-      .mobile-dropdown.open {
-        max-height: 1000px;
-      }
-
-      /* Dropdown links */
-      .mobile-dropdown li a {
-        font-size: 13px;
-        padding: 8px 0;
-        text-transform: none;
-      }
 
       /* From Uiverse.io by StealthWorm */
 

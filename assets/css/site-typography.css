@@ -1,49 +1,230 @@
 /* =========================================================
    POSH — GLOBAL TYPOGRAPHY
    ---------------------------------------------------------
-   Single source of truth for the site's font FAMILY.
+   Single source of truth for the site's font FAMILY and
+   responsive type SCALE.
 
    The reference is the hospital name in the approved
    index.html header:
 
        "The POSH - Pondy Ortho Speciality Hospital Pvt Ltd"
 
-   which renders in Roboto - set by "body { font-family:
+   which renders in Roboto — set by "body { font-family:
    Roboto, sans-serif }" in assets/css/index.css and
    assets/css/header.css. That exact family is reproduced here
    as --posh-font and reused everywhere, so every page renders
    in one family.
 
-   Font WEIGHTS, SIZES and the existing visual hierarchy are
-   deliberately NOT set here — they stay exactly as each page
-   already defines them.
-
    The --font-* aliases below exist because the department
    pages were written against a seven-font token system.
    Pointing every token at --posh-font unifies the family
    without touching any of their size/weight rules.
+
+   ── RESPONSIVE TYPE SCALE ──────────────────────────────
+   Defined once as CSS custom properties using clamp() so
+   sizes scale fluidly between breakpoints:
+
+     Breakpoint    Viewport
+     ──────────    ────────
+     Mobile        ≤ 480px  (verified at 320 / 360 / 390)
+     Tablet        481–1024px
+     Desktop       ≥ 1025px
+
+   Desktop sizes are preserved; only tablet/mobile shrink.
+   No colours, fonts, spacing, or layout are changed here.
    ========================================================= */
 
+/* ─── 1. FONT FAMILY TOKENS ─────────────────────────── */
 :root {
   --posh-font: "Roboto", sans-serif;
 
-  --font-body: var(--posh-font);
+  --font-body:    var(--posh-font);
   --font-heading: var(--posh-font);
-  --font-accent: var(--posh-font);
-  --font-card: var(--posh-font);
-  --font-hero: var(--posh-font);
-  --font-stat: var(--posh-font);
-  --font-badge: var(--posh-font);
+  --font-accent:  var(--posh-font);
+  --font-card:    var(--posh-font);
+  --font-hero:    var(--posh-font);
+  --font-stat:    var(--posh-font);
+  --font-badge:   var(--posh-font);
+
+  /* ─── 2. FLUID TYPE-SIZE TOKENS ──────────────────── */
+  /* clamp(MOBILE-MIN, PREFERRED, DESKTOP-MAX)
+     The preferred value uses vw so the size scales fluidly
+     between 320px and ~1025px without media-query jumps.
+
+     h1:  22px → 30px → 40px   (2.5rem desktop)
+     h2:  19px → 26px → 32px   (2rem)
+     h3:  17px → 20px → 24px   (1.5rem)
+     h4:  16px → 18px → 20px   (1.25rem)
+     h5:  15px → 16px → 18px   (1.125rem)
+     h6:  14px → 15px → 16px   (1rem)
+     body/p:    14px → 15px → 16px
+     small/cap: 12px → 13px → 14px
+     button:    12px → 13px → 14px                    */
+
+  --fs-h1:      clamp(1.375rem, 1rem + 2.5vw, 2.5rem);
+  --fs-h2:      clamp(1.1875rem, 0.95rem + 1.85vw, 2rem);
+  --fs-h3:      clamp(1.0625rem, 0.9rem + 1vw, 1.5rem);
+  --fs-h4:      clamp(1rem, 0.9rem + 0.6vw, 1.25rem);
+  --fs-h5:      clamp(0.9375rem, 0.88rem + 0.4vw, 1.125rem);
+  --fs-h6:      clamp(0.875rem, 0.85rem + 0.2vw, 1rem);
+  --fs-body:    clamp(0.875rem, 0.84rem + 0.25vw, 1rem);
+  --fs-small:   clamp(0.75rem, 0.72rem + 0.2vw, 0.875rem);
+  --fs-button:  clamp(0.75rem, 0.72rem + 0.2vw, 0.875rem);
+
+  /* ─── 3. LINE-HEIGHT TOKENS ──────────────────────── */
+  --lh-heading: 1.25;
+  --lh-body:    1.55;
 }
 
+/* ─── 4. APPLY FAMILY ────────────────────────────────── */
 body {
   font-family: var(--posh-font);
 }
 
-/* Form controls and buttons do not inherit the page font by default */
+/* Form controls don't inherit the page font by default */
 button,
 input,
 select,
 textarea {
   font-family: inherit;
+}
+
+/* ─── 5. GLOBAL HEADING SIZES ────────────────────────── */
+h1 { font-size: var(--fs-h1); line-height: var(--lh-heading); }
+h2 { font-size: var(--fs-h2); line-height: var(--lh-heading); }
+h3 { font-size: var(--fs-h3); line-height: var(--lh-heading); }
+h4 { font-size: var(--fs-h4); line-height: var(--lh-heading); }
+h5 { font-size: var(--fs-h5); line-height: var(--lh-heading); }
+h6 { font-size: var(--fs-h6); line-height: var(--lh-heading); }
+
+/* ─── 6. BODY / PARAGRAPH ───────────────────────────── */
+body {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+p {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+/* ─── 7. SMALL TEXT & CAPTIONS ───────────────────────── */
+small,
+.caption,
+figcaption,
+.text-sm {
+  font-size: var(--fs-small);
+}
+
+/* ─── 8. OVERFLOW GUARD ──────────────────────────────── */
+h1, h2, h3, h4, h5, h6,
+p, li, td, th, blockquote,
+.l-text {
+  overflow-wrap: break-word;
+  word-wrap: break-word;       /* legacy alias for older browsers */
+}
+
+/* =========================================================
+   MOBILE-FIRST OVERRIDES
+   ---------------------------------------------------------
+   The clamp() values above handle most of the fluid scaling,
+   but some page-level and component selectors use px / rem
+   with !important, so the rules below apply at the correct
+   breakpoints to guarantee the scale wins.
+   ========================================================= */
+
+/* ── TABLET (481–1024px) ─────────────────────────────── */
+@media (max-width: 1024px) {
+
+  /* Section titles that pages set inline at ~2rem+ */
+  .section-title,
+  .dept-header h1 {
+    font-size: var(--fs-h2);
+    line-height: var(--lh-heading);
+  }
+
+  .dept-subtitle {
+    font-size: var(--fs-h5);
+  }
+
+  /* Generic headings inside content blocks */
+  .service-box h5,
+  .doctor-info h5,
+  .doctor-card h5 {
+    font-size: var(--fs-h5);
+  }
+
+  .service-box p,
+  .doctor-info p,
+  .doctor-card p,
+  .tick-list li {
+    font-size: var(--fs-body);
+  }
+
+  .final-heading {
+    font-size: var(--fs-body);
+  }
+
+  .btn-appoint {
+    font-size: var(--fs-button);
+  }
+}
+
+/* ── MOBILE (≤ 480px) ────────────────────────────────── */
+@media (max-width: 480px) {
+
+  /* Force the token scale on headings that have inline px */
+  h1 { font-size: var(--fs-h1) !important; }
+  h2 { font-size: var(--fs-h2) !important; }
+  h3 { font-size: var(--fs-h3) !important; }
+  h4 { font-size: var(--fs-h4) !important; }
+  h5 { font-size: var(--fs-h5) !important; }
+  h6 { font-size: var(--fs-h6) !important; }
+
+  p,
+  li,
+  td,
+  th { font-size: var(--fs-body) !important; }
+
+  small,
+  .caption,
+  figcaption { font-size: var(--fs-small) !important; }
+
+  /* Department pages */
+  .section-title {
+    font-size: var(--fs-h3) !important;
+  }
+
+  .dept-header h1 {
+    font-size: var(--fs-h2) !important;
+  }
+
+  .dept-subtitle {
+    font-size: var(--fs-body) !important;
+  }
+
+  .final-heading {
+    font-size: var(--fs-small) !important;
+  }
+
+  .btn-appoint,
+  .whatsapp-btn {
+    font-size: var(--fs-button) !important;
+  }
+
+  /* Stats / counter section */
+  .ring-num {
+    font-size: clamp(1.25rem, 1rem + 1.5vw, 2rem) !important;
+  }
+
+  .st-heading {
+    font-size: var(--fs-h3) !important;
+  }
+
+  /* Card text */
+  .service-box p,
+  .doctor-info p,
+  .doctor-card p {
+    font-size: var(--fs-body) !important;
+  }
 }
