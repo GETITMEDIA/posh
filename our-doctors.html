@@ -3690,7 +3690,14 @@
                             }
                         }
 
-                        // Listen for live updates from admin panel in another tab
+                        // Listen for live updates from admin panel in another tab or same window
+                        function syncDoctorsUpdate(parsed) {
+                            if (Array.isArray(parsed)) {
+                                doctorsData = parsed;
+                                filterDoctors();
+                            }
+                        }
+
                         window.addEventListener('storage', function (e) {
                             if (e.key === 'posh_departments') {
                                 loadStoredDepartments();
@@ -3698,12 +3705,17 @@
                             }
                             if (e.key === 'posh_doctors' && e.newValue) {
                                 try {
-                                    const parsed = JSON.parse(e.newValue);
-                                    if (Array.isArray(parsed)) {
-                                        doctorsData = parsed;
-                                        filterDoctors();
-                                    }
+                                    syncDoctorsUpdate(JSON.parse(e.newValue));
                                 } catch (err) {}
+                            }
+                        });
+
+                        window.addEventListener('posh_doctors_updated', function () {
+                            const stored = localStorage.getItem('posh_doctors');
+                            if (stored) {
+                                try {
+                                    syncDoctorsUpdate(JSON.parse(stored));
+                                } catch (e) {}
                             }
                         });
 

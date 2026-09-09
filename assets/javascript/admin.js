@@ -69,11 +69,37 @@
       }
     };
     departments = {
-      "dental": { name: "DENTAL", icon: "fas fa-tooth", color: "#d946ef" },
-      "cardiology": { name: "CARDIOLOGY", icon: "fas fa-heartbeat", color: "#ef4444" },
-      "orthopedics": { name: "TRAUMA & ORTHOPEDICS", icon: "fas fa-bone", color: "#3b82f6" },
-      "neurology": { name: "NEUROLOGY", icon: "fas fa-brain", color: "#8b5cf6" },
-      "general": { name: "GENERAL MEDICINE", icon: "fas fa-user-md", color: "#10b981" }
+      "orthopaedics": { name: "ORTHOPAEDICS", icon: "fas fa-bone", color: "#d63384" },
+      "orthopedics": { name: "ORTHOPAEDICS", icon: "fas fa-bone", color: "#d63384" },
+      "anaesthesiology": { name: "ANAESTHESIOLOGY", icon: "fas fa-syringe", color: "#4361ee" },
+      "cardiology": { name: "CARDIOLOGY", icon: "fas fa-heart", color: "#ef476f" },
+      "cardiothoracic": { name: "CARDIOTHORACIC & VASCULAR SURGEON", icon: "fas fa-heartbeat", color: "#ef476f" },
+      "dental": { name: "DENTAL", icon: "fas fa-tooth", color: "#06d6a0" },
+      "dermatology": { name: "DERMATOLOGY", icon: "fas fa-allergies", color: "#ffd166" },
+      "endocrinology": { name: "ENDOCRINOLOGY", icon: "fas fa-prescription-bottle", color: "#4cc9f0" },
+      "ent": { name: "ENT", icon: "fas fa-ear-deaf", color: "#118ab2" },
+      "gastroenterology": { name: "GASTROENTEROLOGY", icon: "fas fa-diagnoses", color: "#7209b7" },
+      "gynaecology": { name: "OBSTETRICS & GYNAECOLOGY", icon: "fas fa-baby-carriage", color: "#c9184a" },
+      "general-medicine": { name: "GENERAL MEDICINE", icon: "fas fa-user-md", color: "#f72585" },
+      "general": { name: "GENERAL MEDICINE", icon: "fas fa-user-md", color: "#f72585" },
+      "general-surgeon": { name: "GENERAL SURGEON", icon: "fas fa-scissors", color: "#f8961e" },
+      "general-surgery": { name: "GENERAL SURGEON", icon: "fas fa-scissors", color: "#f8961e" },
+      "hepatology": { name: "HEPATOLOGY", icon: "fas fa-vial", color: "#43aa8b" },
+      "nephrology": { name: "NEPHROLOGY", icon: "fas fa-droplet", color: "#577590" },
+      "neurology": { name: "NEUROLOGY", icon: "fas fa-brain", color: "#9d4edd" },
+      "neurosurgeon": { name: "NEUROSURGEON", icon: "fas fa-brain", color: "#ff6d00" },
+      "neurosurgery": { name: "NEUROSURGEON", icon: "fas fa-brain", color: "#ff6d00" },
+      "oncology": { name: "ONCOLOGY", icon: "fas fa-hospital-user", color: "#8338ec" },
+      "ophthalmology": { name: "OPHTHALMOLOGY", icon: "fas fa-eye", color: "#3a86ff" },
+      "paediatrics": { name: "PAEDIATRICS", icon: "fas fa-baby", color: "#ff006e" },
+      "physiotherapy": { name: "PHYSIOTHERAPY", icon: "fas fa-wheelchair", color: "#3a86ff" },
+      "physiotherapy-two": { name: "PHYSICAL MEDICINE & REHABILITATION", icon: "fas fa-wheelchair", color: "#3a86ff" },
+      "plastic-surgeon": { name: "PLASTIC SURGEON", icon: "fas fa-hand-holding-medical", color: "#fb5607" },
+      "plastic-surgery": { name: "PLASTIC SURGEON", icon: "fas fa-hand-holding-medical", color: "#fb5607" },
+      "psychiatry": { name: "PSYCHIATRY", icon: "fas fa-head-side-virus", color: "#8338ec" },
+      "pulmonology": { name: "PULMONOLOGY", icon: "fas fa-lungs", color: "#06d6a0" },
+      "radiology": { name: "RADIOLOGY", icon: "fas fa-x-ray", color: "#ffbe0b" },
+      "urology": { name: "UROLOGY", icon: "fas fa-procedures", color: "#fb5607" }
     };
 
     try {
@@ -118,7 +144,25 @@
   }
 
   function saveDoctors() {
-    localStorage.setItem(CONFIG.STORAGE_KEY, JSON.stringify(doctors));
+    try {
+      localStorage.setItem(CONFIG.STORAGE_KEY, JSON.stringify(doctors));
+    } catch (e) {
+      console.warn('LocalStorage quota exceeded, simplifying image payload fallback:', e);
+      // Strip oversized base64 strings if localstorage hits quota limits
+      const sanitized = doctors.map(d => {
+        if (d.img && d.img.startsWith('data:image/') && d.img.length > 50000) {
+          return { ...d, img: 'assets/images/doc3.avif' };
+        }
+        return d;
+      });
+      try {
+        localStorage.setItem(CONFIG.STORAGE_KEY, JSON.stringify(sanitized));
+        showToast('Saved (large image simplified for storage quota)', 'warning');
+      } catch (err) {
+        showToast('Storage error: unable to save doctor data', 'error');
+      }
+    }
+    window.dispatchEvent(new Event('posh_doctors_updated'));
   }
 
   // ===== SESSION MANAGEMENT =====
@@ -384,10 +428,10 @@
           </td>
           <td>
             <div class="action-btns">
-              <button class="btn-icon edit" onclick="window.PoshAdmin.editDoctor(${doc.id})" title="Edit">
+              <button class="btn-icon edit" onclick="window.PoshAdmin.editDoctor('${doc.id}')" title="Edit">
                 <i class="fas fa-pen"></i>
               </button>
-              <button class="btn-icon delete" onclick="window.PoshAdmin.deleteDoctor(${doc.id})" title="Delete">
+              <button class="btn-icon delete" onclick="window.PoshAdmin.deleteDoctor('${doc.id}')" title="Delete">
                 <i class="fas fa-trash-alt"></i>
               </button>
             </div>
@@ -424,10 +468,10 @@
           <div class="doctor-grid-actions">
             <span class="status-badge ${status}">${status}</span>
             <div class="action-btns">
-              <button class="btn-icon edit" onclick="window.PoshAdmin.editDoctor(${doc.id})" title="Edit">
+              <button class="btn-icon edit" onclick="window.PoshAdmin.editDoctor('${doc.id}')" title="Edit">
                 <i class="fas fa-pen"></i>
               </button>
-              <button class="btn-icon delete" onclick="window.PoshAdmin.deleteDoctor(${doc.id})" title="Delete">
+              <button class="btn-icon delete" onclick="window.PoshAdmin.deleteDoctor('${doc.id}')" title="Delete">
                 <i class="fas fa-trash-alt"></i>
               </button>
             </div>
@@ -449,12 +493,12 @@
   }
 
   function editDoctor(id) {
-    const doc = doctors.find(d => d.id === id);
+    const doc = doctors.find(d => String(d.id) === String(id));
     if (!doc) return;
 
-    editingDoctorId = id;
+    editingDoctorId = doc.id;
     document.getElementById('modalTitle').innerHTML = '<i class="fas fa-user-edit" style="color:var(--accent-pink);"></i> Edit Doctor';
-    populateModalDepartments();
+    populateModalDepartments(doc.department);
 
     let drName = doc.name || '';
     let drQual = doc.qual || doc.qualification || '';
@@ -468,9 +512,9 @@
     const qualEl = document.getElementById('docQual');
     if (qualEl) qualEl.value = drQual;
 
-    document.getElementById('docSpecialty').value = doc.specialty;
-    document.getElementById('docDepartment').value = doc.department;
-    document.getElementById('docImg').value = doc.img;
+    document.getElementById('docSpecialty').value = doc.specialty || '';
+    document.getElementById('docDepartment').value = doc.department || '';
+    document.getElementById('docImg').value = doc.img || '';
     document.getElementById('docPhone').value = doc.phone || '';
     document.getElementById('docEmail').value = doc.email || '';
     document.getElementById('docStatus').value = doc.status || 'active';
@@ -480,37 +524,47 @@
   }
 
   function saveDoctor(e) {
-    e.preventDefault();
+    if (e) {
+      if (typeof e.preventDefault === 'function') e.preventDefault();
+      if (typeof e.stopPropagation === 'function') e.stopPropagation();
+    }
 
-    const name = document.getElementById('docName').value.trim();
+    const name = (document.getElementById('docName')?.value || '').trim();
     const qualEl = document.getElementById('docQual');
     const qual = qualEl ? qualEl.value.trim() : '';
 
-    const specialty = document.getElementById('docSpecialty').value.trim();
-    const department = document.getElementById('docDepartment').value;
-    const img = document.getElementById('docImg').value.trim() || 'assets/images/doc3.avif';
-    const phone = document.getElementById('docPhone').value.trim();
-    const email = document.getElementById('docEmail').value.trim();
-    const status = document.getElementById('docStatus').value;
+    const specialty = (document.getElementById('docSpecialty')?.value || '').trim();
+    const department = document.getElementById('docDepartment')?.value || '';
+    const img = (document.getElementById('docImg')?.value || '').trim() || 'assets/images/doc3.avif';
+    const phone = (document.getElementById('docPhone')?.value || '').trim();
+    const email = (document.getElementById('docEmail')?.value || '').trim();
+    const status = document.getElementById('docStatus')?.value || 'active';
 
     if (!name || !specialty || !department) {
-      showToast('Please fill in all required fields', 'error');
-      return;
+      showToast('Please fill in all required fields (*)', 'error');
+      return false;
     }
 
     let savedId = editingDoctorId;
 
-    if (editingDoctorId !== null) {
-      const idx = doctors.findIndex(d => d.id === editingDoctorId);
+    if (editingDoctorId !== null && editingDoctorId !== undefined) {
+      const idx = doctors.findIndex(d => String(d.id) === String(editingDoctorId));
       if (idx !== -1) {
         doctors[idx] = {
           ...doctors[idx],
           name, qual, specialty, department, img, phone, email, status
         };
         showToast('Doctor profile updated! ✏️', 'success');
+      } else {
+        const validIds = doctors.map(d => parseInt(d.id, 10)).filter(n => !isNaN(n));
+        const newId = validIds.length > 0 ? Math.max(...validIds) + 1 : 1;
+        savedId = newId;
+        doctors.push({ id: newId, name, qual, specialty, department, img, phone, email, status });
+        showToast('Doctor profile updated! ✏️', 'success');
       }
     } else {
-      const newId = doctors.length > 0 ? Math.max(...doctors.map(d => d.id)) + 1 : 1;
+      const validIds = doctors.map(d => parseInt(d.id, 10)).filter(n => !isNaN(n));
+      const newId = validIds.length > 0 ? Math.max(...validIds) + 1 : 1;
       savedId = newId;
       doctors.push({
         id: newId, name, qual, specialty, department, img, phone, email, status
@@ -518,14 +572,24 @@
       showToast('New doctor added! 🎉', 'success');
     }
 
+    editingDoctorId = null;
+
     saveDoctors();
     closeModal('doctorModal');
-    revealDoctor(savedId);
+
+    try {
+      revealDoctor(savedId);
+    } catch (err) {
+      console.warn('Could not reveal doctor:', err);
+    }
+
+    return false;
   }
 
   /* Scroll the saved doctor into view and flash it, so the user can
      see that the record really was written. */
   function revealDoctor(id) {
+    if (!id && id !== 0) return;
     const search = document.getElementById('searchDoctors');
     const deptFilter = document.getElementById('deptFilter');
     if (search) search.value = '';
@@ -545,7 +609,7 @@
   }
 
   function deleteDoctor(id) {
-    const doc = doctors.find(d => d.id === id);
+    const doc = doctors.find(d => String(d.id) === String(id));
     if (!doc) return;
 
     const commaIdx = doc.name.indexOf(', ');
@@ -553,7 +617,7 @@
 
     document.getElementById('deleteDocName').textContent = drName;
     document.getElementById('confirmDeleteBtn').onclick = () => {
-      doctors = doctors.filter(d => d.id !== id);
+      doctors = doctors.filter(d => String(d.id) !== String(id));
       saveDoctors();
       renderDashboard();
       closeModal('deleteModal');
@@ -628,17 +692,37 @@
     showToast(`New department "${name.toUpperCase()}" created! 🏥`, 'success');
   }
 
-  function populateModalDepartments() {
+  function populateModalDepartments(selectedKey) {
     const select = document.getElementById('docDepartment');
     if (!select) return;
 
     select.innerHTML = '<option value="">Select Department</option>';
+    const addedKeys = new Set();
+
     Object.keys(departments).forEach(key => {
+      const cleanKey = key.trim();
+      if (addedKeys.has(cleanKey)) return;
+      addedKeys.add(cleanKey);
+
       const opt = document.createElement('option');
-      opt.value = key;
+      opt.value = cleanKey;
       opt.textContent = departments[key].name;
       select.appendChild(opt);
     });
+
+    if (selectedKey) {
+      const cleanSelected = String(selectedKey).trim();
+      let matchOpt = Array.from(select.options).find(o => o.value.toLowerCase() === cleanSelected.toLowerCase());
+      if (matchOpt) {
+        select.value = matchOpt.value;
+      } else {
+        const opt = document.createElement('option');
+        opt.value = cleanSelected;
+        opt.textContent = cleanSelected.toUpperCase();
+        select.appendChild(opt);
+        select.value = cleanSelected;
+      }
+    }
   }
 
   // ===== MODALS =====
@@ -655,6 +739,17 @@
     if (modal) {
       modal.classList.remove('show');
       document.body.style.overflow = '';
+    }
+    if (id === 'doctorModal') {
+      editingDoctorId = null;
+      const form = document.getElementById('doctorForm');
+      if (form) form.reset();
+      const imgVal = document.getElementById('docImg');
+      if (imgVal) imgVal.value = '';
+      const imgFile = document.getElementById('docImgFile');
+      if (imgFile) imgFile.value = '';
+      const preview = document.getElementById('imgPreview');
+      if (preview) preview.src = 'assets/images/doc3.avif';
     }
   }
 
@@ -861,23 +956,53 @@
       });
     });
 
-    // Image File Upload Handler
+    // Image File Upload Handler with Canvas Compression
     const imgFileInput = document.getElementById('docImgFile');
     if (imgFileInput) {
       imgFileInput.addEventListener('change', (e) => {
         if (e.target.files && e.target.files[0]) {
           const file = e.target.files[0];
-          const reader = new FileReader();
-          reader.onload = function (evt) {
-            const base64Data = evt.target.result;
-            document.getElementById('docImg').value = base64Data;
-            document.getElementById('imgPreview').src = base64Data;
-            showToast('Image uploaded! 📷', 'info');
-          };
-          reader.readAsDataURL(file);
+          compressImage(file, 350, 350, 0.75, function (compressedDataUrl) {
+            document.getElementById('docImg').value = compressedDataUrl;
+            document.getElementById('imgPreview').src = compressedDataUrl;
+            showToast('Photo attached! 📷', 'info');
+          });
         }
       });
     }
+
+  function compressImage(file, maxWidth, maxHeight, quality, callback) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      const img = new Image();
+      img.onload = function () {
+        let width = img.width;
+        let height = img.height;
+        if (width > height) {
+          if (width > maxWidth) {
+            height = Math.round((height * maxWidth) / width);
+            width = maxWidth;
+          }
+        } else {
+          if (height > maxHeight) {
+            width = Math.round((width * maxHeight) / height);
+            height = maxHeight;
+          }
+        }
+        const canvas = document.createElement('canvas');
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, width, height);
+        callback(canvas.toDataURL('image/jpeg', quality));
+      };
+      img.onerror = function () {
+        callback(e.target.result);
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
 
     // Image preview URL change
     const imgInput = document.getElementById('docImg');
@@ -916,10 +1041,15 @@
   }
   window.scrollTable = scrollTable;
 
+  window.saveDoctor = saveDoctor;
+  window.openAddModal = openAddModal;
+
   // ===== EXPOSE PUBLIC API =====
   window.PoshAdmin = {
     editDoctor,
     deleteDoctor,
+    saveDoctor,
+    openAddModal,
     openDeptModal: function () {
       openModal('deptModal');
     },

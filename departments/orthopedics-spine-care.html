@@ -4651,7 +4651,7 @@ Please share available slots.`;
             <script>
 
               // Doctor data
-              const doctorsData = [
+              let doctorsData = [
                 // ... keep ALL your doctors data exactly as it is ...
                 /* ================= ORTHOPAEDICS ================= */
                 { id: 1, name: "Prof. Dr. V. Veerappan, M.S. (Ortho), FRCS (Glasgow)", specialty: "Trauma, Spine & Joint Replacement surgeon", department: "orthopaedics", img: "../assets/images/doc1.avif" },
@@ -4697,6 +4697,42 @@ Please share available slots.`;
               // Initialize
               document.addEventListener('DOMContentLoaded', function () {
                 console.log("Doctors page loaded");
+
+                const storedDocs = localStorage.getItem('posh_doctors');
+                if (storedDocs) {
+                    try {
+                        const parsed = JSON.parse(storedDocs);
+                        if (Array.isArray(parsed) && parsed.length > 0) {
+                            doctorsData = parsed;
+                        }
+                    } catch (e) {}
+                }
+
+                window.addEventListener('storage', function (e) {
+                    if (e.key === 'posh_doctors' && e.newValue) {
+                        try {
+                            const parsed = JSON.parse(e.newValue);
+                            if (Array.isArray(parsed)) {
+                                doctorsData = parsed;
+                                renderDoctors();
+                            }
+                        } catch (err) {}
+                    }
+                });
+
+                window.addEventListener('posh_doctors_updated', function () {
+                    const stored = localStorage.getItem('posh_doctors');
+                    if (stored) {
+                        try {
+                            const parsed = JSON.parse(stored);
+                            if (Array.isArray(parsed)) {
+                                doctorsData = parsed;
+                                renderDoctors();
+                            }
+                        } catch (e) {}
+                    }
+                });
+
                 createParticles();
                 renderDoctors();
                 setupEventListeners();
@@ -4753,17 +4789,37 @@ Please share available slots.`;
                     noResults.style.display = 'none';
                   }
 
+                  function normalizeDept(dept) {
+                    if (!dept) return '';
+                    const d = dept.trim().toLowerCase();
+                    if (d === 'orthopedics' || d === 'orthopaedics' || d === 'orthopedics-spine-care' || d === 'orthopaedic') {
+                      return 'orthopaedics';
+                    }
+                    if (d === 'general' || d === 'general-medicine') {
+                      return 'general-medicine';
+                    }
+                    if (d === 'general-surgeon' || d === 'general-surgeon ' || d === 'general-surgery') {
+                      return 'general-surgery';
+                    }
+                    if (d === 'neurosurgeon' || d === 'neurosurgeon ' || d === 'neurosurgery') {
+                      return 'neurosurgery';
+                    }
+                    return d;
+                  }
+
                   // Group doctors by department
                   const doctorsByDept = {};
                   filteredDoctors.forEach(doc => {
-                    if (!doctorsByDept[doc.department]) {
-                      doctorsByDept[doc.department] = [];
+                    const normDept = normalizeDept(doc.department);
+                    if (!doctorsByDept[normDept]) {
+                      doctorsByDept[normDept] = [];
                     }
-                    doctorsByDept[doc.department].push(doc);
+                    doctorsByDept[normDept].push(doc);
                   });
 
-                  // Render in fixed department order
-                  Object.keys(departmentInfo).forEach(deptKey => {
+                  // Render ONLY Orthopaedics department on this page
+                  const targetDepts = ['orthopaedics'];
+                  targetDepts.forEach(deptKey => {
                     if (!doctorsByDept[deptKey]) return;
 
                     const deptInfo = departmentInfo[deptKey];
@@ -4784,19 +4840,39 @@ Please share available slots.`;
 
                     const row = document.getElementById(`dept-${deptKey}`);
 
+                    function fixImgSrc(src) {
+                      if (!src) return '../assets/images/doc3.avif';
+                      if (src.startsWith('http://') || src.startsWith('https://') || src.startsWith('data:')) {
+                        return src;
+                      }
+                      if (src.startsWith('../')) return src;
+                      if (src.startsWith('./')) return '../' + src.substring(2);
+                      if (src.startsWith('assets/')) return '../' + src;
+                      return '../' + src;
+                    }
+
                     doctors.forEach(doctor => {
                       const col = document.createElement('div');
                       col.className = 'col-lg-4 col-md-6 mb-4';
 
-                      const commaIdx = doctor.name.indexOf(', ');
-                      const drName = commaIdx !== -1 ? doctor.name.substring(0, commaIdx) : doctor.name;
-                      const drQual = commaIdx !== -1 ? doctor.name.substring(commaIdx + 2) : '';
+                      let drName = doctor.name || '';
+                      let drQual = doctor.qual || doctor.qualification || '';
+
+                      if (drName.indexOf(', ') !== -1) {
+                        const commaIdx = drName.indexOf(', ');
+                        if (!drQual) {
+                          drQual = drName.substring(commaIdx + 2);
+                        }
+                        drName = drName.substring(0, commaIdx);
+                      }
+
                       const waMsg = encodeURIComponent(`Hello, I would like to book an appointment with ${drName} at The Posh Hospital. Please let me know the available date and time.`);
+                      const imgSrc = fixImgSrc(doctor.img);
 
                       col.innerHTML = `
                         <div class="dept-dc-card">
                             <div class="dept-dc-photo-wrap">
-                                <img class="dept-dc-photo" src="${doctor.img}"
+                                <img class="dept-dc-photo" src="${imgSrc}"
                                      onerror="this.src='../assets/images/doc3.avif'" alt="${drName}">
                             </div>
                             <div class="dept-dc-body">
@@ -5108,37 +5184,5 @@ Please share available slots.`;
             
 
 
-<script id="dept-dc-render">
-            (function () {
-              var docs = [
-                { name: "Dr. V. Veerappan", qual: "M.S. (Ortho), FRCS (Glasgow)", spec: "Trauma, Spine & Joint Replacement Surgeon", img: "../assets/images/doc1.avif" },
-                { name: "Dr. Harish Jayakumar", qual: "MBBS, MS (ORTHO)", spec: "Trauma & Orthopedic Surgeon", img: "../assets/images/doc59.avif" },
-                { name: "Dr. R. Krishnagopal", qual: "M.S. (Ortho)", spec: "Arthroscopic Surgeon", img: "../assets/images/doc2.avif" },
-                { name: "Dr. R. Vijayaragavan", qual: "M.S (Ortho)", spec: "Consultant Orthopaedic Surgeon", img: "../assets/images/vijayaraghavan.jpeg" },
-                { name: "Dr. Pragwal", qual: "Ms.ortho., FISU (SESI), FIASM (UK/INDIA)", spec: "Consultant Orthopaedic Surgeon", img: "../assets/images/Pragwal.jpeg" }
-              ];
-              var container = document.getElementById('doctorsContainer');
-              if (!container) return;
-              container.innerHTML = '';
-              var grid = document.createElement('div');
-              grid.className = 'dept-dc-grid';
-              docs.forEach(function (d) {
-                var waName = encodeURIComponent(d.name);
-                var waMsg = 'Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20with%20' + waName + '%20at%20The%20Posh%20Hospital.%20Please%20let%20me%20know%20the%20available%20date%20and%20time.';
-                var card = document.createElement('div');
-                card.className = 'dept-dc-card';
-                card.innerHTML =
-                  '<div class="dept-dc-photo-wrap"><img loading="lazy" class="dept-dc-photo" src="' + d.img + '" onerror="this.src=\'../assets/images/doc3.avif\'" alt="' + d.name + '"></div>'
-                  + '<div class="dept-dc-body">'
-                  + '<div class="dept-dc-name">' + d.name + '</div>'
-                  + (d.qual ? '<div class="dept-dc-qual">' + d.qual + '</div>' : '')
-                  + '<div class="dept-dc-spec">' + d.spec + '</div>'
-                  + '<a href="https://wa.me/918056555330?text=' + waMsg + '" class="dept-dc-btn" target="_blank">&#128172; Book Appointment</a>'
-                  + '</div>';
-                grid.appendChild(card);
-              });
-              container.appendChild(grid);
-            })();
-          </script>
 </body>
 </html>
